@@ -13,6 +13,11 @@ let filipinoDialect = "tagalog";
 let filipinoNameMode = "generic";
 let filipinoSearchQuery = "";
 let filipinoPairsCache = null;
+let preparedDrugRecords = [];
+let preparedDrugRecordsById = new Map();
+const alertsPairsCache = new Map();
+const filipinoPairsCacheByKey = new Map();
+const MAX_RENDERED_PAIRS = 500;
 
 window.handleDirectoryCategoryChange = function(val) {
     directoryCategoryQuery = val;
@@ -110,6 +115,125 @@ function getComparisonCandidates(drugA, drugB, mode) {
     })).filter(candidate => candidate.nameA && candidate.nameB);
 }
 
+function buildPreparedDrugRecords() {
+    preparedDrugRecords = drugsDatabase.map(drug => {
+        const genericNorm = normalizeDrugName(drug.generic_name);
+        const brandNorm = normalizeDrugName(drug.brand_name);
+
+        return {
+            drug,
+            generic: {
+                type: "generic",
+                name: drug.generic_name,
+                otherName: drug.brand_name,
+                norm: genericNorm,
+                lower: (drug.generic_name || "").toLowerCase(),
+                otherLower: (drug.brand_name || "").toLowerCase(),
+                length: genericNorm.length,
+                soundex: soundexEncode(genericNorm)
+            },
+            brand: {
+                type: "brand",
+                name: drug.brand_name,
+                otherName: drug.generic_name,
+                norm: brandNorm,
+                lower: (drug.brand_name || "").toLowerCase(),
+                otherLower: (drug.generic_name || "").toLowerCase(),
+                length: brandNorm.length,
+                soundex: soundexEncode(brandNorm)
+            }
+        };
+    });
+    preparedDrugRecordsById = new Map(preparedDrugRecords.map(record => [record.drug.id, record]));
+    alertsPairsCache.clear();
+    filipinoPairsCacheByKey.clear();
+    filipinoPairsCache = null;
+}
+
+function getPreparedEntries(recordA, recordB, mode) {
+    const typePairs = {
+        generic: [["generic", "generic"]],
+        brand: [["brand", "brand"]],
+        cross: [["generic", "brand"], ["brand", "generic"]],
+        all: [["generic", "generic"], ["brand", "brand"], ["generic", "brand"], ["brand", "generic"]]
+    }[mode] || [["generic", "generic"]];
+
+    return typePairs.map(([typeA, typeB]) => ({
+        drugA: recordA.drug,
+        drugB: recordB.drug,
+        typeA,
+        typeB,
+        entryA: recordA[typeA],
+        entryB: recordB[typeB],
+        nameA: recordA[typeA].name,
+        nameB: recordB[typeB].name,
+        oppNameA: recordA[typeA].otherName,
+        oppNameB: recordB[typeB].otherName
+    })).filter(candidate => candidate.entryA.norm && candidate.entryB.norm);
+}
+
+function codesSimilarity(code1, code2) {
+    if (code1 === code2) return 1.0;
+    let matches = 0;
+    for (let i = 0; i < 4; i++) if (code1[i] === code2[i]) matches++;
+    return matches / 4.0;
+}
+
+function namesMatchSearch(candidate, query) {
+    if (!query) return true;
+    return (
+        candidate.entryA.lower.includes(query) ||
+        candidate.entryB.lower.includes(query) ||
+        candidate.entryA.otherLower.includes(query) ||
+        candidate.entryB.otherLower.includes(query)
+    );
+}
+
+function getPreparedNameEntries(mode) {
+    const entries = [];
+    for (const record of preparedDrugRecords) {
+        if (mode === "generic" || mode === "cross" || mode === "all") {
+            entries.push({ record, entry: record.generic });
+        }
+        if (mode === "brand" || mode === "cross" || mode === "all") {
+            entries.push({ record, entry: record.brand });
+        }
+    }
+    return entries;
+}
+
+function getLengthSortedNameEntries(mode) {
+    return getPreparedNameEntries(mode).sort((a, b) => a.entry.length - b.entry.length);
+}
+
+function getFilipinoLengthSortedEntries(mode, dialect) {
+    return getPreparedNameEntries(mode).sort((a, b) => {
+        return getFilipinoPrepared(a.entry, dialect).length - getFilipinoPrepared(b.entry, dialect).length;
+    });
+}
+
+function isAllowedNameTypePair(typeA, typeB, mode) {
+    if (mode === "generic") return typeA === "generic" && typeB === "generic";
+    if (mode === "brand") return typeA === "brand" && typeB === "brand";
+    if (mode === "cross") return typeA !== typeB;
+    return true;
+}
+
+function makePairCandidate(left, right) {
+    return {
+        drugA: left.record.drug,
+        drugB: right.record.drug,
+        typeA: left.entry.type,
+        typeB: right.entry.type,
+        entryA: left.entry,
+        entryB: right.entry,
+        nameA: left.entry.name,
+        nameB: right.entry.name,
+        oppNameA: left.entry.otherName,
+        oppNameB: right.entry.otherName
+    };
+}
+
 function normalizeDrugName(name) {
     if (!name) return "";
     let norm = name.toLowerCase().trim();
@@ -151,6 +275,7 @@ function loadDatabase() {
     // Load from hardcoded database (drugs_db.js) — no fetch needed for Vercel deployment
     if (typeof DRUGS_DATABASE !== 'undefined' && DRUGS_DATABASE.length > 0) {
         drugsDatabase = DRUGS_DATABASE;
+        buildPreparedDrugRecords();
         console.log(`CDSS loaded ${drugsDatabase.length} medications from hardcoded database.`);
         renderDirectory();
     } else {
@@ -473,88 +598,134 @@ window.handleAlertsSearch = function(val) {
     renderAlerts();
 };
 
+function inflateCachedPair(row) {
+    const recordA = preparedDrugRecordsById.get(row[0]);
+    const recordB = preparedDrugRecordsById.get(row[2]);
+    if (!recordA || !recordB) return null;
+
+    const typeA = row[1];
+    const typeB = row[3];
+    const left = { record: recordA, entry: recordA[typeA] };
+    const right = { record: recordB, entry: recordB[typeB] };
+    const candidate = makePairCandidate(left, right);
+    const normA = candidate.entryA.norm;
+    const normB = candidate.entryB.norm;
+    const [tmlA, tmlB] = generateTallManLettering(normA, normB);
+
+    return {
+        ...candidate,
+        normA,
+        normB,
+        similarity: row[5],
+        levDistance: levenshteinDistance(normA, normB),
+        sdxMatch: row[6],
+        tmlA,
+        tmlB
+    };
+}
+
+function computeAlertsLASAPairs(mode, threshold) {
+    const cacheKey = `${mode}|${threshold.toFixed(2)}`;
+    if (alertsPairsCache.has(cacheKey)) {
+        return alertsPairsCache.get(cacheKey);
+    }
+
+    if (typeof LASA_PAIRS_CACHE !== "undefined" && Array.isArray(LASA_PAIRS_CACHE)) {
+        const cachedPairs = LASA_PAIRS_CACHE
+            .filter(row => {
+                const rowMode = row[4];
+                const jw = row[5];
+                const sdx = row[6];
+                const override = row[7] === 1;
+                return (
+                    (mode === "all" || rowMode === mode) &&
+                    (jw >= threshold || (jw >= 0.75 && sdx >= 0.75) || override)
+                );
+            })
+            .map(row => inflateCachedPair(row))
+            .filter(Boolean)
+            .sort((a, b) => b.similarity - a.similarity);
+        alertsPairsCache.set(cacheKey, cachedPairs);
+        return cachedPairs;
+    }
+
+    const pairs = [];
+    const seen = new Set();
+    const entries = getLengthSortedNameEntries(mode);
+    const len = entries.length;
+
+    for (let i = 0; i < len; i++) {
+        const left = entries[i];
+
+        for (let j = i + 1; j < len; j++) {
+            const right = entries[j];
+            if (left.record.drug.id === right.record.drug.id) continue;
+            if (!isAllowedNameTypePair(left.entry.type, right.entry.type, mode)) continue;
+
+            const normA = left.entry.norm;
+            const normB = right.entry.norm;
+            if (normA === normB) continue;
+
+            if (right.entry.length - left.entry.length > 4) break;
+
+            const sim = jaroWinklerSimilarity(normA, normB);
+            const soundexSim = codesSimilarity(left.entry.soundex, right.entry.soundex);
+
+            const isLasa = (
+                sim >= threshold ||
+                (sim >= 0.75 && soundexSim >= 0.75) ||
+                (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA)
+            );
+
+            if (!isLasa) continue;
+
+            const pairKey = [
+                `${left.record.drug.id}:${left.entry.type}:${normA}`,
+                `${right.record.drug.id}:${right.entry.type}:${normB}`
+            ].sort().join("::");
+            if (seen.has(pairKey)) continue;
+            seen.add(pairKey);
+
+            const candidate = makePairCandidate(left, right);
+            const [tmlA, tmlB] = generateTallManLettering(normA, normB);
+            pairs.push({
+                ...candidate,
+                normA,
+                normB,
+                similarity: sim,
+                levDistance: levenshteinDistance(normA, normB),
+                sdxMatch: soundexSim,
+                tmlA,
+                tmlB
+            });
+        }
+    }
+
+    pairs.sort((a, b) => b.similarity - a.similarity);
+    alertsPairsCache.set(cacheKey, pairs);
+    return pairs;
+}
+
 function renderAlerts() {
     const tbody = document.getElementById("alerts-tbody");
     const countBadge = document.getElementById("alerts-count");
     
-    // Show a loading indicator if needed, but for now just calculate synchronously
     tbody.innerHTML = `<tr><td colspan="6" class="text-center" style="padding: 40px;">Calculating ${alertsMode} LASA matches across the database...</td></tr>`;
     
-    // We defer the heavy O(N^2) to not block the UI completely
     setTimeout(() => {
-        const pairs = [];
-        const seen = new Set();
-        const len = drugsDatabase.length;
+        const pairs = computeAlertsLASAPairs(alertsMode, currentThreshold);
+        const filtered = alertsSearchQuery ? pairs.filter(p => namesMatchSearch(p, alertsSearchQuery)) : pairs;
+        const renderedPairs = filtered.slice(0, MAX_RENDERED_PAIRS);
+        countBadge.innerText = filtered.length > MAX_RENDERED_PAIRS
+            ? `${filtered.length} Pairs Detected · Showing ${MAX_RENDERED_PAIRS}`
+            : `${filtered.length} Pairs Detected`;
         
-        for (let i = 0; i < len; i++) {
-            const drugA = drugsDatabase[i];
-            
-            for (let j = i + 1; j < len; j++) {
-                const drugB = drugsDatabase[j];
-                const candidates = getComparisonCandidates(drugA, drugB, alertsMode);
-
-                for (const candidate of candidates) {
-                    if (alertsSearchQuery &&
-                        !candidate.nameA.toLowerCase().includes(alertsSearchQuery) &&
-                        !candidate.nameB.toLowerCase().includes(alertsSearchQuery) &&
-                        !candidate.oppNameA.toLowerCase().includes(alertsSearchQuery) &&
-                        !candidate.oppNameB.toLowerCase().includes(alertsSearchQuery)
-                    ) {
-                        continue;
-                    }
-
-                    const normA = normalizeDrugName(candidate.nameA);
-                    const normB = normalizeDrugName(candidate.nameB);
-                    if (!normA || !normB || normA === normB) continue;
-
-                    // Length optimization
-                    if (Math.abs(normA.length - normB.length) > 4) {
-                        const isOverride = (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA);
-                        if (!isOverride) continue;
-                    }
-
-                    let sim = jaroWinklerSimilarity(normA, normB);
-                    let soundexSim = soundexSimilarity(normA, normB);
-
-                    const isLasa = (
-                        sim >= currentThreshold ||
-                        (sim >= 0.75 && soundexSim >= 0.75) ||
-                        (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA)
-                    );
-
-                    if (isLasa) {
-                        const pairKey = [
-                            `${candidate.drugA.id}:${candidate.typeA}:${normA}`,
-                            `${candidate.drugB.id}:${candidate.typeB}:${normB}`
-                        ].sort().join("::");
-                        if (seen.has(pairKey)) continue;
-                        seen.add(pairKey);
-
-                        let [tmlA, tmlB] = generateTallManLettering(normA, normB);
-                        let lev = levenshteinDistance(normA, normB);
-
-                        pairs.push({
-                            ...candidate,
-                            similarity: sim,
-                            levDistance: lev,
-                            sdxMatch: soundexSim,
-                            tmlA: tmlA,
-                            tmlB: tmlB
-                        });
-                    }
-                }
-            }
-        }
-        
-        pairs.sort((a, b) => b.similarity - a.similarity);
-        countBadge.innerText = `${pairs.length} Pairs Detected`;
-        
-        if (pairs.length === 0) {
+        if (filtered.length === 0) {
             tbody.innerHTML = `<tr><td colspan="6" class="text-center text-muted" style="padding: 40px;">No confusable pairs found under current similarity configurations.</td></tr>`;
             return;
         }
         
-        tbody.innerHTML = pairs.map(p => {
+        tbody.innerHTML = renderedPairs.map(p => {
             const metaA = NAME_TYPE_META[p.typeA];
             const metaB = NAME_TYPE_META[p.typeB];
             
@@ -755,11 +926,14 @@ function generateTallManLettering(s1, s2) {
 function findSimilarDrugsLocal(targetName, threshold) {
     const targetNorm = normalizeDrugName(targetName);
     if (!targetNorm) return [];
+    const targetSoundex = soundexEncode(targetNorm);
     
     let similar = [];
-    for (let d of drugsDatabase) {
-        const genNorm = normalizeDrugName(d.generic_name);
-        const brandNorm = normalizeDrugName(d.brand_name);
+    for (let record of preparedDrugRecords) {
+        const genEntry = record.generic;
+        const brandEntry = record.brand;
+        const genNorm = genEntry.norm;
+        const brandNorm = brandEntry.norm;
         
         if (genNorm === targetNorm || brandNorm === targetNorm) {
             continue;
@@ -774,7 +948,7 @@ function findSimilarDrugsLocal(targetName, threshold) {
         let brandSim = jaroWinklerSimilarity(targetNorm, brandNorm);
         let sim = Math.max(genSim, brandSim);
         
-        let soundexSim = soundexSimilarity(targetNorm, genNorm);
+        let soundexSim = codesSimilarity(targetSoundex, genEntry.soundex);
         
         const isLasa = (
             sim >= threshold ||
@@ -784,7 +958,7 @@ function findSimilarDrugsLocal(targetName, threshold) {
         
         if (isLasa) {
             let [t, m] = generateTallManLettering(targetNorm, genNorm);
-            similar.push({ drug: d, similarity: sim, tmlTarget: t, tmlMatch: m });
+            similar.push({ drug: record.drug, similarity: sim, tmlTarget: t, tmlMatch: m });
         }
     }
     return similar.sort((a, b) => b.similarity - a.similarity);
@@ -859,6 +1033,19 @@ function filipinoPhoneticSimilarity(s1, s2, dialect) {
     return m / 4.0;
 }
 
+function getFilipinoPrepared(entry, dialect) {
+    if (!entry.filipino) entry.filipino = {};
+    if (!entry.filipino[dialect]) {
+        const g2p = filipinoG2P(entry.norm, dialect);
+        entry.filipino[dialect] = {
+            g2p,
+            length: g2p.result.length,
+            soundex: soundexEncode(g2p.result)
+        };
+    }
+    return entry.filipino[dialect];
+}
+
 function renderG2PHTML(g2pResult) {
     if (g2pResult.rules.length === 0) {
         return `<span class="g2p-unchanged">${g2pResult.result}</span>`;
@@ -886,80 +1073,154 @@ window.handleFilipinoModeChange = function(val) {
     renderFilipinoLASA();
 };
 
+function inflateCachedFilipinoPair(row, dialect) {
+    const recordA = preparedDrugRecordsById.get(row[0]);
+    const recordB = preparedDrugRecordsById.get(row[2]);
+    if (!recordA || !recordB) return null;
+
+    const typeA = row[1];
+    const typeB = row[3];
+    const left = { record: recordA, entry: recordA[typeA] };
+    const right = { record: recordB, entry: recordB[typeB] };
+    const candidate = makePairCandidate(left, right);
+    const filipinoA = getFilipinoPrepared(candidate.entryA, dialect);
+    const filipinoB = getFilipinoPrepared(candidate.entryB, dialect);
+    const filipinoOffset = dialect === "tagalog" ? 8 : 10;
+    const filipinoJW = row[filipinoOffset];
+    const filipinoSdx = row[filipinoOffset + 1];
+    const englishJW = row[5];
+    const englishSdx = row[6];
+    const override = row[7] === 1;
+    const isEnglishLASA = (
+        englishJW >= currentThreshold ||
+        (englishJW >= 0.75 && englishSdx >= 0.75) ||
+        override
+    );
+
+    let flag;
+    if (!isEnglishLASA) {
+        flag = "filipino-only";
+    } else if (filipinoJW > englishJW + 0.01) {
+        flag = "amplified";
+    } else {
+        flag = "standard";
+    }
+
+    return {
+        ...candidate,
+        normA: candidate.entryA.norm,
+        normB: candidate.entryB.norm,
+        g2pA: filipinoA.g2p,
+        g2pB: filipinoB.g2p,
+        filipinoJW,
+        englishJW,
+        filipinoSdx,
+        englishSdx,
+        flag
+    };
+}
+
 function computeFilipinoLASAPairs() {
+    const cacheKey = `${filipinoDialect}|${filipinoNameMode}|${currentThreshold.toFixed(2)}`;
+    if (filipinoPairsCacheByKey.has(cacheKey)) {
+        return filipinoPairsCacheByKey.get(cacheKey);
+    }
+
+    if (typeof LASA_PAIRS_CACHE !== "undefined" && Array.isArray(LASA_PAIRS_CACHE)) {
+        const metricOffset = filipinoDialect === "tagalog" ? 8 : 10;
+        const cachedPairs = LASA_PAIRS_CACHE
+            .filter(row => {
+                const rowMode = row[4];
+                const filipinoJW = row[metricOffset];
+                const filipinoSdx = row[metricOffset + 1];
+                const override = row[7] === 1;
+                return (
+                    filipinoJW >= 0 &&
+                    (filipinoNameMode === "all" || rowMode === filipinoNameMode) &&
+                    (filipinoJW >= currentThreshold || (filipinoJW >= 0.75 && filipinoSdx >= 0.75) || override)
+                );
+            })
+            .map(row => inflateCachedFilipinoPair(row, filipinoDialect))
+            .filter(Boolean)
+            .sort((a, b) => {
+                const flagOrder = { 'filipino-only': 0, 'amplified': 1, 'standard': 2 };
+                if (flagOrder[a.flag] !== flagOrder[b.flag]) return flagOrder[a.flag] - flagOrder[b.flag];
+                return b.filipinoJW - a.filipinoJW;
+            });
+        filipinoPairsCacheByKey.set(cacheKey, cachedPairs);
+        return cachedPairs;
+    }
+
     const pairs = [];
     const seen = new Set();
-    const len = drugsDatabase.length;
+    const entries = getFilipinoLengthSortedEntries(filipinoNameMode, filipinoDialect);
+    const len = entries.length;
 
     for (let i = 0; i < len; i++) {
-        const drugA = drugsDatabase[i];
+        const left = entries[i];
 
         for (let j = i + 1; j < len; j++) {
-            const drugB = drugsDatabase[j];
-            const candidates = getComparisonCandidates(drugA, drugB, filipinoNameMode);
+            const right = entries[j];
+            if (left.record.drug.id === right.record.drug.id) continue;
+            if (!isAllowedNameTypePair(left.entry.type, right.entry.type, filipinoNameMode)) continue;
 
-            for (const candidate of candidates) {
-                const normA = normalizeDrugName(candidate.nameA);
-                const normB = normalizeDrugName(candidate.nameB);
-                if (!normA || !normB || normA === normB) continue;
+            const normA = left.entry.norm;
+            const normB = right.entry.norm;
+            if (normA === normB) continue;
 
-                const g2pA = filipinoG2P(normA, filipinoDialect);
-                const g2pB = filipinoG2P(normB, filipinoDialect);
+            const filipinoA = getFilipinoPrepared(left.entry, filipinoDialect);
+            const filipinoB = getFilipinoPrepared(right.entry, filipinoDialect);
 
-                // Length optimization on Filipino-transformed names
-                if (Math.abs(g2pA.result.length - g2pB.result.length) > 4) {
-                    const isOverride = (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA);
-                    if (!isOverride) continue;
-                }
+            // Length optimization on Filipino-transformed names
+            if (filipinoB.length - filipinoA.length > 4) break;
 
-                const filipinoJW = jaroWinklerSimilarity(g2pA.result, g2pB.result);
-                const filipinoSdx = filipinoPhoneticSimilarity(normA, normB, filipinoDialect);
-                const englishJW = jaroWinklerSimilarity(normA, normB);
-                const englishSdx = soundexSimilarity(normA, normB);
+            const filipinoJW = jaroWinklerSimilarity(filipinoA.g2p.result, filipinoB.g2p.result);
+            const filipinoSdx = codesSimilarity(filipinoA.soundex, filipinoB.soundex);
+            const englishJW = jaroWinklerSimilarity(normA, normB);
+            const englishSdx = codesSimilarity(left.entry.soundex, right.entry.soundex);
 
-                const isFilipinoLASA = (
-                    filipinoJW >= currentThreshold ||
-                    (filipinoJW >= 0.75 && filipinoSdx >= 0.75) ||
-                    (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA)
-                );
+            const isFilipinoLASA = (
+                filipinoJW >= currentThreshold ||
+                (filipinoJW >= 0.75 && filipinoSdx >= 0.75) ||
+                (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA)
+            );
 
-                if (!isFilipinoLASA) continue;
+            if (!isFilipinoLASA) continue;
 
-                const pairKey = [
-                    `${candidate.drugA.id}:${candidate.typeA}:${normA}`,
-                    `${candidate.drugB.id}:${candidate.typeB}:${normB}`
-                ].sort().join('::');
-                if (seen.has(pairKey)) continue;
-                seen.add(pairKey);
+            const pairKey = [
+                `${left.record.drug.id}:${left.entry.type}:${normA}`,
+                `${right.record.drug.id}:${right.entry.type}:${normB}`
+            ].sort().join('::');
+            if (seen.has(pairKey)) continue;
+            seen.add(pairKey);
 
-                const isEnglishLASA = (
-                    englishJW >= currentThreshold ||
-                    (englishJW >= 0.75 && englishSdx >= 0.75) ||
-                    (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA)
-                );
+            const isEnglishLASA = (
+                englishJW >= currentThreshold ||
+                (englishJW >= 0.75 && englishSdx >= 0.75) ||
+                (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA)
+            );
 
-                let flag;
-                if (!isEnglishLASA) {
-                    flag = 'filipino-only';
-                } else if (filipinoJW > englishJW + 0.01) {
-                    flag = 'amplified';
-                } else {
-                    flag = 'standard';
-                }
-
-                pairs.push({
-                    ...candidate,
-                    normA,
-                    normB,
-                    g2pA,
-                    g2pB,
-                    filipinoJW,
-                    englishJW,
-                    filipinoSdx,
-                    englishSdx,
-                    flag
-                });
+            let flag;
+            if (!isEnglishLASA) {
+                flag = 'filipino-only';
+            } else if (filipinoJW > englishJW + 0.01) {
+                flag = 'amplified';
+            } else {
+                flag = 'standard';
             }
+
+            pairs.push({
+                ...makePairCandidate(left, right),
+                normA,
+                normB,
+                g2pA: filipinoA.g2p,
+                g2pB: filipinoB.g2p,
+                filipinoJW,
+                englishJW,
+                filipinoSdx,
+                englishSdx,
+                flag
+            });
         }
     }
 
@@ -970,6 +1231,7 @@ function computeFilipinoLASAPairs() {
         return b.filipinoJW - a.filipinoJW;
     });
 
+    filipinoPairsCacheByKey.set(cacheKey, pairs);
     return pairs;
 }
 
@@ -988,12 +1250,7 @@ function renderFilipinoLASA() {
 
         let filtered = filipinoPairsCache;
         if (filipinoSearchQuery) {
-            filtered = filipinoPairsCache.filter(p =>
-                p.nameA.toLowerCase().includes(filipinoSearchQuery) ||
-                p.nameB.toLowerCase().includes(filipinoSearchQuery) ||
-                p.oppNameA.toLowerCase().includes(filipinoSearchQuery) ||
-                p.oppNameB.toLowerCase().includes(filipinoSearchQuery)
-            );
+            filtered = filipinoPairsCache.filter(p => namesMatchSearch(p, filipinoSearchQuery));
         }
 
         const totalPairs = filtered.length;
@@ -1003,14 +1260,16 @@ function renderFilipinoLASA() {
         document.getElementById('stat-total-pairs').textContent = totalPairs;
         document.getElementById('stat-filipino-only').textContent = filipinoOnlyCount;
         document.getElementById('stat-amplified').textContent = amplifiedCount;
-        countBadge.textContent = `${totalPairs} Pairs Detected`;
+        countBadge.textContent = totalPairs > MAX_RENDERED_PAIRS
+            ? `${totalPairs} Pairs Detected · Showing ${MAX_RENDERED_PAIRS}`
+            : `${totalPairs} Pairs Detected`;
 
         if (totalPairs === 0) {
             tbody.innerHTML = `<tr><td colspan="7" class="text-center text-muted" style="padding: 40px;">No Filipino-context confusable pairs found under current configurations.</td></tr>`;
             return;
         }
 
-        tbody.innerHTML = filtered.map(p => {
+        tbody.innerHTML = filtered.slice(0, MAX_RENDERED_PAIRS).map(p => {
             const flagHTML = p.flag === 'filipino-only'
                 ? '<span class="flag-badge flag-filipino-only">🇵🇭 Filipino-Only</span>'
                 : p.flag === 'amplified'

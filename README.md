@@ -178,6 +178,7 @@ Cross-validates Filipino G2P-transformed Jaro-Winkler scores against Filipino Ph
 | **Frontend** | HTML5, Vanilla CSS, Vanilla JavaScript |
 | **Fonts** | Google Fonts (Inter, Outfit, JetBrains Mono) |
 | **Data** | Hardcoded JSON (1,495 records in `drugs_db.js`) |
+| **Performance Cache** | Precomputed static LASA metrics in `lasa_pairs_cache.js` |
 | **Backend Tools** | Python 3 (data ingestion, CLI tools, testing) |
 | **Data Source** | openFDA Drugs@FDA API / Download |
 | **Deployment** | Static hosting (Vercel, Netlify, GitHub Pages) |
@@ -192,6 +193,7 @@ confusable-drugs/
 ├── styles.css                  # Complete CSS design system
 ├── app.js                      # Frontend application logic (algorithms, UI rendering)
 ├── drugs_db.js                 # Hardcoded database of 1,495 FDA medications
+├── lasa_pairs_cache.js         # Precomputed LASA pair metrics for fast static hosting
 ├── README.md                   # This file
 │
 ├── data/                       # Data directory
@@ -202,6 +204,7 @@ confusable-drugs/
 │   └── manual_review_queue.json # Flagged ambiguous entries for human review
 │
 ├── ingest_fda.py               # Multi-stage FDA data ingestion pipeline
+├── generate_pairs_cache.py     # Generates lasa_pairs_cache.js from processed drug data
 ├── lasa_engine.py              # Core LASA detection engine (LASADetector class)
 ├── prescription_auditor.py     # CLI prescription auditor
 ├── train_cli.py                # Clinician training system (3 quiz modes)
@@ -251,6 +254,9 @@ python3 ingest_fda.py
 
 # Verify the engine
 python3 verify_engine.py
+
+# Regenerate static LASA metric cache for Vercel/GitHub Pages
+python3 generate_pairs_cache.py
 
 # Run unit tests
 python3 -m pytest test_engine.py -v
