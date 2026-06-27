@@ -179,6 +179,45 @@ function codesSimilarity(code1, code2) {
     return matches / 4.0;
 }
 
+function isLikelySameDrugVariant(normA, normB, soundexSim = 0) {
+    if (!normA || !normB) return true;
+    if (normA === normB) return true;
+
+    const tokensA = normA.split(/\s+/).filter(Boolean);
+    const tokensB = normB.split(/\s+/).filter(Boolean);
+    const extraTerms = new Set([
+        "hcl", "hfa", "hct", "af", "er", "xr", "sr", "dr", "cr", "cd", "od", "la", "xl",
+        "delayed", "extended", "release", "solution", "tablet", "capsule"
+    ]);
+
+    const stripExtraTerms = tokens => tokens.filter(token => !extraTerms.has(token)).join(" ");
+    if (stripExtraTerms(tokensA) === stripExtraTerms(tokensB)) return true;
+
+    const shorter = normA.length <= normB.length ? normA : normB;
+    const longer = normA.length > normB.length ? normA : normB;
+    if (longer.startsWith(shorter) && longer.slice(shorter.length).trim().split(/\s+/).every(token => extraTerms.has(token))) {
+        return true;
+    }
+
+    if (tokensA.length === 1 && tokensB.length === 1 && Math.min(normA.length, normB.length) >= 7) {
+        return levenshteinDistance(normA, normB) <= 1 && soundexSim >= 0.75;
+    }
+
+    if (tokensA.length === tokensB.length) {
+        let changedLongTokenCount = 0;
+        for (let i = 0; i < tokensA.length; i++) {
+            if (tokensA[i] === tokensB[i]) continue;
+            if (Math.min(tokensA[i].length, tokensB[i].length) < 6 || levenshteinDistance(tokensA[i], tokensB[i]) > 1) {
+                return false;
+            }
+            changedLongTokenCount++;
+        }
+        return changedLongTokenCount === 1 && soundexSim >= 0.75;
+    }
+
+    return false;
+}
+
 function namesMatchSearch(candidate, query) {
     if (!query) return true;
     return (
@@ -186,6 +225,24 @@ function namesMatchSearch(candidate, query) {
         candidate.entryB.lower.includes(query) ||
         candidate.entryA.otherLower.includes(query) ||
         candidate.entryB.otherLower.includes(query)
+    );
+}
+
+function isStandardLASAMatch(jw, soundexSim, normA, normB, threshold) {
+    return (
+        jw >= threshold ||
+        (jw >= 0.75 && soundexSim >= 0.75) ||
+        (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA)
+    );
+}
+
+function isFilipinoLASAMatch(filipinoJW, filipinoSdx, englishJW, normA, normB, threshold) {
+    const override = KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA;
+    if (override) return true;
+    if (Math.min(normA.length, normB.length) < 5) return false;
+    return (
+        (filipinoJW >= threshold && filipinoSdx >= 0.75) ||
+        (filipinoJW >= 0.90 && englishJW >= 0.78 && filipinoSdx >= 0.50)
     );
 }
 
@@ -251,6 +308,7 @@ function normalizeDrugName(name) {
         norm = norm.replace(pattern, '');
     }
     norm = norm.replace(/[^\w\s]/g, '');
+    norm = norm.replace(/\band\b/g, ' ');
     norm = norm.replace(/\s+/g, ' ').trim();
     return norm;
 
@@ -610,6 +668,8 @@ function inflateCachedPair(row) {
     const candidate = makePairCandidate(left, right);
     const normA = candidate.entryA.norm;
     const normB = candidate.entryB.norm;
+    const sdxMatch = row[6];
+    if (isLikelySameDrugVariant(normA, normB, sdxMatch)) return null;
     const [tmlA, tmlB] = generateTallManLettering(normA, normB);
 
     return {
@@ -618,7 +678,7 @@ function inflateCachedPair(row) {
         normB,
         similarity: row[5],
         levDistance: levenshteinDistance(normA, normB),
-        sdxMatch: row[6],
+        sdxMatch,
         tmlA,
         tmlB
     };
@@ -637,9 +697,10 @@ function computeAlertsLASAPairs(mode, threshold) {
                 const jw = row[5];
                 const sdx = row[6];
                 const override = row[7] === 1;
-                return (
-                    (mode === "all" || rowMode === mode) &&
-                    (jw >= threshold || (jw >= 0.75 && sdx >= 0.75) || override)
+                return (mode === "all" || rowMode === mode) && (
+                    jw >= threshold ||
+                    (jw >= 0.75 && sdx >= 0.75) ||
+                    override
                 );
             })
             .map(row => inflateCachedPair(row))
@@ -670,12 +731,9 @@ function computeAlertsLASAPairs(mode, threshold) {
 
             const sim = jaroWinklerSimilarity(normA, normB);
             const soundexSim = codesSimilarity(left.entry.soundex, right.entry.soundex);
+            if (isLikelySameDrugVariant(normA, normB, soundexSim)) continue;
 
-            const isLasa = (
-                sim >= threshold ||
-                (sim >= 0.75 && soundexSim >= 0.75) ||
-                (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA)
-            );
+            const isLasa = isStandardLASAMatch(sim, soundexSim, normA, normB, threshold);
 
             if (!isLasa) continue;
 
@@ -1091,6 +1149,10 @@ function inflateCachedFilipinoPair(row, dialect) {
     const englishJW = row[5];
     const englishSdx = row[6];
     const override = row[7] === 1;
+    if (isLikelySameDrugVariant(candidate.entryA.norm, candidate.entryB.norm, englishSdx)) return null;
+    if (!isFilipinoLASAMatch(filipinoJW, filipinoSdx, englishJW, candidate.entryA.norm, candidate.entryB.norm, currentThreshold)) {
+        return null;
+    }
     const isEnglishLASA = (
         englishJW >= currentThreshold ||
         (englishJW >= 0.75 && englishSdx >= 0.75) ||
@@ -1137,7 +1199,8 @@ function computeFilipinoLASAPairs() {
                 return (
                     filipinoJW >= 0 &&
                     (filipinoNameMode === "all" || rowMode === filipinoNameMode) &&
-                    (filipinoJW >= currentThreshold || (filipinoJW >= 0.75 && filipinoSdx >= 0.75) || override)
+                    (filipinoJW >= currentThreshold || override) &&
+                    (filipinoSdx >= 0.50 || override)
                 );
             })
             .map(row => inflateCachedFilipinoPair(row, filipinoDialect))
@@ -1178,12 +1241,9 @@ function computeFilipinoLASAPairs() {
             const filipinoSdx = codesSimilarity(filipinoA.soundex, filipinoB.soundex);
             const englishJW = jaroWinklerSimilarity(normA, normB);
             const englishSdx = codesSimilarity(left.entry.soundex, right.entry.soundex);
+            if (isLikelySameDrugVariant(normA, normB, englishSdx)) continue;
 
-            const isFilipinoLASA = (
-                filipinoJW >= currentThreshold ||
-                (filipinoJW >= 0.75 && filipinoSdx >= 0.75) ||
-                (KNOWN_LASA_PAIRS[normA] === normB || KNOWN_LASA_PAIRS[normB] === normA)
-            );
+            const isFilipinoLASA = isFilipinoLASAMatch(filipinoJW, filipinoSdx, englishJW, normA, normB, currentThreshold);
 
             if (!isFilipinoLASA) continue;
 

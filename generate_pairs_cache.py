@@ -3,6 +3,7 @@ import re
 
 
 CURRENT_THRESHOLD_FLOOR = 0.70
+FILIPINO_PRECOMPUTE_FLOOR = 0.82
 
 KNOWN_LASA_PAIRS = {
     "tramadol": "trazodone", "trazodone": "tramadol",
@@ -48,6 +49,7 @@ def normalize_drug_name(name):
     for pattern in salt_suffixes:
         name = re.sub(pattern, "", name)
     name = re.sub(r"[^\w\s]", "", name).strip()
+    name = re.sub(r"\band\b", " ", name)
     return re.sub(r"\s+", " ", name).strip()
 
 
@@ -139,6 +141,67 @@ def soundex_encode(name):
 
 def code_similarity(code1, code2):
     return 1.0 if code1 == code2 else sum(a == b for a, b in zip(code1, code2)) / 4.0
+
+
+def is_likely_same_drug_variant(norm_a, norm_b, soundex_sim=0):
+    if not norm_a or not norm_b:
+        return True
+    if norm_a == norm_b:
+        return True
+
+    tokens_a = [token for token in norm_a.split() if token]
+    tokens_b = [token for token in norm_b.split() if token]
+    extra_terms = {
+        "hcl", "hfa", "hct", "af", "er", "xr", "sr", "dr", "cr", "cd", "od", "la", "xl",
+        "delayed", "extended", "release", "solution", "tablet", "capsule",
+    }
+
+    def strip_extra_terms(tokens):
+        return " ".join(token for token in tokens if token not in extra_terms)
+
+    if strip_extra_terms(tokens_a) == strip_extra_terms(tokens_b):
+        return True
+
+    shorter, longer = (norm_a, norm_b) if len(norm_a) <= len(norm_b) else (norm_b, norm_a)
+    if longer.startswith(shorter):
+        extra = longer[len(shorter):].strip().split()
+        if extra and all(token in extra_terms for token in extra):
+            return True
+
+    if len(tokens_a) == 1 and len(tokens_b) == 1 and min(len(norm_a), len(norm_b)) >= 7:
+        return levenshtein_distance(norm_a, norm_b) <= 1 and soundex_sim >= 0.75
+
+    if len(tokens_a) == len(tokens_b):
+        changed_long_token_count = 0
+        for token_a, token_b in zip(tokens_a, tokens_b):
+            if token_a == token_b:
+                continue
+            if min(len(token_a), len(token_b)) < 6 or levenshtein_distance(token_a, token_b) > 1:
+                return False
+            changed_long_token_count += 1
+        return changed_long_token_count == 1 and soundex_sim >= 0.75
+
+    return False
+
+
+def is_standard_lasa_match(jw, soundex_sim, norm_a, norm_b, threshold):
+    return (
+        jw >= threshold
+        or (jw >= 0.75 and soundex_sim >= 0.75)
+        or KNOWN_LASA_PAIRS.get(norm_a) == norm_b
+        or KNOWN_LASA_PAIRS.get(norm_b) == norm_a
+    )
+
+
+def is_filipino_lasa_match(filipino_jw, filipino_sdx, english_jw, norm_a, norm_b, threshold):
+    if KNOWN_LASA_PAIRS.get(norm_a) == norm_b or KNOWN_LASA_PAIRS.get(norm_b) == norm_a:
+        return True
+    if min(len(norm_a), len(norm_b)) < 5:
+        return False
+    return (
+        (filipino_jw >= threshold and filipino_sdx >= 0.75)
+        or (filipino_jw >= 0.90 and english_jw >= 0.78 and filipino_sdx >= 0.50)
+    )
 
 
 def generate_tallman_lettering(s1, s2):
@@ -235,6 +298,8 @@ for i, left in enumerate(entries):
         jw = jaro_winkler_similarity(left["norm"], right["norm"])
         sdx = code_similarity(left["soundex"], right["soundex"])
         override = KNOWN_LASA_PAIRS.get(left["norm"]) == right["norm"] or KNOWN_LASA_PAIRS.get(right["norm"]) == left["norm"]
+        if is_likely_same_drug_variant(left["norm"], right["norm"], sdx):
+            continue
 
         dialect_metrics = {}
         filipino_hit = False
@@ -251,9 +316,11 @@ for i, left in enumerate(entries):
                 "g2pA": l_g2p,
                 "g2pB": r_g2p,
             }
-            filipino_hit = filipino_hit or f_jw >= CURRENT_THRESHOLD_FLOOR or (f_jw >= 0.75 and f_sdx >= 0.75)
+            filipino_hit = filipino_hit or is_filipino_lasa_match(
+                f_jw, f_sdx, jw, left["norm"], right["norm"], FILIPINO_PRECOMPUTE_FLOOR
+            )
 
-        standard_hit = jw >= CURRENT_THRESHOLD_FLOOR or (jw >= 0.75 and sdx >= 0.75) or override
+        standard_hit = is_standard_lasa_match(jw, sdx, left["norm"], right["norm"], CURRENT_THRESHOLD_FLOOR) or override
         if not standard_hit and not filipino_hit:
             continue
 
