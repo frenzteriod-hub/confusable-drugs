@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Raw openFDA archives exceed GitHub's normal file size limit.
+drug-drugsfda-*.json
+data/drug-drugsfda-*.json
