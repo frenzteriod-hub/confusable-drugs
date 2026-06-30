@@ -348,6 +348,28 @@ input:focus, select:focus {
   font-size: 10px;
   line-height: 1.4;
 }
+.search-suggestion:empty { display: none; }
+.search-suggestion {
+  margin-top: 7px;
+  padding: 9px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #b9d7ca;
+  border-radius: 10px;
+  color: var(--muted);
+  background: var(--green-soft);
+  font-size: 11px;
+}
+.search-suggestion button {
+  padding: 2px 4px;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  color: var(--green);
+  background: transparent;
+  font-weight: 850;
+}
+.search-suggestion small { margin-left: auto; font-size: 9px; }
 @keyframes listening-pulse {
   50% { box-shadow: 0 0 0 5px rgba(159, 47, 54, .14); }
 }
@@ -692,6 +714,8 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
   input, select { height: 46px; font-size: 16px; }
   .speech-search-control { grid-template-columns: minmax(0, 1fr) 46px; }
   .speech-search-button { width: 46px; height: 46px; }
+  .search-suggestion { align-items: flex-start; flex-wrap: wrap; }
+  .search-suggestion small { width: 100%; margin-left: 0; }
   .result-meta { padding: 11px 14px; }
   .table-wrap { padding: 0 10px 10px; overflow: visible; background: var(--wash); }
   table, thead, tbody, tr, td { display: block; width: 100%; }

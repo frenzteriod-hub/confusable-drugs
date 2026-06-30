@@ -1,5 +1,5 @@
 const PAGE_SIZE = 48;
-const state = { products: [], filtered: [], page: 1 };
+const state = { products: [], filtered: [], names: [], page: 1, suggestionTimer: null };
 const elements = {
   search: document.querySelector("#product-search"),
   sort: document.querySelector("#product-sort"),
@@ -8,6 +8,7 @@ const elements = {
   list: document.querySelector("#product-list"),
   previous: document.querySelector("#product-previous"),
   next: document.querySelector("#product-next"),
+  suggestion: document.querySelector("#product-suggestion"),
 };
 const escapeHTML = value => String(value || "").replaceAll("&", "&amp;").replaceAll("<", "&lt;")
   .replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
@@ -23,6 +24,73 @@ const sortValue = (product, mode) => {
   }[mode];
   return (selected || "\uffff").toLocaleLowerCase();
 };
+const normalizeSuggestion = value => String(value || "").toLocaleLowerCase().replace(/[^a-z0-9]+/g, "");
+const filipinoReading = value => {
+  let transformed = normalizeSuggestion(value);
+  for (const [source, target] of [
+    ["ph", "p"], ["th", "t"], ["sh", "s"], ["f", "p"], ["v", "b"],
+    ["z", "s"], ["g", "j"], ["y", "i"], ["e", "i"], ["o", "u"],
+    ["q", "k"], ["c", "k"],
+  ]) transformed = transformed.replaceAll(source, target);
+  return transformed;
+};
+function jaroWinkler(first, second) {
+  if (first === second) return 1;
+  if (!first || !second) return 0;
+  const range = Math.max(Math.floor(Math.max(first.length, second.length) / 2) - 1, 0);
+  const firstMatches = Array(first.length).fill(false);
+  const secondMatches = Array(second.length).fill(false);
+  let matches = 0;
+  for (let i = 0; i < first.length; i++) {
+    const start = Math.max(0, i - range);
+    const end = Math.min(i + range + 1, second.length);
+    for (let j = start; j < end; j++) {
+      if (secondMatches[j] || first[i] !== second[j]) continue;
+      firstMatches[i] = true; secondMatches[j] = true; matches++; break;
+    }
+  }
+  if (!matches) return 0;
+  const firstMatched = [...first].filter((_, index) => firstMatches[index]);
+  const secondMatched = [...second].filter((_, index) => secondMatches[index]);
+  const transpositions = firstMatched.filter((character, index) => character !== secondMatched[index]).length / 2;
+  const jaro = (matches / first.length + matches / second.length + (matches - transpositions) / matches) / 3;
+  let prefix = 0;
+  while (prefix < Math.min(4, first.length, second.length) && first[prefix] === second[prefix]) prefix++;
+  return jaro + prefix * 0.1 * (1 - jaro);
+}
+function bestSuggestion(query) {
+  const standardQuery = normalizeSuggestion(query);
+  const readingQuery = filipinoReading(query);
+  if (standardQuery.length < 4) return null;
+  let best = null;
+  for (const name of state.names) {
+    const lengthDifference = Math.abs(name.normalized.length - standardQuery.length);
+    if (lengthDifference > Math.max(4, Math.floor(standardQuery.length * 0.45))) continue;
+    if (name.reading[0] !== readingQuery[0]) continue;
+    const standardScore = jaroWinkler(standardQuery, name.normalized);
+    const readingScore = jaroWinkler(readingQuery, name.reading);
+    const score = Math.max(standardScore, readingScore);
+    if (!best || score > best.score) best = { ...name, score };
+  }
+  return best && best.score >= 0.82 ? best : null;
+}
+function updateSuggestion(query) {
+  clearTimeout(state.suggestionTimer);
+  elements.suggestion.replaceChildren();
+  if (!query || state.filtered.length) return;
+  state.suggestionTimer = setTimeout(() => {
+    const suggestion = bestSuggestion(query);
+    if (!suggestion) return;
+    elements.suggestion.innerHTML = `<span>Did you mean</span>
+      <button type="button" data-suggestion="${escapeHTML(suggestion.name)}">${escapeHTML(suggestion.name)}</button>
+      <small>${escapeHTML(suggestion.type)} · sounds/spells similar</small>`;
+    const emptyState = elements.list.querySelector(".empty-state");
+    if (emptyState) {
+      emptyState.innerHTML = `<strong>No exact spelling match</strong>
+        <span>Tap the suggested registered name above to search again.</span>`;
+    }
+  }, 120);
+}
 
 function render() {
   const pages = Math.max(1, Math.ceil(state.filtered.length / PAGE_SIZE));
@@ -64,6 +132,7 @@ function applyFilters() {
     || a.r.localeCompare(b.r));
   state.page = 1;
   render();
+  updateSuggestion(query);
 }
 
 fetch("data/product_records.json").then(response => response.json()).then(products => {
@@ -72,6 +141,15 @@ fetch("data/product_records.json").then(response => response.json()).then(produc
     _search: [product.r, product.b, product.g, product.s, product.f, product.c, product.m]
       .filter(Boolean).join(" ").toLocaleLowerCase(),
   }));
+  const uniqueNames = new Map();
+  for (const product of products) {
+    for (const [name, type] of [[product.b, "brand"], [product.g, "generic"]]) {
+      const normalized = normalizeSuggestion(name);
+      if (!normalized || uniqueNames.has(`${type}:${normalized}`)) continue;
+      uniqueNames.set(`${type}:${normalized}`, { name, type, normalized, reading: filipinoReading(name) });
+    }
+  }
+  state.names = [...uniqueNames.values()];
   applyFilters();
 }).catch(error => {
   elements.list.innerHTML = `<div class="empty-state"><strong>Product data could not load</strong><span>${escapeHTML(error.message)}</span></div>`;
@@ -79,6 +157,13 @@ fetch("data/product_records.json").then(response => response.json()).then(produc
 
 elements.search.addEventListener("input", applyFilters);
 elements.sort.addEventListener("input", applyFilters);
+elements.suggestion.addEventListener("click", event => {
+  const button = event.target.closest("button[data-suggestion]");
+  if (!button) return;
+  elements.search.value = button.dataset.suggestion;
+  elements.search.dispatchEvent(new Event("input", { bubbles: true }));
+  elements.search.focus();
+});
 elements.previous.addEventListener("click", () => { state.page--; render(); scrollTo({ top: 0, behavior: "smooth" }); });
 elements.next.addEventListener("click", () => { state.page++; render(); scrollTo({ top: 0, behavior: "smooth" }); });
 elements.list.addEventListener("click", event => {

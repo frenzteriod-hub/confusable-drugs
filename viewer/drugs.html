@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>All Registered Products · PH LASA</title>
-  <link rel="stylesheet" href="styles.css?v=20260630-9">
+  <link rel="stylesheet" href="styles.css?v=20260630-10">
 </head>
 <body>
   <header class="topbar">
@@ -30,7 +30,9 @@
     <section class="workspace">
       <div class="filters product-filters">
         <label class="search-field"><span>Search products</span>
-          <input id="product-search" type="search" placeholder="Registration, brand, generic, manufacturer…"></label>
+          <input id="product-search" type="search" placeholder="Registration, brand, generic, manufacturer…">
+          <div id="product-suggestion" class="search-suggestion" aria-live="polite"></div>
+        </label>
         <label><span>Sort results</span>
           <select id="product-sort">
             <option value="brand">Brand name</option>
@@ -51,7 +53,7 @@
       </footer>
     </section>
   </main>
-  <script src="drugs.js?v=20260630-7"></script>
+  <script src="drugs.js?v=20260630-11"></script>
   <script src="speech-search.js?v=20260630-9"></script>
 </body>
 </html>
