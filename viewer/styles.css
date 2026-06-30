@@ -172,6 +172,35 @@ main {
 .steps span { margin-top: 4px; color: var(--muted); line-height: 1.5; }
 .definition-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .definition-list article { padding: 15px; border-radius: 12px; background: var(--wash); }
+.product-filters { grid-template-columns: minmax(260px, 2fr) minmax(190px, 1fr); }
+.product-directory {
+  padding: 0 22px 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  background: var(--wash);
+}
+.directory-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 3px 12px rgba(28, 53, 44, .04);
+}
+.directory-card-heading { padding: 15px; display: flex; justify-content: space-between; gap: 14px; background: #fbfdfb; }
+.directory-card h3 { margin: 5px 0 0; font: 600 20px Georgia, serif; overflow-wrap: anywhere; }
+.product-classification {
+  max-width: 42%;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1.4;
+  text-align: right;
+}
+.directory-card dl { margin: 0; padding: 13px 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 13px; border-block: 1px solid var(--line); }
+.directory-card dt { color: var(--muted); font-size: 9px; font-weight: 850; letter-spacing: .05em; text-transform: uppercase; }
+.directory-card dd { margin: 4px 0 0; font-size: 12px; font-weight: 700; line-height: 1.4; overflow-wrap: anywhere; }
+.directory-fda-link { margin: 12px 15px 15px; }
 
 .classification-guide {
   margin: 14px 0 20px;
@@ -563,6 +592,7 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
   .filters { grid-template-columns: 1fr; }
   .product-comparison { grid-template-columns: 1fr; }
   .published-fields { grid-template-columns: 1fr; }
+  .product-directory { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
   body { background: var(--wash); }
@@ -585,6 +615,7 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
     padding: 2px 2px 5px;
   }
   .site-nav a { min-height: 40px; padding: 11px 12px; display: grid; place-items: center; font-size: 11px; }
+  .site-nav a:last-child:nth-child(odd) { grid-column: 1 / -1; }
   main { width: min(100% - 20px, 1480px); margin: 12px auto 36px; }
   .notice { padding: 13px 14px; border-radius: 12px; font-size: 12px; line-height: 1.55; }
   .notice strong { display: block; margin: 0 0 3px; }
@@ -716,4 +747,12 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
   .score-heading { margin-top: 18px; }
   .detail-grid { margin-top: 16px; gap: 8px; }
   .detail-grid article { padding: 12px; }
+  .product-filters { grid-template-columns: 1fr; }
+  .product-directory { padding: 0 10px 10px; gap: 10px; }
+  .directory-card { border-radius: 13px; }
+  .directory-card-heading { padding: 13px; display: block; }
+  .directory-card h3 { font-size: 19px; }
+  .product-classification { max-width: none; margin-top: 7px; display: block; text-align: left; }
+  .directory-card dl { padding: 12px 13px; grid-template-columns: 1fr; gap: 11px; }
+  .directory-fda-link { margin: 11px 13px 13px; width: calc(100% - 26px); }
 }

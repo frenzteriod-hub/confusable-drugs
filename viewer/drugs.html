@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Registered Products · PH LASA</title>
+  <link rel="stylesheet" href="styles.css?v=20260630-5">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Philippine FDA data project</p><h1>All Registered Products</h1></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Pair review</a><a class="active" href="drugs.html">All products</a>
+      <a href="relationships.html">Medicine groups</a><a href="filipino.html">Filipino-aware</a>
+      <a href="documentation.html">How it works</a>
+    </nav>
+    <div class="status-pill"><span></span> PH FDA dataset</div>
+  </header>
+  <main>
+    <section class="notice">
+      <strong>Registry records—not prescribing guidance.</strong>
+      Names and product fields are shown as published in the collected PH FDA source. Verify current status through the official portal before clinical use.
+    </section>
+    <section class="page-intro">
+      <p class="eyebrow">Product directory</p>
+      <h2>Search all PH FDA product records</h2>
+      <p>One medicine can have several registrations for different strengths, dosage forms, manufacturers, or brands. This page preserves each registration separately.</p>
+    </section>
+    <section class="workspace">
+      <div class="filters product-filters">
+        <label class="search-field"><span>Search products</span>
+          <input id="product-search" type="search" placeholder="Registration, brand, generic, manufacturer…"></label>
+        <label><span>Sort results</span>
+          <select id="product-sort">
+            <option value="brand">Brand name</option>
+            <option value="generic">Generic name</option>
+            <option value="registration">Registration number</option>
+            <option value="expiry">Expiry date text</option>
+          </select>
+        </label>
+      </div>
+      <div class="result-meta">
+        <p><strong id="product-count">0</strong> registered products</p>
+        <p id="product-page">Loading…</p>
+      </div>
+      <div id="product-list" class="product-directory" aria-live="polite"></div>
+      <footer class="pagination">
+        <button id="product-previous" type="button">← Previous</button>
+        <button id="product-next" type="button">Next →</button>
+      </footer>
+    </section>
+  </main>
+  <script src="drugs.js?v=20260630-6"></script>
+</body>
+</html>
