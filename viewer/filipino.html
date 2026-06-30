@@ -16,23 +16,30 @@
     <section class="notice"><strong>Experimental screening signal only.</strong>
       This is not evidence that Filipinos will confuse two medicines, and it must never be used alone to label a pair as verified LASA.
     </section>
-    <section class="page-intro"><p class="eyebrow">Plain-language explanation</p><h2>One combined Filipino-aware check</h2>
-      <p>It creates one comparison-only reading form using selected consonant and vowel substitutions, then measures similarity. It does not split people into Tagalog and Bisaya groups, and the published medicine names are never changed.</p>
+    <section class="page-intro"><p class="eyebrow">Plain-language explanation</p><h2>Several possible readings—not one forced pronunciation</h2>
+      <p>The experimental pronunciation lattice keeps the published name and creates controlled comparison paths for Filipino nativization, vowel variation, casual speech and stress position. It does not split people into Tagalog and Bisaya groups, and it never changes the official medicine name.</p>
+      <div class="callout"><strong>How this differs from Pair Review:</strong> Pair Review ranks every high/medium candidate using spelling, phonetic and Filipino-aware signals together. This page is a focused explanation view showing only candidates where at least one Filipino-aware signal contributed. It is a subset, not a second algorithm or a separate dataset.</div>
     </section>
     <section class="explain-grid">
-      <article><span>1</span><h3>Normalize for comparison</h3><p>Capitalization, spaces and punctuation are simplified.</p></article>
-      <article><span>2</span><h3>Combine consonant readings</h3><p><code>ph/p</code>, <code>th/t</code>, <code>sh/s</code>, <code>f/p</code>, <code>v/b</code>, and <code>z/s</code>.</p></article>
-      <article><span>3</span><h3>Combine vowel readings</h3><p><code>e/i</code> and <code>o/u</code> are compared as possible reading substitutions for all Filipino-aware screening.</p></article>
-      <article><span>4</span><h3>Score, then review</h3><p>The combined Jaro–Winkler score is only one signal among several.</p></article>
+      <article><span>1</span><h3>Build reading paths</h3><p>Keep the published spelling, then add Filipino-nativized, vowel-merged, casual-speech and stress alternatives.</p></article>
+      <article><span>2</span><h3>Split into syllables</h3><p>Compare syllable structure as well as individual letters, so longer spoken chunks can align.</p></article>
+      <article><span>3</span><h3>Align speech features</h3><p>Weighted phoneme alignment gives smaller penalties to controlled pairs such as <code>f/p</code>, <code>v/b</code>, <code>e/i</code> and <code>o/u</code>.</p></article>
+      <article><span>4</span><h3>Combine explainable signals</h3><p>A fixed-weight score combines the lattice, phonemes, syllables, stress and letter bigrams. It is not a trained or validated accuracy score.</p></article>
     </section>
     <section class="workspace">
       <div class="section-heading"><div><p class="eyebrow">Experimental results</p><h2>Pairs carrying this signal</h2></div></div>
-      <div class="filters one-filter"><label><span>Search either name</span><input id="filipino-search" type="search"></label></div>
-      <div class="result-meta"><p><strong id="filipino-count">0</strong> matching pairs</p><p id="filipino-page"></p></div>
-      <div class="table-wrap"><table><thead><tr><th>Name A</th><th>Name B</th><th>Standard spelling</th><th>Combined Filipino-aware</th><th>Difference</th><th>Review status</th></tr></thead><tbody id="filipino-results"></tbody></table></div>
+      <div class="filters">
+        <label class="search-field"><span>Search either name</span><input id="filipino-search" type="search"></label>
+        <label><span>Comparison</span><select id="filipino-mode">
+          <option value="">All types</option><option value="generic_generic">Generic ↔ Generic</option>
+          <option value="brand_brand">Brand ↔ Brand</option><option value="generic_brand">Generic ↔ Brand</option>
+        </select></label>
+      </div>
+      <div class="result-meta"><p><strong id="filipino-count">0</strong> matching Filipino-signal pairs <span class="subset-count">of <strong id="all-review-count">0</strong> total Pair Review candidates</span></p><p id="filipino-page"></p></div>
+      <div class="table-wrap"><table><thead><tr><th>Name A</th><th>Name B</th><th>Spelling</th><th>Pronunciation lattice</th><th>Feature ensemble</th><th>Selected paths</th><th>Review status</th></tr></thead><tbody id="filipino-results"></tbody></table></div>
       <footer class="pagination"><button id="filipino-previous">← Previous</button><button id="filipino-next">Next →</button></footer>
     </section>
   </main>
-  <script src="filipino.js?v=20260630-7"></script>
-  <script src="speech-search.js?v=20260630-9"></script>
+  <script src="filipino.js?v=20260701-2"></script>
+  <script src="speech-search.js?v=20260701-1"></script>
 </body></html>

@@ -11,7 +11,8 @@ scripts/
 ├── ph_fda_scraper.mjs
 ├── ph_fda_leaflet_extractor.py
 ├── build_canonical_database.py
-└── build_lasa_candidates.py
+├── build_lasa_candidates.py
+└── filipino_phonetics.py
 
 tests/
 data/ph_fda/
@@ -39,7 +40,13 @@ Generate algorithmic LASA candidates for review:
 
 The LASA output is explicitly unverified. It compares unique generic and brand
 names, excludes known brand/generic relationships for the same formulation,
-and records standard and experimental Filipino-aware similarity scores.
+and records standard and experimental Filipino-aware similarity scores. The
+experimental pipeline creates controlled pronunciation paths, syllabifies
+them, performs weighted phoneme alignment, and exposes every component of a
+fixed-weight ensemble. Base-identical strength/version-number variants receive
+an explicit ranking penalty and remain available in the full screening data.
+The weights are not trained, calibrated, or clinically validated and are used
+only to order candidates for review.
 
 ## Open the local review dashboard
 

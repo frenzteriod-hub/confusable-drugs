@@ -68,6 +68,17 @@ def compact_candidate(
         "distance": int(row["levenshtein_distance"]),
         "soundex": float(row["soundex_similarity"]),
         "filipino": float(row["filipino_jaro_winkler"]),
+        "lattice": float(row["pronunciation_lattice_similarity"]),
+        "phoneme": float(row["weighted_phoneme_similarity"]),
+        "syllable": float(row["syllable_similarity"]),
+        "stress": float(row["stress_similarity"]),
+        "bigram": float(row["orthographic_bigram_similarity"]),
+        "ensemble": float(row["experimental_ensemble_score"]),
+        "numberPenalty": float(row["numeric_distinction_penalty"]),
+        "pathA": row["pronunciation_path_a"],
+        "pathB": row["pronunciation_path_b"],
+        "pathLabelA": row["pronunciation_path_label_a"],
+        "pathLabelB": row["pronunciation_path_label_b"],
         "reasons": row["candidate_reasons"].split("|"),
         "classification": (
             "spelling_variant_or_probable_typo"
