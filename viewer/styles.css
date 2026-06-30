@@ -312,6 +312,45 @@ input:focus, select:focus {
   border-color: var(--green);
   box-shadow: 0 0 0 3px rgba(23, 107, 80, .12);
 }
+.speech-search-control { display: grid; grid-template-columns: minmax(0, 1fr) 44px; gap: 7px; }
+.speech-search-control input { min-width: 0; }
+.speech-search-button {
+  width: 44px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid #b9d7ca;
+  border-radius: 10px;
+  color: var(--green);
+  background: var(--green-soft);
+  font-size: 18px;
+}
+.speech-search-button:hover { border-color: var(--green); }
+.speech-search-button svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.speech-search-button.listening {
+  color: white;
+  background: var(--red);
+  border-color: var(--red);
+  animation: listening-pulse 1.2s ease-in-out infinite;
+}
+.speech-search-status {
+  min-height: 15px;
+  margin-top: 5px;
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+@keyframes listening-pulse {
+  50% { box-shadow: 0 0 0 5px rgba(159, 47, 54, .14); }
+}
 
 .result-meta {
   padding: 12px 24px;
@@ -651,6 +690,8 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
   .tab { min-height: 40px; flex: 0 0 auto; padding-inline: 12px; font-size: 11px; }
   .filters { padding: 14px; gap: 10px; }
   input, select { height: 46px; font-size: 16px; }
+  .speech-search-control { grid-template-columns: minmax(0, 1fr) 46px; }
+  .speech-search-button { width: 46px; height: 46px; }
   .result-meta { padding: 11px 14px; }
   .table-wrap { padding: 0 10px 10px; overflow: visible; background: var(--wash); }
   table, thead, tbody, tr, td { display: block; width: 100%; }
