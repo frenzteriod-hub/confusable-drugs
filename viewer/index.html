@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PH LASA Review Workspace</title>
+  <link rel="stylesheet" href="styles.css?v=20260630-2">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div>
+      <p class="eyebrow">Philippine FDA data project</p>
+      <h1>LASA Review Workspace</h1>
+    </div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="active" href="index.html">Pair review</a>
+      <a href="relationships.html">Medicine groups</a>
+      <a href="filipino.html">Filipino-aware</a>
+      <a href="documentation.html">How it works</a>
+    </nav>
+    <div class="status-pill"><span></span> Local dataset</div>
+  </header>
+
+  <main>
+    <section class="notice" aria-label="Safety notice">
+      <strong>Review tool—not a clinical warning system.</strong>
+      “Verified LASA” and “False positive” require a documented human review. The algorithm only proposes candidates.
+    </section>
+
+    <section class="classification-guide" aria-label="Review classification guide">
+      <article><strong>Verified LASA pair</strong><span>Human-confirmed medicines with a meaningful confusion risk</span></article>
+      <article><strong>Potential LASA pair</strong><span>Similar names; confusion evidence is not yet established</span></article>
+      <article><strong>Spelling variant or probable typo</strong><span>Published names requiring source verification</span></article>
+      <article><strong>Normalization duplicate</strong><span>Same name after visual formatting is removed; + and / remain meaningful</span></article>
+      <article><strong>False positive</strong><span>Human-reviewed as unlikely to cause medication confusion</span></article>
+    </section>
+
+    <section id="summary" class="summary-grid" aria-label="Dataset summary">
+      <article><span>Indexed names</span><strong id="indexed-names">—</strong></article>
+      <article><span>Ranked candidates</span><strong id="review-count">—</strong></article>
+      <article><span>Spelling/typo candidates</span><strong id="variant-count">—</strong></article>
+      <article><span>Normalization duplicates</span><strong id="normalization-count">—</strong></article>
+      <article><span>Last generated</span><strong id="generated-at">—</strong></article>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Candidate review</p>
+          <h2>Confusable name pairs</h2>
+        </div>
+        <nav class="view-tabs" aria-label="Dataset view">
+          <button class="tab active" data-view="candidates">Potential LASA pairs</button>
+          <button class="tab" data-view="variants">Spelling/typo candidates</button>
+          <button class="tab" data-view="duplicates">Normalization duplicates</button>
+        </nav>
+      </div>
+
+      <div class="filters">
+        <label class="search-field">
+          <span>Search either name</span>
+          <input id="search" type="search" placeholder="e.g. tramadol, amlotin…">
+        </label>
+        <label>
+          <span>Comparison</span>
+          <select id="mode-filter">
+            <option value="">All types</option>
+            <option value="generic_generic">Generic ↔ Generic</option>
+            <option value="brand_brand">Brand ↔ Brand</option>
+            <option value="generic_brand">Generic ↔ Brand</option>
+          </select>
+        </label>
+        <label>
+          <span>Priority</span>
+          <select id="priority-filter">
+            <option value="">All priorities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="result-meta">
+        <p><strong id="filtered-count">0</strong> matching rows</p>
+        <p id="page-label">Page 1</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead id="table-head"></thead>
+          <tbody id="results"></tbody>
+        </table>
+        <div id="empty-state" class="empty-state" hidden>
+          <strong>No matching rows</strong>
+          <span>Try removing a filter or searching a shorter name.</span>
+        </div>
+      </div>
+
+      <footer class="pagination">
+        <button id="previous" type="button">← Previous</button>
+        <button id="next" type="button">Next →</button>
+      </footer>
+    </section>
+  </main>
+
+  <dialog id="detail-dialog">
+    <form method="dialog"><button class="close-button" aria-label="Close">×</button></form>
+    <p class="eyebrow">Candidate details</p>
+    <h2 id="detail-title"></h2>
+    <div id="relationship-summary" class="relationship-summary"></div>
+    <div id="product-comparison" class="product-comparison"></div>
+    <h3 class="score-heading">Name similarity signals</h3>
+    <div id="detail-content" class="detail-grid"></div>
+  </dialog>
+
+  <script src="app.js?v=20260630-2"></script>
+</body>
+</html>

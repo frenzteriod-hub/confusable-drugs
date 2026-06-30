@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-06-29T18:47:17.721220+00:00",
+  "source_product_rows": 31208,
+  "canonical_products": 31208,
+  "unique_generic_formulations": 3802,
+  "unique_brand_names": 21890,
+  "provisional_ingredient_components": 3190,
+  "combination_formulations": 1558,
+  "unbranded_products": 3795,
+  "brands_linked_to_multiple_formulations": 774,
+  "ambiguous_and_formulations": 40,
+  "duplicate_registration_rows": 0,
+  "sqlite_foreign_keys_valid": true
+}

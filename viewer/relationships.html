@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medicine Groups · PH LASA</title>
+  <link rel="stylesheet" href="styles.css?v=20260630-2">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Philippine FDA data project</p><h1>Medicine Groups</h1></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Pair review</a><a class="active" href="relationships.html">Medicine groups</a>
+      <a href="filipino.html">Filipino-aware</a><a href="documentation.html">How it works</a>
+    </nav>
+    <div class="status-pill"><span></span> Local dataset</div>
+  </header>
+  <main>
+    <section class="notice"><strong>Groups are navigation aids—not verified LASA clusters.</strong>
+      A medicine appears here when it has one or more algorithmic pair candidates. Every connection still requires separate human review.
+    </section>
+    <section class="page-intro">
+      <p class="eyebrow">Relationship view</p>
+      <h2>One medicine, all proposed connections</h2>
+      <p>Use this page to find medicines that occur in several pairs. Select a medicine to see every connected name, comparison type, score and review classification.</p>
+    </section>
+    <section class="workspace">
+      <div class="filters one-filter"><label class="search-field"><span>Search medicine name</span>
+        <input id="group-search" type="search" placeholder="e.g. amlotin, paracetamol…"></label></div>
+      <div class="result-meta"><p><strong id="group-count">0</strong> medicines with connections</p></div>
+      <div id="group-list" class="group-list"></div>
+      <footer class="pagination"><button id="group-previous">← Previous</button><span id="group-page"></span><button id="group-next">Next →</button></footer>
+    </section>
+  </main>
+  <script src="relationships.js?v=20260630-2"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-30T12:40:06.286364+00:00",
+  "name_count": 25252,
+  "source_name_count": 25692,
+  "generic_name_count": 3440,
+  "brand_name_count": 21812,
+  "algorithmic_candidate_count": 321124,
+  "ranked_review_queue_count": 21458,
+  "probable_source_spelling_variant_count": 662,
+  "normalization_duplicate_count": 440,
+  "candidates_by_mode": {
+    "brand_brand": 279996,
+    "generic_brand": 18759,
+    "generic_generic": 22369
+  },
+  "candidates_by_priority": {
+    "high": 18780,
+    "medium": 57293,
+    "screen": 245051
+  },
+  "blocking_keys": 26617,
+  "unique_pairs_scored": 3154454,
+  "large_blocks_skipped": 0,
+  "standard_threshold": 0.84,
+  "filipino_threshold": 0.86,
+  "maximum_block_size": 500,
+  "review_pairs_per_name": 3,
+  "elapsed_seconds": 88.103,
+  "clinical_status": "potential_lasa_candidates_only; verified_lasa_and_false_positive_require_human_review"
+}

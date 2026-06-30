@@ -1,0 +1,959 @@
+normalized_product_key,registration_numbers,generic_name_raw,brand_name_raw,dosage_strength_raw,dosage_form_raw
+human albumin|albunorm 5%|50 g/l|solution for intravenous infusion,BR-1173 | BR-1174,Human Albumin,Albunorm 5%,50 g/L,Solution for Intravenous Infusion
+insulin degludec + insulin aspart|ryzodeg flextouch|100 units/ml (70% insulin degludec/30% insulin aspart)|solution for injection (sc),BR-1178 | BR-1433,Insulin Degludec + Insulin Aspart,Ryzodeg FlexTouch,"100 Units/mL (70% Insulin Degludec/30% Insulin
+Aspart)",Solution for Injection (SC)
+botulinum toxin type a (from clostridium botulinum)|xeomin|100 units|powder for solution for injection (im),BR-1231 | BR-1233,Botulinum Toxin Type A (from Clostridium botulinum),Xeomin,100 units,Powder For Solution For Injection (IM)
+human normal immunoglobulin|privigen|100 mg/ml (10% w/v)|solution for infusion (iv),BR-1243 | BR-1244,Human Normal Immunoglobulin,Privigen,100 mg/mL (10% w/v),Solution for Infusion (IV)
+"diphtheria, tetanus, pertussis, hepatitis b recombinant and haemophilus influenza b tyoe (hib) vaccine|eupenta||solution for im injection",BR-1263 | BR-1264,"Diphtheria, Tetanus, Pertussis, Hepatitis B Recombinant and Haemophilus influenza B Tyoe (Hib) Vaccine",Eupenta,,Solution for IM Injection
+human albumin|alburx|200 g/l (20% w/v)|solution for intravenous infusion,BR-1275 | BR-1277,Human Albumin,Alburx,200 g/L (20% w/v),Solution for Intravenous Infusion
+pneumococcal polysaccharide conjugate vaccine (adsorbed)|synflorix|0.5ml|suspension for injection,BR-1310 | BR-800,Pneumococcal Polysaccharide Conjugate Vaccine (Adsorbed),Synflorix,0.5mL,Suspension For Injection
+semaglutide|ozempic|0.25 mg/0.19 ml (1.34 mg/ml)|solution for injection (sc),BR-1328 | BR-1346,Semaglutide,Ozempic,0.25 mg/0.19 mL (1.34 mg/mL),"Solution for Injection 
+(SC)"
+trastuzumab|trazimera|150 mg|powder for concentrate for solution for infusion (iv),BR-1377 | BR-1394,Trastuzumab,Trazimera,150 mg,Powder for Concentrate for Solution for Infusion (IV)
+trastuzumab|trazimera|440 mg|powder for concentrate for solution for infusion (iv),BR-1395 | BR-1400,Trastuzumab,Trazimera,440 mg,Powder For Concentrate For Solution For Infusion (IV)
+adalimumab|idacio|40 mg/ 0.8 ml|solution for injection (sc),BR-1416 | BR-1417,Adalimumab,Idacio,40 mg/ 0.8 mL,Solution for Injection (SC)
+insulin aspart|kirsty|100 units/ml (equivalent to 3.5 mg/ml)|solution for injection (sc),BR-1456 | BR-1457,Insulin Aspart,Kirsty,100 Units/mL (equivalent to 3.5 mg/mL),Solution for Injection (SC)
+paracetamol|biogesic|500 mg|tablet,DR-153 | DR-XY39670,Paracetamol,Biogesic,500 mg,Tablet
+digoxin|lanoxin|250 mcg|tablet,DR-263 | DR-XY48823,Digoxin,Lanoxin,250 mcg,Tablet
+0.9% sodium chloride||900 mg/100 ml|solution for iv infusion,DR-4660 | DR-XY40137,0.9% Sodium Chloride,Unbranded,900 mg/100 mL,Solution For Iv Infusion
+"polymyxin b sulfate + neomycin sulfate + dexamethasone (as sodium phosphate)|neotic|10,000 units/5 mg/1 mg per ml|otic solution",DR-864-02 | DRP-864-02,Polymyxin B Sulfate + Neomycin Sulfate + Dexamethasone (as Sodium Phosphate),Neotic,"10,000 units/5 mg/1 mg per mL",Otic Solution
+colchicine||500mcg|tablet,DR-X2619 | DRP-4385-02,Colchicine,Unbranded,500mcg,Tablet
+paracetamol|clocephen|500mg|tablet,DR-X7696 | DR-XY7696,PARACETAMOL,CLOCEPHEN,500MG,Tablet
+amoxicillin (as trihydrate)|eleomox|500 mg|capsule,DR-XY10086 | DR-XY46974,Amoxicillin (As Trihydrate),ELEOMOX,500 mg,Capsule
+amoxicillin (as trihydrate)||250 mg/ 5 ml|powder for suspension,DR-XY12368 | DRP-1425-10,Amoxicillin (As Trihydrate),None,250 mg/ 5 mL,Powder For Suspension
+amoxicillin (as trihydrate)||500 mg|capsule,DR-XY12414 | DR-XY21939 | DRP-10399 | DRP-10399-01 | DRP-10399-02 | DRP-10399-03 | DRP-1431 | DRP-1475-03 | DRP-4087-07 | DRP-5147-01 | DRP-7497 | DRP-7497-03 | DRP-7925-01,Amoxicillin (as trihydrate),None,500 mg,Capsule
+amoxicillin (as trihydrate)||250 mg|capsule,DR-XY12415 | DRP-5244-01,"Amoxicillin 
+(As Trihydrate)",None,250 mg,Capsule
+amoxicillin (as trihydrate)||125 mg/ 5 ml|powder for suspension,DR-XY12418 | DRP-1212-06,Amoxicillin (as Trihydrate),Unbranded,125 mg/ 5 mL,Powder For Suspension
+5% dextrose in 0.9% sodium chloride|||solution for iv infusion,DR-XY12423 | DR-XY40138,5% Dextrose in 0.9% Sodium Chloride,Unbranded,None,Solution For Iv Infusion
+amoxicillin (as trihydrate)||100 mg/ml|powder for suspension (oral drops),DR-XY12739 | DRP-1217-07,Amoxicillin (as trihydrate),Unbranded,100 mg/mL,Powder for Suspension (Oral Drops)
+paracetamol||125mg/5ml|syrup,DR-XY13076 | HRP-070,Paracetamol,None,125mg/5mL,Syrup
+paracetamol||250mg/ 5ml|syrup,DR-XY13568 | DRP-1347,Paracetamol,None,250mg/ 5mL,Syrup
+lisinopril (as dihydrate)|zestril|10 mg|tablet,DR-XY14853 | DR-XY49053,Lisinopril (as dihydrate),Zestril,10 mg,Tablet
+amoxicillin (as trihydrate)|rielmox|500 mg|capsule,DR-XY15192 | DR-XY17389 | DR-XY46972,Amoxicillin (as trihydrate),Rielmox,500 mg,Capsule
+amoxicillin (as trihydrate)|medvox|500 mg|capsule,DR-XY16132 | DR-XY46970,Amoxicillin (As Trihydrate),Medvox,500 mg,Capsule
+sodium bicarbonate||84 mg/ml (8.4% w/v)|solution for injection (i.v.),DR-XY17168 | DRP-12551 | DRP-12551-01,Sodium Bicarbonate,None,84 mg/mL (8.4% w/v),Solution for Injection (I.V.)
+cefalexin (as monohydrate)|edexin|500 mg|capsule,DR-XY18419 | DRP-9995-03,Cefalexin (as monohydrate),Edexin,500 mg,Capsule
+zinc oxide + benzoic acid + sulfur + salicylic acid|dr. s. wong's bioderm|12.90 g/ 4.50 g/ 3.40 g/ 1.87 g per 100 g|ointment,DR-XY19285 | DR-XY19286,Zinc Oxide + Benzoic Acid + Sulfur + Salicylic Acid,Dr. S. Wong's Bioderm,12.90 g/ 4.50 g/ 3.40 g/ 1.87 g per 100 g,Ointment
+salbutamol (as sulfate)||2mg/ 5ml|syrup,DR-XY19833 | DRP-10582 | DRP-405 | DRP-405-01,Salbutamol (as Sulfate),None,2mg/ 5mL,Syrup
+paracetamol||500mg|tablet,DR-XY20356 | DR-XY24089 | DR-XY40106 | DRP-1213-05 | DRP-1835-03 | DRP-242,Paracetamol,None,500mg,Tablet
+mefenamic acid||250mg|capsule,DR-XY20954 | DRP-5325-01,MEFENAMIC ACID,None,250mg,Capsule
+sterile water for injection|||solution for injection,DR-XY24268 | DR-XY36352 | DR-XY45771 | DR-XY46678 | DR-XY49637 | DRP-11440 | DRP-11858 | DRP-13354,Sterile Water For Injection,None,None,Solution for Injection
+ambroxol hydrochloride||15 mg/5 ml|syrup,DR-XY24518 | DRP-269-01 | DRP-7528-04,Ambroxol Hydrochloride,None,15 mg/5 mL,Syrup
+sterile water for injection|||,DR-XY24883 | DR-XY43950 | DRP-10092 | DRP-944,Sterile Water for Injection,Unbranded,,None
+cefalexin (as monohydrate)||500 mg|capsule,DR-XY26299 | DRP-1997-03 | DRP-4436-01 | DRP-7084-01,Cefalexin (as monohydrate),Unbranded,500 mg,Capsule
+cefotaxime (as sodium)||1 g|powder for injection (i.m./i.v.),DR-XY27364 | DRP-13817-01,Cefotaxime (As Sodium),None,1 g,Powder for Injection (I.M./I.V.)
+ambroxol hydrochloride||30 mg|tablet,DR-XY27471 | DRP-10675 | DRP-11295-02 | DRP-11295-03 | DRP-1204-02 | DRP-12753 | DRP-6829 | DRP-7799-01 | DRP-7799-04,Ambroxol Hydrochloride,None,30 mg,Tablet
+simvastatin||20 mg|film-coated tablet,DR-XY27487 | DR-XY29267 | DR-XY43406 | DR-XY47335 | DRP-11960 | DRP-1242-04 | DRP-13178-01 | DRP-1375-05 | DRP-1856-02 | DRP-4403-02 | DRP-844-02 | DRP-844-07,Simvastatin,None,20 mg,Film-Coated Tablet
+simvastatin||10 mg|film-coated tablet,DR-XY27488 | DRP-11961 | DRP-5910-01,Simvastatin,None,10 mg,Film-Coated Tablet
+cefaclor (as monohydrate)||500 mg|capsule,DR-XY27569 | DR-XY31646,Cefaclor (as Monohydrate),None,500 mg,Capsule
+salbutamol (as sulfate)||2 mg|tablet,DR-XY27633 | DRP-11725 | DRP-11979 | DRP-2430-01,Salbutamol (as sulfate),None,2 mg,Tablet
+loratadine + betamethasone|claricort|5 mg/250 mcg|tablet,DR-XY28123 | DR-XY48702,Loratadine + Betamethasone,Claricort,5 mg/250 mcg,Tablet
+cloxacillin (as sodium)||500 mg|capsule,DR-XY28146 | DRP-14836 | DRP-14836-01 | DRP-5219-01 | DRP-6714-01,Cloxacillin (As Sodium),Unbranded,500 mg,Capsule
+tramadol hydrochloride||50 mg/ml|solution for injection (i.m./i.v.),DR-XY28661 | DR-XY28662,Tramadol Hydrochloride,Unbranded,50 mg/mL,Solution For Injection (I.M./I.V.)
+simvastatin|forcad|10 mg|film-coated tablet,DR-XY29140 | DR-XY47963,Simvastatin,Forcad,10 mg,Film-Coated Tablet
+simvastatin||40 mg|film-coated tablet,DR-XY29254 | DR-XY43405 | DR-XY47334 | DRP-11959 | DRP-1241-04 | DRP-1346-04,Simvastatin,None,40 mg,Film-Coated Tablet
+paracetamol + phenylephrine hydrochloride|no-drowse decolgen|500 mg/ 10 mg|tablet,DR-XY29288 | DR-XY42877,Paracetamol + Phenylephrine Hydrochloride,No-Drowse Decolgen,500 mg/ 10 mg,Tablet
+d-alpha tocopherol (vitamin e)|myra e|400 i.u.|capsule,DR-XY29292 | DR-XY29743,D-Alpha Tocopherol (Vitamin E),Myra E,400 I.U.,Capsule
+phenylephrine hydrochloride + chlorphenamine maleate + paracetamol|decolgen|10 mg / 2 mg / 500 mg|tablet,DR-XY29386 | DR-XY29386 (For Export Only),Phenylephrine Hydrochloride +  Chlorphenamine Maleate + Paracetamol,Decolgen,10 mg / 2 mg / 500 mg,Tablet
+biperiden hydrochloride||2 mg|tablet,DR-XY29479 | DRP-11138-02 | DRP-11138-03,Biperiden Hydrochloride,Unbranded,2 mg,Tablet
+enalapril maleate||5 mg|tablet,DR-XY29746 | DRP-13631 | DRP-2919-01,Enalapril Maleate,None,5 mg,Tablet
+enalapril maleate||10 mg|tablet,DR-XY29779 | DRP-14024 | DRP-346-03 | DRP-6788,Enalapril Maleate,None,10 mg,Tablet
+doxorubicin hydrochloride|dactorubin|10 mg|lyopjilized powder for injection (iv),DR-XY30076 | DRP-10196,Doxorubicin Hydrochloride,Dactorubin,10 mg,Lyopjilized Powder for Injection (IV)
+atenolol||50 mg|tablet,DR-XY30342 | DRP-2049,Atenolol,None,50 mg,Tablet
+ceftriaxone (as sodium)|pneumosolv|1g|sterile powder for injection (im/iv),DR-XY32371 | DR-XY32789,Ceftriaxone (as Sodium),Pneumosolv,1g,Sterile Powder for Injection (IM/IV)
+aspirin|asthromed|100 mg|enteric-coated tablet,DR-XY32734 | DRP-10362,ASPIRIN,ASTHROMED,100 mg,Enteric-Coated Tablet
+cetirizine dihydrochloride|alerid|10 mg|film-coated tablet,DR-XY32802 | DRP-13023,Cetirizine Dihydrochloride,Alerid,10 mg,Film-Coated Tablet
+fenofibrate|inofib|300 mg|capsule,DR-XY32985 | DRP-12878,Fenofibrate,Inofib,300 mg,Capsule
+methimazole|tapdin|20 mg|tablet,DR-XY33105 | DRP-12826,Methimazole,Tapdin,20 mg,Tablet
+water for injection|||solution for injection,DR-XY33217 | DRP-8616-01,Water for Injection,None,None,Solution For Injection
+clindamycin (as hydrochloride)||300mg|capsule,DR-XY33745 | DRP-1953-02 | DRP-3712 | DRP-3712-03,Clindamycin (as Hydrochloride),None,300mg,Capsule
+propofol|fresofol mct/lct|10mg/ml (1 %)|emulsion for iv infusion,DR-XY34031 | DR-XY34032,Propofol,Fresofol Mct/Lct,10mg/mL (1 %),Emulsion For Iv Infusion
+valproic acid|depakene|250mg/5ml|syrup,DR-XY34422 | DR-XY48143,Valproic Acid,Depakene,250mg/5mL,Syrup
+ketorolac trometamol|ketodol|30 mg/ml|solution for injection (im/iv),DR-XY34516 | DRP-8857-01,Ketorolac Trometamol,Ketodol,30 mg/mL,Solution for Injection (IM/IV)
+silver sulfadiazine|silvex|10 mg/g (1% w/w)|cream,DR-XY34592 | DRP-10168,Silver Sulfadiazine,Silvex,10 mg/g (1% w/w),Cream
+ibuprofen|medbufen|100 mg/5 ml|suspension,DR-XY347215 | DR-XY34725,Ibuprofen,Medbufen,100 mg/5 mL,Suspension
+cinnarizine|stugeron|25 mg|tablet,DR-XY34825 | DR-XY47759,Cinnarizine,Stugeron,25 mg,Tablet
+aspirin|aspen|100 mg|enteric-coated tablet,DR-XY35427 | DRP-10358,Aspirin,Aspen,100 mg,Enteric-Coated Tablet
+aciclovir||400 mg|tablet,DR-XY35459 | DRP-4057-01,Aciclovir,None,400 mg,Tablet
+cefuroxime (as axetil)|medzyme|500 mg|film-coated tablet,DR-XY35468 | DR-XY47957,Cefuroxime (as axetil),Medzyme,500 mg,Film-Coated Tablet
+alfuzosin hydrochloride||10 mg|extended-release tablet,DR-XY35908 | DRP-13700-01,Alfuzosin Hydrochloride,Unbranded,10 mg,Extended-Release Tablet
+montelukast (as sodium)|leukast|5 mg|chewable tablet,DR-XY36105 | DRP-6840-03,Montelukast (as sodium),Leukast,5 mg,Chewable Tablet
+losartan potassium + hydrochlorothiazide|zarnat max|100 mg/25 mg|film-coated tablet,DR-XY36329 | DRP-2898-09,Losartan Potassium + Hydrochlorothiazide,Zarnat Max,100 mg/25 mg,Film-Coated Tablet
+amlodipine (as besilate)||5 mg|film-coated tablet,DR-XY36713 | DR-XY42465 | DR-XY44589,Amlodipine (as besilate),Unbranded,5 mg,Film-Coated Tablet
+amlodipine (as besilate)||10 mg|film-coated tablet,DR-XY36714 | DR-XY42490 | DR-XY44432 | DRP-10852,Amlodipine (as besilate),Unbranded,10 mg,Film-Coated Tablet
+olmesartan medoxomil|alzor|40 mg|film-coated tablet,DR-XY36778 | DR-XY47904,Olmesartan medoxomil,Alzor,40 mg,Film-coated Tablet
+olmesartan medoxomil|alzor|20mg|film-coated tablet,DR-XY36779 | DR-XY48761,Olmesartan medoxomil,Alzor,20mg,Film-Coated Tablet
+olmesartan medoxomil + hydrochlorothiazide|alzor hct|40mg/12.5mg|film-coated tablet,DR-XY37151 | DR-XY48120,Olmesartan medoxomil + Hydrochlorothiazide,Alzor HCT,40mg/12.5mg,Film-Coated Tablet
+cinnarizine||25 mg|tablet,DR-XY37211 | DRP-3100-05 | DRP-3967-01 | DRP-9409,Cinnarizine,Unbranded,25 mg,Tablet
+sildenafil citrate|zilden|50 mg|film-coated tablet,DR-XY37216 | DR-XY48856,Sildenafil citrate,Zilden,50 mg,Film-Coated Tablet
+escitalopram (as oxalate)||10 mg|film-coated tablet,DR-XY37383 | DRP-4757-02 | DRP-4826-04,Escitalopram (as oxalate),Unbranded,10 mg,Film-Coated Tablet
+ranolazine|razine|500mg|extended-release tablet,DR-XY37422 | DR-XY48226,Ranolazine,Razine,500mg,Extended-Release Tablet
+atorvastatin (as calcium)||80 mg|film-coated tablet,DR-XY37435 | DRP-10749-03 | DRP-6818-01,Atorvastatin (as calcium),Unbranded,80 mg,Film-Coated Tablet
+fluoxetine (as hydrochloride)||20 mg|capsule,DR-XY37583 | DRP-1328,Fluoxetine (as hydrochloride),Unbranded,20 mg,Capsule
+d-alpha tocopherol (vitamin e)||400 iu|softgel capsule,DR-XY37678 | DR-XY38232 | DR-XY48622 | DR-XY48623 | DRP-12173,d-Alpha Tocopherol (Vitamin E),Unbranded,400 IU,Softgel Capsule
+olmesartan medoxomil + amlodipine (as besilate)|alzor ccb|40mg/5mg|film-coated tablet,DR-XY38016 | DR-XY47986,Olmesartan medoxomil + Amlodipine (as besilate),Alzor CCB,40mg/5mg,Film-Coated Tablet
+olmesartan medoxomil + amlodipine (as besilate)|alzor ccb|40mg/10mg|film-coated tablet,DR-XY38017 | DR-XY47989,Olmesartan medoxomil + Amlodipine (as besilate),Alzor CCB,40mg/10mg,Film-Coated Tablet
+doxofylline||400 mg|tablet,DR-XY38046 | DR-XY44726 | DRP-11699 | DRP-6391 | DRP-6391-01 | DRP-6391-02 | DRP-6391-03,Doxofylline,Unbranded,400 mg,Tablet
+levocetirizine dihydrochloride||5 mg|film-coated tablet,DR-XY38458 | DRP-4501-02,Levocetirizine Dihydrochloride,None,5 mg,Film-Coated Tablet
+atorvastatin (as calcium)||40 mg|film-coated tablet,DR-XY38470 | DR-XY44901 | DRP-10748-02 | DRP-11879-01 | DRP-13264 | DRP-3175 | DRP-3175-07 | DRP-3224 | DRP-3224-01 | DRP-4371-01 | DRP-4371-02 | DRP-5137-01 | DRP-5137-03 | DRP-5137-04 | DRP-5137-07 | DRP-6540-02 | DRP-6540-03,Atorvastatin (as Calcium),Unbranded,40 mg,Film-Coated Tablet
+atorvastatin (as calcium)||10 mg|film-coated tablet,DR-XY38612 | DR-XY44229 | DRP-2796-01 | DRP-3123-01 | DRP-3123-03 | DRP-3123-06 | DRP-5589-03 | DRP-5614-05,Atorvastatin (As Calcium),None,10 mg,Film-Coated Tablet
+clopidogrel (as bisulfate)||75 mg|film-coated tablet,DR-XY38668 | DR-XY38777 | DR-XY43711 | DRP-13204 | DRP-14741 | DRP-1885-02 | DRP-2123-04 | DRP-2267 | DRP-2672-14 | DRP-2672-16 | DRP-3126-02 | DRP-3126-04 | DRP-3126-05 | DRP-3126-06 | DRP-3126-07 | DRP-3793-01 | DRP-3793-03 | DRP-4028-03 | DRP-4539-01 | DRP-6838,Clopidogrel (as bisulfate),Unbranded,75 mg,Film-Coated Tablet
+cinnarizine||75 mg|capsule,DR-XY38677 | DRP-5317-02,Cinnarizine,Unbranded,75 mg,Capsule
+isotretinoin|isonoin 20|20mg|softgel capsule,DR-XY38731 | DR-XY48455 | DRP-13743,Isotretinoin,Isonoin 20,20mg,Softgel Capsule
+montelukast (as sodium)|kastel|10 mg|film-coated tablet,DR-XY38888 | DRP-11500,Montelukast (As Sodium),Kastel,10 mg,Film-Coated Tablet
+atorvastatin (as calcium)|avator|20 mg|film-coated tablet,DR-XY38985 | DRP-4879-02,Atorvastatin (as calcium),Avator,20 mg,Film-Coated Tablet
+febuxostat|atenurix|40 mg|film-coated tablet,DR-XY38996 | DR-XY48896,Febuxostat,Atenurix,40 mg,Film-Coated Tablet
+febuxostat|atenurix|80mg|film-coated tablet,DR-XY38997 | DRP-12170,Febuxostat,Atenurix,80mg,Film-Coated Tablet
+atorvastatin (as calcium) + fenofibrate|fenostat|10mg/160mg|film-coated tablet,DR-XY39060 | DR-XY48064,Atorvastatin (as calcium) + Fenofibrate,Fenostat,10mg/160mg,Film-Coated Tablet
+isotretinoin|isonoin 10|10mg|softgel capsule,DR-XY39062 | DR-XY48456,Isotretinoin,Isonoin 10,10mg,Softgel Capsule
+losartan potassium||50 mg|film-coated tablet,DR-XY39432 | DRP-11968 | DRP-12460 | DRP-13687-01 | DRP-13687-11 | DRP-14267-01 | DRP-15448-03 | DRP-5040-04 | DRP-5040-06 | DRP-5188-01 | DRP-5916-01 | DRP-6409 | DRP-6453-01 | DRP-6453-06 | DRP-6453-07 | DRP-8522-04 | DRP-8522-05 | DRP-996-03,Losartan Potassium,Unbranded,50 mg,Film-Coated Tablet
+atorvastatin (as calcium)||20 mg|film-coated tablet,DR-XY39434 | DRP-10747-01 | DRP-10747-06 | DRP-13069 | DRP-2383 | DRP-2798-01 | DRP-4879-01 | DRP-5155-04 | DRP-6126-03 | DRP-7120-01 | DRP-8059-02 | DRP-8059-04,Atorvastatin (as calcium),Unbranded,20 mg,Film-Coated Tablet
+rosuvastatin (as calcium)|rosucol|5 mg|film-coated tablet,DR-XY39607 | DR-XY48136,Rosuvastatin (as calcium),Rosucol,5 mg,Film-Coated Tablet
+amlodipine (as besilate) + atorvastatin (as calcium)|amlodine hd|5 mg/20 mg|film-coated tablet,DR-XY39723 | DRP-10218,Amlodipine (As Besilate) + Atorvastatin (As Calcium),Amlodine HD,5 mg/20 mg,Film-Coated Tablet
+colchicine||500 mcg|tablet,DR-XY39821 | DR-XY49385 | DRP-11112 | DRP-2992-02 | DRP-2992-05 | DRP-2992-06 | DRP-4385-03 | DRP-4385-04 | DRP-4385-07 | DRP-4454-01 | DRP-7805,Colchicine,None,500 mcg,Tablet
+amlodipine (as besilate)||10 mg|tablet,DR-XY40060 | DR-XY48086 | DRP-1195-03 | DRP-13327-01 | DRP-1334-10 | DRP-14027-01 | DRP-16060 | DRP-1629-03 | DRP-1676-02 | DRP-2220-02 | DRP-3108-02 | DRP-3553-02 | DRP-4458-05 | DRP-4727-06 | DRP-5800-18 | DRP-6613 | DRP-993-04 | DRP-9946-01,Amlodipine (as besilate),None,10 mg,Tablet
+amlodipine (as besilate)||5 mg|tablet,DR-XY40063 | DR-XY48109 | DRP-10853 | DRP-1185-01 | DRP-1202-03 | DRP-12144-02 | DRP-12489 | DRP-1255 | DRP-1338-06 | DRP-1357-05 | DRP-1357-11 | DRP-16058 | DRP-4778-05 | DRP-4778-09 | DRP-4968-02 | DRP-5806-16 | DRP-6616 | DRP-7671 | DRP-9945-01,Amlodipine (as besilate),None,5 mg,Tablet
+ceftazidime (as pentahydrate)||1g|powder for injection (im/iv),DR-XY40158 | DRP-7950,Ceftazidime (as pentahydrate),None,1g,Powder For Injection (IM/IV)
+irbesartan||150 mg|film-coated tablet,DR-XY40247 | DR-XY43587 | DRP-16603 | DRP-4386-01 | DRP-5716-01 | DRP-7554-02 | DRP-9968-01,Irbesartan,Unbranded,150 mg,Film-Coated Tablet
+omeprazole||40 mg|capsule,DR-XY40330 | DRP-11761 | DRP-3016-02 | DRP-6378-04 | DRP-6378-06 | DRP-6378-08 | DRP-7788,Omeprazole,None,40 mg,Capsule
+metformin (as hydrochloride)||500mg|film-coated tablet,DR-XY40446 | DR-XY46558,METFORMIN (AS HYDROCHLORIDE),None,500mg,Film-Coated Tablet
+ticagrelor|brilinta|90 mg|film-coated tablet,DR-XY40759 | DR-XY49659,Ticagrelor,Brilinta,90 mg,Film-Coated Tablet
+verapamil hydrochloride|isoptin sr|240mg|sustained-release tablet,DR-XY40832 | DR-XY46831,Verapamil Hydrochloride,Isoptin SR,240mg,Sustained-release Tablet
+oxacillin (as sodium)|peoxa|500 mg|powder for injection (i.m./i.v.),DR-XY40899 | DRP-17865,Oxacillin (as Sodium),Peoxa,500 mg,Powder for Injection (I.M./I.V.)
+rosuvastatin (as calcium)|roswin|10 mg|film-coated tablet,DR-XY40971 | DRP-10102,Rosuvastatin (as Calcium),Roswin,10 mg,Film-Coated Tablet
+cefuroxime (as axetil)|cefurex|500 mg|film-coated tablet,DR-XY40991 | DRP-8203-03,Cefuroxime (as Axetil),Cefurex,500 mg,Film-Coated Tablet
+co-amoxiclav|clavoxel-bid|457 mg per 5 ml|powder for suspension,DR-XY41086 | DRP-12822,Co-Amoxiclav,Clavoxel-Bid,457 mg per 5 mL,Powder For Suspension
+pantoprazole (as sodium sesquihydrate)|pantokem|40 mg|enteric-coated tablet,DR-XY41277 | DRP-5909-06,Pantoprazole (as sodium sesquihydrate),Pantokem,40 mg,Enteric-Coated Tablet
+ambroxol hydrochloride|amucsol|15mg/5ml|oral solution,DR-XY41477 | DR-XY41480,Ambroxol Hydrochloride,Amucsol,15mg/5mL,Oral Solution
+metformin hydrochloride||850 mg|film-coated tablet,DR-XY41499 | DRP-6510-01 | DRP-7686,Metformin Hydrochloride,None,850 mg,Film-Coated Tablet
+"retinol palmitate (vitamin a)||100,000 iu|softgel capsule",DR-XY41654 | DR-XY49023,Retinol Palmitate (Vitamin A),None,"100,000 IU",Softgel Capsule
+sildenafil (as citrate)||100 mg|film-coated tablet,DR-XY41997 | DRP-10211 | DRP-10665 | DRP-5190-01,Sildenafil (as citrate),Unbranded,100 mg,Film-Coated Tablet
+zinc (as zinc gluconate)||10 mg|chewable tablet,DR-XY42085 | DR-XY42086,Zinc (as Zinc gluconate),None,10 mg,Chewable Tablet
+candesartan cilexetil|atasart|8 mg|tablet,DR-XY42156 | DRP-15774,Candesartan Cilexetil,Atasart,8  mg,Tablet
+zoledronic acid|zobone 5|5 mg/100 ml|solution for injection (i.v. infusion),DR-XY42423 | DRP-9446,Zoledronic Acid,ZOBONE 5,5 mg/100 mL,Solution For Injection (I.V. Infusion)
+carvedilol||25 mg|tablet,DR-XY42485 | DR-XY43889 | DRP-10686 | DRP-13535 | DRP-4463-01 | DRP-6418 | DRP-6418-01 | DRP-6418-02,CARVEDILOL,Unbranded,25 mg,Tablet
+clindamycin (as hydrochloride)|klindex|300 mg|capsule,DR-XY42492 | DRP-2640-03,Clindamycin (as hydrochloride),Klindex,300 mg,Capsule
+prednisone||10 mg|tablet,DR-XY42512 | DRP-13536 | DRP-2811-02,PREDNISONE,Unbranded,10 mg,Tablet
+prednisone||20 mg|tablet,DR-XY42520 | DRP-13568,PREDNISONE,Unbranded,20 mg,Tablet
+bisacodyl|dulxative|10 mg|suppository,DR-XY42757 | DRP-8373-01,Bisacodyl,Dulxative,10 mg,Suppository
+meclizine||25 mg|chewable tablet,DR-XY42804 | DRP-13537,MECLIZINE,Unbranded,25 mg,Chewable Tablet
+doxofylline|dilatair|400 mg|tablet,DR-XY42871 | DRP-11750-01 | DRP-6157-10,Doxofylline,Dilatair,400 mg,Tablet
+levetiracetam||500 mg|film-coated tablet,DR-XY43110 | DR-XY47087 | DRP-4583-03 | DRP-4583-09 | DRP-4816-02 | DRP-5940,Levetiracetam,Unbranded,500 mg,Film-Coated Tablet
+doxofylline|maxivent|400mg|tablet,DR-XY43186 | DRP-11750,Doxofylline,Maxivent,400mg,Tablet
+levofloxacin (as hemihydrate)||500 mg|film-coated tablet,DR-XY43195 | DRP-11681-02 | DRP-3135-01 | DRP-3158-03 | DRP-3388-01 | DRP-3388-02 | DRP-4368-03 | DRP-4368-04 | DRP-4521 | DRP-4659 | DRP-513-09,Levofloxacin (as hemihydrate),Unbranded,500 mg,Film-Coated Tablet
+dicycloverine hydrochloride||10 mg|tablet,DR-XY43480 | DRP-10880 | DRP-2968-01 | DRP-5823-02,Dicycloverine Hydrochloride,Unbranded,10 mg,Tablet
+montelukast (as sodium)|terrakast|10 mg|film-coated tablet,DR-XY43521 | DRP-12885,Montelukast (As Sodium),Terrakast,10 mg,Film-Coated Tablet
+gliclazide||80 mg|modified-release tablet,DR-XY43681 | DR-XY43682 | DR-XY43810 | DRP-11751 | DRP-7798-01,Gliclazide,Unbranded,80 mg,Modified-Release Tablet
+gliclazide||30 mg|modified-release tablet,DR-XY43689 (For DOH Only) | DR-XY43756 | DRP-10389 | DRP-4138-03 | DRP-5769-10 | DRP-6997 | DRP-6997-01,Gliclazide,Unbranded,30 mg,Modified-Release Tablet
+metoprolol tartrate||50 mg|film-coated tablet,DR-XY43690 (For DOH Only) | DR-XY44261 | DRP-1553-10 | DRP-7133 | DRP-7133-01 | DRP-7133-02,Metoprolol tartrate,Unbranded,50 mg,Film-Coated Tablet
+carvedilol||12.5 mg|tablet,DR-XY43691 | DRP-10824,Carvedilol,Unbranded,12.5 mg,Tablet
+citicoline (as sodium)||1 g|film-coated tablet,DR-XY43699 | DRP-8248-01,Citicoline (as sodium),Unbranded,1 g,Film-Coated Tablet
+valsartan|valvex 80|80 mg|film-coated tablet,DR-XY437888 | DRP-6753-02,Valsartan,Valvex 80,80 mg,Film-Coated Tablet
+irbesartan||300 mg|film-coated tablet,DR-XY43811 | DRP-5715-03 | DRP-9999-01,Irbesartan,Unbranded,300 mg,Film-Coated Tablet
+co-amoxiclav||625mg|film-coated tablet,DR-XY43932 | DRP-10090-02,Co-Amoxiclav,Unbranded,625mg,Film-Coated Tablet
+capecitabine|capnorm-500|500 mg|film-coated tablet,DR-XY44021 | DRP-11595,Capecitabine,Capnorm-500,500 mg,Film-Coated Tablet
+pregabalin||75mg|capsule,DR-XY44096 | DRP-13541 | DRP-6119-01 | DRP-6800,Pregabalin,None,75mg,Capsule
+atenolol||50 mg|film-coated tablet,DR-XY44108 | DRP-14356 | DRP-14468 | DRP-7517,Atenolol,Unbranded,50 mg,Film-Coated Tablet
+telmisartan||40 mg|tablet,DR-XY44116 | DRP-11041-05 | DRP-11041-3 | DRP-11048 | DRP-11533 | DRP-14379-01 | DRP-14388 | DRP-14388-01 | DRP-3687-08 | DRP-4765-08 | DRP-5421-10 | DRP-6176,Telmisartan,Unbranded,40 mg,Tablet
+losartan potassium||100 mg|film-coated tablet,DR-XY44163 | DRP-1100-07 | DRP-11967 | DRP-12006 | DRP-13686-01 | DRP-1667-08 | DRP-4693-03 | DRP-4693-04 | DRP-4693-13 | DRP-8523-03,Losartan Potassium,None,100 mg,Film-Coated Tablet
+rosuvastatin calcium||10 mg|film-coated tablet,DR-XY44197 | DRP-10085 | DRP-10085-01,Rosuvastatin Calcium,Unbranded,10 mg,Film-Coated Tablet
+metoprolol tartrate||100 mg|film-coated tablet,DR-XY44260 | DRP-1554-09,Metoprolol Tartrate,Unbranded,100 mg,Film-Coated Tablet
+epinephrine (as hydrochloride)|epix|1 mg/ml|solution for injection (i.m./i.v./s.c.),DR-XY44310 | DRP-12078,Epinephrine (As Hydrochloride),Epix,1 mg/mL,Solution For Injection (I.M./I.V./S.C.)
+atorvastatin (as calcium)|sitivast-40|40 mg|film-coated tablet,DR-XY44319 | DRP-16531,Atorvastatin (as Calcium),SITIvast-40,40 mg,Film-Coated Tablet
+telmisartan||80 mg|tablet,DR-XY44348 | DR-XY48524 | DRP-11040-03 | DRP-11040-05 | DRP-11047 | DRP-11148 | DRP-13215 | DRP-14387 | DRP-14387-01 | DRP-3710-07 | DRP-4762-08 | DRP-6742,Telmisartan,None,80 mg,Tablet
+celecoxib||200 mg|capsule,DR-XY44441 | DRP-12695 | DRP-14289 | DRP-2052-03 | DRP-2321-03 | DRP-2655-10 | DRP-2655-26 | DRP-3857-01 | DRP-3857-02 | DRP-4628 | DRP-936-10,Celecoxib,Unbranded,200 mg,Capsule
+cefixime (as trihydrate)||200 mg|capsule,DR-XY44516 | DRP-10825 | DRP-14446 | DRP-3521-01,Cefixime (As Trihydrate),None,200 mg,Capsule
+cotrimoxazole||240 mg per 5 ml|suspension,DR-XY44599 | DRP-083-10,Cotrimoxazole,Unbranded,240 mg per 5 mL,Suspension
+rivaroxaban|xarelto|2.5 mg|film-coated tablet,DR-XY44605 | DR-XY49359,Rivaroxaban,Xarelto,2.5 mg,Film-Coated Tablet
+quetiapine (as fumarate)||100 mg|film-coated tablet,DR-XY44648 | DRP-10713 | DRP-4786-01,Quetiapine (as fumarate),Unbranded,100 mg,Film-Coated Tablet
+empagliflozin|jardiance|25 mg|film-coated tablet,DR-XY44689 | DR-XY48712,Empagliflozin,Jardiance,25 mg,Film-Coated Tablet
+empagliflozin|jardiance|10 mg|film-coated tablet,DR-XY44690 | DR-XY48713,Empagliflozin,Jardiance,10 mg,Film-Coated Tablet
+clopidogrel||75 mg|film-coated tablet,DR-XY44799 | DRP-11057,Clopidogrel,Unbranded,75 mg,Film-Coated Tablet
+progesterone|utrogestan|100 mg|oral soft-gel capsule,DR-XY44909 | DR-XY47547,Progesterone,Utrogestan,100 mg,Oral Soft-gel Capsule
+d-alpha tocopherol (vitamin e)||400 i.u.|softgel capsule,DR-XY45014 | DRP-7310,d-Alpha Tocopherol (Vitamin E),Unbranded,400 I.U.,Softgel Capsule
+phytomenadione|kedion|10 mg/ml|solution for injection (im/iv/sc),DR-XY45137 | DRP-12946,Phytomenadione,Kedion,10 mg/mL,Solution for Injection (IM/IV/SC)
+empagliflozin + metformin hydrochloride|jardiance duo|5 mg/1 g|film-coated tablet,DR-XY45444 | DR-XY47976,Empagliflozin + Metformin hydrochloride,Jardiance Duo,5 mg/1 g,Film-Coated Tablet
+empagliflozin + metformin hydrochloride|jardiance duo|12.5 mg/ 500 mg|film-coated tablet,DR-XY45445 | DR-XY47975,Empagliflozin + Metformin hydrochloride,Jardiance Duo,12.5 mg/ 500 mg,Film-Coated Tablet
+empagliflozin + metformin hydrochloride|jardiance duo|12.5 mg/ 850 mg|film-coated tablet,DR-XY45446 | DR-XY47974,Empagliflozin + Metformin hydrochloride,Jardiance Duo,12.5 mg/ 850 mg,Film-Coated Tablet
+empagliflozin + metformin hydrochloride|jardiance duo|12.5 mg/1 g|film-coated tablet,DR-XY45447 | DR-XY47973,Empagliflozin + Metformin hydrochloride,Jardiance Duo,12.5 mg/1 g,Film-Coated Tablet
+salmeterol (xinafoate) + fluticasone propionate|flutiright s-250|50 mcg/250 mcg|dry powder for inhalation in capsule,DR-XY45562 | DRP-10105,Salmeterol (Xinafoate) + Fluticasone Propionate,Flutiright S-250,50 mcg/250 mcg,Dry Powder For Inhalation In Capsule
+salmeterol (xinafoate) + fluticasone propionate|flutiright s-500|50 mcg/500 mcg|dry powder for inhalation in capsule,DR-XY45563 | DRP-10106,Salmeterol (Xinafoate) + Fluticasone Propionate,Flutiright S-500,50 mcg/500 mcg,Dry Powder For Inhalation In Capsule
+macitentan|opsumit|10 mg|film-coated tablet,DR-XY45565 | DR-XY47770,Macitentan,Opsumit,10 mg,Film-Coated Tablet
+aripiprazole|abilify discmelt|15 mg|orally disintegrating tablet,DR-XY45589 | DRP-14185,Aripiprazole,Abilify Discmelt,15 mg,Orally Disintegrating Tablet
+clobetasol propionate||500 mcg/g (0.05% w/w)|cream,DR-XY45675 | DRP-2613,Clobetasol propionate,None,500 mcg/g (0.05% w/w),Cream
+paracetamol||250 mg / 5 ml|oral suspension (orange flavor),DR-XY45681 | DRP-3369-14,Paracetamol,Unbranded,250 mg / 5 mL,Oral Suspension (Orange Flavor)
+ascorbic acid||100mg/ 5ml|syrup,DR-XY45691 | DRHR-1544,Ascorbic Acid,Unbranded,100mg/ 5mL,Syrup
+ascorbic acid (as sodium ascorbate)||500mg|capsule,DR-XY45693 | DR-XY46001,Ascorbic acid (as Sodium Ascorbate),None,500mg,Capsule
+metformin hydrochloride||500mg|film-coated tablet,DR-XY45739 | DR-XY46324 | DRP-7448-01 | DRP-7448-02,Metformin hydrochloride,None,500mg,Film-Coated Tablet
+moxifloxacin (as hydrochloride)||400mg|film-coated tablet,DR-XY45835 | DR-XY48994,Moxifloxacin (as hydrochloride),None,400mg,Film-Coated Tablet
+flurbiprofen|strepsils maxpro|8.75mg|lozenge (honey and lemon flavor),DR-XY45838 | DR-XY45839,Flurbiprofen,Strepsils MaxPro,8.75mg,Lozenge (Honey and Lemon Flavor)
+ibrutinib|imbruvica|140 mg|capsule,DR-XY45842 | DR-XY47704 | DR-XY48542,Ibrutinib,Imbruvica,140 mg,Capsule
+citicoline sodium|neurovell|125mg/ ml|solution for injection (iv/im),DR-XY45862 | DR-XY45863,Citicoline Sodium,Neurovell,125mg/ mL,Solution for Injection (IV/IM)
+osimertinib (as mesylate)|tagrisso|80 mg|film-coated tablet,DR-XY45878 | DRP-16686,Osimertinib (as mesylate),Tagrisso,80 mg,Film-Coated Tablet
+osimertinib (as mesylate)|tagrisso|40 mg|film-coated tablet,DR-XY45879 | DRP-16687,Osimertinib (as mesylate),Tagrisso,40 mg,Film-Coated Tablet
+5% dextrose in 0.9% sodium chloride||5 g/900 mg per 100 ml|solution for iv infusion,DR-XY45893 | DRP-5061-01,5% Dextrose in 0.9% Sodium Chloride,None,5 g/900 mg per 100 mL,Solution for IV Infusion
+tenofovir disoproxil fumarate||300 mg|film-coated tablet,DR-XY45900 | DRP-10413 | DRP-9103,Tenofovir disoproxil fumarate,none,300 mg,Film-Coated Tablet
+efavirenz||600 mg|film-coated tablet,DR-XY45901 | DR-XY46465 | DR-XY47000,Efavirenz,None,600 mg,Film-Coated Tablet
+lamivudine + tenofovir disoproxil fumarate||300 mg/ 300 mg|film-coated tablet,DR-XY45929 | DR-XY45929 (for DOH Use Only),Lamivudine + Tenofovir disoproxil fumarate,None,300 mg/ 300 mg,Film-Coated Tablet
+montelukast (as sodium) + levocetirizine dihydrochloride|stelix|10 mg/5 mg|film-coated tablet,DR-XY45944 | DRP-13136,Montelukast (as sodium) + Levocetirizine dihydrochloride,Stelix,10 mg/5 mg,Film-Coated Tablet
+adapalene + benzoyl peroxide|epiduo forte|3 mg/25 mg (0.3% w/w/ 2.5% w/w) per gram|topical gel,DR-XY46058 | DR-XY46059,Adapalene + Benzoyl Peroxide,Epiduo Forte,3 mg/25 mg (0.3% w/w/ 2.5% w/w) per gram,Topical Gel
+rosuvastatin (as calcium)||20 mg|film-coated tablet,DR-XY46068 | DRP-10467-01 | DRP-11621 | DRP-12200-02 | DRP-15093-03 | DRP-16417 | DRP-6489-01 | DRP-7993-01 | DRP-7993-04 | DRP-7993-05 | DRP-8300-05 | DRP-8300-09,Rosuvastatin (as Calcium),None,20 mg,Film-Coated Tablet
+propranolol hydrochloride|indirin|40 mg|film-coated tablet,DR-XY46106 | DRP-12971,Propranolol Hydrochloride,Indirin,40 mg,Film-Coated Tablet
+mupirocin|mupizee|20 mg/g (2% w/w)|ointment,DR-XY46245 | DR-XY48692,Mupirocin,Mupizee,20 mg/g (2% w/w),Ointment
+clotrimazole||10 mg/g (1% w/w)|cream,DR-XY46258 | DRP-10554,CLOTRIMAZOLE,Unbranded,10 mg/g (1% W/W),Cream
+dequalinium chloride|dequadin mint|250 mcg|lozenge,DR-XY46430 (For Export Only) | DRHR-1907,Dequalinium chloride,Dequadin Mint,250 mcg,Lozenge
+ascorbic acid (as sodium ascorbate)||500 mg|capsule,DR-XY46492 | HRP-033-06,Ascorbic Acid (as Sodium Ascorbate),Unbranded,500 mg,Capsule
+paracetamol|tempra|100 mg/ ml|syrup (pediatric drops) grape flavor,DR-XY46708 | DR-XY46709,Paracetamol,Tempra,100 mg/ mL,Syrup (Pediatric Drops) Grape Flavor
+acetylcysteine||600 mg|granules for oral solution,DR-XY46766 | DRP-12378,Acetylcysteine,Unbranded,600 mg,Granules for Oral Solution
+citicoline (as sodium)||500 mg|capsule,DR-XY46824 | DRP-6967 | DRP-7626,Citicoline (as sodium),Unbranded,500 mg,Capsule
+butamirate citrate||50 mg|sustained-release tablet,DR-XY46857 | DRP-8130-01 | DRP-8782 | DRP-8785 | DRP-8787 | DRP-8791,Butamirate Citrate,Unbranded,50 mg,Sustained-Release Tablet
+ascorbic acid + zinc||500 mg/10 mg|capsule,DR-XY46867 | DRP-9094-01,Ascorbic Acid + Zinc,Unbranded,500 mg/10 mg,Capsule
+levetiracetam|levit|500 mg|film-coated tablet,DR-XY46913 | DRP-8502,Levetiracetam,Levit,500 mg,Film-Coated Tablet
+ascorbic acid + zinc||500 mg (equi to 562.43mg sodium ascorbate)/10mg (equi. to 70mg zinc gluconate)|capsule,DR-XY46932 | DR-XY46933,Ascorbic Acid + Zinc,Unbranded,500 mg (Equi to 562.43mg Sodium Ascorbate)/10mg (Equi. To 70mg Zinc Gluconate),Capsule
+enalapril maleate||20 mg|tablet,DR-XY46957 | DRP-7847,Enalapril Maleate,Unbranded,20 mg,Tablet
+amoxicillin (as trihydrate)|westfimox|500 mg|capsule,DR-XY46973 | DRP-5147,Amoxicillin (as trihydrate),Westfimox,500 mg,Capsule
+amoxicillin (as trihydrate)|altomox|500 mg|capsule,DR-XY46976 | DRP-312-02,Amoxicillin (as trihydrate),Altomox,500 mg,Capsule
+ascorbic acid||500mg (equivalent to 568.18mg sodium ascorbate)|capsule,DR-XY46981 | DRP-10213 | HRP-195-12,Ascorbic Acid,Unbranded,500mg (Equivalent to 568.18mg Sodium Ascorbate),Capsule
+praziquantel|prazimac|600 mg|film-coated tablet,DR-XY46997 | DR-XY46998,Praziquantel,Prazimac,600 mg,Film-Coated Tablet
+d-alpha tocopherol|myra e|400i.u.|capsule,DR-XY47018 | DR-XY47019,D-Alpha Tocopherol,Myra E,400I.U.,Capsule
+quetiapine (as fumarate)|qtipine 100|100 mg|film-coated tablet,DR-XY47034 | DRP-13502-02,Quetiapine (as fumarate),Qtipine 100,100 mg,Film-Coated Tablet
+temozolomide|astrodal|20 mg|capsule,DR-XY47048 | DRP-15442,Temozolomide,Astrodal,20 mg,Capsule
+ascorbic acid||500 mg (equivalent to 562.43 mg sodium ascorbate)|capsule,DR-XY47085 | DR-XY47197 | DRP-10633 | DRP-10678 | DRP-8843-02 | HRP-252-01,Ascorbic Acid,None,500 mg (equivalent to 562.43 mg Sodium ascorbate),Capsule
+azithromycin (as dihydrate)||500mg|film-coated tablet,DR-XY47148 | DRP-4391-06,Azithromycin (As Dihydrate),None,500mg,Film-Coated Tablet
+ascorbic acid||500 mg|tablet,DR-XY47190 | DR-XY48604 | DRP-13029 | DRP-14345-01 | DRP-7039 | DRP-9884 | HRP-021-05 | HRP-021-06 | HRP-104-03 | HRP-215,Ascorbic Acid,Unbranded,500 mg,Tablet
+ascorbic acid + zinc||500 mg (equivalent to 562.43 mg sodium ascorbate)/ 10 mg (equivalent to 70 mg zinc gluconate)|capsule,DR-XY47198 | DR-XY47210 | DRP-9676,Ascorbic Acid + Zinc,None,"500 mg (equivalent to 562.43 mg Sodium Ascorbate)/ 10 mg
+(equivalent to 70 mg Zinc Gluconate)",Capsule
+betamethasone (as valerate)||1 mg/g (0.1% w/w)|cream,DR-XY47315 | DRP-4699-04,Betamethasone (as valerate),None,1 mg/g (0.1% w/w),Cream
+ascorbic acid||500mg|tablet,DR-XY47339 | DRHR-1295 | HRP-021-07 | HRP-042,Ascorbic Acid,None,500mg,Tablet
+"cholecalciferol (vitamin d3)||5,000 iu|softgel capsule",DR-XY47340 | DR-XY48719,Cholecalciferol (Vitamin D3),None,"5,000 IU",Softgel Capsule
+hydrocortisone (as acetate)|kurt|10 mg/g (1% w/w)|topical cream,DR-XY47346 | DRP-11543,Hydrocortisone (as Acetate),Kurt,10 mg/g (1% w/w),Topical Cream
+clotrimazole|clonesten|10 mg/g (1% w/w)|topical cream,DR-XY47347 | DRP-11541,Clotrimazole,Clonesten,10 mg/g (1% w/w),Topical Cream
+cefuroxime (as sodium)||750 mg|powder for injection,DR-XY47405 | DRP-2018-06 | DRP-7547,Cefuroxime (as sodium),None,750 mg,Powder for Injection
+cefepime (as hydrochloride)||1 g|powder for injection (im/iv),DR-XY47456 | DRP-13911-01,Cefepime (as hydrochloride),None,1 g,Powder For Injection (IM/IV)
+tadalafil||20 mg|film-coated tablet,DR-XY47460 | DR-XY47633 | DRP-13120 | DRP-13680,Tadalafil,None,20 mg,Film-Coated Tablet
+rifampicin + isoniazid + pyrazinamide||75 mg/50 mg/150 mg|dispersible tablet,DR-XY47471 | DR-XY47472,Rifampicin + Isoniazid + Pyrazinamide,None,75 mg/50 mg/150 mg,Dispersible Tablet
+esomeprazole (as magnesium trihydrate)|esoric 40|40mg|enteric coated tablet,DR-XY47474 | DRP-12122,Esomeprazole (as magnesium trihydrate),Esoric 40,40mg,Enteric Coated Tablet
+ascorbic acid||500mg (equivalent to 562.43mg sodium ascorbate)|capsule,DR-XY47484 | DR-XY47896 | DRP-9560,Ascorbic Acid,None,500mg (equivalent to 562.43mg Sodium Ascorbate),Capsule
+doxofylline|doxair|400 mg|tablet,DR-XY47485 | DRP-11682,Doxofylline,Doxair,400 mg,Tablet
+co-amoxiclav|aclav-625|625 mg|film-coated tablet,DR-XY47501 | DRP-11728,Co-amoxiclav,Aclav-625,625 mg,Film-Coated Tablet
+gabapentin||300 mg|capsule,DR-XY47508 | DRP-1094 | DRP-1094-01 | DRP-6782 | DRP-6782-01,Gabapentin,None,300 mg,Capsule
+ivabradine (as hydrochloride)||5 mg|film-coated tablet,DR-XY47513 | DRP-12767,Ivabradine (as hydrochloride),None,5 mg,Film-Coated Tablet
+multivitamins|enervon|formulation: each sugar-coated tablet contains: ascorbic acid-500mg thiamine mononitrate (vit. b3)-50mg nicotinamide (vit. b3)-50 mg riboflavin (vit. b2)-20 mg calcium pantothenate (vit. b5)-20mg pyridoxine hydrochloride (vit. b6)-5mg cyanocobalamin (vit. b12)-5mcg|sugar-coated tablet,DR-XY47533 | DR-XY47534,Multivitamins,Enervon,"Formulation: Each sugar-coated tablet contains: 
+Ascorbic Acid-500mg Thiamine Mononitrate (Vit. B3)-50mg Nicotinamide (Vit. B3)-50 mg Riboflavin (Vit. B2)-20 mg 
+Calcium Pantothenate (Vit. B5)-20mg Pyridoxine Hydrochloride (Vit. B6)-5mg Cyanocobalamin (Vit. B12)-5mcg",Sugar-Coated Tablet
+mefenamic acid||50 mg/5 ml|oral suspension (banana and peppermint flavor),DR-XY47558 | DR-XY47559,Mefenamic Acid,None,50 mg/5 mL,"Oral Suspension (Banana and Peppermint 
+Flavor)"
+celecoxib|lecox-200|200 mg|capsule,DR-XY47562 | DRP-11373,Celecoxib,Lecox-200,200 mg,Capsule
+sitagliptin (as phosphate monohydrate) + metformin hydrochloride||50 mg/500 mg|film-coated tablet,DR-XY47569 | DRP-13890 | DRP-14293 | DRP-14294,"Sitagliptin (as phosphate monohydrate) + Metformin 
+hydrochloride",None,50 mg/500 mg,Film-Coated Tablet
+doxofylline|maxivent|400 mg|tablet,DR-XY47600 | DR-XY48596 | DRP-13969,Doxofylline,Maxivent,400 mg,Tablet
+cefuroxime (as axetil)||500 mg|film-coated tablet,DR-XY47614 | DR-XY47955 | DRP-10336 | DRP-11824 | DRP-13649 | DRP-15885-02 | DRP-2103-07 | DRP-2994-03 | DRP-4164-03 | DRP-4164-08 | DRP-4857-04 | DRP-5484-01 | DRP-5503-03,Cefuroxime (As Axetil),None,500 mg,Film-Coated Tablet
+telmisartan|telmez|80 mg|tablet,DR-XY47615 | DRP-11524,Telmisartan,Telmez,80 mg,Tablet
+atomoxetine (as hydrochloride)|attentrol 60|60 mg|capsule,DR-XY47621 | DRP-11127,Atomoxetine (as hydrochloride),Attentrol 60,60 mg,Capsule
+atomoxetine (as hydrochloride)|attentrol 40|40 mg|capsule,DR-XY47653 | DRP-11088,Atomoxetine (as hydrochloride),Attentrol 40,40 mg,Capsule
+atomoxetine (as hydrochloride)|attentrol 18|18 mg|capsule,DR-XY47654 | DRP-11126,Atomoxetine (as hydrochloride),Attentrol 18,18 mg,Capsule
+atomoxetine (as hydrochloride)|attentrol 25|25 mg|capsule,DR-XY47655 | DRP-11089,Atomoxetine (as hydrochloride),Attentrol 25,25 mg,Capsule
+metronidazole|sydenzole|500 mg|tablet,DR-XY47670 | DRP-11633,Metronidazole,Sydenzole,500 mg,Tablet
+gliclazide|diakon|80 mg|tablet,DR-XY47672 | DRP-12894,Gliclazide,Diakon,80 mg,Tablet
+cholecalciferol (vitamin d3)||1000 iu|softgel capsule,DR-XY47692 | DR-XY47693,Cholecalciferol (Vitamin D3),None,1000 IU,Softgel Capsule
+propranolol hydrochloride|indrex|10 mg|film-coated tablet,DR-XY47697 | DRP-12637,Propranolol Hydrochloride,Indrex,10 mg,Film-Coated Tablet
+doxofylline|maxivent|200mg|tablet,DR-XY47755 | DR-XY48541 | DRP-1796,Doxofylline,Maxivent,200mg,Tablet
+clobetasol propionate|dermochem|500 mcg/g (0.05% w/w)|topical cream,DR-XY47764 | DRP-11531,Clobetasol Propionate,Dermochem,500 mcg/g (0.05% w/w),Topical Cream
+hydrocortisone acetate|hydrochem|10 mg/g (1% w/w)|topical cream,DR-XY47765 | DRP-11523,Hydrocortisone acetate,Hydrochem,10 mg/g (1% w/w),Topical Cream
+ambroxol hydrochloride|expesyl|30 mg|tablet,DR-XY47779 | DRP-11538,Ambroxol Hydrochloride,Expesyl,30 mg,Tablet
+acetylcysteine||600 mg|film-coated tablet,DR-XY47802 | DR-XY47804 (For Export Only),Acetylcysteine,None,600 mg,Film-Coated Tablet
+acetylcysteine|exflem|600 mg|film-coated tablet,DR-XY47803 | DR-XY47805 (For Export Only),Acetylcysteine,Exflem,600 mg,Film-Coated Tablet
+hydrocortisone (as sodium succinate)||100 mg|powder for injection (i.m./i.v.),DR-XY47811 | DRP-13249-05,Hydrocortisone (as sodium succinate),None,100 mg,Powder for Injection (I.M./I.V.)
+sitagliptin (as phosphate)||25 mg|film-coated tablet,DR-XY47828 | DRP-11199,Sitagliptin (As Phosphate),None,25 mg,Film-Coated Tablet
+montelukast (as sodium) + levocetirizine hydrochloride|co-altria|10mg/5mg|tablet,DR-XY47833 | DR-XY48227 | DRP-13094 | DRP-1822,Montelukast (as sodium) + Levocetirizine Hydrochloride,Co-Altria,10mg/5mg,Tablet
+ivermectin||5mg/ g (0.5% w/w)|lotion,DR-XY47835 | DR-XY47836,Ivermectin,None,5mg/ g (0.5% w/w),Lotion
+daclastavir (as dihydrochloride)|dacihep 60|60 mg|film coated tablet,DR-XY47858 | DR-XY48174,Daclastavir (As dihydrochloride),Dacihep 60,60 mg,Film Coated Tablet
+pregabalin|neurokem|150 mg|capsule,DR-XY47875 | DRP-6928-04,Pregabalin,Neurokem,150 mg,Capsule
+remdesivir|desrem|100 mg|lyophilized powder for solution for i.v. infusion,DR-XY47882 | DR-XY47883 | DR-XY48984,Remdesivir,Desrem,100 mg,"Lyophilized Powder for Solution for I.V. 
+Infusion"
+montelukast (as sodium) + levocetirizine hydrochloride|co-altria ped|5mg/5mg|chewable tablet,DR-XY47889 | DRP-11749 | DRP-13001,Montelukast (as sodium) + Levocetirizine Hydrochloride,Co-Altria Ped,5mg/5mg,Chewable Tablet
+montelukast (as sodium) + levocetirizine hydrochloride|co-altria ped|5mg/2.5mg|chewable tablet,DR-XY47890 | DRP-11748,Montelukast (as sodium) + Levocetirizine hydrochloride,Co-Altria Ped,5mg/2.5mg,Chewable Tablet
+acetylcysteine||200 mg|powder for oral solution,DR-XY47916 | DRP-4853-07 | DRP-4853-09,Acetylcysteine,None,200 mg,Powder for Oral Solution
+omeprazole (as sodium)||40 mg|lyophilized powder for intravenous injection/ infusion,DR-XY47937 | DRP-11700,Omeprazole (As Sodium),None,40 mg,Lyophilized Powder for Intravenous Injection/ Infusion
+cefuroxime (as axetil)|rovix|500 mg|film-coated tablet,DR-XY47956 | DRP-1188,Cefuroxime (As Axetil),Rovix,500 mg,Film-Coated Tablet
+fenofibrate||200 mg|capsule,DR-XY48000 | DRP-11555 | DRP-4070-03 | DRP-4070-06 | DRP-4070-12 | DRP-4070-14,Fenofibrate,None,200 mg,Capsule
+ceftriaxone (as sodium)||1 g|powder for injection (im/iv),DR-XY48081 | DRP-14065-07,Ceftriaxone (As Sodium),None,1 g,Powder For Injection (IM/IV)
+bisoprolol fumarate||5 mg|film-coated tablet,DR-XY48098 | DRP-18024 | DRP-6628-01,Bisoprolol fumarate,None,5 mg,Film-Coated Tablet
+febuxostat||40 mg|film-coated tablet,DR-XY48099 | DRP-10512-02 | DRP-10512-06 | DRP-10512-15 | DRP-10752-01 | DRP-12601-10,Febuxostat,None,40 mg,Film-Coated Tablet
+montelukast (as sodium) + levocetirizine hydrochloride|zykast|10 mg/ 5 mg|tablet,DR-XY48119 | DRP-1822-01,Montelukast (as sodium) + Levocetirizine Hydrochloride,Zykast,10 mg/ 5 mg,Tablet
+azathioprine|imuran|50 mg|tablet,DR-XY48135 | DR-XY9450,Azathioprine,Imuran,50 mg,Tablet
+ciprofloxacin|ciclodin iv|2mg/ml (400mg/200ml)|solution for iv injection,DR-XY48139 | DR-XY48159,Ciprofloxacin,Ciclodin IV,2mg/mL (400mg/200mL),Solution for IV Injection
+rifampicin + isoniazid||75mg/ 50mg|dispersible tablet,DR-XY48165 | DR-XY48166,Rifampicin + Isoniazid,None,75mg/ 50mg,Dispersible Tablet
+apixaban||2.5 mg|film- coated tablet,DR-XY48169 | DRP-14093,Apixaban,None,2.5 mg,Film- Coated Tablet
+apixaban||5 mg|film- coated tablet,DR-XY48170 | DRP-14092,Apixaban,None,5 mg,Film- Coated Tablet
+trifarotene|aklief|50 mcg/g|cream,DR-XY48184 | DR-XY48413,Trifarotene,Aklief,50 mcg/g,Cream
+febuxostat|febutor-40|40 mg|film-coated tablet,DR-XY48201 | DRP-12292-04,Febuxostat,Febutor-40,40 mg,Film-Coated Tablet
+pantoprazole (as sodium sesquihydrate)||40 mg|enteric-coated tablet,DR-XY48202 | DRP-5909-07 | DRP-5909-13,Pantoprazole (As Sodium Sesquihydrate),None,40 mg,Enteric-Coated Tablet
+sugammadex (as sodium)||100 mg/ml (200 mg/ 2 ml)|solution for injection (iv),DR-XY48203 | DR-XY48222,Sugammadex (As Sodium),None,100 mg/mL (200 mg/ 2 mL),Solution For Injection (IV)
+moxifloxacin (as hydrochloride) + dexamethasone phosphate (as sodium)|milflox dm|5 mg/1 mg per ml (0.5%/0.1% w/v)|sterile ophthalmic solution,DR-XY48243 | DRP-10875,"Moxifloxacin (as hydrochloride) + Dexamethasone 
+phosphate (as sodium)",Milflox Dm,5 mg/1 mg per mL (0.5%/0.1% w/v),"Sterile 
+Ophthalmic Solution"
+dolutegravir (as sodium)||50 mg|film-coated tablet,DR-XY48283 | DRP-13719,Dolutegravir (as sodium),None,50 mg,Film-Coated Tablet
+mecobalamin||500 mcg/ml|solution for injection (im/iv),DR-XY48364 | DRP-13386,Mecobalamin,None,500 mcg/mL,Solution for Injection (IM/IV)
+abiraterone acetate|abirasun|250 mg|tablet,DR-XY48435 | DRP-12288,Abiraterone acetate,Abirasun,250 mg,Tablet
+glutathione|sitiglow|600mg|lyophilized powder for injection (im/iv),DR-XY48462 | DRP-13179,Glutathione,Sitiglow,600mg,Lyophilized Powder for Injection (IM/IV)
+rivaroxaban||20 mg|film-coated tablet,DR-XY48482 | DRP-10305 | DRP-13570-01 | DRP-13677,Rivaroxaban,None,20 mg,Film-Coated Tablet
+ticagrelor||90 mg|film-coated tablet,DR-XY48576 | DRP-12844,Ticagrelor,None,90 mg,Film-Coated Tablet
+rivaroxaban||15 mg|film-coated tablet,DR-XY48590 | DRP-10406 | DRP-13573-01 | DRP-13678,Rivaroxaban,None,15 mg,Film-Coated Tablet
+ascorbic acid||500 mg|capsule,DR-XY48603 | DRP-16514,Ascorbic Acid,None,500 mg,Capsule
+rivaroxaban|xarelto|20 mg|film-coated tablet,DR-XY48607 | DRP-13570,Rivaroxaban,Xarelto,20 mg,Film-Coated Tablet
+rivaroxaban|xarelto|15 mg|film-coated tablet,DR-XY48608 | DRP-13573,Rivaroxaban,Xarelto,15 mg,Film-Coated Tablet
+letrozole|letrosaph|2.5 mg|film-coated tablet,DR-XY48610 | DRP-13836,Letrozole,Letrosaph,2.5 mg,Film-Coated Tablet
+rocuronium bromide|kabiroc|10 mg/ml|solution for injection (iv),DR-XY48637 | DR-XY49319,Rocuronium Bromide,Kabiroc,10 mg/mL,Solution For Injection (IV)
+rivaroxaban||10 mg|film-coated tablet,DR-XY48638 | DRP-12743 | DRP-13576-01,Rivaroxaban,None,10 mg,Film-Coated Tablet
+lenalidomide|lenalid 10|10 mg|capsule,DR-XY48668 | DR-XY48670,Lenalidomide,Lenalid 10,10 mg,Capsule
+lenalidomide|lenalid 5|5 mg|capsule,DR-XY48669 | DR-XY48671,Lenalidomide,Lenalid 5,5 mg,Capsule
+rebamipide|rebamid 100|100 mg|film coated tablet,DR-XY48673 | DR-XY48763,Rebamipide,Rebamid 100,100 mg,Film Coated Tablet
+0.9% sodium chloride||900 mg/100 ml (0.9% w/v)|solution for iv infusion,DR-XY48718 | DRP-15142,0.9% Sodium Chloride,None,900 mg/100 mL (0.9% w/v),Solution for IV Infusion
+metformin hydrochloride||1 g|extended-release tablet,DR-XY48798 | DRP-6509-01,Metformin hydrochloride,None,1 g,Extended-Release Tablet
+clotimazole|candigo|10mg/g (1% w/w)|cream,DR-XY48831 | DRP-14023,Clotimazole,Candigo,10mg/g (1% w/w),Cream
+valsartan||80 mg|film-coated tablet,DR-XY48842 | DRP-10942 | DRP-6753-03 | DRP-7306-01,Valsartan,None,80 mg,Film-Coated Tablet
+rosuvastatin (as calcium)|rovastin|20 mg|film-coated tablet,DR-XY48975 | DRP-16155,Rosuvastatin (as calcium),Rovastin,20 mg,Film-Coated Tablet
+dapagliflozin|catania|10 mg|film-coated tablet,DR-XY49007 | DRP-11789-07,Dapagliflozin,Catania,10 mg,Film-Coated Tablet
+0.9% sodium chloride||9 mg/ml (0.9% w/v)|solution for injection (iv infusion),DR-XY49032 | DR-XY49033,0.9% Sodium Chloride,None,9 mg/mL (0.9% w/v),"Solution for Injection (IV 
+Infusion)"
+cetirizine hydrochloride|benadryl one|10 mg|film-coated tablet,DR-XY49097 | DR-XY49098 | DRP-1469-02,Cetirizine hydrochloride,Benadryl One,10 mg,Film-Coated Tablet
+telmisartan|telarb|40 mg|tablet,DR-XY49109 | DRP-4765-07,Telmisartan,Telarb,40 mg,Tablet
+telmisartan|telarb|80 mg|tablet,DR-XY49110 | DRP-4762-06,Telmisartan,Telarb,80 mg,Tablet
+menthol|vicks vapodrops xtra strong|21 mg|lozenge (lemon menthol flavor),DR-XY49234 | DR-XY49235,Menthol,Vicks VapoDrops Xtra Strong,21 mg,Lozenge (Lemon Menthol Flavor)
+empagliflozin|empera|25 mg|film-coated tablet,DR-XY49291 | DRP-16308,Empagliflozin,Empera,25 mg,Film-Coated Tablet
+empagliflozin|empera|10 mg|film-coated tablet,DR-XY49292 | DRP-16309,Empagliflozin,Empera,10 mg,Film-Coated Tablet
+isoniazid||300 mg|tablet,DR-XY49322 | DRP-12074 | DRP-12075 | DRP-7869 | DRP-7869-01 | DRP-7869-02,Isoniazid,None,300 mg,Tablet
+nicotine|skiip|2 mg (equivalent to 10 mg nicotine polacrilex)|lozenges (mint flavor),DR-XY49355 | DR-XY49356,Nicotine,SKIIP,2 mg (equivalent to 10 mg nicotine polacrilex),Lozenges (Mint Flavor)
+mefenamic acid||500 mg|film-coated tablet,DR-XY49443 | DRP-13952 | DRP-9950,Mefenamic Acid,None,500 mg,Film-Coated Tablet
+linagliptin|encrylin|5 mg|tablet,DR-XY49548 | DRP-17761,Linagliptin,Encrylin,5 mg,Tablet
+rifampicin + isoniazid|macox rh dt|75 mg/50 mg|dispersible tablet,DR-XY49622 | DR-XY49623,Rifampicin + Isoniazid,Macox RH DT,75 mg/50 mg,Dispersible Tablet
+dapagliflozin||10 mg|film-coated tablet,DR-XY49698 | DR-XY49699 | DRP-10721-02,Dapagliflozin,None,10 mg,Film-Coated Tablet
+mefenamic acid||500mg|capsule,DR-XY9153 | DRP-2421-06 | DRP-4745 | DRP-660 | DRP-681-02 | DRP-681-11 | DRP-7092-01 | DRP-7092-02 | DRP-7092-03,Mefenamic Acid,None,500mg,Capsule
+guaifenesin||100mg/5ml|syrup,DR-XY9550 | DRP-5505,Guaifenesin,Unbranded,100mg/5mL,Syrup
+hydrogen peroxide||10 volume|solution,DRHR-08 | DRHR-126,Hydrogen Peroxide,None,10 VOLUME,Solution
+hydrogen peroxide||3% w/v (10 volumes)|topical solution,DRHR-1188 | DRHR-237 | HRP-275-02,Hydrogen Peroxide,None,3% w/v (10 volumes),Topical Solution
+pyrethrin|licealiz|2mg/ml|liquid,DRHR-1363 | DRHR-1392,Pyrethrin,Licealiz,2mg/mL,LIQUID
+carbocisteine||100mg/ 5ml|syrup,DRHR-1381 | HRP-031,Carbocisteine,None,100mg/ 5mL,Syrup
+carbocisteine||500mg|capsule,DRHR-1382 | DRHR-1495 | DRHR-1549 | HRP-071 | HRP-180 | HRP-279 | HRP-279-01,Carbocisteine,None,500mg,Capsule
+dichlorobenzyl alcohol + amylmetacresol|strepsils|1.2 mg/600 mcg|lozenge,DRHR-1456 | DRHR-1643,Dichlorobenzyl Alcohol + Amylmetacresol,Strepsils,1.2 mg/600 mcg,Lozenge
+ascorbic acid||100 mg/5 ml|syrup,DRHR-1672 | DRHR-1676 | DRP-14117,Ascorbic Acid,Unbranded,100 mg/5 mL,Syrup
+isopropyl alcohol|virex|70% v/v|solution,DRHR-1716 | DRHR-1717,Isopropyl Alcohol,Virex,70% v/v,Solution
+carbocisteine|carbosaph-c500|500mg|capsule,DRHR-1776 | HRP-336,Carbocisteine,Carbosaph-C500,500mg,Capsule
+dequalinium chloride (for export only)|dequadin orange|250mcg|lozenge (orange flavor) (for export only),DRHR-1780 | DRHR-1781,Dequalinium Chloride (For Export Only),Dequadin Orange,250mcg,Lozenge (Orange Flavor) (For Export Only)
+dequalinium chloride (for export only)|dequadin citrus|250mcg|lozenge (citrus flavor) (for export only),DRHR-1782 | DRHR-1785,Dequalinium Chloride (For Export Only),Dequadin Citrus,250mcg,Lozenge (Citrus Flavor) (For Export Only)
+menthol + peppermint oil + camphor + clove oil|golden cup oil|266.4 mg/ 266.4 mg/ 88 mg/ 4.4 mg|liniment,DRHR-1886 | DRHR-1887,MENTHOL + PEPPERMINT OIL + CAMPHOR + CLOVE OIL,GOLDEN CUP OIL,266.4 mg/ 266.4 mg/ 88 mg/ 4.4 mg,Liniment
+ketoconazole||20 mg/g|shampoo,DRHR-1931 | DRHR-1932,Ketoconazole,Unbranded,20 mg/g,Shampoo
+isopropyl alcohol||70ml per 100ml (70% v/v)|solution,DRHR-1934 | HRP-364,Isopropyl Alcohol,Unbranded,70mL per 100mL (70% v/v),Solution
+menthol|perskindol cool|70 mg per gram|gel,DRHR-1950 | DRHR-1951,Menthol,Perskindol Cool,70 mg per gram,Gel
+carbocisteine|solmux|500 mg|capsule,DRHR-1965 | DRHR-2096 | DRHR-2097 | DRHR-717,Carbocisteine,Solmux,500 mg,Capsule
+ethyl alcohol+chlorhexidine digluconate|tegutect x|70%v/v / 2%w/v|topical solution,DRHR-1980 | DRHR-1981,Ethyl Alcohol+Chlorhexidine Digluconate,Tegutect X,70%v/v / 2%w/v,Topical Solution
+ethyl alcohol||0.7% (v/v)|solution,DRHR-1990 | DRHR-1991,Ethyl Alcohol,Unbranded,0.7% (v/v),Solution
+ethyl alcohol|cleene|0.7|solution,DRHR-1997 | DRHR-1998,Ethyl Alcohol,Cleene,0.7,Solution
+isopropyl alcohol||0.7|solution,DRHR-1999 | DRHR-2133,Isopropyl Alcohol,Unbranded,0.7,Solution
+isopropyl alcohol||70% (v/v)|solution,DRHR-2003 | DRHR-2176 | DRHR-2199 | DRHR-2200 | DRHR-2241 | DRHR-2242 | DRHR-39 | HRP-273 | HRP-331 | HRP-706 | HRP-707,Isopropyl Alcohol,Unbranded,70% (v/v),Solution
+ethyl alcohol|casino femme with dual moisturizer|70 ml per 100 ml (70% v/v)|solution,DRHR-2046 | DRHR-2283,Ethyl Alcohol,Casino Femme With Dual Moisturizer,70 mL per 100 mL (70% v/v),Solution
+salicylic acid||10g/100ml (10% w/v)|topical solution,DRHR-2047 | DRHR-251,Salicylic Acid,None,10g/100mL (10% w/v),Topical Solution
+chlorhexidine|hyclens|0.2g/100ml (0.2% w/v)|topical solution,DRHR-2048 | DRHR-2049,Chlorhexidine,Hyclens,0.2g/100mL (0.2% w/v),Topical Solution
+povidone iodine||100 mg/ml (10% w/v)|topical solution,DRHR-2061 | HRP-066,Povidone Iodine,None,100 mg/mL (10% w/v),Topical Solution
+methyl salicylate + zingiber officinale (ginger) root + menthol + camphor + eucalyptus||96mg/12mg/12mg/6mcg/6mcg per ml|liniment,DRHR-2065 | HRP-529,"Methyl Salicylate + Zingiber officinale (Ginger) 
+Root + Menthol + Camphor + Eucalyptus",None,96mg/12mg/12mg/6mcg/6mcg per mL,Liniment
+methyl salicylate + camphor + menthol|efficascent oil|168.73 mg / 38.46 mg / 4.23 mg per ml|liniment,DRHR-2119 | DRHR-2272,Methyl Salicylate + Camphor + Menthol,Efficascent Oil,168.73 mg / 38.46 mg / 4.23 mg per mL,Liniment
+paracetamol|calpol|120mg/5ml|suspension (strawberry flavor),DRHR-2131 | DRHR-2132,Paracetamol,Calpol,120mg/5mL,Suspension (Strawberry Flavor)
+povidone iodine|oradine|4.5 mg/ml (0.45% w/v)|throat spray solution,DRHR-2134 | HRP-520,Povidone Iodine,Oradine,4.5 mg/mL (0.45% w/v),Throat Spray Solution
+isopropyl alcohol|robinsons|70ml per 100ml (70% v/v)|topical solution,DRHR-2153 | DRHR-2155 | DRHR-2156,Isopropyl Alcohol,Robinsons,70mL per 100mL (70% v/v),Topical Solution
+ethyl alcohol||70% v/v|solution,DRHR-2157 | HRP-447,Ethyl Alcohol,Unbranded,70% v/v,Solution
+ethyl alcohol|alcoplus|70% v/v|solution,DRHR-2161 | DRHR-2162 | DRHR-2163,Ethyl Alcohol,Alcoplus,70% v/v,Solution
+isopropyl alcohol|huntergreen|70% (v/v)|solution,DRHR-2179 | DRHR-2207,Isopropyl Alcohol,Huntergreen,70% (v/v),Solution
+ethyl alcohol||70% (v/v)|solution,DRHR-2180 | DRHR-2189 | DRHR-2251 | HRP-276,Ethyl Alcohol,Unbranded,70% (v/v),Solution
+isopropyl alcohol|amiel|70% (v/v)|solution,DRHR-2184 | DRHR-2191,Isopropyl Alcohol,Amiel,70% (v/v),Solution
+ethyl alcohol|nathan|70% (v/v)|solution,DRHR-2185 | DRHR-2190,Ethyl Alcohol,Nathan,70% (v/v),Solution
+isopropyl alcohol|alco lavender|70% (v/v)|solution,DRHR-2218 | DRHR-2219 | DRHR-2220 | DRHR-2221 | DRHR-2222 | DRHR-2223,Isopropyl Alcohol,Alco Lavender,70% (v/v),Solution
+isopropyl alcohol|alco ice|70% (v/v)|solution,DRHR-2224 | DRHR-2225 | DRHR-2226 | DRHR-2229 | DRHR-2230 | DRHR-2231,Isopropyl Alcohol,Alco Ice,70% (v/v),Solution
+isopropyl alcohol|alco 70|70% (v/v)|solution,DRHR-2239 | DRHR-2240,Isopropyl Alcohol,Alco 70,70% (v/v),Solution
+isopropyl alcohol|uni alco safe 2|70 ml/100 ml (70% w/w)|topical solution,DRHR-2258 | DRHR-2259 | DRHR-2260,Isopropyl Alcohol,Uni Alco Safe 2,70 mL/100 mL (70% w/w),Topical Solution
+isopropyl alcohol||70 ml per 100 ml (70% v/v)|topical solution,DRHR-2263 | DRHR-2269,Isopropyl Alcohol,Unbranded,70 mL per 100 mL (70% v/v),Topical Solution
+isopropyl alcohol||70% (v/v) topical solution|topical solution,DRHR-2274 | DRHR-2276,Isopropyl Alcohol,None,70% (v/v) Topical Solution,Topical Solution
+isopropyl alcohol||70 ml per 100 ml (70% v/v)|topical solution (with moisturizer) (lemon scent),DRHR-2287 | DRHR-2289 | DRHR-2290,Isopropyl Alcohol,None,70 mL per 100 mL (70% v/v),Topical Solution (with Moisturizer) (Lemon Scent)
+isopropyl alcohol||70 ml per 100 ml (70% v/v)|topical solution (with moisturizer) (green tea scent),DRHR-2291 | DRHR-2292 | DRHR-2294,Isopropyl Alcohol,None,70 mL per 100 mL (70% v/v),"Topical Solution (with 
+Moisturizer) (Green Tea Scent)"
+isopropyl alcohol||70 ml per 100 ml (70% v/v)|topical solution (with moisturizer) (guava scent),DRHR-2295 | DRHR-2297 | DRHR-2298,Isopropyl Alcohol,None,70 mL per 100 mL (70% v/v),Topical Solution (with Moisturizer) (Guava Scent)
+ethyl alcohol|uni alco safe|70 % (v/v)|topical solution,DRHR-2305 | DRHR-2306 | DRHR-2307,Ethyl Alcohol,Uni Alco Safe,70 % (v/v),Topical Solution
+ethyl alcohol|biogenic|70% solution|solution for external use,DRHR-2312 | DRHR-2314,Ethyl Alcohol,Biogenic,70% Solution,Solution For External Use
+isopropyl alcohol|land and harper|70 ml/100 ml (70% v/v)|solution,DRHR-2318 | DRHR-2318.,Isopropyl Alcohol,Land and Harper,70 mL/100 mL (70% v/v),Solution
+isopropyl alcohol||70 ml (70% v/v) per 100 ml|solution,DRHR-2325 | DRHR-2326,Isopropyl Alcohol,None,70 mL (70% v/v) per 100 mL,Solution
+isopropyl alcohol|alco 70|70 ml (70% v/v) per 100 ml|solution,DRHR-2327 | DRHR-2328 | DRHR-2329,Isopropyl Alcohol,Alco 70,70 mL (70% v/v) per 100 mL,Solution
+ethyl alcohol|angel's flo|70 ml/100 ml (70% v/v)|solution,DRHR-2336 | DRHR-2337,Ethyl Alcohol,Angel'S Flo,70 mL/100 mL (70% v/v),Solution
+ethyl alcohol||70 ml/100 ml (70% v/v)|solution,DRHR-2339 | DRHR-2368 | DRHR-2494,Ethyl Alcohol,None,70 mL/100 mL (70% v/v),Solution
+isopropyl alcohol|med + guard by kkm|70ml/100ml (70% v/v)|solution,DRHR-2345 | DRHR-2346 | DRHR-2347,Isopropyl Alcohol,Med + Guard By KKM,70mL/100mL (70% v/v),Solution
+isopropyl alcohol|adamson|70 ml/100 ml (70% v/v)|solution,DRHR-2360 | DRHR-2366,Isopropyl Alcohol,Adamson,70 mL/100 mL (70% v/v),Solution
+isopropyl alcohol|family|70 ml per 100 ml (70% v/v)|solution (jasmine scent),DRHR-2372 | DRHR-2373,Isopropyl Alcohol,Family,70 mL per 100 mL (70% v/v),Solution (Jasmine Scent)
+isopropyl alcohol|family|70 ml per 100 ml (70% v/v)|solution (baby oil scent),DRHR-2374 | DRHR-2375,Isopropyl Alcohol,Family,70 mL per 100 mL (70% v/v),Solution (Baby Oil Scent)
+ethyl alcohol|shield+|70 ml (70% v/v) per 100 ml|solution (aqua clean),DRHR-2387 | DRHR-2389,Ethyl Alcohol,Shield+,70 mL (70% v/v) per 100 mL,Solution (Aqua Clean)
+ethyl alcohol|biosure|70 ml (70% v/v) per 100 ml|solution,DRHR-2391 | DRHR-2392,Ethyl Alcohol,Biosure,70 mL (70% v/v) per 100 mL,Solution
+ethyl alcohol|shield+|70 ml/100 ml (70% v/v)|solution (pink fresh),DRHR-2396 | DRHR-2397 | DRHR-2398 | DRHR-2399,Ethyl Alcohol,Shield+,70 mL/100 mL (70% v/v),Solution (Pink Fresh)
+isopropyl alcohol|pureshield|70 ml per 100 ml (70% v/v solution)|scented,DRHR-2410 | DRHR-2415,Isopropyl Alcohol,Pureshield,70 mL per 100 mL (70% v/v Solution),Scented
+isopropyl alcohol|alcoshield|70 ml (70% v/v) per 100 ml|solution,DRHR-2416 | DRHR-2429 | DRHR-2430,Isopropyl Alcohol,Alcoshield,70 mL (70% v/v) per 100 mL,Solution
+ethyl alcohol|alcoshield (armour boost)|70 ml (70% v/v) per 100 ml|solution,DRHR-2417 | DRHR-2423 | DRHR-2424 | DRHR-2425,Ethyl Alcohol,Alcoshield (Armour Boost),70 mL (70% v/v) per 100 mL,Solution
+isopropyl alcohol|angel's flo|70 ml per 100 ml (70% v/v solution)|solution,DRHR-2419 | DRHR-2422,Isopropyl Alcohol,Angel's Flo,70 mL per 100 mL (70% v/v Solution),Solution
+isopropyl alcohol||70 ml per 100 ml (70% v/v solution)|solution,DRHR-2420 | HRP-687,Isopropyl Alcohol,None,70 mL per 100 mL (70% v/v Solution),Solution
+ethyl alcohol|alcoshield|70 ml (70% v/v) per 100 ml|solution,DRHR-2426 | DRHR-2427,Ethyl Alcohol,Alcoshield,70 mL (70% v/v) per 100 mL,Solution
+isopropyl alcohol|angel's flo|70 ml/100 ml (70% v/v)|solution,DRHR-2446 | DRHR-2447,Isopropyl Alcohol,Angel's Flo,70 mL/100 mL (70% v/v),Solution
+isopropyl alcohol|alcoplus|70ml/100 ml (70% v/v)|solution,DRHR-2454 | DRHR-2455 | DRHR-2457 | DRHR-2484,Isopropyl Alcohol,Alcoplus,70mL/100 mL (70% v/v),Solution
+sebo de macho||95% w/w|topical ointment,DRHR-2480 | DRHR-2482,Sebo de Macho,None,95% w/w,Topical Ointment
+"2,4-dichlorobenzyl alcohol + amylmetacresol|trusils pro|1.2 mg/600 mcg|lozenge (orange flavour)",DRHR-2491 | HRP-733,"2,4-Dichlorobenzyl Alcohol + Amylmetacresol",Trusils Pro,1.2 mg/600 mcg,Lozenge (Orange Flavour)
+castor oil|||,DRHR-653 | HRP-588-02,Castor Oil,None,None,None
+cefaclor (as monohydrate)|zeflor|250 mg/5 ml|granules for suspension,DRP-086-03 | DRP-086-08,Cefaclor (As Monohydrate),Zeflor,250 mg/5 mL,Granules For Suspension
+montelukast (as sodium)||10 mg|film-coated tablet,DRP-10000-01 | DRP-11506 | DRP-17245-01 | DRP-6741,Montelukast (as sodium),None,10 mg,Film-Coated Tablet
+propranolol hydrochloride||40 mg|film-coated tablet,DRP-10020 | DRP-7560,Propranolol Hydrochloride,Unbranded,40 mg,Film-Coated Tablet
+ascorbic acid|bida-c|1 g (equivalent to 1.125 g sodium ascorbate)|capsule,DRP-10022 | DRP-10202,Ascorbic Acid,Bida-C,1 g (equivalent to 1.125 g Sodium Ascorbate),Capsule
+ascorbic acid + zinc|actcee plus|500 mg (equivalent to 562.5 mg sodium ascorbate) / 40 mg (equivalent to 109.8 mg zinc sulfate monohydrate)|capsule,DRP-10027 | DRP-10028,Ascorbic Acid + Zinc,Actcee Plus,"500 mg (equivalent to 562.5 mg Sodium Ascorbate) / 
+40 mg (equivalent to 109.8 mg Zinc Sulfate Monohydrate)",Capsule
+glimepiride|norizec|3 mg|tablet,DRP-10041 | DRP-13404,Glimepiride,Norizec,3 mg,Tablet
+glimepiride|norizec|1 mg|tablet,DRP-10056 | DRP-13402,Glimepiride,Norizec,1 mg,Tablet
+co-amoxiclav||1 g|film-coated tablet,DRP-1006-04 | DRP-1612-03 | DRP-1612-04 | DRP-5343-03,Co-Amoxiclav,None,1 g,Film-Coated Tablet
+calcium lactate||325 mg|tablet,DRP-10094 | DRP-10802,Calcium Lactate,None,325 mg,Tablet
+calcium lactate||650 mg|tablet,DRP-10095 | DRP-12573,Calcium Lactate,None,650 mg,Tablet
+allopurinol|urisol|100 mg|tablet,DRP-10108 | DRP-15189,Allopurinol,Urisol,100 mg,Tablet
+etoricoxib||120 mg|film-coated tablet,DRP-10167 | DRP-13508 | DRP-14199 | DRP-5488-03 | DRP-5493-04 | DRP-8915,Etoricoxib,None,120 mg,Film-coated Tablet
+bisacodyl||5 mg|enteric-coated tablet,DRP-10172 | DRP-2636 | DRP-2636-03 | DRP-5897-01 | DRP-6454-01,Bisacodyl,None,5 mg,Enteric-Coated Tablet
+cilostazol||50 mg|tablet,DRP-10188 | DRP-14374-01 | DRP-14374-02 | DRP-14374-05 | DRP-4555-01 | DRP-4555-03,Cilostazol,Unbranded,50 mg,Tablet
+sildenafil (as citrate)||50 mg|film-coated tablet,DRP-10212 | DRP-12158 | DRP-13197 | DRP-3050-02 | DRP-4511-02,Sildenafil (as citrate),None,50 mg,Film-Coated Tablet
+clonidine hydrochloride||150mcg|tablet,DRP-10224 | DRP-14144,Clonidine Hydrochloride,None,150mcg,Tablet
+ketoconazole|dizochem|20 mg per gram (2% w/w)|cream,DRP-10225 | DRP-10225-01,Ketoconazole,Dizochem,20 mg per gram (2% w/w),Cream
+fusidic acid||20 mg/g (2% w/w)|cream,DRP-10243 | DRP-2458-02,Fusidic Acid,Unbranded,20 mg/g (2% w/w),Cream
+diosmin + hesperidin||450 mg/50 mg|film-coated tablet,DRP-10262 | DRP-12174 | DRP-12558 | DRP-14540 | DRP-7000-03 | DRP-9156-01 | DRP-9156-02 | DRP-9157-01,Diosmin + Hesperidin,None,450 mg/50 mg,Film-Coated Tablet
+febuxostat|fixuric 40|40 mg|film-coated tablet,DRP-10275-05 | DRP-12601-08,Febuxostat,Fixuric 40,40 mg,Film-Coated Tablet
+febuxostat|atenugen|40 mg|film-coated tablet,DRP-10275-07 | DRP-12601-06 | DRP-14532-03,Febuxostat,Atenugen,40 mg,Film-Coated Tablet
+febuxostat|fixuric 80|80 mg|film-coated tablet,DRP-10276-03 | DRP-12600-06,Febuxostat,Fixuric 80,80 mg,Film-Coated Tablet
+domperidone (as maleate)||10 mg|tablet,DRP-10281 | DRP-4807-01,Domperidone (as maleate),Unbranded,10 mg,Tablet
+etoricoxib|mytor-120|120 mg|film-coated tablet,DRP-10322-02 | DRP-4896-03,Etoricoxib,Mytor-120,120 mg,Film-Coated Tablet
+etoricoxib|mytor-90|90 mg|film-coated tablet,DRP-10323-01 | DRP-4895-06,Etoricoxib,Mytor-90,90 mg,Film-Coated Tablet
+metformin hydrochloride||1 g|film-coated tablet,DRP-10331 | DRP-12989,Metformin hydrochloride,None,1 g,Film-coated Tablet
+ciprofloxacin (as hydrochloride)|ciproted|500 mg|film-coated tablet,DRP-1034-03 | DRP-7370,Ciprofloxacin (as hydrochloride),Ciproted,500 mg,Film-Coated Tablet
+olanzapine||10 mg|film-coated tablet,DRP-10353 | DRP-12940,Olanzapine,None,10 mg,Film-Coated Tablet
+clindamycin (as phosphate)||150 mg/ml (300 mg/2ml)|solution for injection (im/iv),DRP-10375 | DRP-14203-04,Clindamycin (As Phosphate),None,150 mg/mL (300 mg/2mL),Solution For Injection (IM/IV)
+piperacillin (as sodium) + tazobactam (as sodium)||4 g/500 mg|powder for injection (i.v),DRP-10437 | DRP-12003,Piperacillin (As Sodium) + Tazobactam (As Sodium),None,4 g/500 mg,Powder For Injection (I.V)
+ascorbic acid||1 g (equivalent to 1.125 g sodium ascorbate)|capsule,DRP-10445 | DRP-15599,Ascorbic Acid,Unbranded,1 g (equivalent to 1.125 g Sodium Ascorbate),Capsule
+"cholecalciferol (vitamin d3)||1,000 iu|film-coated tablet",DRP-10451 | DRP-10521 | DRP-10522,Cholecalciferol (Vitamin D3),None,"1,000 IU",Film-Coated Tablet
+mefenamic acid||50 mg/5 ml|oral suspension,DRP-10470 | DRP-10489,Mefenamic Acid,None,50 mg/5 mL,Oral Suspension
+telmisartan|teldra|80 mg|tablet,DRP-10476-04 | DRP-15839-01,Telmisartan,Teldra,80 mg,Tablet
+metformin hydrochloride|glyformet|1 g|extended release tablet,DRP-10477-01 | DRP-3520-02,Metformin hydrochloride,Glyformet,1 g,Extended Release Tablet
+mefenamic acid||500 mg|capsule,DRP-10481 | DRP-10481-01 | DRP-11113 | DRP-2421-07 | DRP-7092 | DRP-9418-01,Mefenamic Acid,None,500 mg,Capsule
+febuxostat||80 mg|film-coated tablet,DRP-10511-03 | DRP-12600-05 | DRP-12600-07 | DRP-12600-08 | DRP-13951,Febuxostat,Unbranded,80 mg,Film-Coated Tablet
+febuxostat|febuschwartz|40 mg|film-coated tablet,DRP-10512-12 | DRP-14532-07,Febuxostat,Febuschwartz,40 mg,Film-Coated Tablet
+loratadine||10 mg|tablet,DRP-10513 | DRP-2251-02 | DRP-3834-02 | DRP-3834-03 | DRP-852 | DRP-852-04 | DRP-852-05 | DRP-9555 | DRP-9555-01,Loratadine,Unbranded,10 mg,Tablet
+co-amoxiclav|amoxirife|625 mg|film-coated tablet,DRP-10548-01 | DRP-5407-08,Co-Amoxiclav,Amoxirife,625 mg,Film-Coated Tablet
+clobetasol propionate|clobesaph|500 mcg/g (0.05% w/w)|cream,DRP-10556 | DRP-17931,Clobetasol Propionate,Clobesaph,500 mcg/g (0.05% w/w),Cream
+salbutamol (as sulfate)|bronchogan|1 mg/ml (2.5 mg/2.5 ml)|solution for inhalation,DRP-10591-02 | DRP-10860-05,Salbutamol (as sulfate),Bronchogan,1 mg/mL (2.5 mg/2.5 mL),Solution for Inhalation
+paclitaxel|clitax|6 mg/ml|solution for i.v. infusion,DRP-10592-01 | DRP-10592-02,Paclitaxel,Clitax,6 mg/mL,Solution for I.V. Infusion
+febuxostat|febufast 80|80 mg|film-coated tablet,DRP-10613-01 | DRP-16394,Febuxostat,Febufast 80,80 mg,Film-Coated Tablet
+granisetron (as hydrochloride)|granon|1 mg/ml|solution for injection (iv),DRP-10621 | DRP-10622,Granisetron (as hydrochloride),Granon,1 mg/mL,Solution For Injection (Iv)
+sildenafil (as citrate)|robust s|100 mg|film-coated tablet,DRP-10627 | DRP-3155-01,Sildenafil (As Citrate),Robust S,100 mg,Film-Coated Tablet
+vancomycin (as hydrochloride)||1 g|powder for injection (iv),DRP-10631-05 | DRP-10631-06 | DRP-10631-07 | DRP-10631-8,Vancomycin (as hydrochloride),None,1 g,Powder for Injection (IV)
+paracetamol||500 mg|tablet,DRP-10647 | DRP-13014 | DRP-13748 | DRP-14181 | DRP-14843 | DRP-1835-02 | DRP-4184-11 | DRP-561-02 | DRP-7602 | DRP-8196 | DRP-8781-02,Paracetamol,None,500 mg,Tablet
+mefenamic acid||250 mg|capsule,DRP-10656 | DRP-10692,Mefenamic Acid,None,250 mg,Capsule
+bromhexine hydrochloride||8 mg|tablet,DRP-10657 | DRP-4430-01,Bromhexine Hydrochloride,None,8 mg,Tablet
+losartan potassium|saphlor-100|100 mg|film-coated tablet,DRP-10666 | DRP-12531,Losartan Potassium,Saphlor-100,100 mg,Film-Coated Tablet
+losartan potassium|saphlor-50|50 mg|film-coated tablet,DRP-10667 | DRP-12532,Losartan potassium,Saphlor-50,50 mg,Film-Coated Tablet
+metronidazole||500 mg|tablet,DRP-10685 | DRP-2377-01 | DRP-4034-05,Metronidazole,None,500 mg,Tablet
+"cholecalciferol (vitamin d3)||2,000 iu|film-coated tablet",DRP-10699 | DRP-9699,Cholecalciferol (Vitamin D3),None,"2,000 IU",Film-Coated Tablet
+ascorbic acid||500 mg (equivalent to 562.40 mg sodium ascorbate)|capsule,DRP-10723 | DRP-9251,Ascorbic Acid,None,500 mg (equivalent to 562.40 mg Sodium Ascorbate),Capsule
+cetirizine hydrochloride||10 mg|film-coated tablet,DRP-10725-01 | DRP-10725-03 | DRP-1247 | DRP-8085,Cetirizine Hydrochloride,None,10 mg,Film-Coated Tablet
+olmesartan medoxomil|olmeget|20 mg|film-coated tablet,DRP-10736-01 | DRP-10736-02,Olmesartan medoxomil,OlmeGet,20 mg,Film-Coated Tablet
+carvedilol||6.25 mg|tablet,DRP-10737 | DRP-6419 | DRP-6419-02 | DRP-6419-03 | DRP-8055-03,Carvedilol,None,6.25 mg,Tablet
+co-amoxiclav||625 mg|tablet,DRP-1077-07 | DRP-3774-02 | DRP-6438-01,Co-Amoxiclav,None,625 mg,Tablet
+levothyroxine sodium|euthyrox|25 mcg|tablet,DRP-10772 | DRP-8155,Levothyroxine Sodium,Euthyrox,25 mcg,Tablet
+levothyroxine sodium|euthyrox|50 mcg|tablet,DRP-10773 | DRP-8154,Levothyroxine Sodium,Euthyrox,50 mcg,Tablet
+loratadine||10 mg|chewable tablet,DRP-10776 | DRP-8794,Loratadine,None,10 mg,Chewable Tablet
+sildenafil (as citrate)||25 mg|film-coated tablet,DRP-10781 | DRP-11300 | DRP-14586,Sildenafil (As Citrate),None,25 mg,FILM-COATED TABLET
+sildenafil (as citrate)|erecta|25 mg|film-coated tablet,DRP-10783 | DRP-11302,Sildenafil (As Citrate),Erecta,25 mg,Film-Coated Tablet
+capecitabine||150 mg|film-coated tablet,DRP-10787 | DRP-11305,Capecitabine,None,150 mg,Film-Coated Tablet
+capecitabine||500 mg|film-coated tablet,DRP-10789 | DRP-11306,Capecitabine,None,500 mg,Film-Coated Tablet
+clopidogrel (as bisulfate)|clopisure|75 mg|film-coated tablet,DRP-10878-11 | DRP-16500-01,Clopidogrel (as bisulfate),Clopisure,75 mg,Film-Coated Tablet
+amlodipine (as besilate)||10mg|tablet,DRP-10905 | DRP-12902 | DRP-13162 | DRP-1615 | DRP-3429-01 | DRP-4458-07,Amlodipine (as besilate),None,10mg,Tablet
+valsartan||160 mg|film-coated tablet,DRP-10941 | DRP-6394-01 | DRP-6394-03,Valsartan,None,160 mg,Film-Coated Tablet
+trimetazidine hydrochloride||35 mg|modified release tablet,DRP-10949 | DRP-7640-04,Trimetazidine Hydrochloride,None,35 mg,Modified Release Tablet
+ketoanalogues + essential amino acids||(see reverse for formulation)|film-coated tablet,DRP-10952-03 | DRP-8515-01,Ketoanalogues + Essential Amino Acids,None,(see reverse for formulation),Film-Coated Tablet
+quetiapine (as fumarate)||25 mg|film-coated tablet,DRP-10954 | DRP-14116 | DRP-5429-01,Quetiapine (As Fumarate),None,25 mg,Film-Coated Tablet
+ceftriaxone (as sodium)|santezon|1 g|powder for injection (i.m./i.v.),DRP-10961-05 | DRP-9144-05,Ceftriaxone (as sodium),Santezon,1 g,Powder for Injection (I.M./I.V.)
+azithromycin (as dihydrate)||500 mg|film-coated tablet,DRP-10994-02 | DRP-3549-04 | DRP-3549-05 | DRP-3549-08 | DRP-4391-01 | DRP-4391-09 | DRP-4614-01 | DRP-4614-02 | DRP-8140-03 | DRP-8289-03 | DRP-8407,Azithromycin (as dihydrate),None,500 mg,Film-Coated Tablet
+paracetamol||250mg/5ml|suspension,DRP-110-01 | DRP-8103,Paracetamol,None,250mg/5mL,Suspension
+losartan potassium||50 mg|tablet,DRP-11012 | DRP-128 | DRP-2675-02 | DRP-841-04,Losartan Potassium,None,50 mg,Tablet
+acetylcysteine||600 mg|effervescent tablet,DRP-11026-02 | DRP-12215-04 | DRP-14071,Acetylcysteine,None,600 mg,Effervescent Tablet
+progesterone|progestedin|200 mg|soft gelatin oral capsule,DRP-11027-02 | DRP-11028-01,Progesterone,Progestedin,200 mg,Soft Gelatin Oral Capsule
+quetiapine (as fumarate)||200 mg|film-coated tablet,DRP-11030 | DRP-14738-04 | DRP-5430-01,Quetiapine (As Fumarate),None,200 mg,Film-Coated Tablet
+quetiapine (as fumarate)||300 mg|film-coated tablet,DRP-11031 | DRP-8677-02,Quetiapine (As Fumarate),None,300 mg,Film-Coated Tablet
+"retinol (as palmitate) (vitamin a)|retisol-a|100,000iu|softgel capsule",DRP-11042 | DRP-13482,Retinol (as palmitate) (Vitamin A),Retisol-A,"100,000IU",Softgel Capsule
+telmisartan|merit|80 mg|tablet,DRP-11047-01 | DRP-12703 | DRP-4790-02,Telmisartan,Merit,80 mg,Tablet
+telmisartan|merit|40 mg|tablet,DRP-11048-01 | DRP-12707 | DRP-4789-02,Telmisartan,Merit,40 mg,Tablet
+febuxostat|febufast 40|40 mg|film-coated tablet,DRP-11052-01 | DRP-16395,Febuxostat,Febufast 40,40 mg,Film-Coated Tablet
+clopidogrel||75 mg|film coated tablet,DRP-11057-02 | DRP-11057-05,Clopidogrel,None,75 mg,Film Coated Tablet
+warfarin sodium||5 mg|tablet,DRP-11063 | DRP-8146,Warfarin Sodium,None,5 mg,Tablet
+racecadotril||30 mg|granules for oral suspension,DRP-11078 | DRP-14810,Racecadotril,None,30 mg,Granules for Oral Suspension
+racecadotril||10 mg|granules for oral suspension,DRP-11085 | DRP-14811,Racecadotril,None,10 mg,Granules For Oral Suspension
+pregabalin||75 mg|capsule,DRP-11131 | DRP-11381-01 | DRP-12421 | DRP-12516 | DRP-13209-02 | DRP-8025-04 | DRP-8346-01 | DRP-8432-02 | DRP-8750-02 | DRP-8750-03 | DRP-8750-04,Pregabalin,None,75 mg,Capsule
+valaciclovir (as hydrochloride)||500 mg|film-coated tablet,DRP-11144 | DRP-14155,Valaciclovir (As Hydrochloride),None,500 mg,Film-Coated Tablet
+cefuroxime (as axetil)|cefromaxil|500 mg|film-coated tablet,DRP-11151-01 | DRP-1151-01,Cefuroxime (as axetil),Cefromaxil,500 mg,Film-Coated Tablet
+nicardipine hydrochloride||1mg/ml (10mg/10ml)|solution for injection (iv infusion),DRP-11154-06 | DRP-11154-16,Nicardipine Hydrochloride,None,1mg/mL (10mg/10mL),Solution for Injection (IV Infusion)
+sitagliptin (as phosphate monohydrate)||25 mg|film-coated tablet,DRP-11157 | DRP-11158 | DRP-11159 | DRP-11161 | DRP-11197 | DRP-11198 | DRP-11200 | DRP-11201 | DRP-11202 | DRP-14771,Sitagliptin (as phosphate monohydrate),None,25 mg,Film-Coated Tablet
+tranexamic acid|hemanex|500 mg|capsule,DRP-11169 | DRP-2847-02,Tranexamic Acid,Hemanex,500 mg,Capsule
+anastrozole||1 mg|film-coated tablet,DRP-11203-01 | DRP-4050-01,Anastrozole,None,1 mg,Film-Coated Tablet
+anastrozole|strazol|1 mg|film-coated tablet,DRP-11203-02 | DRP-7878-06,Anastrozole,Strazol,1 mg,Film-Coated Tablet
+anastrozole|zenstra|1 mg|film-coated tablet,DRP-11203-03 | DRP-7878-04,Anastrozole,ZENSTRA,1 mg,Film-Coated Tablet
+metronidazole||500 mg|film-coated tablet,DRP-11208 | DRP-14447 | DRP-14449 | DRP-14450,Metronidazole,None,500 mg,Film-Coated Tablet
+oxaliplatin|lipanox|2 mg/ml|concentrate solution for injection (iv infusion),DRP-11225-01 | DRP-11225-02,Oxaliplatin,Lipanox,2 mg/mL,Concentrate Solution for Injection (IV Infusion)
+oxaliplatin|uket|2 mg/ml|concentrate solution for injection (iv infusion),DRP-11225-03 | DRP-11225-04,Oxaliplatin,Uket,2 mg/mL,Concentrate Solution for Injection (IV Infusion)
+paracetamol||250 mg/5 ml|suspension (orange flavor),DRP-11227 | DRP-17175,Paracetamol,None,250 mg/5 mL,Suspension (Orange Flavor)
+ascorbic acid||500 mg|film-coated tablet,DRP-11234 | DRP-11677 | DRP-11711 | HRP-303-01 | HRP-303-02,Ascorbic Acid,None,500 mg,Film-Coated Tablet
+cefuroxime (as sodium)||750 mg|powder for injection (im/iv),DRP-11250-03 | DRP-8403-08 | DRP-8893,Cefuroxime (as sodium),None,750 mg,Powder for Injection (IM/IV)
+carbocisteine||500 mg|capsule,DRP-11296-01 | HRP-006-04 | HRP-071-04 | HRP-210-01 | HRP-247 | HRP-247-01 | HRP-309 | HRP-700,Carbocisteine,None,500 mg,Capsule
+pregabalin||150 mg|capsule,DRP-11319 | DRP-12422 | DRP-12517 | DRP-8024-02 | DRP-8347-01,Pregabalin,None,150 mg,Capsule
+zinc||10mg (equivalent to 47.35mg zinc picolinate)|film-coated tablet,DRP-11326 | DRP-11372,Zinc,None,10mg (equivalent to 47.35mg Zinc Picolinate),Film-Coated Tablet
+sevelamer carbonate|sefos|800 mg|film-coated tablet,DRP-11355-01 | DRP-15803,Sevelamer Carbonate,Sefos,800 mg,Film-Coated Tablet
+felodipine||5mg|modified-release tablet,DRP-1136-02 | DRP-1136-03,Felodipine,Unbranded,5mg,Modified-Release Tablet
+telmisartan + amlodipine (as besilate)||80 mg/5 mg|tablet,DRP-11424-04 | DRP-13142-04,Telmisartan + Amlodipine (as besilate),None,80 mg/5 mg,Tablet
+spironolactone||25 mg|film-coated tablet,DRP-11428 | DRP-12383-01,Spironolactone,None,25 mg,Film-Coated Tablet
+gliclazide||30 mg|modified release tablet,DRP-11488-01 | DRP-14580,Gliclazide,None,30 mg,Modified Release Tablet
+omeprazole (as sodium)|kinmeprazole|40 mg|lyophilized powder for injection (iv infusion),DRP-11492-04 | DRP-11492-05,Omeprazole (as sodium),Kinmeprazole,40 mg,Lyophilized Powder for Injection (IV Infusion)
+montelukast (as sodium)|airmaxx|10 mg|film-coated tablet,DRP-11510 | DRP-8221,Montelukast (as sodium),Airmaxx,10 mg,Film-Coated Tablet
+clopidogrel (as bisulfate)|noklot|75 mg|film coated tablet,DRP-11517 | DRP-881,Clopidogrel (as bisulfate),Noklot,75 mg,Film Coated Tablet
+candesartan cilexetil||16 mg|tablet,DRP-11552-02 | DRP-3916-01 | DRP-3916-03 | DRP-4610-01 | DRP-4610-03,Candesartan cilexetil,None,16 mg,Tablet
+ofloxacin|oplase|3mg/ml (0.3% w/v)|ophthalmic solution,DRP-11588 | DRP-11839,Ofloxacin,Oplase,3mg/mL (0.3% w/v),Ophthalmic Solution
+rosuvastatin (as calcium)||10 mg|film-coated tablet,DRP-11622 | DRP-12702-06 | DRP-16418 | DRP-6002-03 | DRP-6002-06 | DRP-6002-08 | DRP-6405-06 | DRP-6743-03 | DRP-6743-04 | DRP-7657-01,Rosuvastatin (as calcium),None,10 mg,Film-Coated Tablet
+glimepiride||2 mg|tablet,DRP-1165-03 | DRP-12276-01 | DRP-1588-02 | DRP-3011-01 | DRP-4152-02 | DRP-6297-02,Glimepiride,Unbranded,2 mg,Tablet
+thiamine mononitrate (vitamin b1) + pyridoxine hydrochloride (vitamin b6) + cyanocobalamin (vitamin b12)||500 mg/ 250 mg/ 1 mg|film coated tablet,DRP-11668 | DRP-12631 | DRP-12664,"Thiamine Mononitrate (Vitamin B1) + Pyridoxine 
+Hydrochloride (Vitamin B6) + Cyanocobalamin 
+(Vitamin B12)",none,500 mg/ 250 mg/ 1 mg,Film Coated Tablet
+montelukast (as sodium) + levocetirizine hydrochloride||10 mg/5 mg|film-coated tablet,DRP-11691-02 | DRP-11851-01 | DRP-11851-04 | DRP-11894-01 | DRP-16836,Montelukast (as sodium) + Levocetirizine hydrochloride,Unbranded,10 mg/5 mg,Film-Coated Tablet
+ciprofloxacin (as hydrochloride)||500 mg|film-coated tablet,DRP-11726 | DRP-3666-02 | DRP-3666-06 | DRP-4710-01 | DRP-4710-03 | DRP-5439 | DRP-5976-06 | DRP-6299,Ciprofloxacin (as hydrochloride),None,500 mg,Film-Coated Tablet
+mometasone furoate|mmfred|1 mg/g (0.1% w/w)|topical cream,DRP-11729 | DRP-12639,Mometasone Furoate,Mmfred,1 mg/g (0.1% w/w),Topical Cream
+paracetamol + orphenadrine citrate||450 mg / 35 mg|tablet,DRP-11746-02 | DRP-11746-03,Paracetamol + Orphenadrine Citrate,None,450 mg / 35 mg,Tablet
+capecitabine|capeget|500 mg|film-coated tablet,DRP-11747-01 | DRP-14110-01 | DRP-15723,Capecitabine,CapeGet,500 mg,Film-Coated Tablet
+clindamycin (as hydrochloride)||300 mg|capsule,DRP-11765 | DRP-12245 | DRP-1267-03 | DRP-1267-07 | DRP-14257 | DRP-1455-03 | DRP-1455-05 | DRP-2640,Clindamycin (as hydrochloride),None,300 mg,Capsule
+cefuroxime (as sodium)|gocef iv|750 mg|powder for injection (i.m./i.v.),DRP-11801-10 | DRP-8837-04,Cefuroxime (as Sodium),Gocef IV,750 mg,Powder for Injection (I.M./I.V.)
+telmisartan + amlodipine (as besilate)||40 mg/5 mg|tablet,DRP-11813-03 | DRP-11813-05 | DRP-13059-07 | DRP-14393-01 | DRP-14397,Telmisartan + Amlodipine (as besilate),None,40 mg/5 mg,Tablet
+telmisartan + amlodipine (as besilate)|team duo|40 mg / 5 mg|tablet,DRP-11813-04 | DRP-15758-01,Telmisartan + Amlodipine (as besilate),Team Duo,40 mg / 5 mg,Tablet
+cetirizine dihydrochloride||10 mg|film-coated tablet,DRP-11828 | DRP-2677-02 | DRP-3689-01 | DRP-3689-03 | DRP-6368,Cetirizine Dihydrochloride,Unbranded,10 mg,Film-Coated Tablet
+paracetamol + ibuprofen||325 mg/200 mg|capsule,DRP-11845 | DRP-17091,Paracetamol + Ibuprofen,None,325 mg/200 mg,Capsule
+sitagliptin (as phosphate monohydrate) + metformin hydrochloride|acantha plus|50 mg/ 500 mg|film-coated tablet,DRP-11848-01 | DRP-15915-01,Sitagliptin (as phosphate monohydrate) + Metformin Hydrochloride,Acantha Plus,50 mg/ 500 mg,Film-Coated Tablet
+salbutamol (as sulfate)||4 mg|tablet,DRP-11883 | DRP-11884 | DRP-2431-01,Salbutamol (As Sulfate),None,4 mg,Tablet
+montelukast (as sodium) + levocetirizine hydrochloride||10 mg / 5 mg|film-coated tablet,DRP-11894-02 | DRP-11894-03 | DRP-12409-03,Montelukast (as sodium) + Levocetirizine hydrochloride,None,10 mg / 5 mg,Film-Coated Tablet
+candesartan cilexetil||8 mg|tablet,DRP-11925-01 | DRP-3915-01 | DRP-3915-03 | DRP-4609-02,Candesartan Cilexetil,None,8 mg,Tablet
+amiodarone hydrochloride||200 mg|tablet,DRP-1193-03 | DRP-6467,Amiodarone hydrochloride,Unbranded,200 mg,Tablet
+irbesartan|irbeq 300|300mg|tablet,DRP-11931 | DRP-13520,Irbesartan,Irbeq 300,300mg,Tablet
+irbesartan|irbeq 150|150mg|tablet,DRP-11932 | DRP-13521,Irbesartan,Irbeq 150,150mg,Tablet
+fusidic acid|fusidek|20mg/g (2% w/w)|topical cream,DRP-11954 | DRP-12955,Fusidic Acid,Fusidek,20mg/g (2% w/w),Topical Cream
+losartan potassium + hydrochlorothiazide||100 mg/25 mg|film-coated tablet,DRP-11969 | DRP-13713-01 | DRP-2898-07,Losartan potassium + Hydrochlorothiazide,None,100 mg/25 mg,Film-Coated Tablet
+mupirocin||20 mg/g (2% w/w)|topical ointment,DRP-11977 | DRP-12991-06 | DRP-14210,Mupirocin,None,20 mg/g (2% w/w),Topical Ointment
+amlodipine besilate||5 mg|tablet,DRP-1202 | DRP-3077-01,Amlodipine Besilate,None,5 mg,Tablet
+cefixime (as trihydrate)||200 mg|film-coated tablet,DRP-12034 | DRP-14009-08 | DRP-4072-03 | DRP-4709-01,Cefixime (as trihydrate),None,200 mg,Film-Coated Tablet
+sitagliptin (as phosphate monohydrate) + metformin hydrochloride||50 mg/1 g|film-coated tablet,DRP-12037-01 | DRP-12037-02 | DRP-12037-03 | DRP-12037-05 | DRP-14291 | DRP-14292,Sitagliptin (as phosphate monohydrate) + Metformin hydrochloride,None,50 mg/1 g,Film-Coated Tablet
+anastrozole|annaget|1 mg|film-coated tablet,DRP-12041-01 | DRP-7700-01,Anastrozole,AnnaGet,1 mg,Film-Coated Tablet
+silver sulfadiazine|flamavid|10 mg/g (1% w/w)|topical cream,DRP-12054 | DRP-12055,Silver Sulfadiazine,Flamavid,10 mg/g  (1% w/w),Topical Cream
+losartan potassium|baczartan|50 mg|film-coated tablet,DRP-12057-01 | DRP-5960-01,Losartan Potassium,Baczartan,50 mg,Film-Coated Tablet
+citicoline (as sodium)||500 mg|film-coated tablet,DRP-12063 | DRP-14060 | DRP-2971-02 | DRP-4384-01 | DRP-4384-04 | DRP-5365-01 | DRP-9336-02,Citicoline (As Sodium),None,500 mg,Film-Coated Tablet
+nebivolol (as hydrochloride)||5 mg|tablet,DRP-12080-01 | DRP-12080-05 | DRP-12080-08 | DRP-12874-01,Nebivolol (as hydrochloride),None,5 mg,Tablet
+glibenclamide||5 mg|tablet,DRP-1209-02 | DRP-1209-04,Glibenclamide,Unbranded,5 mg,Tablet
+betahistine dihydrochloride||24 mg|tablet,DRP-12094 | DRP-4145-08,Betahistine Dihydrochloride,None,24 mg,Tablet
+betahistine dihydrochloride||16 mg|tablet,DRP-12095 | DRP-1557-06,Betahistine Dihydrochloride,None,16 mg,Tablet
+trimetazidine dihydrochloride||35 mg|modified-release tablet,DRP-12117-01 | DRP-8586-04 | DRP-8586-07 | DRP-8586-09 | DRP-8586-11 | DRP-8586-15,Trimetazidine Dihydrochloride,None,35 mg,Modified-Release Tablet
+co-amoxiclav||457 mg/5 ml|powder for oral suspension,DRP-12192-03 | DRP-2274-04,Co-Amoxiclav,None,457 mg/5 mL,Powder for Oral Suspension
+telmisartan||80mg|tablet,DRP-12206-01 | DRP-8338,Telmisartan,Unbranded,80mg,Tablet
+cefuroxime (as axetil)|eroxime-500|500 mg|film-coated tablet,DRP-12213-03 | DRP-4975-05,Cefuroxime (as axetil),Eroxime-500,500 mg,Film-Coated Tablet
+metformin hydrochloride||500 mg|tablet,DRP-12246 | DRP-5030-03 | DRP-5363-01 | DRP-5363-02 | DRP-5364,Metformin Hydrochloride,None,500 mg,Tablet
+co-amoxiclav|co-amoxisaph 375|375mg|film-coated tablet,DRP-12256 | DRP-14260,Co-Amoxiclav,Co-Amoxisaph 375,375mg,Film-Coated Tablet
+fenofibrate||160 mg|micronized capsule,DRP-12257-03 | DRP-12257-04,Fenofibrate,None,160 mg,Micronized Capsule
+ursodeoxycholic acid||500 mg|film-coated tablet,DRP-12263-04 | DRP-13237-04 | DRP-13237-07,Ursodeoxycholic Acid,None,500 mg,Film-Coated Tablet
+ciprofloxacin (as hydrochloride)|ancipro-500|500 mg|film-coated tablet,DRP-12271 | DRP-16826,Ciprofloxacin (as hydrochloride),Ancipro-500,500 mg,Film-coated Tablet
+dl-alpha-tocopherol (vitamin e)||400 i.u.|softgel capsule,DRP-12308-01 | DRP-12308-02,DL-Alpha-Tocopherol (Vitamin E),None,400 I.U.,Softgel Capsule
+esomeprazole (as magnesium trihydrate)||40 mg|enteric-coated tablet,DRP-12312-01 | DRP-6606-02 | DRP-6606-03 | DRP-8015-01,Esomeprazole (as magnesium trihydrate),None,40 mg,Enteric-Coated Tablet
+atorvastatin (as calcium)||40 mg|film coated tablet,DRP-1232 | DRP-9583-01,Atorvastatin (as calcium),Unbranded,40 mg,Film Coated Tablet
+atorvastatin (as calcium)||10 mg|film coated tablet,DRP-1233 | DRP-5614-01,Atorvastatin (as calcium),Unbranded,10 mg,Film Coated Tablet
+zinc||40 mg (equivalent to 189.40 mg zinc picolinate)|film-coated tablet,DRP-12395 | DRP-12396,Zinc,None,40 mg (equivalent to 189.40 mg Zinc Picolinate),Film-Coated Tablet
+sevelamer carbonate||800 mg|film-coated tablet,DRP-12411 | DRP-14864-06,Sevelamer carbonate,None,800 mg,Film-Coated Tablet
+sevelamer carbonate|verlaserv|800 mg|film-coated tablet,DRP-12411-02 | DRP-14863-02,Sevelamer carbonate,Verlaserv,800 mg,Film-Coated Tablet
+sevelamer carbonate|fosfamer|800 mg|film-coated tablet,DRP-12411-05 | DRP-14864-01,Sevelamer carbonate,Fosfamer,800 mg,Film-Coated Tablet
+pregabalin||50 mg|capsule,DRP-12420 | DRP-12655,Pregabalin,None,50 mg,capsule
+metoprolol tartrate||50 mg|tablet,DRP-12446 | DRP-17022 | DRP-2887 | DRP-800-02,Metoprolol Tartrate,None,50 mg,Tablet
+sitagliptin (as phosphate)||100 mg|film-coated tablet,DRP-12502 | DRP-12503 | DRP-8900-01 | DRP-9079-05 | DRP-9079-06,Sitagliptin (as Phosphate),None,100 mg,Film-Coated Tablet
+sitagliptin (as phosphate)||50 mg|film-coated tablet,DRP-12504 | DRP-8901-01 | DRP-9078-02 | DRP-9078-03 | DRP-9078-08,Sitagliptin (as Phosphate),None,50 mg,Film-Coated Tablet
+celecoxib||400 mg|capsule,DRP-12510 | DRP-4804-01 | DRP-4804-03 | DRP-4804-05 | DRP-4804-06 | DRP-5312-01 | DRP-5523-02,Celecoxib,None,400 mg,Capsule
+clopidogrel (as bisulfate)|colife|75 mg|film-coated tablet,DRP-12515-01 | DRP-13933-02,Clopidogrel (as bisulfate),Colife,75 mg,Film-Coated Tablet
+gliclazide||80 mg|tablet,DRP-1256-04 | DRP-12894-01 | DRP-6571-02 | DRP-6571-04 | DRP-6726-01,Gliclazide,Unbranded,80 mg,Tablet
+domperidone|vometa ft|10 mg|tablet,DRP-12593 | DRP-8061,Domperidone,Vometa FT,10 mg,Tablet
+febuxostat|febstat 80|80 mg|film-coated tablet,DRP-12600-09 | DRP-13981-01,Febuxostat,Febstat 80,80 mg,Film-Coated Tablet
+captopril||25 mg|tablet,DRP-12619 | DRP-14359 | DRP-4269-02,Captopril,None,25 mg,Tablet
+propranolol hydrochloride|indirin|10 mg|film-coated tablet,DRP-12637-01 | DRP-12970,Propranolol Hydrochloride,Indirin,10 mg,Film-coated Tablet
+vildagliptin||50 mg|tablet,DRP-12690 | DRP-12691-01 | DRP-12691-02 | DRP-13762 | DRP-13869-01 | DRP-14632 | DRP-15109 | DRP-15220 | DRP-15263,Vildagliptin,None,50 mg,Tablet
+metformin hydrochloride||500 mg|film-coated tablet,DRP-12693-01 | DRP-4077-04 | DRP-6512-01 | DRP-8065-02 | DRP-8408 | DRP-8408-01 | DRP-8408-02,Metformin Hydrochloride,Unbranded,500 mg,Film-Coated Tablet
+bisoprolol fumarate||10 mg|film-coated tablet,DRP-12694 | DRP-18023,Bisoprolol Fumarate,None,10 mg,Film-Coated Tablet
+hydrocortisone (as sodium succinate)|zelera|100 mg|powder for injection (im/iv),DRP-1272-11 | DRP-7618-01,Hydrocortisone (as Sodium Succinate),Zelera,100 mg,Powder For Injection (IM/IV)
+telmisartan + amlodipine (as besilate)||40 mg / 5 mg|tablet,DRP-12738-14 | DRP-13059-06 | DRP-14391-01,Telmisartan + Amlodipine (as besilate),None,40 mg / 5 mg,Tablet
+telmisartan + hydrochlorothiazide|merit plus|80 mg/25 mg|tablet,DRP-12776 | DRP-8455-01,Telmisartan + Hydrochlorothiazide,Merit Plus,80 mg/25 mg,Tablet
+ibuprofen + paracetamol||200mg/325mg|capsule,DRP-12777 | DRP-13539,Ibuprofen + Paracetamol,None,200mg/325mg,Capsule
+omeprazole||40 mg|delayed-release capsule,DRP-12788-03 | DRP-2725-18 | DRP-6027-02 | DRP-6027-8,Omeprazole,None,40 mg,Delayed-Release Capsule
+aluminum hydroxide + magnesium hydroxide + simethicone||200 mg/200 mg/25 mg|chewable tablet,DRP-12842 | DRP-2912-04,Aluminum Hydroxide + Magnesium Hydroxide + Simethicone,None,200 mg/200 mg/25 mg,Chewable Tablet
+co-amoxiclav|auget|625 mg|film-coated tablet,DRP-1291-03 | DRP-1614-02,Co-Amoxiclav,Auget,625 mg,Film-Coated Tablet
+co-amoxiclav||625 mg|film-coated tablet,DRP-1291-05 | DRP-3774-05 | DRP-4135-01 | DRP-4135-04 | DRP-5357-05 | DRP-5357-06 | DRP-6810-11,Co-Amoxiclav,None,625 mg,Film-Coated Tablet
+apixaban||2.5 mg|film-coated tablet,DRP-12943 | DRP-13352 | DRP-13984-04 | DRP-13984-11,Apixaban,None,2.5 mg,Film-Coated Tablet
+apixaban||5 mg|film-coated tablet,DRP-12944 | DRP-13983-01 | DRP-13983-12 | DRP-14600 | DRP-17905,Apixaban,None,5 mg,Film-Coated Tablet
+cetirizine hydrochloride|ricam|10mg|tablet,DRP-12947 | DRP-6916,Cetirizine Hydrochloride,Ricam,10mg,Tablet
+losartan potassium + amlodipine (as besilate)||50 mg/5 mg|film-coated tablet,DRP-12985-01 | DRP-13171-05 | DRP-15038-01 | DRP-6450-20,Losartan Potassium + Amlodipine (as besilate),None,50 mg/5 mg,Film-Coated Tablet
+irbesartan||150 mg|tablet,DRP-13010-01 | DRP-6398-01 | DRP-6398-02 | DRP-6398-04,Irbesartan,None,150 mg,Tablet
+thiamine mononitrate (vitamin b1) + pyridoxine hydrochloride (vitamin b6) + cyanocobalamin (vitamin b12)||100 mg/ 5 mg/ 50 mcg|tablet,DRP-13028 | DRP-1458-13,"Thiamine Mononitrate (Vitamin B1) + Pyridoxine
+Hydrochloride
+(Vitamin B6)
++ Cyanocobalamin
+(Vitamin B12)",None,100 mg/ 5 mg/ 50 mcg,Tablet
+telmisartan + amlodipine (as besilate)||80 mg/10 mg|tablet,DRP-13089-05 | DRP-13089-06 | DRP-13376-02 | DRP-13376-03 | DRP-14392-01 | DRP-14396,Telmisartan + Amlodipine (as besilate),None,80 mg/10 mg,Tablet
+co-amoxiclav||312.5 mg per 5 ml|powder for oral suspension,DRP-13115-01 | DRP-13886,Co-Amoxiclav,None,312.5 mg per 5 mL,Powder for Oral Suspension
+omeprazole||20 mg|capsule,DRP-1313-03 | DRP-14049 | DRP-1421-03 | DRP-4950-01 | DRP-4950-02 | DRP-570 | DRP-570-04 | DRP-843 | DRP-843-03,Omeprazole,None,20 mg,Capsule
+amlodipine (as besilate)||5mg|tablet,DRP-13163 | DRP-3419-01,Amlodipine (As Besilate),None,5mg,Tablet
+sterile water for injection|roywat||solution for injection,DRP-13261 | DRP-13262,Sterile Water For Injection,Roywat,None,Solution For Injection
+apixaban|xavi|5 mg|film-coated tablet,DRP-13266-01 | DRP-13983-09,Apixaban,Xavi,5 mg,Film-Coated Tablet
+ascorbic acid + zinc||500 mg (equivalent to 562.42mg sodium ascorbate)/ 10 mg (equivalent to 27.50mg zinc monohydrate)|capsule,DRP-13285 | DRP-13286,Ascorbic Acid + Zinc,None,"500 mg (equivalent to 562.42mg Sodium Ascorbate)/
+10 mg (equivalent to 27.50mg Zinc Monohydrate)",Capsule
+metoprolol tartrate||100 mg|tablet,DRP-13313 | DRP-17021 | DRP-2846,Metoprolol Tartrate,None,100 mg,Tablet
+bisoprolol fumarate||5mg|film-coated tablet,DRP-13329 | DRP-2514-01,Bisoprolol Fumarate,None,5mg,Film-Coated Tablet
+vildagliptin + metformin hydrochloride||50 mg/1 g|film-coated tablet,DRP-13356-01 | DRP-18031,Vildagliptin + Metformin Hydrochloride,None,50 mg/1 g,Film-Coated Tablet
+telmisartan + amlodipine (as besilate)|team duo|80 mg/10 mg|tablet,DRP-13376-04 | DRP-15757-01,Telmisartan + Amlodipine (as besilate),Team Duo,80 mg/10 mg,Tablet
+clindamycin (as hydrochloride)|clintop|300 mg|capsule,DRP-13378 | DRP-14915,Clindamycin (as hydrochloride),Clintop,300 mg,Capsule
+fenofibrate|fenoflex|160 mg|capsule,DRP-13382 | DRP-9976,Fenofibrate,Fenoflex,160 mg,Capsule
+aspirin||80 mg|tablet,DRP-13452 | DRP-13453 | DRP-13455,Aspirin,None,80 mg,Tablet
+simvastatin (reformulated)||40mg|film-coated tablet,DRP-1346-02 | DRP-1346-03,Simvastatin (Reformulated),Unbranded,40mg,Film-Coated Tablet
+azithromycin (as dihydrate)|azicass|200 mg/5 ml|powder for oral suspension,DRP-13507-03 | DRP-16281-01,Azithromycin (as dihydrate),Azicass,200 mg/5 mL,Powder for Oral Suspension
+etoricoxib||60 mg|film-coated tablet,DRP-13509 | DRP-15900 | DRP-5798-03,Etoricoxib,None,60 mg,Film-Coated Tablet
+etoricoxib||90 mg|film-coated tablet,DRP-13510 | DRP-14558 | DRP-4874-02 | DRP-5487-01 | DRP-7446-01,Etoricoxib,None,90 mg,Film-Coated Tablet
+levetiracetam|kepdin|500 mg|film-coated tablet,DRP-13517-3 | DRP-4583-01,Levetiracetam,Kepdin,500 mg,Film-Coated Tablet
+pregabalin||150mg|capsule,DRP-13540 | DRP-6120-01 | DRP-8149,Pregabalin,None,150mg,Capsule
+pregabalin||50mg|capsule,DRP-13542 | DRP-6121-01,Pregabalin,None,50mg,Capsule
+loratadine||5 mg/5 ml|syrup,DRP-13548 | DRP-1875-03 | DRP-851-03,Loratadine,None,5 mg/5 mL,Syrup
+loperamide hydrochloride||2 mg|capsule,DRP-13569 | DRP-17043 | DRP-1911-03 | DRP-297-04 | DRP-5554 | DRP-6808-01 | DRP-9365-01,Loperamide Hydrochloride,None,2 mg,Capsule
+etoricoxib|etoxib 120|120 mg|film-coated tablet,DRP-13634 | DRP-5493-02,Etoricoxib,Etoxib 120,120 mg,Film-Coated Tablet
+sodium bicarbonate||650 mg|tablet,DRP-13745 | DRP-8074,Sodium Bicarbonate,None,650 mg,Tablet
+simvastatin (reformulated)||20mg|film-coated tablet,DRP-1375-03 | DRP-1375-04,Simvastatin (Reformulated),None,20mg,Film-Coated Tablet
+hyoscine-n-butylbromide||10 mg|tablet,DRP-1376-05 | DRP-3533-02 | DRP-7807 | DRP-8492-01,Hyoscine-N-Butylbromide,Unbranded,10 mg,Tablet
+losartan potassium|besartan|50 mg|film-coated tablet,DRP-13778-01 | DRP-982-03,Losartan Potassium,Besartan,50 mg,Film-Coated Tablet
+iron (as iron sucrose)||20 mg/ml (100 mg/5 ml)|solution for injection (iv),DRP-13888-05 | DRP-13888-06,Iron (as Iron Sucrose),None,20 mg/mL (100 mg/5 mL),Solution for Injection (IV)
+etoricoxib|starcox|90 mg|film-coated tablet,DRP-13897 | DRP-7049-01,Etoricoxib,Starcox,90 mg,Film-Coated Tablet
+cefixime (as trihydrate)||100 mg / 5 ml|powder for suspension,DRP-13909-04 | DRP-5926-12,Cefixime (as trihydrate),None,100 mg / 5 mL,Powder for Suspension
+fenofibrate||160 mg|tablet,DRP-1391-01 | DRP-1391-02,Fenofibrate,Unbranded,160 mg,Tablet
+rifampicin + isoniazid|duasaph-450|450 mg/400 mg|film-coated tablet,DRP-13941 | DRP-14109,Rifampicin + Isoniazid,Duasaph-450,450 mg/400 mg,Film-Coated Tablet
+levofloxacin (as hemihydrate)||500 mg|film - coated tablet,DRP-13964-01 | DRP-1414,Levofloxacin (as hemihydrate),None,500 mg,Film - Coated Tablet
+propranolol hydrochloride|saphanolol|10 mg|film-coated tablet,DRP-13966 | DRP-13996,Propranolol Hydrochloride,Saphanolol,10 mg,Film-Coated Tablet
+cefixime (as trihydrate)|fixsil-200|200 mg|film-coated tablet,DRP-14009-02 | DRP-4072-09,Cefixime (as trihydrate),Fixsil-200,200 mg,Film-coated Tablet
+pyrazinamide||500mg|tablet,DRP-1403 | DRP-6854,PYRAZINAMIDE,Unbranded,500mg,Tablet
+ceftriaxone (as sodium)|axonex|1 g|powder for injection (im/iv),DRP-14065-05 | DRP-7138-15,Ceftriaxone (as sodium),Axonex,1 g,Powder for Injection (IM/IV)
+captopril|capomed|25 mg|tablet,DRP-141-02 | DRP-4269-04,Captopril,Capomed,25 mg,Tablet
+glimepiride||4 mg|tablet,DRP-1412-01 | DRP-5548-01,Glimepiride,None,4 mg,Tablet
+glimepiride||2 mg|film-coated tablet,DRP-14126-01 | DRP-6981 | DRP-6981-01,Glimepiride,None,2 mg,Film-Coated Tablet
+telmisartan + hydrochlorothiazide||40 mg/12.5 mg|tablet,DRP-14139 | DRP-4489-08,Telmisartan + Hydrochlorothiazide,None,40 mg/12.5 mg,Tablet
+hydroxychloroquine sulfate||200mg|film-coated tablet,DRP-14158 | DRP-15068,Hydroxychloroquine Sulfate,None,200mg,Film-Coated Tablet
+co-amoxiclav||1g|film-coated tablet,DRP-14195 | DRP-7246-03,Co-Amoxiclav,None,1g,Film-Coated Tablet
+iron (as iron sucrose)||20 mg/ml|solution for injection (iv),DRP-14215-02 | DRP-14215-04,Iron (as Iron sucrose),None,20 mg/mL,Solution for Injection (IV)
+amoxicillin (as trihydrate)||250mg/ 5ml|powder for suspension,DRP-1425 | DRP-248,Amoxicillin (as Trihydrate),None,250mg/ 5mL,Powder for Suspension
+amoxicillin (as trihydrate)||250 mg/5 ml|powder for suspension,DRP-1425-12 | DRP-1425-13 | DRP-1425-17,Amoxicillin (As Trihydrate),None,250 mg/5 mL,Powder For Suspension
+losartan potassium + hydrochlorothiazide||50 mg/12.5 mg|film-coated tablet,DRP-14290 | DRP-6117-04 | DRP-6130-01 | DRP-6130-07,Losartan Potassium + Hydrochlorothiazide,None,50 mg/12.5 mg,Film-Coated Tablet
+cefoperazone (as sodium) + sulbactam (as sodium)|saphtazone-1500|1 g/500 mg|powder for injection (im/iv),DRP-14307 | DRP-14308,Cefoperazone (as sodium) + Sulbactam (as sodium),Saphtazone-1500,1 g/500 mg,Powder for Injection (IM/IV)
+bisoprolol fumarate||10mg|film-coated tablet,DRP-14318 | DRP-2513-01 | DRP-7724-01,Bisoprolol fumarate,None,10mg,Film-coated Tablet
+ascorbic acid|cevit|500 mg|tablet,DRP-14345 | DRP-15136 | HRP-104,Ascorbic Acid,Cevit,500 mg,Tablet
+ascorbic acid|redvit-c|500 mg|tablet,DRP-14345-02 | HRP-104-04,Ascorbic Acid,Redvit-C,500 mg,Tablet
+colecalciferol|d'fense|1000 iu|softgel capsule,DRP-14347 | DRP-14570,Colecalciferol,D'Fense,1000 IU,Softgel Capsule
+colecalciferol|d'fense|5000 iu|softgel capsule,DRP-14348 | DRP-14569,Colecalciferol,D'fense,5000 IU,Softgel Capsule
+cilostazol||100 mg|tablet,DRP-14373-01 | DRP-14373-03 | DRP-5650-02,Cilostazol,None,100 mg,Tablet
+cilostazol|clostelo 100|100 mg|tablet,DRP-14373-02 | DRP-5650-08,Cilostazol,Clostelo 100,100 mg,Tablet
+cilostazol|clostelo 50|50 mg|tablet,DRP-14374-03 | DRP-4555-08,Cilostazol,Clostelo 50,50 mg,Tablet
+montelukast (as sodium)||4 mg|chewable tablet,DRP-14399 | DRP-5342-01 | DRP-6839 | DRP-8043-01,Montelukast (as sodium),None,4 mg,Chewable Tablet
+diltiazem hydrochloride|diltimax|60mg|tablet,DRP-14401 | DRP-14805,Diltiazem hydrochloride,Diltimax,60mg,Tablet
+iopamidol|iopamedix|755.22 mg/ml (equivalent to 370 mg iodine)|solution for injection for intravascular use only (not for intrathecal use),DRP-14408 | DRP-14410,Iopamidol,Iopamedix,755.22 mg/mL (equivalent to 370 mg Iodine),Solution for Injection for Intravascular Use Only (Not for Intrathecal Use)
+iopamidol||755.22 mg/ml (equivalent to 370 mg iodine)|solution for injection for intravascular use only (not for intrathecal use),DRP-14409 | DRP-14411,Iopamidol,None,755.22 mg/mL (equivalent to 370 mg Iodine),Solution for Injection for Intravascular Use Only (Not for Intrathecal Use)
+cefixime (as trihydrate)||100 mg|capsule,DRP-14418 | DRP-4438,Cefixime (as trihydrate),None,100 mg,Capsule
+cefotaxime (as sodium)||1g|powder for injection (im/iv),DRP-14419 | DRP-14420,Cefotaxime (as sodium),None,1g,Powder For Injection (IM/IV)
+cetirizine hydrochloride||10 mg|tablet,DRP-14443 | DRP-5427-08 | DRP-5546-03 | DRP-5546-04 | DRP-6260-03,Cetirizine Hydrochloride,None,10 mg,Tablet
+co-amoxiclav|raniclav|625 mg|film-coated tablet,DRP-14462-01 | DRP-8498-01,Co-Amoxiclav,Raniclav,625 mg,Film-Coated Tablet
+methylprednisolone|philcort-16|16 mg|tablet,DRP-14508 | DRP-17783,Methylprednisolone,Philcort-16,16 mg,Tablet
+losartan potassium||100 mg|film coated tablet,DRP-1454-03 | DRP-1454-04 | DRP-1454-06,Losartan Potassium,Unbranded,100 mg,Film Coated Tablet
+losartan potassium||50 mg|film coated tablet,DRP-1456-02 | DRP-1456-03 | DRP-1456-05 | DRP-996-04,Losartan Potassium,Unbranded,50 mg,Film Coated Tablet
+thiamine mononitrate (vitamin b1) + pyridoxine hydrochloride (vitamin b6) + cyanocobalamin (vitamin b12)||100 mg/5 mg/50 mcg|tablet,DRP-1458-09 | DRP-2586-01,"Thiamine Mononitrate (Vitamin B1) + Pyridoxine
+Hydrochloride (Vitamin B6) + Cyanocobalamin (Vitamin B12)",None,100 mg/5 mg/50 mcg,Tablet
+gliclazide||60 mg|modified release tablet,DRP-14582 | DRP-8994-07 | DRP-8994-12 | DRP-8994-16,Gliclazide,None,60 mg,Modified Release Tablet
+guaifenesin + salbutamol (as sulfate)||100 mg/2 mg|capsule,DRP-1459-03 | DRP-7837-01,Guaifenesin + Salbutamol (as sulfate),None,100 mg/2 mg,Capsule
+allopurinol||300 mg|tablet,DRP-14602 | DRP-15559 | DRP-5299-01,Allopurinol,None,300 mg,Tablet
+captopril|captivo 25|25 mg|tablet,DRP-14607 | DRP-14654,Captopril,Captivo 25,25 mg,Tablet
+azithromycin (as dihydrate)||200 mg/ 5 ml|powder for suspension,DRP-14610-01 | DRP-5051-07,Azithromycin (as dihydrate),None,200 mg/ 5 mL,Powder for Suspension
+meclizine hydrochloride||12.5 mg|chewable tablet,DRP-14659 | DRP-14824,Meclizine hydrochloride,None,12.5 mg,Chewable Tablet
+zoledronic acid (as monohydrate)|zologet|4 mg|lyophilized powder for iv infusion,DRP-14667 | DRP-5129-07,Zoledronic Acid (as monohydrate),Zologet,4 mg,Lyophilized Powder for IV Infusion
+cetirizine hydrochloride||5mg/5ml|syrup,DRP-1468-02 | DRP-6812-01,Cetirizine Hydrochloride,Unbranded,5mg/5mL,Syrup
+cetirizine hydrochloride||5 mg/5 ml|syrup,DRP-1468-09 | DRP-1468-11 | DRP-3707-01 | DRP-3707-02 | DRP-3707-03 | DRP-3707-05,Cetirizine Hydrochloride,Unbranded,5 mg/5 mL,Syrup
+hyoscine butylbromide||20 mg/ml|solution for injection (im/iv),DRP-14684-01 | DRP-16887-01,Hyoscine Butylbromide,None,20 mg/mL,Solution for Injection (IM/IV)
+sitagliptin (as phosphate monohydrate)||50 mg|film-coated tablet,DRP-14689-01 | DRP-9031-02,Sitagliptin (as phosphate monohydrate),None,50 mg,Film-Coated Tablet
+acetylcysteine|rapicis|600 mg|powder for oral solution,DRP-14744-02 | DRP-14763-03,Acetylcysteine,Rapicis,600 mg,Powder for Oral Solution
+rasagiline (as mesilate)|relzin|1 mg|tablet,DRP-14801 | DRP-16698,Rasagiline (as mesilate),Relzin,1 mg,Tablet
+escitalopram (as oxalate)|nexito 10|10 mg|film-coated tablet,DRP-14881 | DRP-8667,Escitalopram (as oxalate),Nexito 10,10 mg,Film-Coated Tablet
+escitalopram (as oxalate)|nexito 20|20 mg|film-coated tablet,DRP-14882 | DRP-8663,Escitalopram (as oxalate),Nexito 20,20 mg,Film-Coated Tablet
+amoxicillin (as trihydrate)|ambimox|500 mg|capsule,DRP-14971 | DRP-9966,Amoxicillin (as trihydrate),Ambimox,500 mg,Capsule
+phenylephrine hydrochloride + brompheniramine maleate|bromitapp|12.5 mg/4 mg per 5 ml|syrup,DRP-1505 | DRP-1505-02,Phenylephrine Hydrochloride + Brompheniramine Maleate,Bromitapp,12.5 mg/4 mg PER 5 mL,SYRUP
+topiramate|topirol 50|50 mg|film-coated tablet,DRP-15080 | DRP-9914,Topiramate,Topirol 50,50 mg,Film-Coated Tablet
+topiramate|topirol 25|25 mg|film-coated tablet,DRP-15081 | DRP-8666,Topiramate,Topirol 25,25 mg,Film-Coated Tablet
+co-amoxiclav|bactiv|457 mg/ 5 ml|powder for oral suspension,DRP-15113-01 | DRP-2274-03,Co-Amoxiclav,Bactiv,457 mg/ 5 mL,Powder for Oral Suspension
+cytarabine|cytaget|100 mg/ml (500 mg/5 ml)|solution for injection (iv/sc),DRP-15131 | DRP-15132,Cytarabine,CytaGet,100 mg/mL (500 mg/5 mL),Solution for Injection (IV/SC)
+losartan potassium|natrasol|50 mg|film-coated tablet,DRP-15134 | DRP-1884,Losartan Potassium,Natrasol,50 mg,Film-Coated Tablet
+losartan potassium|prestan|50 mg|film-coated tablet,DRP-15156 | DRP-5916,Losartan potassium,Prestan,50 mg,Film-Coated Tablet
+levothyroxine sodium|euthyrox|100 mcg|tablet,DRP-15160 | DRP-8153,Levothyroxine Sodium,Euthyrox,100 mcg,Tablet
+clobetasol propionate.|clovate|0.5 mg/g (0.05% w/w)|cream,DRP-15264 | DRP-15264 .,Clobetasol Propionate.,Clovate,0.5 mg/g (0.05% w/w),Cream
+esomeprazole (as magnesium trihydrate)||20 mg|enteric-coated tablet,DRP-15414 | DRP-2707-03,Esomeprazole (as magnesium trihydrate),None,20 mg,Enteric-Coated Tablet
+gabapentin||100 mg|capsule,DRP-15426 | DRP-4791-05 | DRP-6228,Gabapentin,None,100 mg,Capsule
+dapagliflozin (as propanediol monohydrate)||10 mg|film-coated tablet,DRP-15483-04 | DRP-15483-17 | DRP-9916-01,Dapagliflozin (as propanediol monohydrate),None,10 mg,Film-Coated Tablet
+omeprazole (as sodium)||40 mg|lyophilized powder for iv injection,DRP-15496-04 | DRP-15496-05 | DRP-15496-07 | DRP-15496-09 | DRP-15496-11,Omeprazole (as sodium),None,40 mg,Lyophilized Powder for IV Injection
+metformin hydrochloride|glucophage xr|500 mg|extended-release tablet,DRP-15546 | DRP-6507,Metformin Hydrochloride,Glucophage XR,500 mg,Extended-Release Tablet
+allopurinol||100 mg|tablet,DRP-15560 | DRP-16194 | DRP-5680-01,Allopurinol,None,100 mg,Tablet
+paracetamol + tramadol hydrochloride||325 mg/37.5 mg|film-coated tablet,DRP-15592 | DRP-5195-04 | DRP-5195-07,Paracetamol + Tramadol Hydrochloride,None,325 mg/37.5 mg,Film-Coated Tablet
+cetirizine||10 mg|film-coated tablet,DRP-15601 | DRP-15601-02,Cetirizine,None,10 mg,Film-Coated Tablet
+atorvastatin (as calcium)|atorsave-20|20 mg|film-coated tablet,DRP-15641-01 | DRP-16027-04,Atorvastatin (as calcium),Atorsave-20,20 mg,Film-Coated Tablet
+etoricoxib|tricoxia|120 mg|film-coated tablet,DRP-15696 | DRP-7190,Etoricoxib,Tricoxia,120 mg,Film-Coated Tablet
+betamethasone (as valerate)|retasone|1 mg / g (0.1% w/w)|cream,DRP-15707-01 | DRP-4699-06,Betamethasone (as valerate),Retasone,1 mg / g (0.1% w/w),Cream
+letrozole|letroget|2.5 mg|film-coated tablet,DRP-15724 | DRP-9863-01,Letrozole,LetroGet,2.5 mg,Film-Coated Tablet
+ibuprofen + paracetamol||200 mg / 325 mg|tablet,DRP-1583-06 | DRP-2960 | DRP-2960-01 | DRP-5366-01,Ibuprofen + Paracetamol,Unbranded,200 mg / 325 mg,Tablet
+rosuvastatin (as calcium)|rosuvin 10|10 mg|film-coated tablet,DRP-15849 | DRP-6002,Rosuvastatin (as Calcium),Rosuvin 10,10 mg,Film-Coated Tablet
+glimepiride||3 mg|tablet,DRP-1587-02 | DRP-2270 | DRP-3012-01 | DRP-5668,Glimepiride,Unbranded,3 mg,Tablet
+clarithromycin||500 mg|film-coated tablet,DRP-1596-01 | DRP-2331-05 | DRP-4542-02 | DRP-5301-05 | DRP-6789-01 | DRP-7477-01,Clarithromycin,Unbranded,500 mg,Film-Coated Tablet
+rifampicin + isoniazid||150mg/75mg|film-coated tablet,DRP-15997-01 | DRP-17441 | DRP-704,Rifampicin + Isoniazid,None,150mg/75mg,Film-Coated Tablet
+dutasteride|dutarid|500 mcg|film-coated tablet,DRP-16023 | DRP-6015,Dutasteride,Dutarid,500 mcg,Film-Coated Tablet
+amlodipine (as besilate)|amlothix|10 mg|tablet,DRP-16059 | DRP-993-03,Amlodipine (as besilate),Amlothix,10 mg,Tablet
+clonidine hydrochloride||150 mcg|tablet,DRP-16210 | DRP-2046-01,Clonidine hydrochloride,None,150 mcg,Tablet
+clonidine hydrochloride||75 mcg|tablet,DRP-16211 | DRP-1868-01 | DRP-6744-01 | DRP-6787-01,Clonidine hydrochloride,None,75 mcg,Tablet
+lamotrigine|lamosyn 50|50 mg|tablet,DRP-16296 | DRP-3340-01,Lamotrigine,Lamosyn 50,50 mg,Tablet
+lamotrigine|lamosyn 100|100 mg|tablet,DRP-16297 | DRP-3283-01,Lamotrigine,Lamosyn 100,100 mg,Tablet
+atorvastatin (as calcium)|vazi2r|80 mg|film-coated tablet,DRP-16342 | DRP-6341,Atorvastatin (as calcium),Vazi2r,80 mg,Film-Coated Tablet
+cefotaxime (as sodium)||500 mg|powder for injection (im/iv),DRP-16347-01 | DRP-16348-01,Cefotaxime (as sodium),None,500 mg,Powder for Injection (IM/IV)
+clopidogrel (as bisulfate)||75 mg|film coated tablet,DRP-16366 | DRP-5643-01,Clopidogrel (as bisulfate),None,75 mg,Film Coated Tablet
+paracetamol + phenylephrine hcl + chlorphenamine maleate|fluaid|500 mg/10 mg/2 mg|tablet,DRP-16380 | DRP-8645,"Paracetamol + Phenylephrine HCl + Chlorphenamine 
+Maleate",Fluaid,500 mg/10 mg/2 mg,Tablet
+rosuvastatin (as calcium)||5 mg|film-coated tablet,DRP-16419 | DRP-6651-01,Rosuvastatin (as calcium),None,5 mg,Film-Coated Tablet
+paracetamol|flugard|500 mg|tablet,DRP-16423 | DRP-1835,Paracetamol,Flugard,500 mg,Tablet
+betamethasone (as valerate)|betnoderm|1 mg/g (0.1 % w/w)|cream,DRP-16454 | DRP-4699,Betamethasone (as valerate),Betnoderm,1 mg/g (0.1 % w/w),Cream
+metformin hydrochloride|glumet|1 g|film-coated tablet,DRP-16505 | DRP-7389-02,Metformin hydrochloride,Glumet,1 g,Film-Coated Tablet
+aciclovir|zyvax|800 mg|tablet,DRP-1660-01 | DRP-1669-01,Aciclovir,Zyvax,800 mg,Tablet
+cefuroxime (as axetil)|ceft|500 mg|film-coated tablet,DRP-16629 | DRP-6830,Cefuroxime (as axetil),Ceft,500 mg,Film-Coated Tablet
+folic acid||5 mg|tablet,DRP-1677-04 | DRP-2899-06 | DRP-2899-13 | DRP-2899-14 | DRP-4337-01 | DRP-4337-02,Folic Acid,Unbranded,5 mg,Tablet
+erlotinib (as hydrochloride)|lotyro 100|100 mg|film-coated tablet,DRP-16815 | DRP-16818,Erlotinib (as hydrochloride),Lotyro 100,100 mg,Film-Coated Tablet
+erlotinib (as hydrochloride)|lotyro 25|25 mg|film-coated tablet,DRP-16816 | DRP-16819,Erlotinib (as hydrochloride),Lotyro 25,25 mg,Film-Coated Tablet
+metformin hydrochloride|glucophage xr|750 mg|extended-release tablet,DRP-16842 | DRP-6508,Metformin Hydrochloride,Glucophage XR,750 mg,Extended-Release Tablet
+rivaroxaban|rivein-10|10 mg|film-coated tablet,DRP-16866 | DRP-16867 | DRP-16868,Rivaroxaban,Rivein-10,10 mg,Film-Coated Tablet
+meloxicam||15 mg|tablet,DRP-1695 | DRP-4667-01 | DRP-4667-03 | DRP-4667-04 | DRP-5955 | DRP-5955-01 | DRP-5955-02,Meloxicam,Unbranded,15 mg,Tablet
+ticagrelor|reclovac 90|90 mg|tablet,DRP-17007 | DRP-17008,Ticagrelor,Reclovac 90,90 mg,Tablet
+levofloxacin (as hemihydrate)||500mg|tablet,DRP-1722 | DRP-1722-01,Levofloxacin (as Hemihydrate),None,500mg,Tablet
+paracetamol|zetagic|120 mg per 5ml syrup (strawberry flavor)|syrup,DRP-17267 | DRP-17268,Paracetamol,Zetagic,120 mg per 5mL Syrup (Strawberry Flavor),Syrup
+phytomenadione|ambivit k|10mg/ml|solution for injection (im/iv/sc),DRP-17325 | DRP-9445,Phytomenadione,Ambivit K,10mg/mL,Solution for Injection (IM/IV/SC)
+metformin hydrochloride||500 mg|extended-release tablet,DRP-17477 | DRP-5659-02 | DRP-6507-02,Metformin hydrochloride,None,500 mg,Extended-Release Tablet
+metformin hydrochloride||750 mg|extended-release tablet,DRP-17478 | DRP-6508-01,Metformin hydrochloride,None,750 mg,Extended-Release Tablet
+metformin hydrochloride|glumet|850 mg|film-coated tablet,DRP-17514 | DRP-3292-01,Metformin hydrochloride,Glumet,850 mg,Film-Coated Tablet
+mupirocin||20 mg/g (2% w/w)|ointment,DRP-17650 | DRP-3840-05 | DRP-3840-06 | DRP-3840-07 | DRP-8263-11,Mupirocin,None,20 mg/g (2% w/w),Ointment
+hyoscine n-butylbromide|hyosaph|10 mg|film-coated tablet,DRP-17657 | DRP-8477,Hyoscine N-Butylbromide,Hyosaph,10 mg,Film-coated Tablet
+praziquantel||600 mg|film-coated tablet,DRP-17712 | DRP-6723,Praziquantel,None,600 mg,Film-Coated Tablet
+linagliptin||5 mg|film-coated tablet,DRP-17869 | DRP-18021,Linagliptin,none,5 mg,Film-Coated Tablet
+ceftriaxone (as sodium)|cefravacz|1 g|powder for injection (im/iv),DRP-17932 | DRP-17933,Ceftriaxone (as sodium),Cefravacz,1 g,Powder for Injection (IM/IV)
+carvedilol||25 mg|film-coated tablet,DRP-1823-03 | DRP-8717-02,Carvedilol,Unbranded,25 mg,Film-Coated Tablet
+carvedilol||6.25 mg|film-coated tablet,DRP-1825-04 | DRP-5742-05 | DRP-9879 | DRP-9879-01 | DRP-9879-02,Carvedilol,None,6.25 mg,Film-Coated Tablet
+mefenamic acid||500 mg|tablet,DRP-1837-04 | DRP-2092-01,Mefenamic Acid,Unbranded,500 mg,Tablet
+doxycycline (as hyclate)||100mg|capsule,DRP-1845-01 | DRP-9988,Doxycycline (as hyclate),None,100mg,Capsule
+naproxen||500 mg|tablet,DRP-1906-03 | DRP-940-04,Naproxen,None,500 mg,Tablet
+glipizide||5 mg|tablet,DRP-1909 | DRP-2894 | DRP-888-02,Glipizide,Unbranded,5 mg,Tablet
+loperamide hydrochloride||2mg|capsule,DRP-1911-01 | DRP-1911-02 | DRP-562 | DRP-562-05 | DRP-7091-01 | DRP-7091-02,Loperamide Hydrochloride,Unbranded,2mg,Capsule
+loratadine||10mg|tablet,DRP-1912-02 | DRP-1912-03 | DRP-1912-04 | DRP-5552 | DRP-5552-02,Loratadine,Unbranded,10mg,Tablet
+tranexamic acid||500mg|capsule,DRP-1949 | DRP-5833-01,Tranexamic Acid,None,500mg,Capsule
+clindamycin (as hydrochloride)||150mg|capsule,DRP-1954-02 | DRP-5681-01 | DRP-9620,Clindamycin (As Hydrochloride),None,150mg,Capsule
+ambroxol hydrochloride||30 mg|capsule,DRP-1985-04 | DRP-1985-06 | DRP-1985-07,Ambroxol Hydrochloride,none,30 mg,Capsule
+celecoxib||200mg|capsule,DRP-2052-01 | DRP-5502-01 | DRP-5502-02 | DRP-5502-03 | DRP-5502-04 | DRP-9162 | DRP-9163,Celecoxib,None,200mg,Capsule
+sildenafil (as citrate)||100mg|tablet,DRP-2073-01 | DRP-3965-02,Sildenafil (as Citrate),None,100mg,Tablet
+cefuroxime (as axetil)|altoxime|500 mg|film-coated tablet,DRP-2103-01 | DRP-7568-01,Cefuroxime (as axetil),Altoxime,500 mg,Film-Coated Tablet
+amlodipine (as besilate)|eurovasc-5|5 mg|tablet,DRP-2111-01 | DRP-3077-02,Amlodipine (As Besilate),Eurovasc-5,5 mg,Tablet
+ciprofloxacin (as hydrochloride)|prozin|500 mg|film-coated tablet,DRP-2150-02 | DRP-495-09,Ciprofloxacin (as hydrochloride),Prozin,500 mg,Film-Coated Tablet
+losartan (as potassium) / hydrochlorothiazide||50 mg / 12.5 mg|film coated tablet,DRP-2158-02 | DRP-2158-03,Losartan (As Potassium) / Hydrochlorothiazide,None,50 mg / 12.5 mg,Film Coated Tablet
+pioglitazone (as hydrochloride)||15 mg tablet|tablet,DRP-2167-02 | DRP-2167-03,Pioglitazone (as Hydrochloride),None,15 mg Tablet,Tablet
+hydrocortisone||10mg/g|cream,DRP-2175-02 | DRP-2175-03,Hydrocortisone,Unbranded,10mg/g,Cream
+losartan potassium||50mg|film-coated tablet,DRP-2183-02 | DRP-3183-02 | DRP-3971-02,Losartan Potassium,Unbranded,50mg,Film-Coated Tablet
+naproxen sodium||550 mg|film-coated tablet,DRP-2227-01 | DRP-2227-02 | DRP-7093 | DRP-7093-01 | DRP-7093-02 | DRP-7093-03,Naproxen Sodium,Unbranded,550 mg,Film-Coated Tablet
+loratadine|godine|10 mg|tablet,DRP-2251-04 | DRP-852-03,Loratadine,Godine,10 mg,Tablet
+atorvastatin (as calcium)||40mg|film-coated tablet,DRP-2279-01 | DRP-3109-04,Atorvastatin (as Calcium),Unbranded,40mg,Film-Coated Tablet
+bisoprolol fumarate||5 mg|tablet,DRP-2287-01 | DRP-2287-02,Bisoprolol fumarate,Unbranded,5 mg,Tablet
+simvastatin||40 mg|tablet,DRP-2288-04 | DRP-5935,Simvastatin,None,40 mg,Tablet
+amlodipine (as besilate) + atorvastatin (as calcium)||10 mg/ 10 mg|tablet,DRP-2304-05 | DRP-2304-07,Amlodipine (As Besilate) + Atorvastatin (As Calcium),None,10 mg/ 10 mg,Tablet
+metronidazole||500mg|tablet,DRP-2377 | DRP-3941 | DRP-5468-02,METRONIDAZOLE,Unbranded,500mg,Tablet
+phenylpropanolamine hydrochloride||6.25 mg/ml|syrup (oral drops),DRP-2468 | DRP-7207,Phenylpropanolamine Hydrochloride,Unbranded,6.25 mg/mL,Syrup (Oral drops)
+amoxicillin (as trihydrate)||500mg|capsule,DRP-247 | DRP-7497-01 | DRP-7497-02,Amoxicillin (as trihydrate),none,500mg,Capsule
+trimetazidine hydrochloride|mabzidine mr|35 mg|modified release film-coated tablet,DRP-2479-07 | DRP-5354-04,Trimetazidine Hydrochloride,Mabzidine MR,35 mg,Modified Release Film-Coated Tablet
+tramadol hydrochloride||50 mg|capsule,DRP-2510-03 | DRP-2946-01,Tramadol Hydrochloride,None,50 mg,Capsule
+atorvastatin (as calcium) + amlodipine (as besilate)||5 mg/10 mg|film-coated tablet,DRP-2511-04 | DRP-2511-05,Atorvastatin (As Calcium) + Amlodipine (As Besilate),None,5 mg/10 mg,Film-Coated Tablet
+losartan potassium|q-pid|50 mg|film-coated tablet,DRP-2591-05 | DRP-5040-03,Losartan Potassium,Q-Pid,50 mg,Film-Coated Tablet
+alendronic acid (as alendronate sodium trihydrate)||70 mg|film-coated tablet,DRP-2599-01 | DRP-2599-02,Alendronic Acid (As Alendronate Sodium Trihydrate),None,70 mg,Film-Coated Tablet
+methylergometrine maleate|mergot|200 mcg/ml|solution for injection (im/iv),DRP-2604 | DRP-8424-01,Methylergometrine Maleate,Mergot,200 mcg/mL,Solution For Injection (IM/IV)
+cetirizine dihydrochloride||10mg|tablet,DRP-262 | DRP-262-04,Cetirizine Dihydrochloride,None,10mg,Tablet
+captopril|biopril|25 mg|tablet,DRP-264 | DRP-7962,Captopril,Biopril,25 mg,Tablet
+diclofenac sodium||50 mg|enteric-coated tablet,DRP-2652-03 | DRP-2893-01 | DRP-2893-03,Diclofenac Sodium,None,50 mg,Enteric-Coated Tablet
+cefixime (as trihydrate)|triocef|200 mg|film-coated tablet,DRP-2654-03 | DRP-4072-11,Cefixime (As Trihydrate),Triocef,200 mg,Film-Coated Tablet
+levofloxacin (as hemihydrate)||750 mg|film-coated tablet,DRP-2666-02 | DRP-3166-01,Levofloxacin (as hemihydrate),Unbranded,750 mg,Film-Coated Tablet
+pioglitazone (as hydrochloride)||30 mg|tablet,DRP-2748-02 | DRP-5216-01 | DRP-5648-01,Pioglitazone (as hydrochloride),None,30 mg,Tablet
+nifedipine||5 mg|softgel capsule,DRP-2751-04 | DRP-2751-06 | DRP-2751-07,Nifedipine,Unbranded,5 mg,Softgel Capsule
+|mometasone furoate|1 mg /g (0.1 % w/w)|cream,DRP-2797-02 | DRP-2797-03,None,Mometasone Furoate,1 mg /g (0.1 % w/w),Cream
+diphenhydramine hydrochloride||50 mg|capsule,DRP-2875 | DRP-2875-01 | DRP-5665-01,DIPHENHYDRAMINE HYDROCHLORIDE,Unbranded,50 mg,Capsule
+losartan potassium + hydrochlorothiazide||100 mg/ 25 mg|film-coated tablet,DRP-2898-01 | DRP-2898-02,Losartan Potassium + Hydrochlorothiazide,Unbranded,100 mg/ 25 mg,Film-Coated Tablet
+clobetasol propionate||0.5 mg/g (0.05% w/w)|cream,DRP-2909 | DRP-2909-02 | DRP-2909-04,Clobetasol Propionate,Unbranded,0.5 mg/g (0.05% w/w),Cream
+montelukast (as sodium)||5 mg|chewable tablet,DRP-2920-01 | DRP-3052-05 | DRP-6840 | DRP-7567-01,Montelukast (as sodium),Unbranded,5 mg,Chewable Tablet
+miconazole nitrate|fungtopic|20 mg/ g (2%w/w)|cream,DRP-2956 | DRP-3235,Miconazole Nitrate,Fungtopic,20 mg/ g (2%w/w),Cream
+co-amoxiclav||500 mg/125 mg|film-coated tablet,DRP-3087-16 | DRP-3087-18,Co-Amoxiclav,None,500 mg/125 mg,Film-Coated Tablet
+levofloxacin (as hemihydrate)|celevo|500 mg|film-coated tablet,DRP-3158-01 | DRP-5498-03,Levofloxacin (as hemihydrate),Celevo,500 mg,Film-Coated Tablet
+clotrimazole||1%|cream,DRP-3179-02 | DRP-3179-05,Clotrimazole,Unbranded,1%,Cream
+piperacillin (as sodium) + tazobactam (as sodium)||2 g/250 mg|powder for injection (i.m./i.v.),DRP-3220-01 | DRP-3220-08,Piperacillin (as sodium) + Tazobactam (as sodium),Unbranded,2 g/250 mg,Powder For Injection (I.M./I.V.)
+sildenadil (as citrate)||50 mg|tablet,DRP-3290-02 | DRP-3290-10,Sildenadil (As Citrate),None,50 mg,Tablet
+tramadol hydrochloride + paracetamol||37.5 mg/325 mg|film-coated tablet,DRP-3309-03 | DRP-3309-10 | DRP-3309-12,Tramadol Hydrochloride + Paracetamol,Unbranded,37.5 mg/325 mg,Film-Coated Tablet
+ceftazidime (as pentahydrate)||1 g|powder for injection (i.m./i.v.),DRP-3389-02 | DRP-6180-02,Ceftazidime (as Pentahydrate),None,1 g,Powder for Injection (I.M./I.V.)
+finasteride||5 mg|film-coated tablet,DRP-3409-02 | DRP-4265-01 | DRP-4827-01,Finasteride,Unbranded,5 mg,Film-Coated Tablet
+cefuroxime (as axetil)||500mg|film coated tablet,DRP-3442-04 | DRP-3442-07,Cefuroxime (as Axetil),Unbranded,500mg,Film Coated Tablet
+cefuroxime (as axetil)||500mg|film-coated tablet,DRP-3442-08 | DRP-4618 | DRP-4618-09 | DRP-5385-03,Cefuroxime (as axetil),Unbranded,500mg,Film-Coated Tablet
+enalapril maleate||10mg|tablet,DRP-346 | DRP-6788-01,Enalapril Maleate,None,10mg,Tablet
+montelukast (as sodium)||10 mg|tablet,DRP-3548-01 | DRP-3548-02,Montelukast (As Sodium),None,10 mg,Tablet
+olmesartan medoxomil||20 mg|film-coated tablet,DRP-3629-01 | DRP-4814 | DRP-4814-01 | DRP-4814-02 | DRP-4864-01,Olmesartan medoxomil,None,20 mg,Film-coated Tablet
+clarithromycin||250 mg/5 ml|powder for suspension,DRP-3651-05 | DRP-3651-06,Clarithromycin,None,250 mg/5 mL,Powder For Suspension
+ciprofloxacin(as hydrochloride)||500 mg|film coated tablet,DRP-3666-01 | DRP-3666-05,Ciprofloxacin(as hydrochloride),Unbranded,500 mg,Film Coated Tablet
+levocetirizine||5mg|film-coated tablet,DRP-3806-02 | DRP-3806-03,Levocetirizine,None,5mg,Film-Coated Tablet
+ketoconazole||20mg/g (2%w/w)|cream,DRP-3821-05 | DRP-3821-06,Ketoconazole,None,20mg/g (2%w/w),Cream
+betahistine hydrochloride||16 mg|film-coated tablet,DRP-3836 | DRP-3836-07 | DRP-6968-02,BETAHISTINE HYDROCHLORIDE,Unbranded,16 mg,Film-Coated Tablet
+"multivitamins + amino acids|aminotrene|formulation: each capsule contains: retinol (vitamin a) calciferol (vitamin d) tocopherol acetate (vitamin e) thiamine mononitrate (vitamin b) riboflavin (vitamin b2) nicotinamide (vitamin b3) pyridoxine hydrochloride (vitamin b ) folic acid (vitamin b,) calcium pantothenate cyanocobalamin (vitamin b12) 2,000 iu 200 iu 1 mg 5 mg 3 mg 20 mg 2.5 mg 200 mcg 5 mg 1 mcg ascorbic acid (vitamin c) 5-oxyanthranilic acid l-leucine l-isoleucine l-lysine hci l-phenylalanine l-threonine l-valine l-acetyltryptophan l-methionine 20 mg 20 mcg 18.30 mg 5.9 mg 25 mg 5 mg 4.2 mg 6.7 mg 5 mg 18.4 mg|capsule",DRP-3850-01 | DRP-3850-02,Multivitamins + Amino Acids,Aminotrene,"Formulation: Each capsule contains: Retinol (Vitamin A) Calciferol (Vitamin D) Tocopherol Acetate (Vitamin E) Thiamine Mononitrate (Vitamin B) Riboflavin (Vitamin B2) Nicotinamide (Vitamin B3) 
+Pyridoxine Hydrochloride (Vitamin B ) Folic Acid (Vitamin B,) Calcium Pantothenate Cyanocobalamin (Vitamin B12) 
+2,000 IU 200 IU 
+1 mg 5 mg 3 mg 20 mg 2.5 mg 200 mcg 
+5 mg 1 mcg 
+Ascorbic Acid (Vitamin C) 5-Oxyanthranilic Acid L-Leucine L-Isoleucine L-Lysine HCI L-Phenylalanine L-Threonine L-Valine L-Acetyltryptophan L-Methionine 
+20 mg 20 mcg 18.30 mg 5.9 mg 25 mg 
+5 mg 4.2 mg 6.7 mg 
+5 mg 18.4 mg",Capsule
+cetirizine dihydrochloride||10 mg|tablet,DRP-3851-01 | DRP-3851-02 | DRP-740-05,Cetirizine dihydrochloride,Unbranded,10 mg,Tablet
+montelukast (as sodium)||10 mg|chewable tablet,DRP-3881-05 | DRP-3881-06 | DRP-3881-07,Montelukast (As Sodium),None,10 mg,Chewable Tablet
+tamsulosin hydrochloride|tamzor|400 mcg|prolonged-release capsule,DRP-3940-01 | DRP-8237-02,Tamsulosin Hydrochloride,Tamzor,400 mcg,Prolonged-Release Capsule
+carbamazepine||200 mg|tablet,DRP-4013 | DRP-4013-05,Carbamazepine,Unbranded,200 mg,Tablet
+cefuroxime (as axetil)|aeruginox|500 mg|film-coated tablet,DRP-4164-05 | DRP-4857-03 | DRP-4975-02,Cefuroxime (as axetil),Aeruginox,500 mg,Film-Coated Tablet
+cefuroxime (as axetil)|kefsyn|500 mg|film-coated tablet,DRP-4164-28 | DRP-477-12,Cefuroxime (As Axetil),Kefsyn,500 mg,Film-Coated Tablet
+cefuroxime (as axetil)|levexime-500|500 mg|film-coated tablet,DRP-4164-34 | DRP-477-11,Cefuroxime (as Axetil),Levexime-500,500 mg,Film-Coated Tablet
+guaifenesin + salbutamol (as sulfate)||50 mg/1 mg per 5 ml|syrup,DRP-4224-03 | DRP-564,Guaifenesin + Salbutamol (as sulfate),Unbranded,50 mg/1 mg per 5 mL,Syrup
+levothyroxine sodium|eurolev|50mcg|tablet,DRP-4244 | DRP-4244-01,Levothyroxine Sodium,Eurolev,50mcg,Tablet
+betahistine dihydrochloride||8 mg|tablet,DRP-4302-01 | DRP-4302-02,Betahistine dihydrochloride,None,8 mg,Tablet
+meloxicam||7.5 mg|tablet,DRP-4303-01 | DRP-4303-02,Meloxicam,None,7.5 mg,Tablet
+clobetasol (as propionate)||0.05% (0.5mg/ g)|ointment,DRP-4364 | DRP-4364-03,Clobetasol (as Propionate),None,0.05% (0.5mg/ g),Ointment
+ethambutol hydrochloride||400 mg|tablet,DRP-4434 | DRP-4434-01,Ethambutol Hydrochloride,None,400 mg,Tablet
+ketoconazole||2% w/v|topical cream,DRP-4513-01 | DRP-4513-02,Ketoconazole,None,2% w/v,Topical Cream
+celecoxib|icox|200 mg|capsule,DRP-4627-02 | DRP-9162-01,Celecoxib,Icox,200 mg,Capsule
+spironolactone||25 mg|tablet,DRP-4662-05 | DRP-4662-06,Spironolactone,None,25 mg,Tablet
+hydrochlorothiazide||25mg|tablet,DRP-4714 | DRP-7079,Hydrochlorothiazide,None,25mg,Tablet
+amlodipine (as besilate)|none (reformulated)|10mg|tablet,DRP-4727-03 | DRP-4727-05,Amlodipine (As Besilate),None (Reformulated),10mg,Tablet
+paracetamol + phenylephrine hydrochloride|sinuzip pe|500mg/10mg|powder for solution,DRP-4729 | DRP-7929,Paracetamol + Phenylephrine Hydrochloride,Sinuzip Pe,500mg/10mg,Powder For Solution
+etoricoxib|akticib|60 mg|film-coated tablet,DRP-4737-02 | DRP-5798-02,Etoricoxib,Akticib,60 mg,Film-Coated Tablet
+escitalopram (as oxalate)|eslopram 10|10 mg|film-coated tablet,DRP-4757-04 | DRP-6879-01,Escitalopram (as oxalate),Eslopram 10,10 mg,Film-Coated Tablet
+co-amoxiclav|coxatech 625|625 mg|film-coated tablet,DRP-4771-09 | DRP-8498-04,Co-Amoxiclav,Coxatech 625,625 mg,Film-Coated Tablet
+cloxacillin (as sodium)||500mg|capsule,DRP-4823 | DRP-4823-02,Cloxacillin (As Sodium),none,500mg,Capsule
+potassium citrate||1080mg|extended-release tablet,DRP-4840-02 | DRP-4840-10 | DRP-4840-12 | DRP-4840-13,Potassium Citrate,Unbranded,1080mg,Extended-Release Tablet
+esomeprazole (as sodium)||40 mg|lyophilized powder for injection (i.v.),DRP-4854-07 | DRP-4854-11,Esomeprazole (As Sodium),None,40 mg,Lyophilized Powder For Injection (I.V.)
+etoricoxib|akticib|90 mg|film-coated tablet,DRP-4874-03 | DRP-5487-02,Etoricoxib,Akticib,90 mg,Film-Coated Tablet
+atorvastatin (as calcium)||20mg|film-coated tablet,DRP-4879-06 | DRP-7056-01,Atorvastatin (As Calcium),None,20mg,Film-Coated Tablet
+omeprazole||20mg|delayed-release capsule,DRP-4935-01 | DRP-5904-01,Omeprazole,None,20mg,Delayed-Release Capsule
+omeprazole||20 mg|delayed release capsule,DRP-4935-02 | DRP-4935-03 | DRP-4935-04,Omeprazole,Unbranded,20 mg,Delayed Release Capsule
+tamsulosin hydrochloride||400 mcg|enteric-coated tablet,DRP-4938-01 | DRP-4938-03,Tamsulosin hydrochloride,Unbranded,400 mcg,Enteric-Coated Tablet
+ceftriaxone (as sodium)||1 g|powder for injection (i.m./i.v.),DRP-4940-19 | DRP-9353,Ceftriaxone (as sodium),None,1 g,Powder for Injection (I.M./I.V.)
+bisacodyl||5 mg|enteric coated tablet,DRP-4996 | DRP-5494-01,Bisacodyl,None,5 mg,Enteric Coated Tablet
+ampicillin (as sodium) + sulbactam (as sodium)||500 mg/250 mg|powder for injection (im/iv),DRP-5132-01 | DRP-5442-03,Ampicillin (as sodium) + Sulbactam (as sodium),Unbranded,500 mg/250 mg,Powder For Injection (Im/Iv)
+domperidone (as maleate)||10 mg|film-coated tablet,DRP-5341 | DRP-7801-01,Domperidone (as maleate),Unbranded,10 mg,Film-Coated Tablet
+acetylcysteine||600 mg|powder for oral solution,DRP-5362-06 | DRP-5362-08 | DRP-5362-28,Acetylcysteine,Unbranded,600 mg,Powder For Oral Solution
+d-alpha tocopheryl acetate (vitamin e)||400 iu|softgel capsule,DRP-5387-01 | DRP-5387-02 | DRP-5387-05 | DRP-5387-06,d-Alpha Tocopheryl Acetate (Vitamin E),Unbranded,400 IU,Softgel Capsule
+methyldopa (as sesquihydrate)|doparine|250 mg|film-coated tablet,DRP-5467 | DRP-9109,Methyldopa (as sesquihydrate),Doparine,250 mg,Film-Coated Tablet
+methyldopa (as sesquihydrate)|dopamaine|250 mg|film-coated tablet,DRP-5467-01 | DRP-9303,Methyldopa (as sesquihydrate),Dopamaine,250 mg,Film-Coated Tablet
+etoricoxib|rilaxia|120 mg|film-coated tablet,DRP-5488-02 | DRP-5493-06,Etoricoxib,Rilaxia,120 mg,Film-Coated Tablet
+etoricoxib|akticib|120 mg|film-coated tablet,DRP-5488-04 | DRP-5493-05,Etoricoxib,Akticib,120 mg,Film-Coated Tablet
+timolol (as maleate)||5 mg/ml (0.5% w/v)|ophthalmic solution,DRP-5499-03 | DRP-5499-05,Timolol (as Maleate),Unbranded,5 mg/mL (0.5% W/V),Ophthalmic Solution
+tamsulosin hydrochloride||200 mcg|enteric-coated tablet,DRP-5529-01 | DRP-5529-02,Tamsulosin Hydrochloride,Unbranded,200 mcg,Enteric-Coated Tablet
+mefenamic acid|gopain|500 mg|tablet,DRP-5534 | DRP-5534-01,Mefenamic Acid,Gopain,500 mg,Tablet
+phospholipids + multivitamins||300 mg/6 mg/6 mg/6 mg/30 mg/6 mg/6 mg|capsule,DRP-5608-06 | DRP-5608-10,Phospholipids + Multivitamins,Unbranded,300 mg/6 mg/6 mg/6 mg/30 mg/6 mg/6 mg,Capsule
+isoxsuprine hydrochloride||10mg|tablet,DRP-5638 | DRP-5638-02,Isoxsuprine Hydrochloride,None,10mg,Tablet
+betahistine hydrochloride||8 mg|tablet,DRP-5646-02 | DRP-5646-04,Betahistine Hydrochloride,Unbranded,8 mg,Tablet
+methyldopa||250 mg|tablet,DRP-5679 | DRP-7382-01,Methyldopa,Unbranded,250 mg,Tablet
+cefixime||20mg/ml|granules for suspension (oral drops),DRP-5683 | DRP-5683-25,Cefixime,None,20mg/mL,Granules For Suspension (Oral Drops)
+amlodipine (as besilate) + losartan potassium||5 mg/50 mg|film-coated tablet,DRP-5685-04 | DRP-5685-06,Amlodipine (as Besilate) + Losartan Potassium,Unbranded,5 mg/50 mg,Film-Coated Tablet
+carvedilol||12.5 mg|film-coated tablet,DRP-5744-02 | DRP-5744-06,Carvedilol,None,12.5 mg,Film-Coated Tablet
+prednisone||5mg|tablet,DRP-5779-01 | DRP-931,Prednisone,Unbranded,5mg,Tablet
+ceftriaxone (as sodium)|gifixon|1 g|powder for injection (i.m./i.v.),DRP-5834-08 | DRP-6779-06,Ceftriaxone (as sodium),Gifixon,1 g,Powder for Injection (I.M./I.V.)
+pantoprazole (as sodium sesquihydrate)||40mg|lyophilized powder for injection (iv),DRP-5896-01 | DRP-5982-02,Pantoprazole (as Sodium Sesquihydrate),None,40mg,Lyophilized Powder for Injection (IV)
+pantoprazole (as sodium sesquihydrate)||40mg|enteric-coated tablet,DRP-5928-01 | DRP-5928-02,Pantoprazole (as Sodium Sesquihydrate),Unbranded,40mg,Enteric-Coated Tablet
+orlistat||120 mg|capsule,DRP-5938-01 | DRP-8083,Orlistat,None,120 mg,Capsule
+folic acid||5 mg|capsule,DRP-605-18 | DRP-605-19 | DRP-8409-01,Folic Acid,None,5 mg,Capsule
+pregabalin|lyrica|150mg|capsule,DRP-6119 | DRP-6120,Pregabalin,Lyrica,150mg,Capsule
+losartan potassium + hydrochlorothiazide||100mg/25mg|film coated tablet,DRP-6122-02 | DRP-6122-03,Losartan Potassium + Hydrochlorothiazide,Unbranded,100mg/25mg,Film Coated Tablet
+memantine hydrochloride|memanta|10 mg|film-coated tablet,DRP-6167-06 | DRP-7391-02,Memantine Hydrochloride,Memanta,10 mg,Film-Coated Tablet
+cetirizine dihydrochloride||5 mg/5 ml|syrup,DRP-6229-01 | DRP-6229-02,Cetirizine Dihydrochloride,None,5 mg/5 mL,Syrup
+tamsulosin hydrochloride||400 mcg|prolonged-release capsule,DRP-6372-01 | DRP-6372-03,Tamsulosin hydrochloride,Unbranded,400 mcg,Prolonged-Release Capsule
+irbesartan||300 mg|tablet,DRP-6399-01 | DRP-6399-03,Irbesartan,Unbranded,300 mg,Tablet
+glibenclamide||5mg|tablet,DRP-6416 | DRP-7758 | DRP-7758-01,Glibenclamide,Unbranded,5mg,Tablet
+amiodarone hydrochloride|anoion|200 mg|tablet,DRP-6467-01 | DRP-9440,Amiodarone Hydrochloride,Anoion,200 mg,Tablet
+rosuvastatin (as calcium)|rosalta|20 mg|film-coated tablet,DRP-6489-03 | DRP-8300-08,Rosuvastatin (as Calcium),Rosalta,20 mg,Film-Coated Tablet
+tamsulosin hydrochloride||400 mcg|prolonged release capsule,DRP-6526 | DRP-6526-01,Tamsulosin Hydrochloride,Unbranded,400 mcg,Prolonged Release Capsule
+clopidogrel (as bisulfate)||75mg|film-coated tablet,DRP-6560-01 | DRP-8514-03 | DRP-8514-05,Clopidogrel (as bisulfate),Unbranded,75mg,Film-Coated Tablet
+risperidone|risperi|2 mg|tablet,DRP-6729-01 | DRP-6729-04,RISPERIDONE,Risperi,2 mg,Tablet
+risperidone||2 mg|tablet,DRP-6729-05 | DRP-6729-06,Risperidone,None,2 mg,Tablet
+cefuroxime (as sodium)||750mg|powder for injection (im/iv),DRP-7060 | DRP-7088,Cefuroxime (as Sodium),None,750mg,Powder for Injection (IM/IV)
+cefuroxime (as sodium)|cefulab|750 mg|powder for injection (im/iv),DRP-7126-12 | DRP-8403-12,Cefuroxime (as Sodium),Cefulab,750 mg,Powder For Injection (Im/Iv)
+ambroxol hydrochloride|abrexin|30 mg/5 ml|syrup,DRP-741 | DRP-8826,Ambroxol Hydrochloride,Abrexin,30 mg/5 mL,Syrup
+ascorbic acid||100 mg|chewable tablet,DRP-7696 | HRP-517,Ascorbic Acid,None,100 mg,Chewable Tablet
+ambroxol hydrochloride||30 mg / 5 ml|syrup,DRP-8040 | DRP-8067,Ambroxol Hydrochloride,Unbranded,30 mg / 5 mL,Syrup
+ascorbic acid||500 mg|chewable tablet,DRP-8117-01 | HRP-225,Ascorbic Acid,None,500 mg,Chewable Tablet
+mefenamic acid||250 mg|film-coated tablet,DRP-8131 | DRP-9949,Mefenamic Acid,Unbranded,250 mg,Film-Coated Tablet
+cefuroxime (as axetil)|roxxin-500|500 mg|film-coated tablet,DRP-8203-05 | DRP-9975-09,Cefuroxime (As Axetil),Roxxin-500,500 mg,Film-Coated Tablet
+metformin hydrochloride|theomet-500|500 mg|film-coated tablet,DRP-8238 | DRP-8238-01,Metformin Hydrochloride,Theomet-500,500 mg,Film-Coated Tablet
+methotrexate|methocel|100 mg/ml (500 mg / 5 ml)|solution for injection (im/iv),DRP-8242 | DRP-8245,Methotrexate,Methocel,100 mg/mL (500 mg / 5 mL),Solution for Injection (IM/IV)
+vitamin b1 + b6 + b12||100mg/5mg/50mcg|tablet,DRP-8266 | DRP-8267,Vitamin B1 + B6 + B12,Unbranded,100mg/5mg/50mcg,Tablet
+cefixime (as trihydrate)|sevixime-200|200 mg|capsule,DRP-8385-01 | DRP-8385-03,Cefixime (as Trihydrate),Sevixime-200,200 mg,Capsule
+cefixime (as trihydrate)|sevixime-400|400 mg|capsule,DRP-8386-01 | DRP-8386-03,Cefixime (as Trihydrate),Sevixime-400,400 mg,Capsule
+ascorbic acid||500 mg (equivalent to 568.18 mg of sodium ascorbate)|capsule,DRP-8508-02 | DRP-8508-03,Ascorbic Acid,None,500 mg (equivalent to 568.18 mg of SodIUm ascorbate),Capsule
+cefuroxime (as axetil)|sanfur ds-125|125mg/5ml|powder for oral suspension,DRP-8625 | DRP-8626,Cefuroxime (as axetil),Sanfur DS-125,125mg/5mL,Powder for Oral Suspension
+clozapine||100 mg|tablet,DRP-8678-01 | DRP-8678-02,Clozapine,Unbranded,100 mg,Tablet
+irinotecan hydrochloride|iritanz|20mg/ml|solution for iv infusion,DRP-8858 | DRP-8859,Irinotecan Hydrochloride,Iritanz,20mg/Ml,Solution For Iv Infusion
+irinotecan hydrochloride|ventera|20 mg/ml|solution for iv infusion,DRP-8858-01 | DRP-8859-01,Irinotecan Hydrochloride,Ventera,20 mg/mL,Solution for IV Infusion
+diosmin + hesperidin||450mg/50 mg|film-coated tablet,DRP-8865-02 | DRP-8865-04,Diosmin + Hesperidin,Unbranded,450mg/50 mg,Film-Coated Tablet
+valsartan + amlodipine (as besilate)||160 mg/ 10 mg|film-coated tablet,DRP-8908 | DRP-8979 | DRP-8981,Valsartan + Amlodipine (as besilate),Unbranded,160 mg/ 10 mg,Film-Coated Tablet
+aspirin|philprin|80 mg|film-coated tablet,DRP-8934 | DRP-8938-01,Aspirin,Philprin,80 mg,Film-Coated Tablet
+carbocisteine + zinc||500 mg/5 mg (equivalent to 13.75 mg zinc sulfate monohydrate)|film-coated tablet,DRP-8970-01 | DRP-8970-02,Carbocisteine + Zinc,None,500 mg/5 mg (equivalent to 13.75 mg Zinc Sulfate Monohydrate),Film-Coated Tablet
+ivabradine (as hydrochloride)|siftus 7.5|7.5 mg|film coated tablet,DRP-9233 | DRP-9238,Ivabradine (as hydrochloride),Siftus 7.5,7.5 mg,Film Coated Tablet
+paclitaxel|paclihope|6 mg/ml (30 mg/5 ml)|solution for (i.v.) infusion,DRP-9410 | DRP-9410-01,Paclitaxel,Paclihope,6 mg/mL (30 mg/5 mL),Solution for (I.V.) Infusion
+ascorbic acid||500mg|capsule,DRP-9798 | HRP-195-04 | HRP-195-09 | HRP-319,Ascorbic Acid,Unbranded,500mg,Capsule
+oxytocin|exatoxyn|10 iu/ml|solution for injection (im/iv),DRP-9991-01 | DRP-9991-02,Oxytocin,Exatoxyn,10 IU/mL,Solution for Injection (IM/IV)
+vitex negundo l. (lagundi leaf)||300mg/5ml|syrup,HMR-138 | HMR-90,Vitex Negundo L. (Lagundi Leaf),None,300mg/5mL,Syrup
+vitex negundo l. (lagundi leaf)|ascof (ponkan flavor)|300 mg/ 5 ml|syrup,HMR-14 | HMRP-30,Vitex negundo L. (Lagundi Leaf),Ascof (Ponkan Flavor),300 mg/ 5 mL,Syrup
+vitex negundo l. (lagundi leaf)||600 mg|capsule,HMR-99 | HMRP-21-02,Vitex negundo L. (Lagundi Leaf),None,600 mg,Capsule
+blumea balsamifera (l.) dc (sambong leaf)|awanay forte|500mg|tablet,HMRP-10 | HMRP-3,Blumea balsamifera (L.) DC (Sambong leaf),Awanay Forte,500mg,Tablet
+blumea balsamifera (l.) dc (sambong leaf)|awanay|250mg|tablet,HMRP-2 | HMRP-9,Blumea Balsamifera (L.) DC (Sambong Leaf),AWANAY,250mg,Tablet
+vitex negundo l. (lagundi) leaf|ofplemed|300 mg/5 ml|syrup (ponkan flavor),HMRP-32 | HMRP-33,Vitex Negundo L. (Lagundi) Leaf,Ofplemed,300 mg/5 mL,Syrup (Ponkan Flavor)
+vitex negundo l. (lagundi) leaf|ofplemed|300 mg/5 ml|syrup (strawberry flavor),HMRP-34 | HMRP-35,Vitex Negundo L. (Lagundi) Leaf,Ofplemed,300 mg/5 mL,Syrup (Strawberry Flavor)
+ascorbic acid|ascor-kid|100 mg/5 ml|syrup,HRP-097 | HRP-097-04,ASCORBIC ACID,ASCOR-Kid,100 mg/5 mL,Syrup
+hydrogen peroxide 3% solution||each 100ml contains: hydrogen peroxide ...... 3g|solution,HRP-233 | HRP-233-01,Hydrogen Peroxide 3% Solution,None,Each 100mL contains: Hydrogen peroxide …… 3g,Solution
+hydroquinone + tretinoin||20 mg/250 mcg per 1 g (2% / 0.025% w/w)|topical cream,HRP-238 | HRP-238-01,Hydroquinone + Tretinoin,None,20 mg/250 mcg per 1 g (2% / 0.025% w/w),Topical Cream
+hexetidine||0.1%|solution,HRP-249-01 | HRP-249-02,Hexetidine,Unbranded,0.1%,Solution
+povidone-iodine||100 mg/ml (10% w/v)|topical solution,HRP-267-03 | HRP-267-05 | HRP-267-06,Povidone-Iodine,None,100 mg/mL (10% w/v),Topical Solution
+dichlorobenzyl alcohol + amylmetacresol||1.2 mg/600 mcg|lozenge (orange flavor),HRP-315-01 | HRP-315-02,Dichlorobenzyl Alcohol + Amylmetacresol,Unbranded,1.2 mg/600 mcg,Lozenge (Orange Flavor)
+dichlorobenzyl alcohol + amylmetacresol||1.2 mg/600 mcg|lozenge (honey lemon flavor),HRP-316-01 | HRP-316-02,Dichlorobenzyl Alcohol + Amylmetacresol,Unbranded,1.2 mg/600 mcg,Lozenge (Honey Lemon Flavor)
+quassinoids|oilganics|30mcg/ml|shampoo,HRP-356 | HRP-357,Quassinoids,Oilganics,30mcg/mL,Shampoo
+isopropyl alcohol|alco-aid|70% (v/v)|solution,HRP-371 | HRP-567 | HRP-568,Isopropyl Alcohol,Alco-Aid,70% (V/V),Solution
+"2,4-dichlorobenzyl alcohol + amylmetacresol|therasil (honey and lemon flavor)|1.2 mg/600 mcg|lozenge",HRP-444 | HRP-444-01,"2,4-Dichlorobenzyl Alcohol + Amylmetacresol",Therasil (Honey and Lemon flavor),1.2 mg/600 mcg,Lozenge
+"2,4-dichlorobenzyl alcohol + amylmetacresol|therasil (black currant flavor)|1.2 mg/600 mcg|lozenge",HRP-446 | HRP-446-01,"2,4-Dichlorobenzyl Alcohol + Amylmetacresol",Therasil (Black Currant Flavor),1.2 mg/600 mcg,Lozenge
+povidone-iodine||100 mg/ml|solution,HRP-469 | HRP-469-01,Povidone-Iodine,None,100 mg/mL,Solution
+methyl salicylate||100 g (100%) per 100 ml|solution,HRP-556 | HRP-556-01,Methyl Salicylate,None,100 g (100%) per 100 mL,Solution
+ethyl alcohol|alco-aid plus|70% (v/v)|solution,HRP-572 | HRP-573,Ethyl Alcohol,Alco-Aid Plus,70% (v/v),Solution
+eucalyptus oil||7.5 ml|solution,HRP-585 | HRP-585-01,Eucalyptus Oil,None,7.5 mL,Solution
+petroleum jelly||1g / g (100% w/w)|jelly,HRP-616 | HRP-616-01,Petroleum Jelly,Unbranded,1g / g (100% w/w),Jelly
+ethyl alcohol|young's|70 ml/100 ml (70% v/v)|solution (freshness new scent),HRP-665 | HRP-666 | HRP-667 | HRP-668,Ethyl Alcohol,Young's,70 mL/100 mL (70% v/v),"Solution (Freshness New 
+Scent)"
+isopropyl alcohol|luxe organix|70 ml per 100 ml (70% v/v)|topical solution (with moisturizer) (lemon scent),HRP-672-01 | HRP-673-01 | HRP-674-01 | HRP-675-01,Isopropyl Alcohol,LUXE ORGANIX,70 mL per 100 mL (70% v/v),Topical Solution (with Moisturizer) (Lemon Scent)
+isopropyl alcohol|luxe organix|70 ml per 100 ml (70% v/v)|topical solution (with moisturizer) (green tea scent),HRP-676-01 | HRP-677-01 | HRP-678-01 | HRP-682-01,Isopropyl Alcohol,LUXE ORGANIX,70 mL per 100 mL (70% v/v),Topical Solution (with Moisturizer) (Green Tea Scent)
+isopropyl alcohol|luxe organix|70 ml per 100 ml (70% v/v)|topical solution (with moisturizer) (guava scent),HRP-679-01 | HRP-680-01 | HRP-681-01 | HRP-683-01,Isopropyl Alcohol,LUXE ORGANIX,70 mL per 100 mL (70% v/v),Topical Solution (with Moisturizer) (Guava Scent)
+isopropyl alcohol|young's|70 ml/100 ml (70% v/v)|solution (freshness new scent),HRP-685 | HRP-686,Isopropyl Alcohol,Young's,70 mL/100 mL (70% v/v),"Solution (Freshness New 
+Scent)"
+isopropyl alcohol||70 ml/100 ml (70% v/v)|solution (scented),HRP-702 | HRP-704,Isopropyl Alcohol,None,70 mL/100 mL (70% v/v),Solution (Scented)
+isopropyl alcohol|young's|70 ml/100 ml (70% v/v)|solution,HRP-710 | HRP-711,Isopropyl Alcohol,Young's,70 mL/100 mL (70% v/v),Solution

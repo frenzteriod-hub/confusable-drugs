@@ -1,0 +1,774 @@
+brand_name_normalized,generic_names_normalized,registration_numbers,review_reason
+actrapid,human insulin (rdna) | insulin human (regular),BR-1008 | BR-1219,same_brand_name_has_multiple_generic_names
+insulatard,"isophane insulin human | isophane insulin human, recombinant dna",BR-1010 | BR-1218,same_brand_name_has_multiple_generic_names
+novomix 30 flexpen,biphasic insulin aspart 30 | insulin aspart,BR-1014 | BR-1364,same_brand_name_has_multiple_generic_names
+scitropin a,somatropin | somatropin (rbe),BR-1058 | BR-1059,same_brand_name_has_multiple_generic_names
+prevenar 13,"pneumococcal conjugate vaccine, 13-valent (adsorbed) (see formulation) | pneumococcal conjugate vaccine, 13-valent (adsorbed) [see formulation]",BR-1133 | BR-1308,same_brand_name_has_multiple_generic_names
+xeomin,botulinum toxin type a (from clostridium botulinum) | botulinum toxin* type a (*from clostridium botulinum),BR-1233 | BR-1234,same_brand_name_has_multiple_generic_names
+novoseven rt,eptacog alfa (activated) | eptacog alfa activated,BR-1282 | BR-1484,same_brand_name_has_multiple_generic_names
+poliovac,"inactivated poliomyelitis vaccine (types 1, 2 and 3) | inactivated poliomyelitis vaccine (types 1, 2, and 3)",BR-1379 | BR-1422,same_brand_name_has_multiple_generic_names
+pneumosil,pneumococcal polysaccharide conjugate vaccine (adsorbed) (10-valent) | pneumococcal polysaccharide conjugate vaccine. (adsorbed) (10-valent),BR-1350 | BR-1351,same_brand_name_has_multiple_generic_names
+green-viii inj.,human blood coagulation factor viii | human coagulation factor viii,BR-1360 | BR-1361,same_brand_name_has_multiple_generic_names
+ceparin,heparin (as sodium) | heparin sodium,BR-1435 | DR-XY42377,same_brand_name_has_multiple_generic_names
+torcand-32,candesartan | candesartan cilexetil,BR-1438 | DR-XY48684,same_brand_name_has_multiple_generic_names
+broncho-vaxom,bacterial lysate | lyophilized bacterial lysate,BR-1440 | DR-XY18770,same_brand_name_has_multiple_generic_names
+feiba,factor viii inhibitor bypassing activity | powder for solution for infusion (iv),BR-1443 | BR-1445,same_brand_name_has_multiple_generic_names
+rotarix,"live attenuated rotavirus vaccine | rotavirus vaccine (live, attenuated)",BR-674 | BR-776,same_brand_name_has_multiple_generic_names
+t-vac,tetanus toxoid ( adsorbed ) | tetanus toxoid (adsorbed),BR-326 | BR-435,same_brand_name_has_multiple_generic_names
+i.v. - globulin sn injection,human normal immunoglobulin | human norml immunoglobulin,BR-469 | BR-897,same_brand_name_has_multiple_generic_names
+imovax polio,"inactivated poliomyelitis vaccine (type 1,2 and 3) | poliomyelitis vaccine (type 1, 2 and 3) (inactivated)",BR-498 | BR-929,same_brand_name_has_multiple_generic_names
+dysport,botulinum toxin type a | clostridium botulinum type a toxin,BR-540 | BR-959,same_brand_name_has_multiple_generic_names
+gardasil,"human papillomavirus vaccine (types 6, 11, 16 and 18) (recombinant adsorbed | human papillomavrius vaccine [types 6, 11, 16, 18] (recombinant, adsorbed)",BR-602 | BR-603,same_brand_name_has_multiple_generic_names
+cervarix,"human papillomavirus vaccine [types 16 and 18] (recombinant, adjuvanted, adsorbed) | human papillomavirus vaccine [types 16, 18] (recombinant, adjuvanted, adsorbed)",BR-616 | BR-925,same_brand_name_has_multiple_generic_names
+eposino,epoetin alfa | epoetin alfa (recombinant human erythropoietin),BR-755 | BR-779,same_brand_name_has_multiple_generic_names
+white-c,filgrastim | filgrastim (recombinant human granulocyte colony stimulating factor),BR-778 | BR-920,same_brand_name_has_multiple_generic_names
+clexane,enoxaparin (as sodium) | enoxaparin sodium,BR-798 | BR-799,same_brand_name_has_multiple_generic_names
+m-m-r ii,"live measles, mumps and rubella vaccine | measles, mumps and rubella vaccine (live, attenuated)",BR-877 | BR-917,same_brand_name_has_multiple_generic_names
+renogen,epoetin alfa | epoetin alfa (recombinant human erythropoietin),BR-940 | BR-981,same_brand_name_has_multiple_generic_names
+espogen,epoetin alfa (recombinant human erythropoietin) | recombinant human erythropoietin,BR-971 | BR-972,same_brand_name_has_multiple_generic_names
+lasix,furosemide | furosemide (as sodium),DR-1110 | DR-1111,same_brand_name_has_multiple_generic_names
+fucidin,fusidic acid | sodium fusidate,DR-1170 | DR-XY7269,same_brand_name_has_multiple_generic_names
+antamin,chlorphenamine maleate | chlorpheniramine maleate,DR-2359 | DR-XY2450,same_brand_name_has_multiple_generic_names
+buscopan,hyoscine n-butylbromide | hyoscine-n-butyl-bromide,DR-4184 | DR-XY41205,same_brand_name_has_multiple_generic_names
+decolsin,dextromethorphan hbr + phenylpropanolamine hydrochloride + paracetamol | dextromethorphan hydrobromide + phenylpropanolamine hydrochloride + paracetamol,DR-6325 | DR-6475,same_brand_name_has_multiple_generic_names
+fortifer-fa,iron + folic acid + vitamin b -complex | thiamine mononitrate (vitamin b1) + pyridoxine hydrochloride (vitamin b6) + folic acid (vitamin b9) + cyanocobalamin (vitamin b12) + iron,DR-8656 | DR-XY47971 (For Export Use Only),same_brand_name_has_multiple_generic_names
+united home glydolax,glycerin | glycerol,DRHR-2164 | HRP-532,same_brand_name_has_multiple_generic_names
+rogin-e,multivitamins + minerals + deanol + royal jelly + korean panax ginseng | multivitamins + minerals + dimethylaminoethanol (deanol) + royal jelly + panax ginseng (korean panax ginseng) root powder,DR-X4038 | DR-XY47554,same_brand_name_has_multiple_generic_names
+cynosal,chlorphenamine maleate + phenylephrine hydrochloride | chlorphenamine maleate + phenylpropanolamine hydrochloride | paracetamol + phenylpropanolamine hydrochloride + chlorphenamine maleate | paracetamol + phenylpropanolamine hydrochloride+ chlorphenamine maleate,DR-X7598 | DR-XY32028 | DR-XY35968 | DR-XY42801,same_brand_name_has_multiple_generic_names
+mucosform,bromhexine hydrochloride | bromhexine hydrochloride + chlorphenamine maleate,DR-XY30391 | DR-XY47317,same_brand_name_has_multiple_generic_names
+teramoxyl,amoxicillin (as trihydrate) | amoxicillin (trihydrate),DR-XY250 | DR-XY4717,same_brand_name_has_multiple_generic_names
+faktu,policresulen+cinchocaine hcl | policresulen+cinchocaine hydrochloride,DR-XY092 | DR-XY093,same_brand_name_has_multiple_generic_names
+salinase,sodium chloride | sodium choride 0.65% buffered solution nasal spray,DR-XY20973 | DR-XY30142,same_brand_name_has_multiple_generic_names
+europersol,peritoneal dialysis solution with 1.5% dextrose | peritoneal dialysis solution with 4.25% dextrose | peritoneal dialysis with 1.5% dextrose,DR-XY13928 | DR-XY46633 | DR-XY46929,same_brand_name_has_multiple_generic_names
+daktarin,miconazole | miconazole nitrate,DR-XY14359 | DR-XY14361,same_brand_name_has_multiple_generic_names
+tobradex,tobradex + dexamethasone | tobramycin + dexamethasone,DR-XY14481 | DR-XY15352,same_brand_name_has_multiple_generic_names
+mecovit,mecobalamin | methylcobalamin (vitamin b12),DR-XY15525 | DR-XY48808,same_brand_name_has_multiple_generic_names
+broadmetz,amoxicillin (as trihydrate) | amoxicillin (trihydrate),DR-XY17246-B | DRP-9934,same_brand_name_has_multiple_generic_names
+xylocaine,lidocaine | lidocaine hydrochloride,DR-XY15681 | DR-XY48561,same_brand_name_has_multiple_generic_names
+dynatussin,dextromethorphan hydrobromide + guaifenesin + sodium citrate + phenylpropanolamine hydrochloride | dextromethorphan hydrobromide/ guaifenesin/ chlorphenamine maleate/ paracetamol/ phenylpropanolamine hydrochloride,DR-XY16022 | DR-XY18308,same_brand_name_has_multiple_generic_names
+lacipil,lacidipine | lacipidine,DR-XY16827 | DR-XY29222,same_brand_name_has_multiple_generic_names
+ceclor,cefaclor | cefaclor (as monohydrate),DR-XY4009-L | DRP-15731,same_brand_name_has_multiple_generic_names
+dicymed,dicycloverine (as hydrochloride) | dicycloverine hydrochloride,DR-XY18411 | DR-XY18698,same_brand_name_has_multiple_generic_names
+qinolon,ofloxacin | ofloxacin (as hydrochloride),DR-XY28270 | DR-XY7167,same_brand_name_has_multiple_generic_names
+quadrotopic,tolnaftate + clioquinol + gentamicin (as sulfate) + betamethasone (as valerate) | tolnaftate/ clioquinol/ gentamicin (as sulfate)/betamethasone (as valerate) | tolnaftate/clioquinol/gentamicin (as sulfate)/ betamethasone (as valerate),DR-XY18727 | DRP-11254 | DRP-12783,same_brand_name_has_multiple_generic_names
+korgivit-e,d-alpha tocopheryl acid succinate (vitamin e) + calcium pantothenate + korean ginseng + bee pollen + lecithin | d-alpha tocopheryl acid succinate (vitamin e)/ korean ginseng/ bee pollen/ calcium pantothenate/ lecithin,DR-XY19122 | DRP-8175,same_brand_name_has_multiple_generic_names
+zyclodex,dicycloverine | dicycloverine (as hydrochloride),DR-XY19211 | DR-XY22291,same_brand_name_has_multiple_generic_names
+drexclo,chloramphenicol | chloramphenicol (as palmitate),DR-XY19262 | DRP-8972,same_brand_name_has_multiple_generic_names
+sustachlor,chloramphenicol | chloramphenicol (as palmitate),DR-XY19288-B | DR-XY19791-B,same_brand_name_has_multiple_generic_names
+elica,mometasone (as furoate) | mometasone furoate,DR-XY19711 | DR-XY47270,same_brand_name_has_multiple_generic_names
+bisoxine,bromhexine (as hydrochloride) | bromhexine hydrochloride,DR-XY19977 | DR-XY19989,same_brand_name_has_multiple_generic_names
+vitagen,multivitamins | thiamine mononitrate + pyridoxine hydrochloride + cyanocobalamin,DR-XY20133 | DRP-10021,same_brand_name_has_multiple_generic_names
+valzimox,amoxicillin (as trihydrate ) | amoxicillin (as trihydrate),DR-XY20150 | DRP-1217-05,same_brand_name_has_multiple_generic_names
+supramox,amoxicillin (as trihydrate) | amoxicillin(as trihydrate),DR-XY20187-B | DR-XY21578-B,same_brand_name_has_multiple_generic_names
+cephoral,cefalexin ( as monohydrate) | cefalexin (as monohydrate),DR-XY20276-B | DR-XY20277-B,same_brand_name_has_multiple_generic_names
+axillin,cloxacillin (as sodium monohydrate) | cloxacillin (as sodium),DR-XY20552-B | DRP-909-01,same_brand_name_has_multiple_generic_names
+amizol,metronidazole | metronidazole (as benzoate),DRP-13577-01 | DRP-2440-02,same_brand_name_has_multiple_generic_names
+dianeal pd-2,peritoneal dialysis solution with 1.5% dextrose | peritoneal dialysis solution with 2.5% dextrose | peritoneal dialysis solution with 4.25% dextrose,DR-XY22898 | DR-XY23125 | DR-XY23129,same_brand_name_has_multiple_generic_names
+colvan,paracetamol + guaifenesin + phenylpropanolamine hci + dextromethorphan hbr + chlorphenamine maleate | phenylpropanolamine hydrochloride + chlorphenamine maleate,DR-XY23161-B | DRP-9893,same_brand_name_has_multiple_generic_names
+imdur durules,isosorbide mononitrate | isosorbide-5-mononitrate,DR-XY23150 | DR-XY25446,same_brand_name_has_multiple_generic_names
+godex,carnitine orotate + liver extract antitoxic fraction + adenine hci + pyridoxine hci (vit. b6) + riboflavin (vit. b2) + cyanocobalamin (vit. b12) | carnitine orotate + pyridoxine hydrochloride + cyanocobalamin + hepatic extract antitoxic fraction + adenine hydrochloride + riboflavin,DR-XY23410 | DRP-10944,same_brand_name_has_multiple_generic_names
+levox,levofloxacin | levofloxacin (as hemihydrate) | levofloxacin (as hydrate),DR-XY32085 | DR-XY34588 | DR-XY46401,same_brand_name_has_multiple_generic_names
+glomicol,chloramphenicol | chloramphenicol (as palmitate),DR-XY23890 | DR-XY6312,same_brand_name_has_multiple_generic_names
+clindal,clindamycin (as hydrochloride) | clindamycin (as phosphate),DR-XY28449 | DR-XY33407,same_brand_name_has_multiple_generic_names
+augmentin,co-amoxiclav | co-amoxiclav (see reverse for formulation),DRP-6476 | DRP-8405,same_brand_name_has_multiple_generic_names
+dexton,dexamethasone phosphate (as sodium) | dexamethasone sodium phosphate,DR-XY24222 | DRP-701,same_brand_name_has_multiple_generic_names
+nasatapp,phenylpropanolamine hydrochloride + brompheniramine maleate | phenylpropanolamine hydrochloride+brompheniramine maleate,DR-XY24538 | DR-XY27147,same_brand_name_has_multiple_generic_names
+floxel,levofloxacin | levofloxacin (as hemihydrate),DR-XY27918 | DR-XY32172,same_brand_name_has_multiple_generic_names
+sorbifer durules,ferrous sulfate | iron,DR-XY25098 | DRP-10529,same_brand_name_has_multiple_generic_names
+ebedoxo,doxorubicin hydrochloride | doxurubicin hydrochloride,DR-XY25423 | DR-XY25424,same_brand_name_has_multiple_generic_names
+neurolink,thiamine hydrochloride (vitamin b1) / pyridoxine hydrochloride (vitamin b6)/ cyanocobalamin (vitamin b12) | thiamine mononitrate (vitamin b1) + pyridoxine hydrochloride (vitamin b6) + cyanocobalamin (vitamin b12),DR-XY25545 | DRP-579-01,same_brand_name_has_multiple_generic_names
+avelox,moxifloxacin (as hydrochloride) | moxifloxacin (hydrochloride),DR-XY47541 | DR-XY47545,same_brand_name_has_multiple_generic_names
+polynerv,thiamine hydrochloride (vitamin b1) / pyridoxine hydrochloride (vitamin b6) / cyanocobalamin (vitamin b12) | thiamine mononitrate (vitamin b1) / pyridoxine hydrochloride (vitamin b6) / cyanocobalamin (vitamin b12),DR-XY25621 | DR-XY30346,same_brand_name_has_multiple_generic_names
+aggrastat,tirofiban (as hydrochloride monohydrate) | tirofiban hydrochloride,DR-XY25818 | DR-XY47758,same_brand_name_has_multiple_generic_names
+asmacaire,salbutamol (as sulfate) | salbutamol sulfate,DRP-4671-05 | DRP-630-05,same_brand_name_has_multiple_generic_names
+zinbee,zinc (as zinc gluconate) | zinc gluconate,DR-XY26270 | DR-XY33219,same_brand_name_has_multiple_generic_names
+angiozem,diltiazem (as hydrochloride) | diltiazem hydrochloride,DR-XY26629 | DR-XY26641,same_brand_name_has_multiple_generic_names
+jagaplex,multivitamins (see reverse for formulation) | multivitamins + minerals,DR-XY26785 | DRP-3842,same_brand_name_has_multiple_generic_names
+pantoloc,pantoprazole | pantoprazole (as sodium sesquihydrate),DR-XY26884 | DR-XY28439,same_brand_name_has_multiple_generic_names
+nostero,phenylpropanolamine hydrochloride / brompheniramine maleate | phenylpropanolamine hydrochloride/brompheniramine maleate,DRP-11803 | DRP-12064,same_brand_name_has_multiple_generic_names
+nexium®,esomeprazole (as magnesium trihydrate) | esomeprazole (as sodium),DR-XY29595 | DRP-8015,same_brand_name_has_multiple_generic_names
+zepdril,cefradine | cefradine (as monohydrate),DR-XY27095 | DR-XY35150,same_brand_name_has_multiple_generic_names
+dexticort,dexamethasone (as sodium phosphate) | dexamethasone phosphate (as sodium) | dexamethasone sodium phosphate,DR-XY27158 | DR-XY27756 | DR-XY28147,same_brand_name_has_multiple_generic_names
+roxon,ceftriaxone (as sodium) | ceftriaxone sodium,DR-XY27283 | DR-XY27286,same_brand_name_has_multiple_generic_names
+efamed plus,guaifenesin + salbutamol | guaifenesin + salbutamol (as sulfate),DR-XY27288 | DR-XY36247,same_brand_name_has_multiple_generic_names
+symbicort,budesonide + formoterol fumarate dihydrate | budesonide / formoterol fumarate dihydrate,DR-XY27297 | DR-XY31118,same_brand_name_has_multiple_generic_names
+tidact,clindamycin (as hydrochloride) | clindamycin (as phosphate),DRP-1039 | DRP-7835,same_brand_name_has_multiple_generic_names
+zegen,cefuroxime (as axetil) | cefuroxime (as sodium),DR-XY27790 | DR-XY47592,same_brand_name_has_multiple_generic_names
+powervit,multivitamins + minerals | multivitamins+minerals,DR-XY27883 | DRP-13180,same_brand_name_has_multiple_generic_names
+zyrcef,cefaclor | cefaclor (as monohdyrate),DR-XY27981 | DRP-3573-03,same_brand_name_has_multiple_generic_names
+xyzal,levocetirizine | levocetirizine dihydrochloride,DR-XY33392 | DR-XY37522,same_brand_name_has_multiple_generic_names
+co-amoxiclav,clavoxel | megaclav,DR-XY28161 | DRP-7485-01,same_brand_name_has_multiple_generic_names
+sullivan,amoxicillin (as trihydrate) + clavulanic acid (as potassium clavulanate) | co-amoxiclav,DR-XY37414 | DR-XY43959,same_brand_name_has_multiple_generic_names
+risek,omeprazole | omeprazole (as sodium),DR-XY28643 | DR-XY31530,same_brand_name_has_multiple_generic_names
+daivobet,calcipotriol (as hydrate) + betamethasone (as dipropionate) | calcipotriol (as monohydrate) + betamethasone (as dipropionate),DR-XY28706 | DR-XY41745,same_brand_name_has_multiple_generic_names
+cirok,ciprofloxacin | ciprofloxacin (as hydrochloride),DR-XY28759 | DRP-11726-01,same_brand_name_has_multiple_generic_names
+cetrotide,cetrorelix (as acetate) | cetrorelix acetate,DR-XY29116 | DR-XY48790,same_brand_name_has_multiple_generic_names
+nazaclir,paracetamol +phenylephrine hydrochloride + chlorphenamine maleate | phenylephrine hydrochloride + brompheniramine maleate | phenylpropanolamine hydrochloride + brompheniramine maleate,DR-XY29195 | DR-XY38961 | DRP-329-01,same_brand_name_has_multiple_generic_names
+no-drowse decolgen,paracetamol + phenylephrine hydrochloride | phenylpropanolamine hydrochloride + paracetamol,DR-XY42877 | DR-XY46285,same_brand_name_has_multiple_generic_names
+myra e,d-alpha tocopherol | d-alpha tocopherol (vitamin e),DR-XY29743 | DR-XY47019,same_brand_name_has_multiple_generic_names
+zyrrigin,cetirizine (as dihydrochloride) | cetirizine hydrochloride,DR-XY29378 | DR-XY31796,same_brand_name_has_multiple_generic_names
+momate,mometasone furoate | mometasone furoate (as monohydrate),DR-XY30243 | DR-XY45503,same_brand_name_has_multiple_generic_names
+dactorubin,doxorubicin (as hydrochloride) | doxorubicin hydrochloride,DRP-10196 | DRP-10197,same_brand_name_has_multiple_generic_names
+liothyl,metoclopramide (as hydrochloride) | metoclopramide hydrochloride,DR-XY30184 | DRP-16387,same_brand_name_has_multiple_generic_names
+omepron,omeprazole | omeprazole (as sodium) | omeprazole sodium,DR-XY30333 | DRP-11754 | DRP-9983,same_brand_name_has_multiple_generic_names
+pred 20,prednisolone | prednisone,DR-XY30359 | DR-XY38895,same_brand_name_has_multiple_generic_names
+silgram,ampicillin (as sodium) + sulbactam (as sodium) | sultamicillin (as tosylate),DR-XY36108 | DR-XY38438,same_brand_name_has_multiple_generic_names
+sulbacin,ampicillin (as sodium) + sulbactam (as sodium) | ampicillin sodium + sulbactam sodium,DRP-1556 | DRP-2337,same_brand_name_has_multiple_generic_names
+tropicee plus,ascorbic acid + taurine + lysine hydrochloride | ascorbic acid + taurine + lysine monohydrochloride,DR-XY30499 | DR-XY30551,same_brand_name_has_multiple_generic_names
+terclovir,aciclovir | acyclovir,DR-XY31054 | DR-XY31055,same_brand_name_has_multiple_generic_names
+andros,sildenafil (as citrate) | sildenafil citrate,DRP-3050 | DRP-3051,same_brand_name_has_multiple_generic_names
+zoltax,cefuroxime (as axetil) | cefuroxime (as sodium),DR-XY32247 | DR-XY37463,same_brand_name_has_multiple_generic_names
+medilexin,cefalexin (as monohydrate) | cefalexin (monohydrate),DR-XY32324 | DR-XY33480,same_brand_name_has_multiple_generic_names
+kalanit,cetirizine dihydrochloride | cetirizine hydrochloride,DR-XY32437 | DRP-6260-01,same_brand_name_has_multiple_generic_names
+mirtazapine,mirazep | novazapine-30,DR-XY32795 | DRP-14762,same_brand_name_has_multiple_generic_names
+ketomed,ketorolac (as trometamol) | ketorolac trometamol,DR-XY32804 | DRP-1810,same_brand_name_has_multiple_generic_names
+rhinol plus,guaifenesin + salbutamol | guiafenesin + salbutamol (as sulfate),DR-XY33210 | DR-XY33457,same_brand_name_has_multiple_generic_names
+conzace,multivitamins + mineral | multivitamins + minerals,DR-XY33366 | DRP-14340,same_brand_name_has_multiple_generic_names
+surecef,cefaclor | cefaclor (as monohydrate),DR-XY33504 | DR-XY35253,same_brand_name_has_multiple_generic_names
+haxim,cefotaxime (as sodium) | cefotaxime sodium,DR-XY33532 | DR-XY34646,same_brand_name_has_multiple_generic_names
+pediaclav,co-amoxiclav | co-amoxiclav (see reverse for formulation),DR-XY33625 | DRP-5966-23,same_brand_name_has_multiple_generic_names
+neo-penotran forte-l,metronidazole + miconazole nitrate + lidocaine | metronodazole + miconazole nitrate + lidocaine,DR-XY33679 | DRP-12794,same_brand_name_has_multiple_generic_names
+dayzinc,ascorbic acid + zinc | sodium ascorbate + ascorbic acid + zinc 56.24 mg/50 mg/10 mg per 5 ml syrup,DR-XY33767 | DRP-8467,same_brand_name_has_multiple_generic_names
+vasalat,amlodipine (as besilate) | amlodipine(as besilate),DR-XY33804 | DR-XY33805,same_brand_name_has_multiple_generic_names
+tamiflu,oseltamivir (as phospate) | oseltamivir (as phosphate),DR-XY34215 | DR-XY40612,same_brand_name_has_multiple_generic_names
+pecof,salbutamol (as sulfate) + bromehexine hydrochloride + guaifenesin | salbutamol (as sulfate) + bromhexine + guaifenesin,DR-XY34286 | DRP-7977,same_brand_name_has_multiple_generic_names
+korgivit-e forte,d-alpha tocopheryl acid succinate (vit. e) bee pollen | d-alpha tocopheryl acid succinate+korean ginseng+ bee pollen +lecithin+calcium pantothenate,DR-XY34430 | DR-XY41848,same_brand_name_has_multiple_generic_names
+sterofundin iso,isotonic electrolyte solution (i.v.) | sodium chloride + potassium chloride + magnesium chloride hexahydrate + calcium chloride dihydrate + sodium acetate trihydrate + l-mlaic acid,DR-XY34691 | DR-XY46598,same_brand_name_has_multiple_generic_names
+zynapse,citicoline | citicoline (as sodium),DR-XY34865 | DRP-434-01,same_brand_name_has_multiple_generic_names
+gaviscon,sodium alginate + sodium bicarbonate + calcium carnonate | sodium alginate / sodium bicarbonate / calcium carbonate,DR-XY34907 | DR-XY35582,same_brand_name_has_multiple_generic_names
+carezee,ascorbic acid | ascorbic acid (as sodium ascorbate),DR-XY35220 | DRHR-881,same_brand_name_has_multiple_generic_names
+a.n.b.,0.9% sodium chloride | sterile water for injection,DR-XY35226 | DR-XY35229,same_brand_name_has_multiple_generic_names
+trizef,cefpodoxime (as proxetil) | cefpodoxime proxetil,DR-XY35252 | DRP-7109-03,same_brand_name_has_multiple_generic_names
+salmeflo,salmeterol (as xinafoate) + fluticasone propionate | salmeterol xinafoate + fluticasone propionate,DRP-1266 | DRP-6975,same_brand_name_has_multiple_generic_names
+ceti-med,cetirizine (as dihydrochloride) | cetirizine dihydrochloride,DR-XY35277 | DR-XY36424,same_brand_name_has_multiple_generic_names
+pulmodual,ipratropium (as bromide) + salbutamol (as sulfate) | salbutamol (as sulfate) + ipratropium (as bromide) | salbutamol (as sulfate) + ipratropium bromide,DR-XY35413 | DRP-12113-01 | DRP-1419-08,same_brand_name_has_multiple_generic_names
+medzyme,cefuroxime (as axetil) | cefuroxime (as sodium),DR-XY47957 | DRP-884-08,same_brand_name_has_multiple_generic_names
+symdex-d,paracetamol + phenylpropanolamine hydrochloride + chlorphenamine maleate | paracetamol/ phenylpropanolamine hydrochloride/ chlorphenamine maleate | phenylpropanolamine hcl+chlorphenamine maleate+paracetamol,DR-XY35512 | DR-XY47810 | DRP-035,same_brand_name_has_multiple_generic_names
+hypetor,metoprolol | metoprolol tartrate,DR-XY35610 | DR-XY43790,same_brand_name_has_multiple_generic_names
+zefuxim,cefuroxime (as sodium) | cefuroxime sodium,DR-XY36551 | DRP-1657,same_brand_name_has_multiple_generic_names
+tazopen,piperacillin (as sodium) + tazobactam (as sodium) | piperacillin (as sodium) / tazobactam (as sodium),DR-XY35878 | DR-XY36130,same_brand_name_has_multiple_generic_names
+h-one,cetirizine (as hydrochloride) | cetirizine dihydrochloride | cetirizine hydrochloride,DR-XY35936 | DR-XY37470 | DRP-262-01,same_brand_name_has_multiple_generic_names
+nasathera cpm,paracetamol + phenylpropanolamine (as hydrochloride)+ chlorphenamine maleate | phenylpropanolamine hydrochloride + chlorphenamine maleate,DR-XY36065 | DR-XY44499,same_brand_name_has_multiple_generic_names
+xypen,ciprofloxacin | ciprofloxacin hydrochloride,DR-XY36235 | DR-XY42238,same_brand_name_has_multiple_generic_names
+decolgen forte,phenylpropanolamine hydrochloride + chlorphenamine maleate + paracetamol | phenylpropanolamine hydrochloride chlorphenamine maleate + paracetamol,DR-XY3624 | DR-XY45716,same_brand_name_has_multiple_generic_names
+alzor ccb,olmesartan (as medoxomil) + amlodipine (as besilate) | olmesartan medoxomil + amlodipine (as besilate) | olmesartan medoxomil) + amlodipine (as besilate),DR-XY36290 | DR-XY47903 | DR-XY48197,same_brand_name_has_multiple_generic_names
+silvederma,silver sulfadiazine | silver sulfadiazone,DR-XY36319 | DRP-8116-02,same_brand_name_has_multiple_generic_names
+levores,levofloxacin | levofloxacin (as hemihydrate),DR-XY36435 | DR-XY49147,same_brand_name_has_multiple_generic_names
+tazovex,piperacillin (as sodium) + tazobactam ( as sodium) | piperacillin (as sodium) + tazobactam (as sodium),DR-XY36498 | DR-XY38894,same_brand_name_has_multiple_generic_names
+glypressin,terlipressin (as acetate) | terlipressin acetate,DR-XY36684 | DR-XY43597,same_brand_name_has_multiple_generic_names
+cefurox,cefuroxime (as axetil) | cefuroxime axetil,DRP-2563 | DRP-3607,same_brand_name_has_multiple_generic_names
+allerzet,levocetirizine dihydrochloride | levocetrizine dihyrdrochloride,DR-XY36974 | DR-XY37865,same_brand_name_has_multiple_generic_names
+loxeva,levofloxacin (as hemihydrate) | levofloxacin as hemihydrate,DRP-2082-02 | DRP-5178,same_brand_name_has_multiple_generic_names
+liquisone,prednisolone | prednisolone (as sodium phosphate),DR-XY37098 | DR-XY47367,same_brand_name_has_multiple_generic_names
+vertegra,betahistine dihydrochloride | betahistine hydrochloride,DR-XY37103 | DRP-6968-01,same_brand_name_has_multiple_generic_names
+glitaz,pioglitazone (as hydrochloride) | pioglitazone hydrochloride,DR-XY37130 | DRP-2807-02,same_brand_name_has_multiple_generic_names
+zilden,sildenafil (as citrate) | sildenafil citrate,DR-XY48849 | DR-XY48856,same_brand_name_has_multiple_generic_names
+visine,tetrahydrozoline hcl | tetrahydrozoline hydrochloride,DR-XY46844 | DR-XY47700,same_brand_name_has_multiple_generic_names
+zarnat plus,losartan potasium + hydrochlorothiazide | losartan potassium + hydrochlorothiazide,DR-XY37659 | DRP-6130-05,same_brand_name_has_multiple_generic_names
+tocovid suprabio,d-alpha tocotrienol +d-gamma+d-delta tocotrienol + d-alpha tocopherol+plant squalene+phytosterol+phytocarotenoid | multivitamins,DR-XY41652 | DR-XY41835,same_brand_name_has_multiple_generic_names
+bee-all,thiamine hydrochloride + pyridoxine hydrochloride + cyanocobalamin | thiamine mononitrate + pyridoxine hydrochloride + cyanocobalamin,DR-XY37831 | DR-XY38148,same_brand_name_has_multiple_generic_names
+medifer,multivitamins + iron | thiamine mononitrate (vitamin b1) + pyridoxine hydrochloride (vitamin b6) + cyanocobalamin (vitamin b12) + lysine hydrochloride + iron,DR-XY37927 | DRP-236-04,same_brand_name_has_multiple_generic_names
+cefogram,cefotaxime (as sodium) | cefotaxime as sodium,DR-XY37948 | DRP-16307,same_brand_name_has_multiple_generic_names
+protec,levonorgestrel + ethinylestradiol; ferrous fumarate | medroxyprogesterone acetate,DR-XY38297 | DR-XY42049,same_brand_name_has_multiple_generic_names
+cetrizil,cetirizine hydrochloride | cetrizine hydrochloride,DR-XY38609 | DRP-8764,same_brand_name_has_multiple_generic_names
+avator,atorvastatin (as calcium trihydrate) | atorvastatin (as calcium),DRP-4295-02 | DRP-4879-02,same_brand_name_has_multiple_generic_names
+azomac,azithromycin (as dihydrate) | azithromycin dihydrate,DR-XY38805 | DR-XY38806,same_brand_name_has_multiple_generic_names
+s-celepra,escitalopram ( as oxalate ) | escitalopram (as oxalate),DR-XY39592 | DR-XY39916,same_brand_name_has_multiple_generic_names
+neuropse,citicoline ( as sodium ) | citicoline (as sodium),DR-XY39468 | DR-XY40037,same_brand_name_has_multiple_generic_names
+healthcare,amoxicillin (as trihydrate) | cotrimoxazole | dextromethorphan hydrochloride + guaifenesin,DR-XY39829 (For Export Only) | DR-XY39937 (For Export Only) | DR-XY40219 (For Export Only),same_brand_name_has_multiple_generic_names
+endusol-m,balanced multiple maintenance solution with 5% dextrose (adult) | balanced multiple maintenance solution with 5% dextrose (for adult),DR-XY39583 | DR-XY41365,same_brand_name_has_multiple_generic_names
+endusol-imb,balanced multiple maintenance solution with 5% dextrose (for pedia) | balanced multiple maintenance solution with 5% dextrose (pedia),DR-XY39703 | DR-XY41244,same_brand_name_has_multiple_generic_names
+ascorbic acid + zinc,ascorbic acid + zinc | ceezinc | imucor-z,DR-XY39842 | DRP-10868-15 | DRP-3128-01,same_brand_name_has_multiple_generic_names
+cebroline,citicoline (as sodium) | citicoline sodium,DR-XY39954 | DRP-1446-01,same_brand_name_has_multiple_generic_names
+iroplus,vitamin b-complex + iron + lysine + buclizine hci | vitamin b-complex+ iron + lysine +buclizine hcl,DR-XY40123 | DRP-10671,same_brand_name_has_multiple_generic_names
+gastrosil,metoclopramide (as hydrochloride) | metoclopromide (as hydrochloride),DR-XY40129 | DRP-11611,same_brand_name_has_multiple_generic_names
+esofag,esomeprazole | esomeprazole (as magnesium trihydrate),DR-XY40146 | DR-XY40931,same_brand_name_has_multiple_generic_names
+coldeze infant drops,phenylephrine hydrochloride + chlorpheniramine maelate | phenylephrine hydrochloride + chlorpheniramine maleate,DR-XY40186 | DR-XY40186 (For Export Only),same_brand_name_has_multiple_generic_names
+restor big,multivitamins + minerals | vitamin a + vitamin d3 + vitamin b1 + vitamin b2 po4 + vitamin b12 + vitamin b3 + vitamin c + ca gluconate + fe polymaltose + zn gluconate + taurine + l-lysine hydrochloride + chlorella powder + chlorella extract powder,DR-XY40220 | DR-XY40221,same_brand_name_has_multiple_generic_names
+esoflux,esomeprazole | esomeprazole (as sodium) | esomeprazole magnesium,DR-XY40238 | DR-XY40389 | DR-XY41485,same_brand_name_has_multiple_generic_names
+trivasc,trimetazidine dihydrochloride | trimetazidine hydrochloride,DR-XY45557 | DRP-12117,same_brand_name_has_multiple_generic_names
+adfer,iron + zinc + vitamin b-complex | multivitamins + minerals,DR-XY40504 | DR-XY47966,same_brand_name_has_multiple_generic_names
+merop,meropenem | meropenem (as trihydrate),DRP-11480 | DRP-2151-01,same_brand_name_has_multiple_generic_names
+nutram,paracetamol + tramadol hydrochloride | tramadol hydrochloride + paracetamol,DR-XY40688 | DRP-7603-05,same_brand_name_has_multiple_generic_names
+asmalex,guaifenesin + salbutamol | guiafenesin + salbutamol,DR-XY40804 | DR-XY40805,same_brand_name_has_multiple_generic_names
+aurohex,montelukast ( as sodium) | montelukast (as sodium),DR-XY40869 | DRP-4742,same_brand_name_has_multiple_generic_names
+gesitram,tramadol (as hydrochloride) | tramadol hydrochloride,DR-XY40882 | DRP-092,same_brand_name_has_multiple_generic_names
+lecit-e 200,d-alpha tocopherol (vitamin e) + lecithin | d-alpha tocopherol + lecithin,DR-XY40962 | DR-XY47362,same_brand_name_has_multiple_generic_names
+zefur,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-2356-04 | DRP-8433,same_brand_name_has_multiple_generic_names
+azemax,azithromycin (as dihydrate) | azithromycin(as monohydrate),DR-XY41106 | DRP-3248-03,same_brand_name_has_multiple_generic_names
+tazidem,ceftazidime | ceftazidime (as pentahydrate),DR-XY41116 | DRP-6053-03,same_brand_name_has_multiple_generic_names
+ziprox,ciprofloxacin | ciprofloxacin hydrochloride,DR-XY41119 | DRP-7100,same_brand_name_has_multiple_generic_names
+combipul,ipratropium bromide + salbutamol (as sulfate) | salbutamol (as sulfate) + ipratropium bromide,DRP-16038-01 | DRP-6160,same_brand_name_has_multiple_generic_names
+cofnil,salbutamol (as sulfate) + bromhexine hydrochloride + guaifenesin | salbutamol (as sulfate) + bromhexine hydrochloride + guiafenesin,DR-XY41155 | DRP-4624,same_brand_name_has_multiple_generic_names
+orazinc plus,ascorbic acid (as sodium ascorbate) + zinc (as gluconate) | ascorbic acid + zinc,DR-XY42549 | DR-XY47072,same_brand_name_has_multiple_generic_names
+elicort,mometasone (as furoate) | mometasone furoate,DR-XY41202 | DR-XY42264,same_brand_name_has_multiple_generic_names
+sinedin,levedopa + carbidopa | levodopa + carbidopa (as monohydrate),DR-XY41327 | DR-XY41871,same_brand_name_has_multiple_generic_names
+mucosolvan,ambroxol hydrochloride | ambroxol hydrochlride,DR-XY41618 | DR-XY42650,same_brand_name_has_multiple_generic_names
+acifre,omeprazole | omeprazole (as sodium) | omeprazole sodium,DR-XY42726 | DRP-1570-11 | DRP-5930-09,same_brand_name_has_multiple_generic_names
+apuldon,domperidone | domperidone (as maleate),DRP-7422 | DRP-7801,same_brand_name_has_multiple_generic_names
+irican,irinotecan hydrochloride | irinotecan hydrochloride trihydrate,DR-XY41775 | DR-XY48013,same_brand_name_has_multiple_generic_names
+medzart plus,losartan potassium + hydrochlorithiazide | losartan potassium + hydrochlorothiazide,DR-XY41923 | DR-XY42491,same_brand_name_has_multiple_generic_names
+trajenta duo,linagliptin + metformin hydrochloride | linagliptin + metformin hyydrochloride,DR-XY47929 | DR-XY47930,same_brand_name_has_multiple_generic_names
+sultagold,sultamicillin (as tosylate) | sultamicillin tosilate,DR-XY42437 | DR-XY47711,same_brand_name_has_multiple_generic_names
+pzbactam,piperacillin (as sodium) + tazobactam (as sodium) | piperacillin as (sodium) + tazobactam (as sodium),DR-XY42548 | DR-XY48728,same_brand_name_has_multiple_generic_names
+clavuxel,co-amoxiclav | co-amoxiclav (see reverse for formulation),DR-XY42810 (For Export Only) | DR-XY44328 (For Export Only),same_brand_name_has_multiple_generic_names
+memry,memantine hcl | memantine hydrochloride,DR-XY42967 | DR-XY48342,same_brand_name_has_multiple_generic_names
+sublimax,fentanyl | fentanyl (as citrate),DR-XY43003 | DR-XY46838,same_brand_name_has_multiple_generic_names
+neopred,prednisolone | prednisolone (as sodium phosphate),DR-XY43017 | DR-XY43263,same_brand_name_has_multiple_generic_names
+alduet,montelukast (as sodium) + cetirizine hydrochloride | montelukast sodium + cetirizine hydrochloride,DR-XY43106 | DR-XY47878,same_brand_name_has_multiple_generic_names
+servonex,donepezil (as hydrochloride) | donepezil hydrochloride,DR-XY43385 | DR-XY44130,same_brand_name_has_multiple_generic_names
+berocca performance,multivitamins + minerals | multivitamins and minerals (orange flavor),DR-XY45715 | DR-XY46749,same_brand_name_has_multiple_generic_names
+buclisyr,multivitamins + iron + lysine hydrochloride + buclizine hydrochloride | multivitamins + lysine hcl + buclizine hcl,DR-XY43497 | DR-XY45552,same_brand_name_has_multiple_generic_names
+ondavell,ondansetron (as hydrochloride dihydrate) | ondansetron (as hydrochloride),DR-XY43610 | DR-XY43655,same_brand_name_has_multiple_generic_names
+nasathera,paracetamol + phenylpropanolamine hydrochloride | phenylpropanolamine hydrochloride + paracetamol,DR-XY4383 | DRP-8436,same_brand_name_has_multiple_generic_names
+enafril,enalapril (as maleate) | enalapril maleate,DR-XY43850 | DR-XY44658,same_brand_name_has_multiple_generic_names
+seroxyn,salmeterol (as xinafoate) + fluticasone propionate + fluticasone propionate | salmeterol xinafoate + fluticasone propionate,DR-XY44565 | DR-XY44566,same_brand_name_has_multiple_generic_names
+hyperzol,omeprazole | omeprazole (as sodium),DR-XY44636 | DRP-5071,same_brand_name_has_multiple_generic_names
+natrixam,indapamide + amlodipine (as besilate) | lndapamide + amlodipine (as besilate),DR-XY44704 | DR-XY44705,same_brand_name_has_multiple_generic_names
+xiflox,moxifloxacin (as hydrochloride) | moxifloxacin hydrochloride,DR-XY44737 | DR-XY48624,same_brand_name_has_multiple_generic_names
+xigduo xr,apagliflozin (as propanediol monohydrate) + metformin hydrochloride | dapagliflozin (as propanediol monohydrate) + metformin hydrochloride,DR-XY44972 | DR-XY44973,same_brand_name_has_multiple_generic_names
+aero-vent,salbutamol | salbutamol (as sulfate),DRP-7205-01 | DRP-8462-01,same_brand_name_has_multiple_generic_names
+jardiance duo,empagliflozin + metformin hydrochloride | empagliflozin + metformin hydrochloride.,DR-XY45443 | DR-XY47978,same_brand_name_has_multiple_generic_names
+royale c plus,ascorbic acid + zinc | ascorbic acid + zinc (as citrate),DR-XY45479 | DRP-10376,same_brand_name_has_multiple_generic_names
+maalox plus,aluminum hydroxide + magnesium hydroxide + simethicone | aluminum hydroxide/magnesium hydroxide/simethicone,DR-XY45569 | DR-XY8389,same_brand_name_has_multiple_generic_names
+ceelin plus,ascorbic acid + zinc (as sulfate monohydrate) | ascorbic acid + zinc sulfate monohydrate,DR-XY45747 | DRP-15582,same_brand_name_has_multiple_generic_names
+zincee,ascorbic acid + zinc | sodium ascorbate + zinc sulfate monohydrate,DR-XY45770 | DRP-13149,same_brand_name_has_multiple_generic_names
+molev,montelukast (as sodium) + levocetirizine dihydrochloride | montelukast (as sodium) + levocetirizine hydrochloride,DR-XY48076 | DRP-13221,same_brand_name_has_multiple_generic_names
+norvasc,amlodipine (as besilate) | amlodipine besilate,DR-XY45953 | DRP-3429,same_brand_name_has_multiple_generic_names
+ceplenext,cefalexin (as monohydrate) | cefalexin monohydrate,DR-XY45968 | DRP-16453,same_brand_name_has_multiple_generic_names
+pitator,pitavastatin (as calcium) | pitavastatin calcium,DR-XY46016 | DR-XY47320,same_brand_name_has_multiple_generic_names
+maxcee,ascorbic acid | ascorbic acid (as sodium ascorbate),DR-XY46146 | DR-XY49371,same_brand_name_has_multiple_generic_names
+voleca,levofloxacin | levofloxacin (as hemihydrate),DRP-8078 | DRP-8428,same_brand_name_has_multiple_generic_names
+mighty cee,ascorbic acid | ascorbic acid (as sodium ascorbate),DR-XY46183 | DRP-7728,same_brand_name_has_multiple_generic_names
+tazokab,piperacillin (as sodium) + tazobactam (as sodium) | piperacillin + tazobactam,DR-XY46201 | DR-XY46202,same_brand_name_has_multiple_generic_names
+gen-cee plus,ascorbic acid (as sodium ascorbate) + zinc | ascorbic acid (as sodium ascorbate) + zinc (as sulfate monohydrate) | ascorbic acid + zinc,DR-XY46278 | DR-XY49402 | DR-XY49539,same_brand_name_has_multiple_generic_names
+immunosin,inosine dimepranol acedoben | inosiplex,DR-XY4639 | DR-XY4759,same_brand_name_has_multiple_generic_names
+ryvel,cetirizine | cetirizine dihydrochloride,DR-XY46436 | DR-XY49368,same_brand_name_has_multiple_generic_names
+novomit,meclizine hydrochloride | meclizne hydrochloride,DR-XY46605 | DR-XY47358,same_brand_name_has_multiple_generic_names
+fasrel,ibuprofen (as sodium dihydrate) + paracetamol | paracetamol + ibuprofen (as sodium dihydrate),DR-XY46617 | DR-XY49128,same_brand_name_has_multiple_generic_names
+rapidon,olapatadine ( as hydrochloride ) | olopatadine (as hydrochloride),DR-XY46759 | DRP-7228,same_brand_name_has_multiple_generic_names
+diabee,thiamine hydrochloride (vitamin b1) + pyridoxine hydrochloride (vitamin b6) + cyanocobalamin (vitamin b12) | thiamine mononitrate (vitamin b1) + pyridoxine hydrochloride (vitamin b6) + cyanocobalamin (vitamin b12),DR-XY46820 | DRP-8176,same_brand_name_has_multiple_generic_names
+diabee forte,thiamine monitrate (vitamin b1) + pyridoxine hydrochloride (vitamin b6) + cyanocobalamin (vitamin b12) | thiamine mononitrate (vitamin b1)+pyridoxine hydrochloride (vitamine b6)+cyanocobalamine (vitamin b12),DR-XY46822 | DRP-7815,same_brand_name_has_multiple_generic_names
+diclosafe,diclofenac diethylamine | diclofenac sodium,DR-XY46858 | DR-XY48209,same_brand_name_has_multiple_generic_names
+vexdopa,levodopa + carbidopa | levodopa + carbidopa (as monohydrate),DR-XY46969 | DRP-7708-02,same_brand_name_has_multiple_generic_names
+zolesar,zoledronic acid | zoledronic acid (as monohydrate),DR-XY47017 | DR-XY49534,same_brand_name_has_multiple_generic_names
+pradol,paracetamol + tramadol hydrochloride | paracetamol+tramadol hydrochloride,DR-XY47075 | DRP-8189,same_brand_name_has_multiple_generic_names
+calpol,paracetamol | paracetamol 250 mg/5 ml suspension,DRHR-2132 | DRHR-913,same_brand_name_has_multiple_generic_names
+izbrid,salbutamol (as sulfate) + guafenesin | salbutamol (as sulfate) + guaifenesin,DR-XY47326 | DR-XY47981,same_brand_name_has_multiple_generic_names
+ertasure,ertapenem | ertapenem (as sodium),DR-XY47377 | DRP-12571,same_brand_name_has_multiple_generic_names
+estellar plus,: telmisartan + amlodipine (as besilate) | telmisartan + amlodipine (as besilate),DR-XY47400 | DR-XY47401,same_brand_name_has_multiple_generic_names
+ferlin,iron + vitamin b complex | multivitamin + iron,DR-XY47419 | DRP-14432,same_brand_name_has_multiple_generic_names
+jasz-c,ascorbic + zinc | ascorbic acid + zinc,DR-XY47443 | DRP-11835,same_brand_name_has_multiple_generic_names
+montral,montelukast (as sodium ) + levocetirizine hydrochloride | montelukast (as sodium) + levocetirizine hydrochloride,DR-XY47468 | DRP-11288,same_brand_name_has_multiple_generic_names
+candigo,clotimazole | clotrimazole,DR-XY47859 | DRP-14023,same_brand_name_has_multiple_generic_names
+immunforte,ascorbic acid + zinc + cholecalciferol (vitamin d3) | ascorbic acid + zinc + colecalciferol (vitamin d3),DR-XY47643 | DR-XY47926,same_brand_name_has_multiple_generic_names
+adivia met,per kit contains: sitagliptin (as phosphate monohydrate) 50 mg film coated tablet + metformin hydrochloride 1 g extended release tablet | sitagliptin (as phosphate monohydrate) + metformin hydrochloride | sitagliptin (as phosphate) + metformin hydrochloride,DR-XY47649 | DRP-10411 | DRP-12817-02,same_brand_name_has_multiple_generic_names
+vicks vapodrops,menthol + glycyrrhiza glabra (liquorice root) + zingiber officinale (ginger rhizome) + phyllanthus emblica (indian gooseberry fruit) | menthol + glycyrrhiza glabra (liquorice) root + zingiber officinale (ginger) rhizome + phyllantus emblica (indian gooseberry) fruit,DR-XY47698 | DR-XY47940,same_brand_name_has_multiple_generic_names
+klozivex,aciclovir | acyclovir,DR-XY47707 | DR-XY48969,same_brand_name_has_multiple_generic_names
+sultamin,sultamicillin (as tosylate) | sultamicillin tosilate,DR-XY47712 | DRP-3489,same_brand_name_has_multiple_generic_names
+zunamyn,sultamicillin (as tosylate) | sultamicillin tosilate,DR-XY47714 | DRP-5380,same_brand_name_has_multiple_generic_names
+kremil-s cool relief,aluminum hydroxide + magnesium hydroxide + simethicone | sodium alginate + sodium bicarbonate + calcium carbonate,DR-XY47731 | DRP-7065-01,same_brand_name_has_multiple_generic_names
+mediplast,complete wound management kit | emergency kit | first aid kit | salicylic acid,DR-XY47753 | DR-XY47756 | DR-XY47757 | DRHR-97,same_brand_name_has_multiple_generic_names
+meroz,meropenem | meropenem (as trihydrate),DR-XY47826 | DRP-16944,same_brand_name_has_multiple_generic_names
+mucin,mupirocin | mupirocin (as calcium dihydrate),DR-XY47843 | DR-XY47899,same_brand_name_has_multiple_generic_names
+dacihep 30,daclastavir (as dihydrochloride) | daclastavir dihydrochloride,DR-XY47856 | DR-XY47857,same_brand_name_has_multiple_generic_names
+gemcilex,gemcitabine | gemcitabine(as hydrochloride),DR-XY47898 | DR-XY47947,same_brand_name_has_multiple_generic_names
+pemex,pemetrexed | pemetrexed (as disodium),DR-XY47913 | DR-XY47914,same_brand_name_has_multiple_generic_names
+dianeal pd-4,peritoneal dialysis solution low calcium with 1.5% dextrose | peritoneal dialysis solution low calcium with 2.5% dextrose | peritoneal dialysis solution low calcium with 4.25% dextrose,DR-XY47921 | DR-XY47922 | DR-XY47923,same_brand_name_has_multiple_generic_names
+rovix,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-2356-01 | DRP-3959,same_brand_name_has_multiple_generic_names
+conchoice,levonorgestrel + ethinylestradiol | levonorgestrel + ethinylestradiol conchoice,DR-XY47960 | DRP-12686,same_brand_name_has_multiple_generic_names
+lignovell,lidocaine (as hydrochloride) | lidocaine hydrochloride,DR-XY48054 | DR-XY49141,same_brand_name_has_multiple_generic_names
+pemexbil,pemetrexed | pemetrexed (as disodium),DR-XY48059 | DR-XY48060,same_brand_name_has_multiple_generic_names
+selaglob 800,sevelamer (as carbonate) | sevelamer carbonate,DR-XY48067 | DRP-13610,same_brand_name_has_multiple_generic_names
+ciclodin iv,ciprofloxacin | ciprofloxacin (as hydrochloride),DR-XY48159 | DRP-3261,same_brand_name_has_multiple_generic_names
+ciprobay,ciprofloxacin | ciprofloxacin (as hydrochloride) | ciprofloxacin (as lactate),DR-XY48775 | DR-XY5324 | DRP-7194,same_brand_name_has_multiple_generic_names
+rosufen,fenofibrate + rosuvastatin (as calcium) | rosuvastatin (as calcium + fenofibrate | rosuvastatin (as calcium) + fenofibrate,DR-XY48234 | DR-XY48235 | DRP-12612,same_brand_name_has_multiple_generic_names
+migratan,rizatriptan | rizatriptan (as benzoate),DR-XY48260 | DR-XY48841,same_brand_name_has_multiple_generic_names
+meconerv,mecobalamin | methylcobalamine,DR-XY48322 | DR-XY48323,same_brand_name_has_multiple_generic_names
+remifemin,cimicifuga racemosa l (black cohosh root &amp; rhizome) | cimicifuga racemosa l. (black cohosh) rhizome,DR-XY48447 | HMR-21,same_brand_name_has_multiple_generic_names
+riltared,erlotinib (as hydrochloride | erlotinib (as hydrochloride),DR-XY48549 | DR-XY48565,same_brand_name_has_multiple_generic_names
+torsit 50,sitagliptin (as phosphate monohydrate) | sitagliptin (as phosphate),DR-XY48588 | DRP-9078-07,same_brand_name_has_multiple_generic_names
+torsit 100,sitagliptin (as phosphate monohydrate) | sitagliptin (as phosphate),DR-XY48589 | DRP-9079-07,same_brand_name_has_multiple_generic_names
+apretude,cabotegravir | cabotegravir (as sodium),DR-XY48834 | DR-XY48835,same_brand_name_has_multiple_generic_names
+telmipin,telmisartan + amlodipine (as besilate) | telmisartan + amlodipine(as besilate),DR-XY48844 | DR-XY48847,same_brand_name_has_multiple_generic_names
+d-rize,cholecalciferol (vitamin d3) | colecalciferol,DR-XY48869 | DR-XY49366,same_brand_name_has_multiple_generic_names
+claxon,co amoxiclav | co-amoxiclav,DR-XY48899 | DR-XY49277,same_brand_name_has_multiple_generic_names
+rozlytrek,entrectinib | entrectinib nib,DR-XY48929 | DR-XY48930,same_brand_name_has_multiple_generic_names
+catania,dapagliflozin | dapagliflozin (as propanediol monohydrate),DRP-11789-07 | DRP-15342-01,same_brand_name_has_multiple_generic_names
+brintellix,vortioxetine (as hydrobromide) | vortioxetine( as hydrobromide) | vortioxetine(as hydrobromide),DRP-11121 | DRP-11123 | DRP-11124,same_brand_name_has_multiple_generic_names
+nuron-e,multivitamins | thiamine hydrochloride + pyridoxine hydrochloride + cyanocobalamin + dl-alpha tocopheryl acetate,DR-XY49202 | DR-XY7537,same_brand_name_has_multiple_generic_names
+immunec,ascorbic acid | ascorbic acid + cholecalciferol (vitamin d3) + zinc,DR-XY49232 | DR-XY49361,same_brand_name_has_multiple_generic_names
+cainedent,articaine hydrochloride + epinephrine (as bitartrate) | articaine hydrochloride + epinephrine (as bitartrate) (for export use only),DR-XY49278 | DRP-16173,same_brand_name_has_multiple_generic_names
+amosartan q,losartan potassium + rosuvastatin (as calcium) + amlodipine (as camsilate) | losartan potassium + rosuvastatin (as calcium) amlodipine (as camsilate),DR-XY49279 | DR-XY49282,same_brand_name_has_multiple_generic_names
+appetamine with iron,multivitamins + iron + l-lysine + buclizine | multivitamins + iron + lysine + buclizine | multivitamins + iron + lysine hydrochloride + buclizine hydrochloride | multivitamins + lysine + iron + buclizine,DR-XY49290 | DR-XY49362 | DRP-12237 | DRP-12240,same_brand_name_has_multiple_generic_names
+skiip,nicotine | nicotine polacrilex,DR-XY49376 | DR-XY49446,same_brand_name_has_multiple_generic_names
+appetamine ob,multivitamins + iron + calcium | multivitamins + mineral,DR-XY49363 | DRP-12296,same_brand_name_has_multiple_generic_names
+dabiqx,dabigatran etexilate (as mesilate) | dabigatran etexilate (as mesylate),DR-XY49426 | DRP-16488,same_brand_name_has_multiple_generic_names
+stanis,betahistine dihydrochloride | betahistine hydrochloride,DR-XY49463 | DR-XY49650,same_brand_name_has_multiple_generic_names
+calciubone vita 3,calcium cholecalciferol (vitamin d3) | cholecalciferol (vitamin d3),DR-XY49598 | DRP-14363,same_brand_name_has_multiple_generic_names
+dapazin met,dapagliflozin (as propanediol monohydrate) + metformin hydrochloride (in extended-release form) | dapagliflozin + metformin hydrochloride,DR-XY49682 | DRP-16260-03,same_brand_name_has_multiple_generic_names
+solmux broncho,salbutamol (as sulfate) + carbocisteine | salbutamol + carbocisteine,DR-XY678 | DRP-14219,same_brand_name_has_multiple_generic_names
+lorpican,chloramphenicol | chloramphenicol (as palmitate),DR-XY7625 | DRP-8560,same_brand_name_has_multiple_generic_names
+michael,ethyl alcohol | isopropyl alcohol,DRHR-1084 | DRHR-656,same_brand_name_has_multiple_generic_names
+biogenic,ethyl alcohol | isopropyl alcohol,DRHR-1120 | DRHR-2344,same_brand_name_has_multiple_generic_names
+katinko,isopropyl alcohol | menthol | menthol + camphor | methyl salicylate + menthol + camphor,DRHR-1935 | DRHR-1955 | DRHR-2243 | DRHR-2364,same_brand_name_has_multiple_generic_names
+tiger balm white,dementholized mint oil/ cajuput oil/ camphor/ menthol/ clove oil | mint oil + cajuput oil + camphor + menthol,DRHR-1174 | DRHR-1514,same_brand_name_has_multiple_generic_names
+tiger balm red,camphor + menthol + cajuput oil + mint oil + clove oil | camphor/ menthol/ cajuput oil/ dementholized mint oil/ clove oil/ cassia oil,DRHR-1175 | DRHR-1940,same_brand_name_has_multiple_generic_names
+ultrasept,benzalkonium chloride | gentian violet,DRHR-1189 | DRHR-1221,same_brand_name_has_multiple_generic_names
+tiger balm neck and shoulder rub,camphor + menthol + dementholised mint oil | camphor+ menthol+ dementholised mint oil,DRHR-1317 | DRHR-1916,same_brand_name_has_multiple_generic_names
+strepsils,"2, 4- dichlorobenzyl alcohol + amylmetacresol | 2,4 dichlorobenzyl alcohol + amylmetacresol | 2,4-dichlorobenzyl alcohol/ amylmetacresol | dichlorobenzyl alcohol + amylmetacresol",DRHR-1496 | DRHR-1557 | DRHR-1644 | DRHR-1767,same_brand_name_has_multiple_generic_names
+hyclens,chlorhexidine | chlorhexidine digluconate,DRHR-1627 | DRHR-2049,same_brand_name_has_multiple_generic_names
+zetadone,povidone iodine | povidone-iodine,HRP-353 | HRP-479,same_brand_name_has_multiple_generic_names
+megascent oil,methyl salicylate + camphor + menthol + eucalyptus oil | methyl salicylate / camphor / menthol / eucalyptus oil,DRHR-17 | DRHR-2123,same_brand_name_has_multiple_generic_names
+golden cup oil,menthol + mentha x piperita + camphor + syzygium aromaticum | menthol + peppermint oil + camphor + clove oil,DRHR-1713 | DRHR-1887,same_brand_name_has_multiple_generic_names
+dequadin lemon,dequalinium chloride | dequalinium chloride (for export only),DRHR-1779 | DRHR-1906,same_brand_name_has_multiple_generic_names
+dequadin orange,dequalinium chloride | dequalinium chloride (for export only),DRHR-1781 | DRHR-1827 (For Export Only),same_brand_name_has_multiple_generic_names
+dequadin citrus,dequalinium chloride | dequalinium chloride (for export only),DRHR-1785 | DRHR-1825,same_brand_name_has_multiple_generic_names
+surebuy,ethyl alcohol | isopropyl alcohol,DRHR-1794 | DRHR-1831,same_brand_name_has_multiple_generic_names
+hyclens ob,chlorhexidine | chlorhexidine digluconate,DRHR-1824 | DRHR-2052,same_brand_name_has_multiple_generic_names
+maridan,ethyl alcohol | isopropyl alcohol,DRHR-2043 | DRHR-2071,same_brand_name_has_multiple_generic_names
+maxidine,povidone iodine | povidone-iodine,DRHR-2083 | HRP-427,same_brand_name_has_multiple_generic_names
+efficascent relaxscent oil,menthol + camphor + eucalyptus oil | menthol + eucalyptus oil + camphor,DRHR-1910 | DRHR-2270,same_brand_name_has_multiple_generic_names
+saver select,ethyl alcohol | isopropyl alcohol,DRHR-1945 | DRHR-2028,same_brand_name_has_multiple_generic_names
+doctor j,70% isopropyl alcohol solution unscented | ethyl alcohol | isopropyl alcohol,DRHR-2128 | DRHR-704 | DRHR-846,same_brand_name_has_multiple_generic_names
+savers select,ethyl alcohol | isopropyl alcohol,DRHR-1973 | DRHR-2237,same_brand_name_has_multiple_generic_names
+tretinoin,claritret clarifying and rejuvenating toner | claritret clarity night cream,DRHR-2078 | DRHR-2079,same_brand_name_has_multiple_generic_names
+septofort,chlorhexidine | chrlorhexidine,DRHR-2085 | DRHR-2101,same_brand_name_has_multiple_generic_names
+alcoplus,ethyl alcohol | isopropyl alcohol,DRHR-2309 | HRP-610,same_brand_name_has_multiple_generic_names
+hygienix,ethyl alcohol | isopropyl alcohol,DRHR-2205 | DRHR-2210,same_brand_name_has_multiple_generic_names
+huntergreen,ethyl alcohol | isopropyl alcohol,DRHR-2207 | DRHR-2211,same_brand_name_has_multiple_generic_names
+leon,menthol + camphor + eucalyptus oil | methyl salicylate + menthol + camphor,DRHR-2203 | DRHR-2204,same_brand_name_has_multiple_generic_names
+katinko calming,camphor + menthol + lavender oil | methyl salicylate + camphor + menthol | methyl salicylate + menthol + camphor,DRHR-2209 | DRHR-2350 | DRHR-2453,same_brand_name_has_multiple_generic_names
+balsamo carminativo,"fluid extract orange peel bitter, fluid extract glycyrrhiza, fluid extract rhubarb | sodium bicarbonate",DRHR-223 | HRP-350,same_brand_name_has_multiple_generic_names
+omega pain killer,methyl salicylate + camphor + menthol | methyl salicylate + menthol + camphor,DRHR-2335 (For Export Only) | DRHR-782,same_brand_name_has_multiple_generic_names
+alcoshield,ethyl alcohol | isopropyl alcohol,DRHR-2492 | DRHR-2493,same_brand_name_has_multiple_generic_names
+pureform,ethyl alcohol | isopropyl alcohol,DRHR-2277 | DRHR-2278,same_brand_name_has_multiple_generic_names
+perfect defense,ethyl alcohol | isopropyl alcohol,DRHR-2310 | DRHR-2352,same_brand_name_has_multiple_generic_names
+angel's flo,ethyl alcohol | isopropyl alcohol,DRHR-2382 | DRHR-2447,same_brand_name_has_multiple_generic_names
+family,ethyl alcohol | isopropyl alcohol,DRHR-2371 | DRHR-282,same_brand_name_has_multiple_generic_names
+pureshield,ethyl alcohol | isopropyl alcohol,DRHR-2414 | DRHR-2415,same_brand_name_has_multiple_generic_names
+vicks vaporub ointment,camphol + menthol + eucalyptus oil | camphor menthol + eucalyptus oil,DRHR-2485 | DRHR-279,same_brand_name_has_multiple_generic_names
+mama's touch mentholated vapor rub,camphor + eucalyptus oil + menthol | camphor eucalyptus oil + menthol,DRHR-2498 | DRHR-2499,same_brand_name_has_multiple_generic_names
+salonpas,methyl salicylate + l-menthol + tocopherol acetate dl-camphor | methyl salicylate l-menthol tocopherol acetate dl-camphor,DRHR-551 | DRHR-821,same_brand_name_has_multiple_generic_names
+co-aprovel,irbesartan + hydrochlorothiazide | irbesartan/hydrochlorothiazide,DRP-001 | DRP-5717,same_brand_name_has_multiple_generic_names
+appetason,multivitamins + iron + lysine | vitamin b complex + ferrous sulfate + l-lysine appetason | vitamin b complex + iron + buclizine hydrochloride,DRP-028 | DRP-4566 | DRP-512,same_brand_name_has_multiple_generic_names
+ferosal,ferrous sulfate | ferrous sulfate heptahydrate | vitamin b-complex + ferrous fumarate,DRP-029 | DRP-162 | DRP-5179,same_brand_name_has_multiple_generic_names
+altoxime,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-2356-02 | DRP-7789-04,same_brand_name_has_multiple_generic_names
+ceft,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-076-02 | DRP-8191,same_brand_name_has_multiple_generic_names
+multilem,multivitamins | multivitamins syrup,DRP-077 | DRP-485,same_brand_name_has_multiple_generic_names
+encorate chrono 500,sodium valproate + valproic acid | sodium valproate + valproic acid (as sodium valproate),DRP-10110 | DRP-9908,same_brand_name_has_multiple_generic_names
+qualcet,cetirizine dihydrochloride | cetirizine hydrochloride,DRP-3707-04 | DRP-5754-06,same_brand_name_has_multiple_generic_names
+albulem,salbutamol | salbutamol (as sulfate),DRP-1014 | DRP-7106,same_brand_name_has_multiple_generic_names
+vitcee plus,ascorbic acid (as sodium ascorbate) + zinc (as sulfate monohydrate) | ascorbic acid + zinc,DRP-10183 | DRP-11707,same_brand_name_has_multiple_generic_names
+sydenhex,bromhexine hydrochloride | bromhexine hydrochloride.,DRP-13367 | DRP-14670,same_brand_name_has_multiple_generic_names
+cgen,ascorbic acid | ascorbic acid (as sodium ascorbate),DRP-10319 | HRP-185-04,same_brand_name_has_multiple_generic_names
+citisaph,citicoline | citicoline (as sodium),DRP-10410 | DRP-13905,same_brand_name_has_multiple_generic_names
+lupigliptin plus,metformin hydrochloride + sitagliptin (as phosphate monohydrate) | sitagliptin (as phosphate monohydrate) + metformin hydrochloride,DRP-10411-01 | DRP-12817-01,same_brand_name_has_multiple_generic_names
+lemzinc,zinc | zinc sulfate monohydrate,DRP-10419 | DRP-7223,same_brand_name_has_multiple_generic_names
+fucon,hyoscine n-butylbromide | hyoscine-n-butylbromide,DRP-10431 | DRP-8151,same_brand_name_has_multiple_generic_names
+ironfer,ferrous sulfate | ferrous sulfate heptahydrate | ferrous sulfate heptahydrate (butter scotch flavor) | iron,DRP-10442 | DRP-12615 | DRP-3223 | DRP-3345,same_brand_name_has_multiple_generic_names
+saphfovit-fe,ferrous sulfate + folic acid + pyridoxine hydrochloride (vitamin b6) + cyanocobalamin (vitamin b12) | multivitamins + iron,DRP-10452 | DRP-13666,same_brand_name_has_multiple_generic_names
+khrizver,mebendazole | mebendazole usp,DRP-10463 | DRP-11037,same_brand_name_has_multiple_generic_names
+opadinex,olapatadine (as hydrochloride) | olopatadine (as hydrochloride),DRP-10464 | DRP-14779,same_brand_name_has_multiple_generic_names
+xelares,cefalexin | cefalexin (as monohydrate),DRP-10545-01 | DRP-1426-13,same_brand_name_has_multiple_generic_names
+motillex,bisacodyl | metoclopramide (as hydrochloride),DRP-1055 | DRP-373,same_brand_name_has_multiple_generic_names
+ferium,iron (iii) hydroxide polymaltose complex | iron + folic acid (vitamin b9),DRP-2320 | DRP-2618,same_brand_name_has_multiple_generic_names
+vancocy,vancomycin (as hydrochloride) | vancomycin (as hydrohloride),DRP-10630-02 | DRP-7335-01,same_brand_name_has_multiple_generic_names
+vancoblis 1000,vancomycin (as hydrochloride) | vancomycin (as hydrochloride) 1 g powder for solution for injection (iv),DRP-10631-09 | DRP-7336,same_brand_name_has_multiple_generic_names
+rezotam,piperacillin (as sodium) + tazobactam (as sodium) | piperacillin (as sodium) and tazobactam (as sodium),DRP-10708 | DRP-10709,same_brand_name_has_multiple_generic_names
+aminoral,alpha ketoanalogues + essential amino acids | ketoanalogues essential amino acids.,DRP-10771 | DRP-13559,same_brand_name_has_multiple_generic_names
+appexcef,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-10888-04 | DRP-7543-05,same_brand_name_has_multiple_generic_names
+zolechem,zoledronic acid | zoledronic acid (as monohydrate),DRP-10892-05 | DRP-7277-02,same_brand_name_has_multiple_generic_names
+ferrogen,ferrous sulfate | iron,DRP-10914 | DRP-12617,same_brand_name_has_multiple_generic_names
+povi-klin,povidone iodine | povidone-iodine,DRP-10920 | HRP-560,same_brand_name_has_multiple_generic_names
+ripesaph-4,rifampicin + isoniazid + pyrazinamide + ethambutol hydrochloride | rifampicin + isoniazid +pyrazinamide + ethambutol hydrochloride,DRP-10934 | DRP-14907,same_brand_name_has_multiple_generic_names
+methimed,methimazole | thiamazole,DRP-10939 | DRP-10940,same_brand_name_has_multiple_generic_names
+dorzodin plus,dorzolamide (as hydrochloride) + timolol (as maleate) | dorzolamide + timolol,DRP-10953-03 | DRP-16293-01,same_brand_name_has_multiple_generic_names
+broncovent plus,ipratropium (as bromide) + salbutamol (as sulfate) | ipratropium bromide + salbutamol (as sulfate),DRP-10970-01 | DRP-13475-03,same_brand_name_has_multiple_generic_names
+gofime,cefepime (as hydrochloride) | cefepime hydrochloride,DRP-3387-02 | DRP-3830-01,same_brand_name_has_multiple_generic_names
+cefortan-z,ascorbic acid (vitamin c) + zinc | ascorbic acid + zinc,DRP-11005 | DRP-11006,same_brand_name_has_multiple_generic_names
+drenisole,prednisolone (as sodium phosphate ) | prednisolone (as sodium phosphate),DRP-11020 | DRP-12710,same_brand_name_has_multiple_generic_names
+citcole,citicoline | citicoline (as sodium),DRP-11039 | DRP-14148,same_brand_name_has_multiple_generic_names
+saphridone,domperidone | domperidone (as maleate),DRP-11046 | DRP-7345,same_brand_name_has_multiple_generic_names
+ketocass,alpha ketoanalogues + essential amino acids | ketoanalogues + essential amino acids,DRP-11059-02 | DRP-15878-01,same_brand_name_has_multiple_generic_names
+ambivent,salbutamol (as sulfate ) + ipratropium bromide | salbutamol (as sulfate) + ipratropium (as bromide) | salbutamol (as sulfate) + ipratropium bromide | salbutamol sulfate + ipratropium bromide,DRP-11062-06 | DRP-1419-02 | DRP-1419-10 | DRP-4672-02,same_brand_name_has_multiple_generic_names
+dialix,ceterizine hydrochloride | cetirizine hydrochloride,DRP-11109 | DRP-7172,same_brand_name_has_multiple_generic_names
+gel-malicid,aluminum hydoxide + magnesium hydroxide | aluminum hydroxide + magnesium hydroxide,DRP-1112 | DRP-493,same_brand_name_has_multiple_generic_names
+cetricare,cetirizine | cetirizine dihydrochloride,DRP-11128-01 | DRP-15601-01,same_brand_name_has_multiple_generic_names
+sitajack-m,sitagliptin (as phosphate monohydrate) + metformin hydrochloride | sitagliptin (as phosphate) + metformin hydrochloride,DRP-11150-01 | DRP-13278-01,same_brand_name_has_multiple_generic_names
+cidrenzin,ascorbic acid + cholecalciferol (vitamin d3) + zinc | ascorbic acid + cholecalciferol + zinc,DRP-11217 | DRP-13038,same_brand_name_has_multiple_generic_names
+feruz,ferrous sulfate | iron,DRP-11265 | DRP-12613,same_brand_name_has_multiple_generic_names
+gloww-e,dl-alpha tocopheryl acetate | dl-alpha tocopheryl acetate (vitamin e),DRP-11335-01 | DRP-8126-01,same_brand_name_has_multiple_generic_names
+lexzin,levofloxacin (as hemihydrate) | levofloxacin (as hemihydrates),DRP-3166 | DRP-6473-01,same_brand_name_has_multiple_generic_names
+philvasc,amlodipine (as besilate) | amlodipine(as besilate),DRP-12901-01 | DRP-3553-01,same_brand_name_has_multiple_generic_names
+tramine,tramadol hydrochloride | tranexamic acid,DRP-11399 | DRP-2510-01,same_brand_name_has_multiple_generic_names
+telmilop,telmisartan + amlodipine | telmisartan + amlodipine (as besilate),DRP-11456 | DRP-13142,same_brand_name_has_multiple_generic_names
+mistacor am,telmisartan + amlodipine | telmisartan + amlodipine (as besilate),DRP-11456-01 | DRP-13142-01,same_brand_name_has_multiple_generic_names
+temsta,telmisartan + amlodipine | telmisartan + amlodipine (as besilate),DRP-11456-02 | DRP-13142-02,same_brand_name_has_multiple_generic_names
+telmiget duo,telmisartan + amlodipine | telmisartan + amlodipine (as besilate),DRP-11456-03 | DRP-13089-03,same_brand_name_has_multiple_generic_names
+melzin,clonidine hydrochloride | meclizine hydrochloride,DRP-1146 | DRP-11990-02,same_brand_name_has_multiple_generic_names
+ambiflex plus,thiamine (vitamin b1) + pyridoxine (vitamin b6) + cyanocobalamin (vitamin b12) | thiamine mononitrate (vitamin b1) + pyridoxine hydrochloride (vitamin b6) + cyanocobalamin (vitamin b12,DRP-11484 | DRP-8903,same_brand_name_has_multiple_generic_names
+trosoothe plus,dichlorobenzyl alcohol + amylmetacresol + lidocaine hydrochloride | dichlorobenzyl alcohol + amylmetacresol lidocaine hydrochloride,DRP-11613 | DRP-11782,same_brand_name_has_multiple_generic_names
+abrexin,ambroxol | ambroxol hydrchloride | ambroxol hydrochloride,DRP-1162 | DRP-8826 | DRP-9382,same_brand_name_has_multiple_generic_names
+ezoprole,esomeprazole (as magnesium) | esomeprazole magnesium,DRP-11669 | DRP-7282,same_brand_name_has_multiple_generic_names
+jewel-cee,ascorbic acid | ascorbic acid (as sodium ascorbate),DRP-11820 | DRP-16192-02,same_brand_name_has_multiple_generic_names
+rentos,dapagliflozin | dapagliflozin (as propanediol monohydrate),DRP-11789-09 | DRP-15483-12,same_brand_name_has_multiple_generic_names
+vertset,betahistine dihydrochloride | betahistine hydrochloride,DRP-11798 | DRP-17512,same_brand_name_has_multiple_generic_names
+jucef,cefuroxime (as sodium) | cefuroxime sodium,DRP-3115-06 | DRP-4515-04,same_brand_name_has_multiple_generic_names
+hyopan,hyoscine n-butylbromide | hyoscine-n-butylbromide,DRP-11819 | DRP-8395,same_brand_name_has_multiple_generic_names
+prepexol,pramipexole (as dihydrochloride monohydrate) | pramipexole (as hydrochloride),DRP-11832 | DRP-12720,same_brand_name_has_multiple_generic_names
+op-ator,atorvastatin (as calcium trihydrate) | atorvastatin (as calcium),DRP-11880-01 | DRP-15961-05,same_brand_name_has_multiple_generic_names
+retavent plus,ipratropium bromide + salbutamol (as sulfate) | salbutamol (as sulfate)+ ipratropium (as bromide),DRP-11882-01 | DRP-13475-06,same_brand_name_has_multiple_generic_names
+biosaph,paracetamol + phenylephrine hcl + chlorphenamine maleate | paracetamol + phenylephrine hydrochloride + chlorphenamine maleate,DRP-11922 | DRP-12660,same_brand_name_has_multiple_generic_names
+ero-s,meropenem | meropenem (as trihydrate),DRP-11926-02 | DRP-7074-04,same_brand_name_has_multiple_generic_names
+cefuhil,cefuroxime | cefuroxime (as sodium),DRP-11928 | DRP-7126-04,same_brand_name_has_multiple_generic_names
+amvasc be,amlodipine (as besilate) | amlodipine besilate,DRP-1195 | DRP-9946,same_brand_name_has_multiple_generic_names
+godex ds,carnitine orotate + hepatic extract antitoxic fraction + adenine hcl + pyridoxine hcl + riboflavin + cyanocobalamin | carnitine orotate + liver extract antitoxic fraction + adenine hydrochloride + pyridoxine hydrochloride + riboflavin + cyanocobalamin,DRP-1200 | DRP-12347,same_brand_name_has_multiple_generic_names
+ferolem,ferrous sulfate | ferrous sulfate heptahydrate | iron | iron (as ferrous sulfate),DRP-2527 | DRP-7098 | DRP-7224 | DRP-7879,same_brand_name_has_multiple_generic_names
+diclophil,diclofenac (as sodium) | diclofenac sodium,DRP-12104 | DRP-17324,same_brand_name_has_multiple_generic_names
+avamax,atorvastatin (as calcium trihydrate) | atorvastatin (as calcium),DRP-15498-01 | DRP-2279-02,same_brand_name_has_multiple_generic_names
+macproto,pantoprazole | pantoprazole (as sodium),DRP-12138-2 | DRP-3762-02,same_brand_name_has_multiple_generic_names
+atorvex-20,atorvastatin (as calcium trihydrate) | atorvastatin (as calcium),DRP-12155-02 | DRP-15714-02,same_brand_name_has_multiple_generic_names
+gostin-20,atorvastatin (as calcium trihydrate) | atorvastatin (as calcium),DRP-12155-03 | DRP-15714-01,same_brand_name_has_multiple_generic_names
+fluaid,paracetamol + phenylephrine hcl + chlorphenamine maleate | paracetamol +phenylephrine hcl + chlorphenamine maleate,DRP-12156 | DRP-8645,same_brand_name_has_multiple_generic_names
+pramide,metoclopramide (as hydrochloride) | metoclopramide hydrochloride,DRP-12163 | DRP-17035,same_brand_name_has_multiple_generic_names
+omeprasaph,omeprazole | omeprazole (as sodium),DRP-12165 | DRP-12932,same_brand_name_has_multiple_generic_names
+amoxipen,amoxicillin (as trihydrate) | amoxicillin trihydrate,DRP-1425-08 | DRP-1475-02,same_brand_name_has_multiple_generic_names
+off-colds,paracetamol + phenylpropanolamine hydrochloride + chlorphenamine maleate | paracetamol + phenylpropanolamine hydrochloride+ chlorphenamine maleate,DRP-12179 | DRP-8205,same_brand_name_has_multiple_generic_names
+telmisartan,micajub | telmisartan,DRP-12210 | DRP-3212-08,same_brand_name_has_multiple_generic_names
+eroxime,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-12213 | DRP-3600-02,same_brand_name_has_multiple_generic_names
+atorvex-10,atorvastatin (as calcium trihydrate) | atorvastatin (as calcium),DRP-12225-01 | DRP-15715-01,same_brand_name_has_multiple_generic_names
+gostin-10,atorvastatin (as calcium trihydrate) | atorvastatin (as calcium),DRP-12225-02 | DRP-15715-02,same_brand_name_has_multiple_generic_names
+ocumox,moxifloxacin (as hydrochloride) | moxifloxacin hydrochloride,DRP-12248 | DRP-12277,same_brand_name_has_multiple_generic_names
+cipromax,ciprofloxacin | ciprofloxacin (as hydrochloride),DRP-12369 | DRP-3583,same_brand_name_has_multiple_generic_names
+benzaclir,benzydamine (as hydrochloride) | benzydamine hydrochloride,DRP-12388-01 | DRP-12389-01,same_brand_name_has_multiple_generic_names
+omepace,omeprazole (as sodium monohydrate) | omeprazole (as sodium),DRP-12424-03 | DRP-15591-03,same_brand_name_has_multiple_generic_names
+dipinew,amlodipine ( as besilate) | amlodipine (as besilate),DRP-12488 | DRP-14027,same_brand_name_has_multiple_generic_names
+sapheron,ferrous sulfate | iron,DRP-12512 | DRP-14233,same_brand_name_has_multiple_generic_names
+zetrinx plus,cetirizine (as dihydrochloride) + phenylephrine hydrochloride | cetirizine dihydrochloride phenylephrine hydrochloride,DRP-12525 | DRP-8813,same_brand_name_has_multiple_generic_names
+mepracid,omeprazole | omeprazole sodium,DRP-12538 | DRP-3047-02,same_brand_name_has_multiple_generic_names
+zynasalo,xylometazoline (as hydrochloride) | xylometazoline hydrochloride,DRP-13362 | DRP-14213,same_brand_name_has_multiple_generic_names
+oxan,oxacillin (as sodium) | oxacillin sodium,DRP-12577 | DRP-6179,same_brand_name_has_multiple_generic_names
+trimetaz,trimetazidine (as hydrochloride) | trimetazidine hydrochloride,DRP-12623-11 | DRP-2489-15,same_brand_name_has_multiple_generic_names
+rondvit plus c,multivitamins + iron | multivitamins + minerals,DRP-17740 | DRP-17741,same_brand_name_has_multiple_generic_names
+levixa,levofloxacin (as hemihydrate) | levofloxacin (as hemihydrate).,DRP-12672 | DRP-5498,same_brand_name_has_multiple_generic_names
+hycort,hydrocortisone (as sodium succinate) | hydrocortisone sodium succinate,DRP-1272 | DRP-5968,same_brand_name_has_multiple_generic_names
+lodipex hctz,amlodipine (as besilate) + hydrochlorothiazide | amlodipine (as besylate) + hydrochlorothiazide,DRP-12791 | DRP-12808,same_brand_name_has_multiple_generic_names
+combizar,losartan + hydrochlorothiazide | losartan potassium + hydrochlorothiazide,DRP-2186-02 | DRP-3754,same_brand_name_has_multiple_generic_names
+analou,ketoanalogues + essential amino acids | ketoanalogues and essential amino acids,DRP-12879-01 | DRP-14052-01,same_brand_name_has_multiple_generic_names
+allecur d,cetirizine | cetirizine (as dihydrochloride) | cetirizine dihydrochloride,DRP-12952 | DRP-13823 | DRP-14362,same_brand_name_has_multiple_generic_names
+rani-d,cholecalciferol (vitamin d3) | colecalciferol (vitamin d3),DRP-12957 | DRP-13827,same_brand_name_has_multiple_generic_names
+quetiapro,quetiapine (as fumarate) | quetiapine fumarate,DRP-8730 | DRP-9913,same_brand_name_has_multiple_generic_names
+aetropsal,ipratropium bromide + salbutamol (as sulfate) | salbutamol (as sulfate) + ipratropium bromide,DRP-13048-03 | DRP-5276-04,same_brand_name_has_multiple_generic_names
+koztatm plus,sitagliptin (as phosphate) + metformin hydrochloride | sitagliptin (as phosphate) + metformin hydrochloride.,DRP-13051 | DRP-15039,same_brand_name_has_multiple_generic_names
+betaneosaph,betamethasone (as valerate) + neomycin (as sulfate) | betamethasone valerate + neomycin sulfate,DRP-13064 | DRP-17930,same_brand_name_has_multiple_generic_names
+triosaph,rifampicin + isoniazid + ethambutol hydrochloride | rifampicin + isoniazid + ethambutol hydrochloride + isoniazid,DRP-13108 | DRP-14077,same_brand_name_has_multiple_generic_names
+allermed,cetirizine dihydrochloride | cetirizine hydrochloride,DRP-1469-06 | DRP-920-01,same_brand_name_has_multiple_generic_names
+aforvir,cetirizine dihydrochloride | cetirizine hydrochloride,DRP-1317-09 | DRP-275-01,same_brand_name_has_multiple_generic_names
+celtere,docetaxel | docetaxel (as trihydrate),DRP-1320 | DRP-1486,same_brand_name_has_multiple_generic_names
+ecmetrix,clobetasol (as propionate) | clobetasol propionate,DRP-13217 | DRP-13220,same_brand_name_has_multiple_generic_names
+xinatrene,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-1326-06 | DRP-7543-03,same_brand_name_has_multiple_generic_names
+amzur,amlodipine (as besilate) | amlodipine (as besylate),DRP-13327 | DRP-13841,same_brand_name_has_multiple_generic_names
+clintop,clindamycin (as hydrochloride) | clindamycin hydrochloride,DRP-14915 | DRP-17321,same_brand_name_has_multiple_generic_names
+none (reformulated),amlodipine (as besilate) | cetirizine hydrochloride,DRP-1469-04 | DRP-4727-05,same_brand_name_has_multiple_generic_names
+flazomel,omeprazole | omeprazole (as sodium),DRP-13388 | DRP-413,same_brand_name_has_multiple_generic_names
+megavit,multivitamins | multivitamins syrup,DRP-134-01 | DRP-485-01,same_brand_name_has_multiple_generic_names
+exicof,dextromethorphan hydrobromide + guaifenesin + phenylephrine hydrochloride | dextromethorphan hydrobromide + guaifenesin + phenylephrine hydrochloride (pomegranate flavor) | dextromethorphan hydrobromide + guaifenesin + phenylephrine hydrochloride (strawberry flavor),DRP-5794 | DRP-5997 | DRP-6248,same_brand_name_has_multiple_generic_names
+citicure,cetirizine | cetirizine dihydrochloride | cetirizine hydrochloride,DRP-1352-05 | DRP-5754-12 | DRP-8451-01,same_brand_name_has_multiple_generic_names
+glucasaph,calcium gluconate | calcium gluconate (as monohydrate),DRP-13544 | DRP-17455,same_brand_name_has_multiple_generic_names
+losarx 50,losartan (as potassium) | losartan potassium,DRP-13556 | DRP-15534,same_brand_name_has_multiple_generic_names
+losarx 100,losartan (as potassium) | losartan potassium,DRP-13557 | DRP-15533,same_brand_name_has_multiple_generic_names
+fefosaph,ferrous sulfate + folic acid | iron (as ferrous sulfate) + folic acid (vitamin b9),DRP-16365 | DRP-8476,same_brand_name_has_multiple_generic_names
+glimphage,glimeperide | glimepiride,DRP-16420 | DRP-17232,same_brand_name_has_multiple_generic_names
+irofer,iron (as ferric hydroxidesucrose complex) | iron (as iron sucrose),DRP-13888-01 | DRP-7111-06,same_brand_name_has_multiple_generic_names
+feruvin,iron (as ferric hydroxide sucrose complex) | iron (as iron sucrose),DRP-13888-02 | DRP-7111-01,same_brand_name_has_multiple_generic_names
+bliron,iron (as ferric hydroxide sucrose complex) | iron (as iron sucrose),DRP-13888-03 | DRP-7111,same_brand_name_has_multiple_generic_names
+isufer,iron (as ferric hydroxide sucrose complex) | iron (as iron sucrose),DRP-13888-04 | DRP-7111-03,same_brand_name_has_multiple_generic_names
+ambiforge,amlodipine (as besilate) + valsartan | amlodipine (as besylate) + valsartan,DRP-13932 | DRP-14081,same_brand_name_has_multiple_generic_names
+triocef,cefixime | cefixime (as trihydrate),DRP-5052-17 | DRP-5683-10,same_brand_name_has_multiple_generic_names
+peesaph-g,guaifenesin + salbutamol (as sulfate) | salbutamol (as sulfate) + guaifenesin,DRP-14017 | DRP-14797,same_brand_name_has_multiple_generic_names
+rimstar 4,rifampicin + isoniazid + pyrazinamide + ethambutol | rifampicin + isoniazid + pyrazinamide + ethambutol hydrochloride,DRP-14178 | DRP-1751,same_brand_name_has_multiple_generic_names
+aura plus,salbutamol (as sulfate) + ipratropium (as bromide) | salbutamol (as sulfate) + ipratropium bromide | salbutamol sulfate + ipratropium bromide,DRP-1419-03 | DRP-1419-11 | DRP-4672-03,same_brand_name_has_multiple_generic_names
+brodix plus,salbutamol (as sulfate) + lpratropium bromide | salbutamol sulfate + ipratropium bromide,DRP-1419-04 | DRP-4672-04,same_brand_name_has_multiple_generic_names
+asmagone plus,salbutamol (as sulfate) + ipratropium (as bromide) | salbutamol (as sulfate)+ ipratropium bromide,DRP-1419-09 | DRP-4672-01,same_brand_name_has_multiple_generic_names
+allecur plus,cetirizine (as dihydrochloride) + phenylephrine hydrochloride | cetirizine dihydrochloride hydrochloride,DRP-14228 | DRP-8815,same_brand_name_has_multiple_generic_names
+zophizole,pantoprazole (as sodium sesquihydrate) | pantoprazole (as sodium),DRP-14239-03 | DRP-3762-01,same_brand_name_has_multiple_generic_names
+citiright,citicoline | citicoline (as sodium),DRP-14329 | DRP-4639-02,same_brand_name_has_multiple_generic_names
+doxetacent,docetaxel | docetaxel (as trihydrate),DRP-14331-02 | DRP-5973-05,same_brand_name_has_multiple_generic_names
+cetirifed,cetirizine | cetirizine hydrochloride,DRP-14362-01 | DRP-5427-13,same_brand_name_has_multiple_generic_names
+flusaph,paracetamol + phenylpropanolamine (as hydrochloride) + chlorphenamine maleate | paracetamol + phenylpropanolamine (as) hydrochloride) + chlorphenamine maleate,DRP-14454 | DRP-14455,same_brand_name_has_multiple_generic_names
+mefetab,mefenamic acid | mefenamic acid.,DRP-14492 | DRP-4496-03,same_brand_name_has_multiple_generic_names
+telmirx-hctz,telmisartan+hydrochlorothiazide | telmisartan/hydrochlorothiazide,DRP-14525 | DRP-14527,same_brand_name_has_multiple_generic_names
+venotion,diosmin + hesperidin | diosmin hesperidin,DRP-14541 | DRP-14692,same_brand_name_has_multiple_generic_names
+arbloc ccb,amlodipine (as besilate) + losartan potassium | losartan potassium + amlodipine (as besilate),DRP-14687-03 | DRP-8527-01,same_brand_name_has_multiple_generic_names
+azimentia,donepezil hydrochloride | donepezil hydrochloride (as monohydrate),DRP-14695 | DRP-14719,same_brand_name_has_multiple_generic_names
+zetriz,cetirizine (as hydrochloride) | cetirizine dihydrochloride,DRP-14754 | DRP-9228,same_brand_name_has_multiple_generic_names
+monphevin,erythromycin (as ethylsuccinate) | erythromycin (as stearate),DRP-1481 | DRP-3304,same_brand_name_has_multiple_generic_names
+calzur chews,cholecalciferol (vitamin d3) | colecalciferol (vitamin d3),DRP-14904 | DRP-17643,same_brand_name_has_multiple_generic_names
+alsuni,sunitinib | sunitinib (as malate),DRP-15001 | DRP-16536,same_brand_name_has_multiple_generic_names
+tumiwel,sodium alginate + sodium bicarbonate + calcium carbonate | sodium alginate sodium bicarbonate + calcium carbonate,DRP-15021 | DRP-16221,same_brand_name_has_multiple_generic_names
+dipp-4 plus,vildagliptin + metformin | vildagliptin + metformin hcl | vildagliptin + metformin hydrochloride.,DRP-15077 | DRP-15672 | DRP-15893,same_brand_name_has_multiple_generic_names
+trimecard mr 35,trimetazidine | trimetazidine hydrochloride,DRP-15150 | DRP-2489,same_brand_name_has_multiple_generic_names
+cardiozidine,trimetazidine dihydrochloride | trimetazidine hydrochloride,DRP-15150-04 | DRP-8586-01,same_brand_name_has_multiple_generic_names
+trigil,trimetazidine (as hydrochloride) | trimetazidine dihydrochloride | trimetazidine hydrochloride,DRP-15150-07 | DRP-2489-07 | DRP-8586-13,same_brand_name_has_multiple_generic_names
+kozta,sitagliptin (as hydrochloride monohydrate) | sitagliptin (as phosphate),DRP-16881 | DRP-8901-04,same_brand_name_has_multiple_generic_names
+clovate,clobetasol propionate | clobetasol propionate.,DRP-15264 . | DRP-15273,same_brand_name_has_multiple_generic_names
+rovalpin,valsartan + amlodipine (as besilate) | valsartan amlodipine (as besilate),DRP-15284 | DRP-15285,same_brand_name_has_multiple_generic_names
+amlodine plus,amlodipine (as besilate) + losartan potassium | amlodipine (as besilate) / losartan potassium | losartan potassium + amlodipine (as besilate),DRP-15300 | DRP-5685 | DRP-8527,same_brand_name_has_multiple_generic_names
+pretension plus,telmisartan + hydrochlorothiazide | telmisartan+hydrochlorothiazide,DRP-15332 | DRP-15333,same_brand_name_has_multiple_generic_names
+duocard,telmisartan + amlodipine (as besilate) | telmisartan + amlodipine besilate,DRP-15335 | DRP-15336,same_brand_name_has_multiple_generic_names
+daphix,dapagliflozin | dapagliflozin (as propanediol monohydrate),DRP-15429 | DRP-16601,same_brand_name_has_multiple_generic_names
+xantor,: atorvastatin (as calcium trihydrate) | atorvastatin (as calcium trihydrate) | atorvastatin (as calcium),DRP-15500 | DRP-15501 | DRP-2279,same_brand_name_has_multiple_generic_names
+lc-dopa,levodopa + carbidopa | levodopa + carbidopa (as monohydrate) | levodopa +carbidopa,DRP-15563 | DRP-16089 | DRP-16982,same_brand_name_has_multiple_generic_names
+verbeta 16,betahistine dihydrochloride | betahistine hydrochloride,DRP-1557-10 | DRP-5645-05,same_brand_name_has_multiple_generic_names
+tazacin,piperacillin (as (as sodium) + tazobactam (as sodium) | piperacillin + tazobactam,DRP-15584 | DRP-7343,same_brand_name_has_multiple_generic_names
+cleazole,esomeprazole (as sodium) | omeprazole | omeprazole (as sodium),DRP-1570-13 | DRP-3047-01 | DRP-4854-12,same_brand_name_has_multiple_generic_names
+genzole,omeprazole | omeprazole (as sodium),DRP-1570-20 | DRP-1623-09,same_brand_name_has_multiple_generic_names
+dapafast,dapagliflozin | dapaglifozin,DRP-15726 | DRP-16535,same_brand_name_has_multiple_generic_names
+resdilsin,guaifenesin + salbutamol | salbutamol (as sulfate) + guaifenesin,DRP-1578 | DRP-2198,same_brand_name_has_multiple_generic_names
+hemovit,ferrous sulfate | ferrous sulfate (as heptahydrate),DRP-1597 | DRP-1673,same_brand_name_has_multiple_generic_names
+estolax,aluminum hydroxide + magnesium hydroxide | aluminumhydroxide + magnesium hydroxide,DRP-1581 | HRP-089,same_brand_name_has_multiple_generic_names
+enerzee,zinc (as sulfate monohydrate) | zinc. (as sulfate monohydrate),DRP-1598 | DRP-3627,same_brand_name_has_multiple_generic_names
+enerzinc,zinc (as sulfate monohydrate) | zinc sulfate (as monohydrate) 27.5 mg/ml (equivalent to 10 mg elemental zinc) syrup (oral drops),DRP-1598-02 | DRP-3627-01,same_brand_name_has_multiple_generic_names
+lifeozinc,zinc (as sulfate monohydrate) | zinc sulfate (as monohydrate) 27.5 mg/ml (equivalent to 10 mg elemental zinc) syrup (oral drops),DRP-1598-07 | DRP-3627-02,same_brand_name_has_multiple_generic_names
+janumet,sitagliptin (as monohydrate phosphate) + metformin hydrochloride | sitagliptin (as phosphate) + metformin hydrochloride,DRP-16031 | DRP-4012,same_brand_name_has_multiple_generic_names
+velmetia,sitagliptin (as monohydrate phosphate) + metformin hydrochloride | sitagliptin (as phosphate) + metformin hydrochloride,DRP-16031-01 | DRP-4012-01,same_brand_name_has_multiple_generic_names
+amlothix,amlodipine | amlodipine (as besilate),DRP-993-03 | DRP-994-03,same_brand_name_has_multiple_generic_names
+prestan plus,losartan potassium + hydrochlorothiazide | losartan potassium / hydrochlorothiazide,DRP-1630 | DRP-2669,same_brand_name_has_multiple_generic_names
+saphcolgen,paracetamol + phenylpropanolamine hydrochloride + chlorphenamine maleate | paracetamol chlorpheniramine maleate,DRP-16406 | DRP-16580,same_brand_name_has_multiple_generic_names
+rimaclor,cefaclor (as monohdyrate) | cefaclor (as monohydrate),DRP-1649 | DRP-7827,same_brand_name_has_multiple_generic_names
+ercef,cefaclor (as monohdyrate) | cefaclor (as monohydrate),DRP-1645-02 | DRP-7827-01,same_brand_name_has_multiple_generic_names
+ironova,iron (as ferric hydroxidesucrose complex) | iron sucrose (as ferric hydroxide sucrose complex),DRP-16452 | DRP-7111-04,same_brand_name_has_multiple_generic_names
+ranvast,atorvastatin (as calcium) | atorvastatin(as calcium),DRP-2778 | DRP-5224,same_brand_name_has_multiple_generic_names
+nervit,"thiamine hcl + pyridoxine hcl + cyanocobalamin | vitamin b1,b6, b12",DRP-1647-01 | DRP-1863-03,same_brand_name_has_multiple_generic_names
+dabitrin 110,dabigatran etexilate (as mesilate) | dabigatran etexilate (as mesylate),DRP-16486 | DRP-16766,same_brand_name_has_multiple_generic_names
+vitruvia,vortioxetine | vortioxetine (as hydrobromide),DRP-16632 | DRP-16634,same_brand_name_has_multiple_generic_names
+ranzole,omeprazole | omeprazole (as sodium),DRP-3590-02 | DRP-9420,same_brand_name_has_multiple_generic_names
+bromacef,ambroxol (as hydrochloride) | ambroxol hydrochloride,DRP-1831 | DRP-2264,same_brand_name_has_multiple_generic_names
+glinamet,linagliptin + metformin hc1 | linagliptin +metformin hc1,DRP-16977 | DRP-16980,same_brand_name_has_multiple_generic_names
+ibuprofen,ibufam 200 | ibufam 400,DRP-17011 | DRP-17012,same_brand_name_has_multiple_generic_names
+bestatin,atorvastatin | atorvastatin (as calcium),DRP-1720 | DRP-2254,same_brand_name_has_multiple_generic_names
+atorbet,atorvastatin | atorvastatin (as calcium),DRP-1721-02 | DRP-2254-01,same_brand_name_has_multiple_generic_names
+glucotrose-50,dextrose | dextrose 50%,DRP-17208 | DRP-17265,same_brand_name_has_multiple_generic_names
+amtorphil,: amlodipine (as besilate) + atorvastatin (as calcium) | amlodipine (as besilate) + atorvastatin (as calcium),DRP-17718 | DRP-17720,same_brand_name_has_multiple_generic_names
+prosterone,abiraterone (as acetate) | abiraterone acetate,DRP-17775 | DRP-17851,same_brand_name_has_multiple_generic_names
+rapichlor,chlorhexidine (as gluconate) | chlorhexidine digluconate | chlorhexidine gluconate,DRP-17830 | HRP-519 | HRP-624,same_brand_name_has_multiple_generic_names
+ventrex,salbutamol (as sulfate) | salbutamol sulfate,DRP-1812 | DRP-2779,same_brand_name_has_multiple_generic_names
+flagyl,metronidazole | metronidazole (as benzoate),DRP-182 | DRP-5591-05,same_brand_name_has_multiple_generic_names
+leal vits,vitamin b complex | vitamins b1 + b6 + b12 (see reverse for formulation),DRP-1847 | DRP-6692,same_brand_name_has_multiple_generic_names
+zervit,vitamin b1 + b6 + b12 | vitamin b1 + be + b12,DRP-1847-01 | DRP-8905-01,same_brand_name_has_multiple_generic_names
+myclosil,metoclopramide (as hydrochloride) | metoclopramide hydrochloride,DRP-1865 | DRP-2258,same_brand_name_has_multiple_generic_names
+naxen,naproxem sodium | naproxen sodium,DRP-1872 | DRP-2227,same_brand_name_has_multiple_generic_names
+saridon max,naproxem sodium | naproxen sodium,DRP-1872-02 | DRP-2227-04,same_brand_name_has_multiple_generic_names
+zenith,azithromycin (as dihydrate) | azithromycin (as monohydrate),DRP-1879-01 | DRP-8453-01,same_brand_name_has_multiple_generic_names
+cimex,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-4342 | DRP-4443,same_brand_name_has_multiple_generic_names
+sinucare,paracetamol + phenylephrine hydrochloride + chlorphenamine maleate | phenylpropanolamine hydrochloride + brompheniramine maleate,DRP-1926-04 | DRP-329-07,same_brand_name_has_multiple_generic_names
+dalacin-c,clindamycin (as hydrochloride) | clindamycin (as palmitate hydrochloride),DRP-1951 | DRP-1953,same_brand_name_has_multiple_generic_names
+dalacin c,clindamycin (as hydrochloride) | clindamycin (as phosphate),DRP-1952 | DRP-1954,same_brand_name_has_multiple_generic_names
+redacid,omeprazole | omeprazole (as sodium),DRP-1977-07 | DRP-8557-01,same_brand_name_has_multiple_generic_names
+dilantin,phenytoin | phenytoin sodium,DRP-2037 | DRP-2038,same_brand_name_has_multiple_generic_names
+cefuxal,cefuroxime (as axetil) | cefuroxime (as axetll),DRP-2103-09 | DRP-7568-04,same_brand_name_has_multiple_generic_names
+solu-medrol,methylprednisolone (as sodium succinate) | methylprednisolone sodium succinate,DRP-2156 | DRP-7404,same_brand_name_has_multiple_generic_names
+solu-cortef,hydrocortisone (as sodium succinate) | hydrocortisone sodium succinate,DRP-2145 | DRP-2154,same_brand_name_has_multiple_generic_names
+viacef,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-2144-01 | DRP-3995-20,same_brand_name_has_multiple_generic_names
+pio-source,pioglitazone (as hydrochloride) | pioglitazone hydrochloride,DRP-2167-06 | DRP-2807-06,same_brand_name_has_multiple_generic_names
+vivasartan plus,losartan +hydrochlorothiazide | losartan potassium + hydrochlorothiazide,DRP-2185 | DRP-2186,same_brand_name_has_multiple_generic_names
+cardiotaz 20,trimetazidine (as dihydrochloride) | trimetazidine dihydrochloride,DRP-2253 | DRP-4161-03,same_brand_name_has_multiple_generic_names
+cordistat,amlodipine (as besilate) + atorvastatin (as calcium) | atorvastatin (as calcium) + amlodipine (as besilate),DRP-2304-02 | DRP-2511-02,same_brand_name_has_multiple_generic_names
+miravast,amlodipine (as besilate) + atorvastatin (as calcium) | atorvastatin (as calcium) + amlodipine (as besilate),DRP-2304-03 | DRP-2511-03,same_brand_name_has_multiple_generic_names
+coldrex-ppa,paracetamol + phenylpropanolamine hcl + chlorphenamine maleate | paracetamol + phenylpropanolamine hydrochloride + chlorphenamine maleate,DRP-2360 | DRP-2362,same_brand_name_has_multiple_generic_names
+jinzole,metronidazole | metronidazole (as benzoate),DRP-2420 | DRP-5591,same_brand_name_has_multiple_generic_names
+menizole,metronidazole | metronidazole (as benzoate),DRP-2420-01 | DRP-5591-01,same_brand_name_has_multiple_generic_names
+ricozole,metronidazole | metronidazole (as benzoate),DRP-2420-03 | DRP-5591-04,same_brand_name_has_multiple_generic_names
+fuson,fusidic acid | sodium fusidate,DRP-2457 | DRP-2458,same_brand_name_has_multiple_generic_names
+cardiotaz,trimetazidine (as hydrochloride) | trimetazidine dihydrochloride,DRP-2489-02 | DRP-8586-05,same_brand_name_has_multiple_generic_names
+gozedine,trimetazidine (as hydrochloride) | trimetazidine dihydrochloride,DRP-2489-05 | DRP-8586-08,same_brand_name_has_multiple_generic_names
+xinprotec,trimetazidine (as hydrochloride) | trimetazidine dihydrochloride,DRP-2489-09 | DRP-8586-14,same_brand_name_has_multiple_generic_names
+diazitri 35,trimetazidine (as hydrochloride) | trimetazidine dihydrochloride,DRP-2489-14 | DRP-4004-03,same_brand_name_has_multiple_generic_names
+cifrem,cefuroxime (as axetil) | cefuroxime(as axetil),DRP-2555 | DRP-3211,same_brand_name_has_multiple_generic_names
+cefumax,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-2596-01 | DRP-3442-01,same_brand_name_has_multiple_generic_names
+visymplex plus,multivitamins | multivitamins + l-lysine hydrochloride,DRP-2616 | DRP-2617,same_brand_name_has_multiple_generic_names
+appevit,buclizine hydrochloride + vitamin b complex + iron | multivitamins + mineral + buclizine,DRP-2653 | DRP-7742,same_brand_name_has_multiple_generic_names
+apperon,buclizine hydrohloride + vitamin b-complex + iron | multivitamins + minerals + buclizine,DRP-2653-10 | DRP-7742-05,same_brand_name_has_multiple_generic_names
+apperozine,buclizine hydrohloride + vitamin b-complex + iron | multivitamins + minerals + buclizine,DRP-2653-20 | DRP-7742-10,same_brand_name_has_multiple_generic_names
+geoprazole,omeprazole | omeprazole (as sodium),DRP-2725-12 | DRP-5025-03,same_brand_name_has_multiple_generic_names
+omemac-gerd,omeprazole | omeprazole (as sodium),DRP-3047-03 | DRP-5025-29,same_brand_name_has_multiple_generic_names
+tidomet,carbidopa + levodopa | levodopa + carbidopa,DRP-2770 | DRP-2782,same_brand_name_has_multiple_generic_names
+zurenix,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-282 | DRP-455,same_brand_name_has_multiple_generic_names
+eurimax,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-3995-23 | DRP-5367-02,same_brand_name_has_multiple_generic_names
+solazol,glimeperide | glimepiride,DRP-3019-01 | DRP-3019-02,same_brand_name_has_multiple_generic_names
+zemomax,omeprazole | omeprazole (as sodium),DRP-3047-10 | DRP-5025-28,same_brand_name_has_multiple_generic_names
+zionel,metoprolol (as tartrate) | metoprolol tartrate,DRP-3073 | DRP-4215,same_brand_name_has_multiple_generic_names
+b-bloc,metoprolol (as tartrate) | metoprolol tartrate,DRP-3073-02 | DRP-4215-01,same_brand_name_has_multiple_generic_names
+amlodipine (as besilate),bptrol | calpress-10 | calpress-5 | norvatrol,DRP-3077 | DRP-3079 | DRP-3108 | DRP-3108-03,same_brand_name_has_multiple_generic_names
+zyrex,cefuroxime (as sodium) | cefuroxime sodium,DRP-3115-02 | DRP-4515-07,same_brand_name_has_multiple_generic_names
+trixime,cefuroxime (as axetil) | cefuroxime (as sodium) | cefuroxime sodium,DRP-3115-04 | DRP-3210-04 | DRP-4515-06,same_brand_name_has_multiple_generic_names
+piperacillin (as sodium) + tazobactam (as sodium),tazbac | tazobet | ureitaz | zopip,DRP-3143 | DRP-3143-01 | DRP-3143-02 | DRP-3555-05,same_brand_name_has_multiple_generic_names
+ezythromax,azithromycin | azithromycin (as monohydrate),DRP-3204-03 | DRP-3431-05,same_brand_name_has_multiple_generic_names
+avax,salbutamol (as sulfate) | salbutamol sulfate,DRP-3237 | DRP-4258,same_brand_name_has_multiple_generic_names
+gasaide,dicycloverine (as hydrochloride) | dicycloverine hydrichloride | dicycloverine hydrochloride,DRP-3246 | DRP-4522 | DRP-5274,same_brand_name_has_multiple_generic_names
+dicyclogen,dicycloverine (as hydrochloride) | dicycloverine hydrochloride,DRP-3246-02 | DRP-5274-01,same_brand_name_has_multiple_generic_names
+cloverine,dicycloverine (as hydrochloride) | dicycloverine hydrochloride,DRP-3246-03 | DRP-4522-03,same_brand_name_has_multiple_generic_names
+reliefas,dicycloverine (as hydrochloride) | dicycloverine hydrochloride,DRP-3246-05 | DRP-5274-02,same_brand_name_has_multiple_generic_names
+urobac,cotrimaxozole | cotrimoxazole,DRP-3267-04 | DRP-4549-03,same_brand_name_has_multiple_generic_names
+ketofix,ketotifen (as hydrogen fumarate) | ketotifen fumarate | ketotifen hydrogen fumarate,DRP-3271 | DRP-3983 | DRP-5334,same_brand_name_has_multiple_generic_names
+allecur,cetirizine hydrochloride | cetirizine hydrochloride (apple green flavor),DRP-3272 | DRP-8261,same_brand_name_has_multiple_generic_names
+fevcet,paracetamol + tramadol hydrochloride | tramadol hydrochloride + paracetamol,DRP-3309-08 | DRP-5195-05,same_brand_name_has_multiple_generic_names
+cinazith-ds,azithromycin (as dihydrate) | azithromycin (as monohydrate),DRP-3431-09 | DRP-5605-01,same_brand_name_has_multiple_generic_names
+ferlum,ferrous sulfate | ferrous sulfate (as heptahydrate),DRP-3328 | DRP-4167,same_brand_name_has_multiple_generic_names
+lipitor,atorvastatin (as calcium) | atorvastatin calcium,DRP-3363 | DRP-3364,same_brand_name_has_multiple_generic_names
+flukid,phenylpropanolamine hydrochloride + chlorphenamine maleate | phenylpropanolamine hydrochloride + chlorpheniramine maleate,DRP-3383-03 | DRP-3599-03,same_brand_name_has_multiple_generic_names
+raphzep,paracetamol + phenylephrine hydrochloride + chlorpheniramine maleate | phenylephrine hydrochloride + chlorpheniramine maleate + paracetamol,DRP-3400-01 | DRP-4997,same_brand_name_has_multiple_generic_names
+bercef,cefaclor | cefaclor (as monohydrate),DRP-3423-01 | DRP-3573-02,same_brand_name_has_multiple_generic_names
+xelor,cefaclor | cefaclor (as monohydrate),DRP-3423-02 | DRP-3573-01,same_brand_name_has_multiple_generic_names
+buclivit,multivitamins + buclizine hydrochloride | multivitamins + buclizine hydrochloride + iron,DRP-3493-01 | DRP-6827-07,same_brand_name_has_multiple_generic_names
+appebest,multivitamins + buclizine hydrochloride | multivitamins + buclizine hydrochloride + iron (as ferrous sulfate),DRP-3493-03 | DRP-6827-08,same_brand_name_has_multiple_generic_names
+daily plus,multivitamins + buclizine hydrochloride | multivitamins + buclizine hydrochloride + iron,DRP-3493-05 | DRP-6827-06,same_brand_name_has_multiple_generic_names
+buclirich,multivitamins + buclizine hydrochloride | multivitamins + buclizine hydrochloride + iron,DRP-3493-09 | DRP-6827-05,same_brand_name_has_multiple_generic_names
+bufen,ibuprofen | ibuprofen (orange flavor),DRP-3562 | DRP-3563,same_brand_name_has_multiple_generic_names
+noxifen,phenylpropanolamine hydrochloride + chlorphenamine maleate | phenylpropanolamine hydrochloride + chlorpheniramine maleate,DRP-3599 | DRP-935,same_brand_name_has_multiple_generic_names
+aerox,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-3600 | DRP-4975,same_brand_name_has_multiple_generic_names
+gentriaxone,ceftriaxone (as sodium) | ceftriaxone sodium,DRP-3601-09 | DRP-5240-20,same_brand_name_has_multiple_generic_names
+danoxime,cefuroxime (as sodium) | cefuroxime sodium,DRP-3615 | DRP-7062,same_brand_name_has_multiple_generic_names
+amamcla,amoxicillin (as sodium) + potassium clavulanate (as clavulanic acid) | co-amoxiclav,DRP-3620 | DRP-6052,same_brand_name_has_multiple_generic_names
+ampimax,ampicillin (as sodium) + sulbactam (as sodium) | sultamicillin (as tosilate dihydrate),DRP-3649-01 | DRP-4190,same_brand_name_has_multiple_generic_names
+telmidin,telmisartan | telmisartan 40mg,DRP-3687-05 | DRP-3710-04,same_brand_name_has_multiple_generic_names
+calan,verapamil | verapamil hydrochloride,DRP-3734 | DRP-4007,same_brand_name_has_multiple_generic_names
+revitron,multivitamins + minerals | multivitamins + minerals + lysine + inositol,DRP-3800-01 | DRP-3842-02,same_brand_name_has_multiple_generic_names
+mupiban,mupirocin | mupirocin (as calcium),DRP-3840 | DRP-7979,same_brand_name_has_multiple_generic_names
+evamin,amino acids | amino acids + multiviatmins + minerals,DRP-3866-03 | DRP-4561-03,same_brand_name_has_multiple_generic_names
+zolnex,hyoscine (as n-butylbromide) | hyoscine n-butylbromide,DRP-3930 | DRP-4770,same_brand_name_has_multiple_generic_names
+zycloran,chlorpromazine ( as hydrochloride ) | chlorpromazine ( as hydrochloride),DRP-3961 | DRP-3962,same_brand_name_has_multiple_generic_names
+cefuget,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-3995-08 | DRP-5503-01,same_brand_name_has_multiple_generic_names
+titacef,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-3995-09 | DRP-4164-18,same_brand_name_has_multiple_generic_names
+oxifadz,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-3995-27 | DRP-4164-29,same_brand_name_has_multiple_generic_names
+verbeta 24,betahistine dihydrochloride | betahistine hydrochloride,DRP-4145-12 | DRP-5644-03,same_brand_name_has_multiple_generic_names
+aeruginox,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-4975-02 | DRP-7483,same_brand_name_has_multiple_generic_names
+histaril,guaifenesin + salbutamol (as sulfate) | guaifenesin / salbutamol (as sulfate),DRP-4224 | DRP-7837,same_brand_name_has_multiple_generic_names
+esolev,esomeprazole (as magnesium trihydrate) | esomeprazole (as sodium),DRP-4232-02 | DRP-5881-02,same_brand_name_has_multiple_generic_names
+methyden,methylprednisolone | methylprednisolone (as sodium succinate),DRP-4317-01 | DRP-5415-03,same_brand_name_has_multiple_generic_names
+somazine,citicoline | citicoline (as sodium),DRP-432 | DRP-434,same_brand_name_has_multiple_generic_names
+clintam,clindamycin (as phosphate) | clindamycin(as phosphate),DRP-4324-04 | DRP-4355-04,same_brand_name_has_multiple_generic_names
+rucef,cefuroxime | cefuroxime (as axetil),DRP-4349 | DRP-5503-02,same_brand_name_has_multiple_generic_names
+diclogen,diclofenac diethylamine | diclofenac sodium,DRP-4362 | DRP-978,same_brand_name_has_multiple_generic_names
+anemifer,ferrous sulfate heptahydrate | iron | iron (as ferrous sulfate heptahydrate),DRP-4493 | DRP-7744 | DRP-7846,same_brand_name_has_multiple_generic_names
+dolright,tramadol (as hydrochloride) | tramadol hydrochloride,DRP-4508-01 | DRP-5457-04,same_brand_name_has_multiple_generic_names
+pantoxac,pantoprazole | pantoprazole (as sodium),DRP-4664-05 | DRP-6635-07,same_brand_name_has_multiple_generic_names
+brodix,salbutamol (as sulfate) | salbutamol sulfate,DRP-4671-04 | DRP-630-04,same_brand_name_has_multiple_generic_names
+aezar,piperacillin (as sodium) + tazobactam (as sodium) | piperacillin (as sodium) / tazobactam (as sodium),DRP-4696-13 | DRP-5515-02,same_brand_name_has_multiple_generic_names
+lozak,losartan (as potassium) | losartan potassium,DRP-4706 | DRP-4724,same_brand_name_has_multiple_generic_names
+thiaxtan,losartan potassium + hydrochlorothiazide | losartan potassium + hydrochlothiazide,DRP-4753 | DRP-4860,same_brand_name_has_multiple_generic_names
+mdbrox,ambroxol | ambroxol hydrochloride,DRP-4837 | DRP-5163,same_brand_name_has_multiple_generic_names
+valcamp,amlodipine (as besilate) + valsartan | amlodipine (as besilate)+ valsartan,DRP-4868-01 | DRP-4869-01,same_brand_name_has_multiple_generic_names
+medicip,ciprofloxacin (as hydrochloride) | ciprofloxacin hydrochloride,DRP-495 | DRP-495-03,same_brand_name_has_multiple_generic_names
+cefulab,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-4975-07 | DRP-8403-12,same_brand_name_has_multiple_generic_names
+terxime,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-4976-24 | DRP-5367-12,same_brand_name_has_multiple_generic_names
+ximebac,cefixime | cefixime (as trihydrate),DRP-5683-02 | DRP-8070-05,same_brand_name_has_multiple_generic_names
+cefitrene,cefixime | cefixime (as trihydrate),DRP-5052-04 | DRP-5683-03,same_brand_name_has_multiple_generic_names
+tgxime,cefixime | cefixime (as trihydrate),DRP-5121-14 | DRP-5683-16,same_brand_name_has_multiple_generic_names
+cefulax,cefixime | cefixime (as trihydrate),DRP-5052-11 | DRP-5683-05,same_brand_name_has_multiple_generic_names
+ceftri,cefixime | cefixime (as trihydrate),DRP-5052-12 | DRP-5683-06,same_brand_name_has_multiple_generic_names
+froncef,cefixime | cefixime (as trihydrate),DRP-5052-13 | DRP-5683-27,same_brand_name_has_multiple_generic_names
+tropsiv,cefixime | cefixime (as trihydrate),DRP-5052-15 | DRP-5683-22,same_brand_name_has_multiple_generic_names
+omnixime,cefixime | cefixime (as trihydrate),DRP-5052-16 | DRP-5683-08,same_brand_name_has_multiple_generic_names
+truquest,cefixime | cefixime (as trihydrate),DRP-5052-22 | DRP-5683-18,same_brand_name_has_multiple_generic_names
+nibexime,cefixime | cefixime (as trihydrate),DRP-5052-23 | DRP-5683-19,same_brand_name_has_multiple_generic_names
+kenzocef,cefixime | cefixime (as trihydrate),DRP-5052-24 | DRP-5683-20,same_brand_name_has_multiple_generic_names
+luxime,cefixime | cefixime (as trihydrate),DRP-5052-27 | DRP-5683-24,same_brand_name_has_multiple_generic_names
+cefegold,cefixime | cefixime (as trihydrate),DRP-5052-32 | DRP-5683-28,same_brand_name_has_multiple_generic_names
+elbacef,cefuroxime (as sodium) | cefuroxime sodium,DRP-5060-01 | DRP-7062-01,same_brand_name_has_multiple_generic_names
+phosphaxil,cyclophosphamide | cyclophosphamide (as monohydrate),DRP-5167-03 | DRP-5335-07,same_brand_name_has_multiple_generic_names
+esoget,esomeprazole (as magnesium) | esomeprazole (as sodium),DRP-5177 | DRP-6336,same_brand_name_has_multiple_generic_names
+reax,cetirizine (as dihydrochloride ) | cetirizine dihydrochloride,DRP-5185 | DRP-5508,same_brand_name_has_multiple_generic_names
+alerest,cetirizine (as dihydrochloride) | cetirizine dihydrochloride,DRP-5185-06 | DRP-5508-08,same_brand_name_has_multiple_generic_names
+lergic,cetirizine (as dihydrochloride ) | cetirizine dihydrochloride 2.5 mg/ml syrup (oral drops) | cetirizine dihydrochloride 5 mg/5 ml syrup,DRP-5185-07 | DRP-5405-03 | DRP-5508-03,same_brand_name_has_multiple_generic_names
+lerif,cetirizine (as dihydrochloride) | cetirizine dihydrochloride | cetirizine dihydrochloride 2.5 mg/ml syrup (oral drops),DRP-5185-08 | DRP-5405-02 | DRP-5508-05,same_brand_name_has_multiple_generic_names
+kidicef,paracetamol | paracetamol 500 mg tablet,DRP-5636 | HRP-367,same_brand_name_has_multiple_generic_names
+amorex,amoxicillin (as trihydrate) | amoxicillin trihydrate,DRP-5251 | DRP-5258,same_brand_name_has_multiple_generic_names
+cotrimaxol,cotrimoxazole | cotrimoxazole (butterscotch flavor),DRP-5256 | DRP-5447,same_brand_name_has_multiple_generic_names
+pneumonex,cefalexin | cefalexin (as monohydrate),DRP-5261 | DRP-5814,same_brand_name_has_multiple_generic_names
+histamox,diphenhydramine | diphenhydramine hydrochloride,DRP-5316 | DRP-5665,same_brand_name_has_multiple_generic_names
+cladryl,diphenhydramine | diphenhydramine hydrochloride,DRP-5316-02 | DRP-5665-02,same_brand_name_has_multiple_generic_names
+sulvacil,ampicillin (as sodium) + sulbactam (as sodium) | ampicillin(as sodium)+sulbactam(as sodium),DRP-5382-02 | DRP-5442-02,same_brand_name_has_multiple_generic_names
+cloxid,cloxacillin | cloxacillin (as sodium),DRP-5525 | DRP-5599,same_brand_name_has_multiple_generic_names
+maxifer,iron (as iron sucrose) | iron sucrose,DRP-5540-02 | DRP-6809-01,same_brand_name_has_multiple_generic_names
+prosec,omeprazole | omeprazole(as sodium),DRP-5657 | DRP-742-01,same_brand_name_has_multiple_generic_names
+nurocol,citicoline | citicoline ( as sodium ),DRP-5671 | DRP-6435,same_brand_name_has_multiple_generic_names
+propump,pantoprazole (as sodium sesquihydrate) | pantoprazole (as sodium),DRP-5828-07 | DRP-5896-02,same_brand_name_has_multiple_generic_names
+bizataz,piperacillin (as sodium) + tazobactam (as sodium) | piperacillin(as sodium) + tazobactam (as sodium),DRP-5865 | DRP-7426,same_brand_name_has_multiple_generic_names
+omee,omeprazole (as sodium) | omeprazole sodium,DRP-5882-04 | DRP-5930-11,same_brand_name_has_multiple_generic_names
+zukastop,ondansetron (as hydrochloride dihydrate) | ondansetron (as hydrochloride),DRP-5894-02 | DRP-6609-06,same_brand_name_has_multiple_generic_names
+ondens,ondansetron (as hydrochloride dihydrate) | ondansetron (as hydrochloride),DRP-5894-06 | DRP-6609-07,same_brand_name_has_multiple_generic_names
+ketomicore,ketoanalogues + essential amino acids | ketoanalogues + essential phospholipids,DRP-5901-02 | DRP-6051-17,same_brand_name_has_multiple_generic_names
+melmag,aluminum hydroxide + magnesium hydroxide | aluminum hydroxide/ magnesium hydroxide,DRP-5941 | HRP-103,same_brand_name_has_multiple_generic_names
+maxcid,aluminum hydroxide + magnesium hydroxide | aluminum hydroxide/ magnesium hydroxide,DRP-5941-01 | HRP-103-01,same_brand_name_has_multiple_generic_names
+ketoanalogues + essential amino acids,aminoral | ketoanalogues + essential amino acids,DRP-6051-21 | DRP-7371,same_brand_name_has_multiple_generic_names
+methocel,methorexate | methotrexate,DRP-6054 | DRP-8246,same_brand_name_has_multiple_generic_names
+enhanzee,ascorbic acid | ascorbic acid (as sodium ascorbate) + zinc (as sulfate monohydrate),DRP-6089-06 | DRP-8843-01,same_brand_name_has_multiple_generic_names
+corbizee plus,ascorbic acid (as sodium ascorbate) + zinc. (as sulfate monohydrate) | ascorbic acid + zinc,DRP-6089 | DRP-8988,same_brand_name_has_multiple_generic_names
+diprogenta,betamethasone (dipropionate) / gentamicin (as sulfate) | betamethasone / gentamicin,DRP-6238 | DRP-6239,same_brand_name_has_multiple_generic_names
+alfree,cetirizine dihydrochloride | cetirizine hydrochloride,DRP-6260 | DRP-9074,same_brand_name_has_multiple_generic_names
+valianz,amlodipine (as besilate) + valsartan | valsartan + amlodipine (as besilate),DRP-6311 | DRP-8984,same_brand_name_has_multiple_generic_names
+vent,salbutamol (as sulfate) | salbutamol sulfate,DRP-630 | DRP-630-08,same_brand_name_has_multiple_generic_names
+clonigen,clonidine | clonidine (as hydrochloride),DRP-6300 | DRP-6315,same_brand_name_has_multiple_generic_names
+aekovan,vancomycin (as hydrochloride) | vancomycin hydrochloride,DRP-6421 | DRP-7387-06,same_brand_name_has_multiple_generic_names
+uniclox,cloxacillin (as sodium) | cloxacillin sodium,DRP-6714 | DRP-6752,same_brand_name_has_multiple_generic_names
+zeticof,butamirate (as citrate) | butamirate citrate,DRP-6725-01 | DRP-8379-03,same_brand_name_has_multiple_generic_names
+buticod,butamirate (as citrate) | butamirate citrate,DRP-6725-03 | DRP-8379-02,same_brand_name_has_multiple_generic_names
+b.n.p.,neomycin (as sulfate) + polymyxin (as sulfate) + bacitracin | neomycin (as sulfate) + polymyxin b (as sulfate) + bacitracin,DRP-675 | DRP-678,same_brand_name_has_multiple_generic_names
+aceclav,co-amoxiclav | co-amoxiclav (see reverse for formulation),DRP-6757-04 | DRP-7048-01,same_brand_name_has_multiple_generic_names
+lamotrigine,lamepil-100 | lamepil-25,DRP-6770 | DRP-6797,same_brand_name_has_multiple_generic_names
+exforge hct,amlodipine (as besilate) + hydrochlorothiazide | amlodipine (as besilate) + valsartan + hydrochlorothiazide | amlodipine hydrochlorothiazide,DRP-6805 | DRP-6806 | DRP-6807,same_brand_name_has_multiple_generic_names
+budesonide,asthlon | medcort,DRP-6868-02 | DRP-6868-03,same_brand_name_has_multiple_generic_names
+guiacof plus,guaifenesin + salbutamol | salbutamol (as sulfate) + guaifenesin,DRP-6938 | DRP-6939,same_brand_name_has_multiple_generic_names
+mepem,meropenem (as trihydrate) | meropenem trihydrate . dried sodium carbonate,DRP-6955 | DRP-7859,same_brand_name_has_multiple_generic_names
+enerstress,multivitamin | multivitamins,DRP-7005 | DRP-7006,same_brand_name_has_multiple_generic_names
+avas,atorvastatin ( as calcium ) | atorvastatin (as calcium),DRP-7057 | DRP-9583,same_brand_name_has_multiple_generic_names
+metrozole,metronidazole | metronidazole (as benzoate),DRP-7068 | DRP-7107,same_brand_name_has_multiple_generic_names
+multilem plus,multilem+iron | multivitamins+iron,DRP-7085 | DRP-7294,same_brand_name_has_multiple_generic_names
+zudem,cefpodoxime (as proxetil) | desloratadine,DRP-7109 | DRP-7775,same_brand_name_has_multiple_generic_names
+ferriscript,iron (as ferric hydroxide sucrose complex) | iron (as iron sucrose),DRP-7111-02 | DRP-7844-05,same_brand_name_has_multiple_generic_names
+sinudrin,phenylpropanolamine hydrochloride | phenylpropanolomine hydrochloride,DRP-7164 | DRP-7301,same_brand_name_has_multiple_generic_names
+edroxid,aluminum / magnesium hydroxide | aluminum hydroxide + magnesium hydroxide,DRP-720 | DRP-8013,same_brand_name_has_multiple_generic_names
+q-win,quetiapine ( as fumarate ) | quetiapine ( as fumarate) | quetiapine (as fumarate ),DRP-7200 | DRP-7203 | DRP-7868,same_brand_name_has_multiple_generic_names
+angioten,losartan (as potassium) | losartan potassium,DRP-7208 | DRP-7209,same_brand_name_has_multiple_generic_names
+spiroden,spirinolactone | spironolactone,DRP-7359-03 | DRP-7361-02,same_brand_name_has_multiple_generic_names
+appetens,pizotifen + vitamin b complex | pizotifen + vitamin b-complex,DRP-7455 | DRP-7462,same_brand_name_has_multiple_generic_names
+atornav,atorvastatin | atorvastatin (as calcium),DRP-7530-03 | DRP-8593-01,same_brand_name_has_multiple_generic_names
+flustan,paracetamol + phenylephrine hcl + chlorphenamine maleate | paracetamol + phenylephrine hydrochloride + chlorphenamine maleate,DRP-7759-02 | DRP-7760-02,same_brand_name_has_multiple_generic_names
+alerchek,olapatadine (as hydrochloride) | olopatadine (as hydrochloride),DRP-7886 | DRP-8264,same_brand_name_has_multiple_generic_names
+drozid,cefadroxil | cefadroxil (as monohydrate),DRP-8080 | DRP-8421,same_brand_name_has_multiple_generic_names
+stalev,levodopa + carbidopa + entacapone | levodopa + carbidopa + entecapone,DRP-8091 | DRP-8092,same_brand_name_has_multiple_generic_names
+qmeprazole,omeprazole | omeprazole (as sodium),DRP-8396-05 | DRP-9420-01,same_brand_name_has_multiple_generic_names
+glivec,imatinib (as mesylate beta crystals) | imatinib (as mesylate),DRP-8528 | DRP-8529,same_brand_name_has_multiple_generic_names
+execore,cefuroxime (as axetil) | cefuroxime (as sodium),DRP-8746 | DRP-9975,same_brand_name_has_multiple_generic_names
+mucucil,acetylcysteine | this cpr is granted following a.o. 31 s. 2005.,DRP-9168-01 | DRP-9169-01,same_brand_name_has_multiple_generic_names
+sa-cee,ascorbic acid (as sodium ascorbate) | sodium ascorbate,DRP-9584 | HRP-344,same_brand_name_has_multiple_generic_names
+lagundex,vitex negundo l. (lagundi leaf) | vitex negundo l. lagundi leaf,HMR-45 | HMR-63,same_brand_name_has_multiple_generic_names
+flumexal,vitex negundo l. (lagundi leaf) | vitex negundo l. (lagundi leaf) mandarin orange flavor,HMR-127 | HMR-175,same_brand_name_has_multiple_generic_names
+re-leaf forte,blumea balsamifera (l.) dc (sambong leaf) | blumea balsamifera l. (sambong leaf),HMR-155 | HMR-17,same_brand_name_has_multiple_generic_names
+lagundex forte,vitex negundo l. (lagundi leaf) | vitex negundo l. lagundi leaf,HMR-177 | HMR-64,same_brand_name_has_multiple_generic_names
+plemex forte,vitex negundo l. | vitex negundo l. (lagundi leaf),HMR-49 | HMR-89,same_brand_name_has_multiple_generic_names
+plemex for kids (banana flavor),vitex negundo l. | vitex negundo l. (lagundi leaf),HMR-184 | HMR-50,same_brand_name_has_multiple_generic_names
+ofplemed,vitex negundo l. (lagundi leaf) | vitex negundo l. (lagundi) leaf | vitex negundo l. lagundi leaf | vitex negundo l.(lagundi leaf),HMR-87 | HMRP-26 | HMRP-36 | HRP-690,same_brand_name_has_multiple_generic_names
+stimuno,phyllanthus niruri l. | phyllanthus niruri l. (meniran whole plant),HMRP-11 | HMRP-12,same_brand_name_has_multiple_generic_names
+imuncare,phyllanthus niruri l. | phyllanthus niruri l. (meniran whole plant),HMRP-11-01 | HMRP-12-01,same_brand_name_has_multiple_generic_names
+clircaf forte,vitex negundo l (lagundi leaf) | vitex negundo l. (lagundi leaf),HMRP-22 | HMRP-25,same_brand_name_has_multiple_generic_names
+clircaf,vitex negundo l (lagundi leaf) | vitex negundo l. (lagundi leaf),HMRP-24 | HMRP-39,same_brand_name_has_multiple_generic_names
+gundisaph-s600,vitex negundo l. (lagundi leaf) | vitex negundo l. (nirgundi leaf),HRP-505 | HRP-506,same_brand_name_has_multiple_generic_names
+evergreen,ethyl alcohol | isopropyl alcohol,HRP-038 | HRP-626,same_brand_name_has_multiple_generic_names
+lemon-cee,ascorbic acid | ascorbic acid (vitamin c),HRP-083-02 | HRP-096-03,same_brand_name_has_multiple_generic_names
+myrevit-c,ascorbic acid | ascorbic acid (reformulated),HRP-096 | HRP-098,same_brand_name_has_multiple_generic_names
+regicee,ascorbic acid | ascorbic acid (vitamin c),HRP-096-01 | HRP-098-02,same_brand_name_has_multiple_generic_names
+povigen,povidone iodine | povidone-iodine,HRP-565 | HRP-571,same_brand_name_has_multiple_generic_names
+acura,menthol+ camphor+eucalyptus oil | methyl salicylate + camphor + menthol + eucalyptus oil,HRP-308 | HRP-378,same_brand_name_has_multiple_generic_names
+medalem,aluminum hydroxide + magnesium hydroxide | aluminum hydroxide + magnessium hydroxide,HRP-317 | HRP-320,same_brand_name_has_multiple_generic_names
+electral,oral rehydration salts | oral rehydration salts (ors),HRP-348 | HRP-464,same_brand_name_has_multiple_generic_names
+maxi-aid,povidone iodine | povidone-iodine,HRP-552 | HRP-735,same_brand_name_has_multiple_generic_names
+therasil (orange flavor),"2, 4 dichlorobenzyl alcohol + amylmetacresol | 2,4-dichlorobenzyl alcohol + amylmetacresol",HRP-445 | HRP-445-01,same_brand_name_has_multiple_generic_names
+sureguard,chlorhexidine gluconate + isopropyl alcohol : sureguard | povidone-lodine,HRP-494 | HRP-497,same_brand_name_has_multiple_generic_names
+trapeel,hydroquinone + tretinoin | tretinoin + hydroquinone,HRP-495 | HRP-627,same_brand_name_has_multiple_generic_names
+safeplus,2% chlorhexidine in 70% alcohol | chlorhexidine gluconate + isopropyl alcohol,HRP-514 | HRP-515,same_brand_name_has_multiple_generic_names
+chlorgen,chlorhexidine | chlorhexidine (as gluconate),HRP-522 | HRP-625,same_brand_name_has_multiple_generic_names
+chlorklenz,chlorhexidine | chlorhexidine (as gluconate),HRP-524 | HRP-600,same_brand_name_has_multiple_generic_names
+young's,ethyl alcohol | isopropyl alcohol,HRP-668 | HRP-711,same_brand_name_has_multiple_generic_names

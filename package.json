@@ -1,0 +1,14 @@
+{
+  "name": "confusable-drugs-ph-data",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scrape:ph-fda": "node scripts/ph_fda_scraper.mjs",
+    "test:ph-fda": "node --test tests/ph_fda_scraper.test.mjs",
+    "viewer:data": ".venv/bin/python scripts/export_lasa_viewer_data.py",
+    "viewer": "python3 -m http.server 8088 --directory viewer"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  }
+}

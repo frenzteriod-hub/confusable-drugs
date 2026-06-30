@@ -1,0 +1,18 @@
+{
+  "source": "PH_FDA_VERIFICATION_PORTAL",
+  "portal_url": "https://verification.fda.gov.ph/",
+  "generated_at": "2026-06-29T18:32:05.327Z",
+  "expected_total_benchmark": 32557,
+  "unique_product_records": 31208,
+  "unique_leaflet_links": 6255,
+  "completed_queries": 428,
+  "sharded_queries": 4,
+  "pending_queries": 0,
+  "failed_queries": 0,
+  "incomplete_records": 11,
+  "possible_duplicate_groups": 924,
+  "registration_conflicts": 3,
+  "brand_generic_conflicts": 773,
+  "target_reached": true,
+  "complete_registry_verified": false
+}

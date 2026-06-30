@@ -1,0 +1,3037 @@
+{
+  "schema_version": 1,
+  "source": "PH_FDA_VERIFICATION_PORTAL",
+  "portal_url": "https://verification.fda.gov.ph/",
+  "created_at": "2026-06-29T13:25:00.309Z",
+  "updated_at": "2026-06-29T18:32:04.234Z",
+  "target_records": "all",
+  "expected_total": 32557,
+  "pending_queries": [],
+  "query_results": {
+    "BR-0": {
+      "status": "collected",
+      "file": "BR_0_b407759295.json",
+      "matching_products": 1,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:25:17.004Z"
+    },
+    "BR-1": {
+      "status": "collected",
+      "file": "BR_1_955acc71e8.json",
+      "matching_products": 277,
+      "matching_leaflets": 173,
+      "retrieved_at": "2026-06-29T13:25:31.829Z"
+    },
+    "BR-2": {
+      "status": "collected",
+      "file": "BR_2_ad0f6f33d2.json",
+      "matching_products": 2,
+      "matching_leaflets": 3,
+      "retrieved_at": "2026-06-29T13:25:45.064Z"
+    },
+    "BR-3": {
+      "status": "collected",
+      "file": "BR_3_8594f31804.json",
+      "matching_products": 6,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:25:58.291Z"
+    },
+    "BR-4": {
+      "status": "collected",
+      "file": "BR_4_13ac34ce73.json",
+      "matching_products": 15,
+      "matching_leaflets": 3,
+      "retrieved_at": "2026-06-29T13:26:11.403Z"
+    },
+    "BR-5": {
+      "status": "collected",
+      "file": "BR_5_3540148f77.json",
+      "matching_products": 30,
+      "matching_leaflets": 10,
+      "retrieved_at": "2026-06-29T13:26:23.157Z"
+    },
+    "BR-6": {
+      "status": "collected",
+      "file": "BR_6_5c12cb2109.json",
+      "matching_products": 33,
+      "matching_leaflets": 15,
+      "retrieved_at": "2026-06-29T13:26:36.639Z"
+    },
+    "BR-7": {
+      "status": "collected",
+      "file": "BR_7_134ca152d0.json",
+      "matching_products": 30,
+      "matching_leaflets": 22,
+      "retrieved_at": "2026-06-29T13:26:48.647Z"
+    },
+    "BR-8": {
+      "status": "collected",
+      "file": "BR_8_32d6e62bc4.json",
+      "matching_products": 30,
+      "matching_leaflets": 13,
+      "retrieved_at": "2026-06-29T13:26:59.965Z"
+    },
+    "BR-9": {
+      "status": "collected",
+      "file": "BR_9_e6c032f1f7.json",
+      "matching_products": 48,
+      "matching_leaflets": 21,
+      "retrieved_at": "2026-06-29T13:27:12.200Z"
+    },
+    "BR-A": {
+      "status": "collected",
+      "file": "BR_A_8e53671b2c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:27:24.627Z"
+    },
+    "BR-B": {
+      "status": "collected",
+      "file": "BR_B_58876f11f5.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:27:36.643Z"
+    },
+    "BR-C": {
+      "status": "collected",
+      "file": "BR_C_29c2591858.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:27:49.279Z"
+    },
+    "BR-D": {
+      "status": "collected",
+      "file": "BR_D_8918bce161.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:28:01.587Z"
+    },
+    "BR-E": {
+      "status": "collected",
+      "file": "BR_E_701347a0c7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:28:13.564Z"
+    },
+    "BR-F": {
+      "status": "collected",
+      "file": "BR_F_18a04b2cb9.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:28:26.140Z"
+    },
+    "BR-G": {
+      "status": "collected",
+      "file": "BR_G_30527fb2aa.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:28:39.625Z"
+    },
+    "BR-H": {
+      "status": "collected",
+      "file": "BR_H_4b0ab4cc16.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:28:54.797Z"
+    },
+    "BR-I": {
+      "status": "collected",
+      "file": "BR_I_1c904c4744.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:29:09.655Z"
+    },
+    "BR-J": {
+      "status": "collected",
+      "file": "BR_J_7c9629b549.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:29:25.868Z"
+    },
+    "BR-K": {
+      "status": "collected",
+      "file": "BR_K_d06b7b8fce.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:29:40.431Z"
+    },
+    "BR-L": {
+      "status": "collected",
+      "file": "BR_L_f2c64d368a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:29:54.535Z"
+    },
+    "BR-M": {
+      "status": "collected",
+      "file": "BR_M_716d78dd47.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:30:08.075Z"
+    },
+    "BR-N": {
+      "status": "collected",
+      "file": "BR_N_1859026a55.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:30:20.243Z"
+    },
+    "BR-O": {
+      "status": "collected",
+      "file": "BR_O_bc57a20957.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:30:34.857Z"
+    },
+    "BR-P": {
+      "status": "collected",
+      "file": "BR_P_1be92e57d1.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:30:48.090Z"
+    },
+    "BR-Q": {
+      "status": "collected",
+      "file": "BR_Q_839efce2c8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:30:59.831Z"
+    },
+    "BR-R": {
+      "status": "collected",
+      "file": "BR_R_7191db8fd7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:31:12.273Z"
+    },
+    "BR-S": {
+      "status": "collected",
+      "file": "BR_S_b8578f4bcd.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:31:25.576Z"
+    },
+    "BR-T": {
+      "status": "collected",
+      "file": "BR_T_276481824f.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:31:38.784Z"
+    },
+    "BR-U": {
+      "status": "collected",
+      "file": "BR_U_0c5cbfbdfa.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:31:50.198Z"
+    },
+    "BR-V": {
+      "status": "collected",
+      "file": "BR_V_84f9a2999b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:32:02.604Z"
+    },
+    "BR-W": {
+      "status": "collected",
+      "file": "BR_W_5fb15e2c8b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:32:14.323Z"
+    },
+    "BR-X": {
+      "status": "collected",
+      "file": "BR_X_5509a14941.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:32:25.643Z"
+    },
+    "BR-Y": {
+      "status": "collected",
+      "file": "BR_Y_15e9bd520c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:32:37.539Z"
+    },
+    "BR-Z": {
+      "status": "collected",
+      "file": "BR_Z_4501d2f333.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:32:49.006Z"
+    },
+    "DRP-0": {
+      "status": "collected",
+      "file": "DRP_0_d05024982f.json",
+      "matching_products": 110,
+      "matching_leaflets": 28,
+      "retrieved_at": "2026-06-29T13:33:00.957Z"
+    },
+    "DRP-1": {
+      "status": "sharded",
+      "file": "DRP_1_0616a937fc.json",
+      "matching_products": 10926,
+      "child_queries": 36,
+      "retrieved_at": "2026-06-29T13:33:14.474Z"
+    },
+    "DRP-10": {
+      "status": "collected",
+      "file": "DRP_10_84beb021e1.json",
+      "matching_products": 1590,
+      "matching_leaflets": 241,
+      "retrieved_at": "2026-06-29T13:33:27.306Z"
+    },
+    "DRP-11": {
+      "status": "collected",
+      "file": "DRP_11_1b7736ecf1.json",
+      "matching_products": 1572,
+      "matching_leaflets": 234,
+      "retrieved_at": "2026-06-29T13:33:40.179Z"
+    },
+    "DRP-12": {
+      "status": "collected",
+      "file": "DRP_12_8338ade1a3.json",
+      "matching_products": 1665,
+      "matching_leaflets": 292,
+      "retrieved_at": "2026-06-29T13:33:52.954Z"
+    },
+    "DRP-13": {
+      "status": "collected",
+      "file": "DRP_13_63f4b268e9.json",
+      "matching_products": 1683,
+      "matching_leaflets": 242,
+      "retrieved_at": "2026-06-29T13:34:05.434Z"
+    },
+    "DRP-14": {
+      "status": "collected",
+      "file": "DRP_14_3ad800d680.json",
+      "matching_products": 1429,
+      "matching_leaflets": 143,
+      "retrieved_at": "2026-06-29T13:34:17.289Z"
+    },
+    "DRP-15": {
+      "status": "collected",
+      "file": "DRP_15_0a45062cb0.json",
+      "matching_products": 1085,
+      "matching_leaflets": 66,
+      "retrieved_at": "2026-06-29T13:34:31.115Z"
+    },
+    "DRP-16": {
+      "status": "collected",
+      "file": "DRP_16_8e2f4e5b3d.json",
+      "matching_products": 905,
+      "matching_leaflets": 56,
+      "retrieved_at": "2026-06-29T13:34:44.209Z"
+    },
+    "DRP-17": {
+      "status": "collected",
+      "file": "DRP_17_302a26a391.json",
+      "matching_products": 797,
+      "matching_leaflets": 15,
+      "retrieved_at": "2026-06-29T13:40:57.227Z"
+    },
+    "DRP-18": {
+      "status": "collected",
+      "file": "DRP_18_45b8b24ff3.json",
+      "matching_products": 93,
+      "matching_leaflets": 11,
+      "retrieved_at": "2026-06-29T13:41:08.908Z"
+    },
+    "DRP-19": {
+      "status": "collected",
+      "file": "DRP_19_3e32c1f968.json",
+      "matching_products": 107,
+      "matching_leaflets": 27,
+      "retrieved_at": "2026-06-29T13:41:21.369Z"
+    },
+    "DRP-1A": {
+      "status": "collected",
+      "file": "DRP_1A_003132c1bc.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:41:35.344Z"
+    },
+    "DRP-1B": {
+      "status": "collected",
+      "file": "DRP_1B_d1b49606db.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:41:47.601Z"
+    },
+    "DRP-1C": {
+      "status": "collected",
+      "file": "DRP_1C_0b81e17053.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:41:59.348Z"
+    },
+    "DRP-1D": {
+      "status": "collected",
+      "file": "DRP_1D_3b597c4e6b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:42:13.381Z"
+    },
+    "DRP-1E": {
+      "status": "collected",
+      "file": "DRP_1E_93237e6af0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:42:24.629Z"
+    },
+    "DRP-1F": {
+      "status": "collected",
+      "file": "DRP_1F_b328e1a833.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:42:37.649Z"
+    },
+    "DRP-1G": {
+      "status": "collected",
+      "file": "DRP_1G_46fb5d2cd3.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:42:49.315Z"
+    },
+    "DRP-1H": {
+      "status": "collected",
+      "file": "DRP_1H_997202a11b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:43:03.097Z"
+    },
+    "DRP-1I": {
+      "status": "collected",
+      "file": "DRP_1I_4dbcd18758.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:43:15.596Z"
+    },
+    "DRP-1J": {
+      "status": "collected",
+      "file": "DRP_1J_2988b1e189.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:43:28.915Z"
+    },
+    "DRP-1N": {
+      "status": "collected",
+      "file": "DRP_1N_b764d00e23.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:46:58.855Z"
+    },
+    "DRP-1O": {
+      "status": "collected",
+      "file": "DRP_1O_d952fdb273.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:47:13.897Z"
+    },
+    "DRP-1P": {
+      "status": "collected",
+      "file": "DRP_1P_1b9caba78b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:47:28.741Z"
+    },
+    "DRP-1Q": {
+      "status": "collected",
+      "file": "DRP_1Q_4c32ff8920.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:47:42.933Z"
+    },
+    "DRP-1R": {
+      "status": "collected",
+      "file": "DRP_1R_2a29d6c26e.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:47:56.241Z"
+    },
+    "DRP-1S": {
+      "status": "collected",
+      "file": "DRP_1S_47a0e68228.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:48:07.762Z"
+    },
+    "DRP-1T": {
+      "status": "collected",
+      "file": "DRP_1T_ac08958f6f.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:48:18.969Z"
+    },
+    "DRP-1U": {
+      "status": "collected",
+      "file": "DRP_1U_e109ba549c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:48:31.010Z"
+    },
+    "DRP-1V": {
+      "status": "collected",
+      "file": "DRP_1V_48e90656b0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:48:42.828Z"
+    },
+    "DRP-1W": {
+      "status": "collected",
+      "file": "DRP_1W_8198b1a46e.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:48:54.408Z"
+    },
+    "DRP-1X": {
+      "status": "collected",
+      "file": "DRP_1X_ea3e43053c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:49:06.952Z"
+    },
+    "DRP-1Y": {
+      "status": "collected",
+      "file": "DRP_1Y_cb41275cf5.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:49:20.184Z"
+    },
+    "DRP-1Z": {
+      "status": "collected",
+      "file": "DRP_1Z_2209555937.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:49:31.441Z"
+    },
+    "DRP-2": {
+      "status": "collected",
+      "file": "DRP_2_ceed9c61d6.json",
+      "matching_products": 1129,
+      "matching_leaflets": 330,
+      "retrieved_at": "2026-06-29T13:49:45.393Z"
+    },
+    "DRP-3": {
+      "status": "collected",
+      "file": "DRP_3_cb8500191a.json",
+      "matching_products": 1311,
+      "matching_leaflets": 302,
+      "retrieved_at": "2026-06-29T13:49:57.880Z"
+    },
+    "DRP-4": {
+      "status": "collected",
+      "file": "DRP_4_438177a67d.json",
+      "matching_products": 1766,
+      "matching_leaflets": 462,
+      "retrieved_at": "2026-06-29T13:50:11.853Z"
+    },
+    "DRP-5": {
+      "status": "collected",
+      "file": "DRP_5_11e4d392da.json",
+      "matching_products": 1931,
+      "matching_leaflets": 452,
+      "retrieved_at": "2026-06-29T13:50:25.011Z"
+    },
+    "DRP-6": {
+      "status": "collected",
+      "file": "DRP_6_1fbf47e840.json",
+      "matching_products": 1379,
+      "matching_leaflets": 360,
+      "retrieved_at": "2026-06-29T13:50:38.999Z"
+    },
+    "DRP-7": {
+      "status": "collected",
+      "file": "DRP_7_30f7ee472e.json",
+      "matching_products": 1234,
+      "matching_leaflets": 313,
+      "retrieved_at": "2026-06-29T13:50:54.522Z"
+    },
+    "DRP-8": {
+      "status": "collected",
+      "file": "DRP_8_7a603eb68b.json",
+      "matching_products": 1500,
+      "matching_leaflets": 301,
+      "retrieved_at": "2026-06-29T13:51:09.187Z"
+    },
+    "DRP-9": {
+      "status": "collected",
+      "file": "DRP_9_2e3faacbd1.json",
+      "matching_products": 813,
+      "matching_leaflets": 185,
+      "retrieved_at": "2026-06-29T13:51:22.822Z"
+    },
+    "DRP-A": {
+      "status": "collected",
+      "file": "DRP_A_adf4713e16.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:51:37.552Z"
+    },
+    "DRP-B": {
+      "status": "collected",
+      "file": "DRP_B_60bbe62a45.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:51:50.693Z"
+    },
+    "DRP-C": {
+      "status": "collected",
+      "file": "DRP_C_e85f2d56c2.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:52:04.724Z"
+    },
+    "DRP-D": {
+      "status": "collected",
+      "file": "DRP_D_a932840602.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:52:18.288Z"
+    },
+    "DRP-E": {
+      "status": "collected",
+      "file": "DRP_E_a49eb67f02.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:52:30.369Z"
+    },
+    "DRP-F": {
+      "status": "collected",
+      "file": "DRP_F_4c0d6f786f.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:52:42.202Z"
+    },
+    "DRP-G": {
+      "status": "collected",
+      "file": "DRP_G_41208334b5.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:52:53.773Z"
+    },
+    "DRP-H": {
+      "status": "collected",
+      "file": "DRP_H_772b9e399c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:53:05.660Z"
+    },
+    "DRP-I": {
+      "status": "collected",
+      "file": "DRP_I_e5a40326ad.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:53:17.935Z"
+    },
+    "DRP-J": {
+      "status": "collected",
+      "file": "DRP_J_eb0c3eaba0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:53:31.003Z"
+    },
+    "DRP-K": {
+      "status": "collected",
+      "file": "DRP_K_79169312c5.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:53:45.173Z"
+    },
+    "DRP-L": {
+      "status": "collected",
+      "file": "DRP_L_c3f67a6f69.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:54:02.096Z"
+    },
+    "DRP-M": {
+      "status": "collected",
+      "file": "DRP_M_a25e601d58.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:54:16.239Z"
+    },
+    "DRP-N": {
+      "status": "collected",
+      "file": "DRP_N_158b8bd054.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:54:31.474Z"
+    },
+    "DRP-O": {
+      "status": "collected",
+      "file": "DRP_O_c10e4872d2.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:54:46.096Z"
+    },
+    "DRP-P": {
+      "status": "collected",
+      "file": "DRP_P_fda8a56dca.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:54:59.545Z"
+    },
+    "DRP-Q": {
+      "status": "collected",
+      "file": "DRP_Q_740e4529f8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:55:13.351Z"
+    },
+    "DRP-R": {
+      "status": "collected",
+      "file": "DRP_R_24feda8eaa.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:55:29.775Z"
+    },
+    "DRP-S": {
+      "status": "collected",
+      "file": "DRP_S_7b48f9eba0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:55:47.296Z"
+    },
+    "DRP-T": {
+      "status": "collected",
+      "file": "DRP_T_863d231a9c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:56:02.718Z"
+    },
+    "DRP-U": {
+      "status": "collected",
+      "file": "DRP_U_f6f6bb6ee2.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:56:16.331Z"
+    },
+    "DRP-V": {
+      "status": "collected",
+      "file": "DRP_V_2596c75799.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:56:30.141Z"
+    },
+    "DRP-W": {
+      "status": "collected",
+      "file": "DRP_W_cb5aeb1692.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:56:44.398Z"
+    },
+    "DRP-X": {
+      "status": "collected",
+      "file": "DRP_X_1c22de2118.json",
+      "matching_products": 1,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:56:59.689Z"
+    },
+    "DRP-Y": {
+      "status": "collected",
+      "file": "DRP_Y_b553b66600.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:57:19.705Z"
+    },
+    "DRP-Z": {
+      "status": "collected",
+      "file": "DRP_Z_ac4691120f.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:57:36.064Z"
+    },
+    "DR-0": {
+      "status": "collected",
+      "file": "DR_0_52fbcd353d.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:57:51.456Z"
+    },
+    "DR-1": {
+      "status": "collected",
+      "file": "DR_1_49b1eda82b.json",
+      "matching_products": 11,
+      "matching_leaflets": 8,
+      "retrieved_at": "2026-06-29T13:58:09.133Z"
+    },
+    "DR-2": {
+      "status": "collected",
+      "file": "DR_2_799a780d81.json",
+      "matching_products": 11,
+      "matching_leaflets": 3,
+      "retrieved_at": "2026-06-29T13:58:23.289Z"
+    },
+    "DR-3": {
+      "status": "collected",
+      "file": "DR_3_e5f190d82d.json",
+      "matching_products": 5,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T13:58:37.630Z"
+    },
+    "DR-4": {
+      "status": "collected",
+      "file": "DR_4_9d23642e20.json",
+      "matching_products": 16,
+      "matching_leaflets": 9,
+      "retrieved_at": "2026-06-29T13:58:51.763Z"
+    },
+    "DR-5": {
+      "status": "collected",
+      "file": "DR_5_4e489b5344.json",
+      "matching_products": 11,
+      "matching_leaflets": 12,
+      "retrieved_at": "2026-06-29T13:59:04.773Z"
+    },
+    "DR-6": {
+      "status": "collected",
+      "file": "DR_6_5806326f09.json",
+      "matching_products": 16,
+      "matching_leaflets": 7,
+      "retrieved_at": "2026-06-29T13:59:18.172Z"
+    },
+    "DR-7": {
+      "status": "collected",
+      "file": "DR_7_6d4b6041e0.json",
+      "matching_products": 8,
+      "matching_leaflets": 4,
+      "retrieved_at": "2026-06-29T13:59:30.472Z"
+    },
+    "DR-8": {
+      "status": "collected",
+      "file": "DR_8_523f670a6a.json",
+      "matching_products": 10,
+      "matching_leaflets": 8,
+      "retrieved_at": "2026-06-29T13:59:43.237Z"
+    },
+    "DR-9": {
+      "status": "collected",
+      "file": "DR_9_113d414cfd.json",
+      "matching_products": 14,
+      "matching_leaflets": 8,
+      "retrieved_at": "2026-06-29T13:59:55.911Z"
+    },
+    "DR-A": {
+      "status": "collected",
+      "file": "DR_A_ea733a7ba5.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:00:07.402Z"
+    },
+    "DR-B": {
+      "status": "collected",
+      "file": "DR_B_1c631422ec.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:00:20.559Z"
+    },
+    "DR-C": {
+      "status": "collected",
+      "file": "DR_C_2e7d94b128.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:00:32.315Z"
+    },
+    "DR-D": {
+      "status": "collected",
+      "file": "DR_D_7aa7b6edab.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:00:47.187Z"
+    },
+    "DR-E": {
+      "status": "collected",
+      "file": "DR_E_08dada9d3d.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:00:58.644Z"
+    },
+    "DR-F": {
+      "status": "collected",
+      "file": "DR_F_f18ba91d42.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:01:10.865Z"
+    },
+    "DR-G": {
+      "status": "collected",
+      "file": "DR_G_99009dafa8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:01:23.345Z"
+    },
+    "DR-H": {
+      "status": "collected",
+      "file": "DR_H_5561a3bf1e.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:01:35.126Z"
+    },
+    "DR-I": {
+      "status": "collected",
+      "file": "DR_I_5cb5ff6757.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:01:47.022Z"
+    },
+    "DR-J": {
+      "status": "collected",
+      "file": "DR_J_6141986b17.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:01:59.846Z"
+    },
+    "DR-K": {
+      "status": "collected",
+      "file": "DR_K_49df289a75.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:02:13.259Z"
+    },
+    "DR-L": {
+      "status": "collected",
+      "file": "DR_L_2ac8390a1a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:02:26.090Z"
+    },
+    "DR-M": {
+      "status": "collected",
+      "file": "DR_M_2a96e727dc.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:02:37.964Z"
+    },
+    "DR-N": {
+      "status": "collected",
+      "file": "DR_N_fdd531d5ec.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:02:52.130Z"
+    },
+    "DR-O": {
+      "status": "collected",
+      "file": "DR_O_522278e68d.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:03:05.573Z"
+    },
+    "DR-P": {
+      "status": "collected",
+      "file": "DR_P_dc1f88e5dc.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:03:17.393Z"
+    },
+    "DR-Q": {
+      "status": "collected",
+      "file": "DR_Q_e41488273b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:03:30.811Z"
+    },
+    "DR-R": {
+      "status": "collected",
+      "file": "DR_R_7d3bcef487.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:03:42.257Z"
+    },
+    "DR-S": {
+      "status": "collected",
+      "file": "DR_S_fd8e8c8b1d.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:03:53.794Z"
+    },
+    "DR-T": {
+      "status": "collected",
+      "file": "DR_T_fdcd91ca56.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:04:05.509Z"
+    },
+    "DR-U": {
+      "status": "collected",
+      "file": "DR_U_09ac5315f6.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:04:17.181Z"
+    },
+    "DR-V": {
+      "status": "collected",
+      "file": "DR_V_1453d9dc9f.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:04:29.554Z"
+    },
+    "DR-W": {
+      "status": "collected",
+      "file": "DR_W_f0695e03f5.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:04:40.833Z"
+    },
+    "DR-X": {
+      "status": "sharded",
+      "file": "DR_X_2ed749d3cf.json",
+      "matching_products": 6932,
+      "child_queries": 36,
+      "retrieved_at": "2026-06-29T14:04:56.305Z"
+    },
+    "DR-X0": {
+      "status": "collected",
+      "file": "DR_X0_8a71b3cb1a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:05:07.968Z"
+    },
+    "DR-X1": {
+      "status": "collected",
+      "file": "DR_X1_877d3090df.json",
+      "matching_products": 9,
+      "matching_leaflets": 7,
+      "retrieved_at": "2026-06-29T14:05:21.849Z"
+    },
+    "DR-X2": {
+      "status": "collected",
+      "file": "DR_X2_cfba3220f5.json",
+      "matching_products": 7,
+      "matching_leaflets": 3,
+      "retrieved_at": "2026-06-29T14:05:33.315Z"
+    },
+    "DR-X3": {
+      "status": "collected",
+      "file": "DR_X3_8b46886614.json",
+      "matching_products": 6,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:05:46.486Z"
+    },
+    "DR-X4": {
+      "status": "collected",
+      "file": "DR_X4_660bb61349.json",
+      "matching_products": 1,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:05:58.187Z"
+    },
+    "DR-X5": {
+      "status": "collected",
+      "file": "DR_X5_7ca724e149.json",
+      "matching_products": 6,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:06:10.730Z"
+    },
+    "DR-X6": {
+      "status": "collected",
+      "file": "DR_X6_7311cf4082.json",
+      "matching_products": 8,
+      "matching_leaflets": 4,
+      "retrieved_at": "2026-06-29T14:06:22.664Z"
+    },
+    "DR-X7": {
+      "status": "collected",
+      "file": "DR_X7_f6d98dbfac.json",
+      "matching_products": 9,
+      "matching_leaflets": 2,
+      "retrieved_at": "2026-06-29T14:06:36.484Z"
+    },
+    "DR-X8": {
+      "status": "collected",
+      "file": "DR_X8_be38e717a0.json",
+      "matching_products": 8,
+      "matching_leaflets": 3,
+      "retrieved_at": "2026-06-29T14:06:48.525Z"
+    },
+    "DR-X9": {
+      "status": "collected",
+      "file": "DR_X9_96c0e53dc3.json",
+      "matching_products": 6,
+      "matching_leaflets": 2,
+      "retrieved_at": "2026-06-29T14:06:59.772Z"
+    },
+    "DR-XA": {
+      "status": "collected",
+      "file": "DR_XA_cc8281a3d1.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:07:10.862Z"
+    },
+    "DR-XB": {
+      "status": "collected",
+      "file": "DR_XB_9a2414cd80.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:07:22.690Z"
+    },
+    "DR-XC": {
+      "status": "collected",
+      "file": "DR_XC_7ee124087d.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:07:35.387Z"
+    },
+    "DR-XD": {
+      "status": "collected",
+      "file": "DR_XD_8ea6ab8c44.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:07:46.669Z"
+    },
+    "DR-XE": {
+      "status": "collected",
+      "file": "DR_XE_ebd737675b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:07:58.264Z"
+    },
+    "DR-XF": {
+      "status": "collected",
+      "file": "DR_XF_ea8a5187b2.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:08:10.357Z"
+    },
+    "DR-XG": {
+      "status": "collected",
+      "file": "DR_XG_ffdb13ee79.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:08:22.134Z"
+    },
+    "DR-XH": {
+      "status": "collected",
+      "file": "DR_XH_fad745c74d.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:08:33.943Z"
+    },
+    "DR-XI": {
+      "status": "collected",
+      "file": "DR_XI_8a6b2cecec.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:08:46.035Z"
+    },
+    "DR-XJ": {
+      "status": "collected",
+      "file": "DR_XJ_880d23aaa3.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:08:57.402Z"
+    },
+    "DR-XK": {
+      "status": "collected",
+      "file": "DR_XK_7da03dbdc7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:09:11.158Z"
+    },
+    "DR-XL": {
+      "status": "collected",
+      "file": "DR_XL_b85caa41fa.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:09:22.638Z"
+    },
+    "DR-XM": {
+      "status": "collected",
+      "file": "DR_XM_00036da1cd.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:09:35.216Z"
+    },
+    "DR-XN": {
+      "status": "collected",
+      "file": "DR_XN_bb230675be.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:09:46.938Z"
+    },
+    "DR-XO": {
+      "status": "collected",
+      "file": "DR_XO_856166c684.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:09:59.745Z"
+    },
+    "DR-XP": {
+      "status": "collected",
+      "file": "DR_XP_b404f4ea07.json",
+      "matching_products": 1,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:10:14.270Z"
+    },
+    "DR-XQ": {
+      "status": "collected",
+      "file": "DR_XQ_52cb8f8397.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:10:27.677Z"
+    },
+    "DR-XR": {
+      "status": "collected",
+      "file": "DR_XR_1d45a6b302.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:10:41.042Z"
+    },
+    "DR-XS": {
+      "status": "collected",
+      "file": "DR_XS_55d4805164.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:10:54.689Z"
+    },
+    "DR-XT": {
+      "status": "collected",
+      "file": "DR_XT_f39e7e7584.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:11:08.543Z"
+    },
+    "DR-XU": {
+      "status": "collected",
+      "file": "DR_XU_89277786ea.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:11:22.140Z"
+    },
+    "DR-XV": {
+      "status": "collected",
+      "file": "DR_XV_2764fe29eb.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:11:35.091Z"
+    },
+    "DR-XW": {
+      "status": "collected",
+      "file": "DR_XW_1bf09c997a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:11:46.597Z"
+    },
+    "DR-XX": {
+      "status": "collected",
+      "file": "DR_XX_2dd4a42545.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:11:59.893Z"
+    },
+    "DR-XY": {
+      "status": "sharded",
+      "file": "DR_XY_8cea17049c.json",
+      "matching_products": 6871,
+      "child_queries": 36,
+      "retrieved_at": "2026-06-29T14:12:14.397Z"
+    },
+    "DR-XY0": {
+      "status": "collected",
+      "file": "DR_XY0_fb86c73f15.json",
+      "matching_products": 2,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:12:26.985Z"
+    },
+    "DR-XY1": {
+      "status": "collected",
+      "file": "DR_XY1_ca54c6a9c3.json",
+      "matching_products": 378,
+      "matching_leaflets": 90,
+      "retrieved_at": "2026-06-29T14:12:39.105Z"
+    },
+    "DR-XY2": {
+      "status": "collected",
+      "file": "DR_XY2_61d652acfb.json",
+      "matching_products": 750,
+      "matching_leaflets": 196,
+      "retrieved_at": "2026-06-29T14:12:51.055Z"
+    },
+    "DR-XY3": {
+      "status": "collected",
+      "file": "DR_XY3_fef38efe62.json",
+      "matching_products": 1333,
+      "matching_leaflets": 419,
+      "retrieved_at": "2026-06-29T14:13:04.539Z"
+    },
+    "DR-XY4": {
+      "status": "sharded",
+      "file": "DR_XY4_afc3acae60.json",
+      "matching_products": 4301,
+      "child_queries": 36,
+      "retrieved_at": "2026-06-29T14:13:17.186Z"
+    },
+    "DR-XY40": {
+      "status": "collected",
+      "file": "DR_XY40_8a98452132.json",
+      "matching_products": 244,
+      "matching_leaflets": 39,
+      "retrieved_at": "2026-06-29T14:13:30.483Z"
+    },
+    "DR-XY41": {
+      "status": "collected",
+      "file": "DR_XY41_7f5601d8b9.json",
+      "matching_products": 249,
+      "matching_leaflets": 40,
+      "retrieved_at": "2026-06-29T14:13:42.456Z"
+    },
+    "DR-XY42": {
+      "status": "collected",
+      "file": "DR_XY42_c9e7bec301.json",
+      "matching_products": 247,
+      "matching_leaflets": 47,
+      "retrieved_at": "2026-06-29T14:13:55.253Z"
+    },
+    "DR-XY43": {
+      "status": "collected",
+      "file": "DR_XY43_9e1e033e0c.json",
+      "matching_products": 314,
+      "matching_leaflets": 97,
+      "retrieved_at": "2026-06-29T14:14:06.955Z"
+    },
+    "DR-XY44": {
+      "status": "collected",
+      "file": "DR_XY44_db1e4a5f58.json",
+      "matching_products": 297,
+      "matching_leaflets": 95,
+      "retrieved_at": "2026-06-29T14:14:18.389Z"
+    },
+    "DR-XY45": {
+      "status": "collected",
+      "file": "DR_XY45_5e9e5db3e7.json",
+      "matching_products": 332,
+      "matching_leaflets": 95,
+      "retrieved_at": "2026-06-29T14:14:29.658Z"
+    },
+    "DR-XY46": {
+      "status": "collected",
+      "file": "DR_XY46_3f4fa8b871.json",
+      "matching_products": 447,
+      "matching_leaflets": 168,
+      "retrieved_at": "2026-06-29T14:14:41.024Z"
+    },
+    "DR-XY47": {
+      "status": "collected",
+      "file": "DR_XY47_b64924b4a9.json",
+      "matching_products": 698,
+      "matching_leaflets": 198,
+      "retrieved_at": "2026-06-29T14:14:52.480Z"
+    },
+    "DR-XY48": {
+      "status": "collected",
+      "file": "DR_XY48_883e7039b7.json",
+      "matching_products": 906,
+      "matching_leaflets": 230,
+      "retrieved_at": "2026-06-29T14:15:04.092Z"
+    },
+    "DR-XY49": {
+      "status": "collected",
+      "file": "DR_XY49_8f7ef9d661.json",
+      "matching_products": 567,
+      "matching_leaflets": 28,
+      "retrieved_at": "2026-06-29T14:15:15.786Z"
+    },
+    "DR-XY4A": {
+      "status": "collected",
+      "file": "DR_XY4A_afaf87aec5.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:15:27.142Z"
+    },
+    "DR-XY4B": {
+      "status": "collected",
+      "file": "DR_XY4B_5a45296b1a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:15:38.828Z"
+    },
+    "DR-XY4C": {
+      "status": "collected",
+      "file": "DR_XY4C_61d9964571.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:15:51.040Z"
+    },
+    "DR-XY4D": {
+      "status": "collected",
+      "file": "DR_XY4D_ba8e394767.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:16:03.993Z"
+    },
+    "DR-XY4E": {
+      "status": "collected",
+      "file": "DR_XY4E_f237782d79.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:16:16.617Z"
+    },
+    "DR-XY4F": {
+      "status": "collected",
+      "file": "DR_XY4F_e2f23c7599.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:16:29.044Z"
+    },
+    "DR-XY4G": {
+      "status": "collected",
+      "file": "DR_XY4G_d3ca3481ff.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:16:41.938Z"
+    },
+    "DR-XY4H": {
+      "status": "collected",
+      "file": "DR_XY4H_5e2d002a15.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:16:53.383Z"
+    },
+    "DR-XY4I": {
+      "status": "collected",
+      "file": "DR_XY4I_6f27ad8651.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:17:05.155Z"
+    },
+    "DR-XY4J": {
+      "status": "collected",
+      "file": "DR_XY4J_68ac283e20.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:17:17.116Z"
+    },
+    "DR-XY4K": {
+      "status": "collected",
+      "file": "DR_XY4K_dbc9b59f4e.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:17:29.460Z"
+    },
+    "DR-XY4L": {
+      "status": "collected",
+      "file": "DR_XY4L_f58fe44c06.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:17:42.079Z"
+    },
+    "DR-XY4M": {
+      "status": "collected",
+      "file": "DR_XY4M_fe2389f6c5.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:17:53.249Z"
+    },
+    "DR-XY4N": {
+      "status": "collected",
+      "file": "DR_XY4N_1c35b68426.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:18:05.244Z"
+    },
+    "DR-XY4O": {
+      "status": "collected",
+      "file": "DR_XY4O_d600e552db.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:18:17.443Z"
+    },
+    "DR-XY4P": {
+      "status": "collected",
+      "file": "DR_XY4P_592f5141d2.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:18:29.630Z"
+    },
+    "DR-XY4Q": {
+      "status": "collected",
+      "file": "DR_XY4Q_0b05342f4f.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:18:44.660Z"
+    },
+    "DR-XY4R": {
+      "status": "collected",
+      "file": "DR_XY4R_5439550217.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:18:59.242Z"
+    },
+    "DR-XY4S": {
+      "status": "collected",
+      "file": "DR_XY4S_895873686a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:19:14.210Z"
+    },
+    "DR-XY4T": {
+      "status": "collected",
+      "file": "DR_XY4T_6a297c6fe1.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:19:28.341Z"
+    },
+    "DR-XY4U": {
+      "status": "collected",
+      "file": "DR_XY4U_9cd5ab8f31.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:19:43.102Z"
+    },
+    "DR-XY4V": {
+      "status": "collected",
+      "file": "DR_XY4V_ca81d27bfa.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:19:57.432Z"
+    },
+    "DR-XY4W": {
+      "status": "collected",
+      "file": "DR_XY4W_b810532c3d.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:20:10.905Z"
+    },
+    "DR-XY4X": {
+      "status": "collected",
+      "file": "DR_XY4X_fa1f4fb0b0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:20:22.113Z"
+    },
+    "DR-XY4Y": {
+      "status": "collected",
+      "file": "DR_XY4Y_85025167b4.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:20:38.129Z"
+    },
+    "DR-XY4Z": {
+      "status": "collected",
+      "file": "DR_XY4Z_efd1b5c7ff.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:20:50.079Z"
+    },
+    "DR-XY5": {
+      "status": "collected",
+      "file": "DR_XY5_4298e59a05.json",
+      "matching_products": 5,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:21:02.252Z"
+    },
+    "DR-XY6": {
+      "status": "collected",
+      "file": "DR_XY6_1861fe4615.json",
+      "matching_products": 8,
+      "matching_leaflets": 3,
+      "retrieved_at": "2026-06-29T14:21:15.316Z"
+    },
+    "DR-XY7": {
+      "status": "collected",
+      "file": "DR_XY7_b3ba9e3c5e.json",
+      "matching_products": 29,
+      "matching_leaflets": 13,
+      "retrieved_at": "2026-06-29T14:21:27.206Z"
+    },
+    "DR-XY8": {
+      "status": "collected",
+      "file": "DR_XY8_29fe7db6e4.json",
+      "matching_products": 10,
+      "matching_leaflets": 4,
+      "retrieved_at": "2026-06-29T14:21:39.101Z"
+    },
+    "DR-XY9": {
+      "status": "collected",
+      "file": "DR_XY9_4d6e8542f6.json",
+      "matching_products": 12,
+      "matching_leaflets": 1,
+      "retrieved_at": "2026-06-29T14:21:52.802Z"
+    },
+    "DR-XYA": {
+      "status": "collected",
+      "file": "DR_XYA_402220e98a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:22:05.838Z"
+    },
+    "DR-XYB": {
+      "status": "collected",
+      "file": "DR_XYB_a3bf11212c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:22:18.375Z"
+    },
+    "DR-XYC": {
+      "status": "collected",
+      "file": "DR_XYC_f08abaf42d.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:22:32.064Z"
+    },
+    "DR-XYD": {
+      "status": "collected",
+      "file": "DR_XYD_5d809ea140.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:22:43.676Z"
+    },
+    "DR-XYE": {
+      "status": "collected",
+      "file": "DR_XYE_b8fd85c9c7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:22:56.842Z"
+    },
+    "DR-XYF": {
+      "status": "collected",
+      "file": "DR_XYF_fa728f8249.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:23:12.495Z"
+    },
+    "DR-XYG": {
+      "status": "collected",
+      "file": "DR_XYG_b3e75624dc.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:23:23.874Z"
+    },
+    "DR-XYH": {
+      "status": "collected",
+      "file": "DR_XYH_9781d89fde.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:23:36.909Z"
+    },
+    "DR-XYI": {
+      "status": "collected",
+      "file": "DR_XYI_31c44847d1.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:23:49.292Z"
+    },
+    "DR-XYJ": {
+      "status": "collected",
+      "file": "DR_XYJ_0d72d3b946.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:24:00.941Z"
+    },
+    "DR-XYK": {
+      "status": "collected",
+      "file": "DR_XYK_d2e6b69912.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:24:12.334Z"
+    },
+    "DR-XYL": {
+      "status": "collected",
+      "file": "DR_XYL_fe4236c82b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:24:24.757Z"
+    },
+    "DR-XYM": {
+      "status": "collected",
+      "file": "DR_XYM_a6b5f6e67a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:24:37.522Z"
+    },
+    "DR-XYN": {
+      "status": "collected",
+      "file": "DR_XYN_647220a75b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:24:51.430Z"
+    },
+    "DR-XYO": {
+      "status": "collected",
+      "file": "DR_XYO_1528d8ff86.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:25:02.928Z"
+    },
+    "DR-XYP": {
+      "status": "collected",
+      "file": "DR_XYP_4fe46a60ef.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:25:14.308Z"
+    },
+    "DR-XYQ": {
+      "status": "collected",
+      "file": "DR_XYQ_e886708641.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:25:26.936Z"
+    },
+    "DR-XYR": {
+      "status": "collected",
+      "file": "DR_XYR_cbb08128cc.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:25:39.901Z"
+    },
+    "DR-XYS": {
+      "status": "collected",
+      "file": "DR_XYS_609edaec08.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:25:51.533Z"
+    },
+    "DR-XYT": {
+      "status": "collected",
+      "file": "DR_XYT_02ded545e2.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:26:04.572Z"
+    },
+    "DR-XYU": {
+      "status": "collected",
+      "file": "DR_XYU_81b11b1c75.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:26:18.817Z"
+    },
+    "DR-XYV": {
+      "status": "collected",
+      "file": "DR_XYV_b37e2532ec.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:26:31.443Z"
+    },
+    "DR-XYW": {
+      "status": "collected",
+      "file": "DR_XYW_e2ecd9bff4.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:26:42.899Z"
+    },
+    "DR-XYX": {
+      "status": "collected",
+      "file": "DR_XYX_e0b75ac28a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:26:57.541Z"
+    },
+    "DR-XYY": {
+      "status": "collected",
+      "file": "DR_XYY_5a5bd55999.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:27:11.792Z"
+    },
+    "DR-XYZ": {
+      "status": "collected",
+      "file": "DR_XYZ_44ef411340.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:27:24.317Z"
+    },
+    "DR-XZ": {
+      "status": "collected",
+      "file": "DR_XZ_2ce06552e8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:27:38.537Z"
+    },
+    "DR-Y": {
+      "status": "collected",
+      "file": "DR_Y_6eaf12a314.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:27:50.404Z"
+    },
+    "DR-Z": {
+      "status": "collected",
+      "file": "DR_Z_0fe25eb955.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:28:04.382Z"
+    },
+    "DRP-1K": {
+      "status": "collected",
+      "file": "DRP_1K_3daa3c47c4.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:28:15.700Z"
+    },
+    "DRP-1L": {
+      "status": "collected",
+      "file": "DRP_1L_6f81a1ac71.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:28:28.351Z"
+    },
+    "DRP-1M": {
+      "status": "collected",
+      "file": "DRP_1M_1bede9d5a0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:28:39.782Z"
+    },
+    "HRP-0": {
+      "status": "collected",
+      "file": "HRP_0_b3dba9f5e1.json",
+      "matching_products": 85,
+      "matching_leaflets": 11,
+      "retrieved_at": "2026-06-29T14:29:04.974Z"
+    },
+    "HRP-1": {
+      "status": "collected",
+      "file": "HRP_1_ee2a047312.json",
+      "matching_products": 85,
+      "matching_leaflets": 4,
+      "retrieved_at": "2026-06-29T14:29:17.682Z"
+    },
+    "HRP-2": {
+      "status": "collected",
+      "file": "HRP_2_580965ac3c.json",
+      "matching_products": 122,
+      "matching_leaflets": 4,
+      "retrieved_at": "2026-06-29T14:29:28.983Z"
+    },
+    "HRP-3": {
+      "status": "collected",
+      "file": "HRP_3_d7eea9a813.json",
+      "matching_products": 80,
+      "matching_leaflets": 10,
+      "retrieved_at": "2026-06-29T14:29:41.311Z"
+    },
+    "HRP-4": {
+      "status": "collected",
+      "file": "HRP_4_644b45aaa4.json",
+      "matching_products": 80,
+      "matching_leaflets": 2,
+      "retrieved_at": "2026-06-29T14:29:53.806Z"
+    },
+    "HRP-5": {
+      "status": "collected",
+      "file": "HRP_5_14fba16dfc.json",
+      "matching_products": 88,
+      "matching_leaflets": 1,
+      "retrieved_at": "2026-06-29T14:30:07.397Z"
+    },
+    "HRP-6": {
+      "status": "collected",
+      "file": "HRP_6_93b62307a5.json",
+      "matching_products": 75,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:30:19.915Z"
+    },
+    "HRP-7": {
+      "status": "collected",
+      "file": "HRP_7_b982e40f6e.json",
+      "matching_products": 32,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:30:31.339Z"
+    },
+    "HRP-8": {
+      "status": "collected",
+      "file": "HRP_8_deef84a37a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:30:42.734Z"
+    },
+    "HRP-9": {
+      "status": "collected",
+      "file": "HRP_9_66c56cdc83.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:30:54.567Z"
+    },
+    "HRP-A": {
+      "status": "collected",
+      "file": "HRP_A_e5ccf0a217.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:31:06.565Z"
+    },
+    "HRP-B": {
+      "status": "collected",
+      "file": "HRP_B_461ba3b7cc.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:31:18.070Z"
+    },
+    "HRP-C": {
+      "status": "collected",
+      "file": "HRP_C_91a796f42c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:31:29.904Z"
+    },
+    "HRP-D": {
+      "status": "collected",
+      "file": "HRP_D_8806691c78.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:31:41.931Z"
+    },
+    "HRP-E": {
+      "status": "collected",
+      "file": "HRP_E_e5b1781d70.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:31:53.367Z"
+    },
+    "HRP-F": {
+      "status": "collected",
+      "file": "HRP_F_7736b6edc0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:32:06.214Z"
+    },
+    "HRP-G": {
+      "status": "collected",
+      "file": "HRP_G_79abb827c7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:32:17.925Z"
+    },
+    "HRP-H": {
+      "status": "collected",
+      "file": "HRP_H_af82917917.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:32:31.132Z"
+    },
+    "HRP-I": {
+      "status": "collected",
+      "file": "HRP_I_da5e8967b3.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:32:44.766Z"
+    },
+    "HRP-J": {
+      "status": "collected",
+      "file": "HRP_J_6e45455134.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:32:57.291Z"
+    },
+    "HRP-K": {
+      "status": "collected",
+      "file": "HRP_K_39fab38602.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:33:11.117Z"
+    },
+    "HRP-L": {
+      "status": "collected",
+      "file": "HRP_L_6f4cb646d7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:33:24.847Z"
+    },
+    "HRP-M": {
+      "status": "collected",
+      "file": "HRP_M_64e6304b6b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:33:38.438Z"
+    },
+    "HRP-N": {
+      "status": "collected",
+      "file": "HRP_N_af609d38cc.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:33:50.785Z"
+    },
+    "HRP-O": {
+      "status": "collected",
+      "file": "HRP_O_a031de00c0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:34:02.143Z"
+    },
+    "HRP-P": {
+      "status": "collected",
+      "file": "HRP_P_a5b3b7892c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:34:16.505Z"
+    },
+    "HRP-Q": {
+      "status": "collected",
+      "file": "HRP_Q_a9bbf87bdd.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:34:29.515Z"
+    },
+    "HRP-R": {
+      "status": "collected",
+      "file": "HRP_R_1a7fde9bf4.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:34:41.994Z"
+    },
+    "HRP-S": {
+      "status": "collected",
+      "file": "HRP_S_17162d7b63.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:34:55.215Z"
+    },
+    "HRP-T": {
+      "status": "collected",
+      "file": "HRP_T_405f69630f.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:35:06.716Z"
+    },
+    "HRP-U": {
+      "status": "collected",
+      "file": "HRP_U_c39a1df212.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:35:19.942Z"
+    },
+    "HRP-V": {
+      "status": "collected",
+      "file": "HRP_V_f5a4cf46db.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:35:31.241Z"
+    },
+    "HRP-W": {
+      "status": "collected",
+      "file": "HRP_W_d17a34fb7a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:35:42.580Z"
+    },
+    "HRP-X": {
+      "status": "collected",
+      "file": "HRP_X_60d45a1c5a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:35:54.892Z"
+    },
+    "HRP-Y": {
+      "status": "collected",
+      "file": "HRP_Y_ab4b2e0cd0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:36:07.096Z"
+    },
+    "HRP-Z": {
+      "status": "collected",
+      "file": "HRP_Z_579690ad73.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:36:18.849Z"
+    },
+    "HMRP-0": {
+      "status": "collected",
+      "file": "HMRP_0_7da2108b74.json",
+      "matching_products": 4,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:36:31.351Z"
+    },
+    "HMRP-1": {
+      "status": "collected",
+      "file": "HMRP_1_93d3590692.json",
+      "matching_products": 9,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:36:42.640Z"
+    },
+    "HMRP-2": {
+      "status": "collected",
+      "file": "HMRP_2_79d6064a8b.json",
+      "matching_products": 15,
+      "matching_leaflets": 3,
+      "retrieved_at": "2026-06-29T14:36:55.286Z"
+    },
+    "HMRP-3": {
+      "status": "collected",
+      "file": "HMRP_3_2958a875a0.json",
+      "matching_products": 14,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:37:06.497Z"
+    },
+    "HMRP-4": {
+      "status": "collected",
+      "file": "HMRP_4_8a7ff6638d.json",
+      "matching_products": 7,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:37:19.656Z"
+    },
+    "HMRP-5": {
+      "status": "collected",
+      "file": "HMRP_5_76f670fd6e.json",
+      "matching_products": 3,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:37:30.996Z"
+    },
+    "HMRP-6": {
+      "status": "collected",
+      "file": "HMRP_6_8d86603fb9.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:37:42.273Z"
+    },
+    "HMRP-7": {
+      "status": "collected",
+      "file": "HMRP_7_025795ba16.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:37:55.223Z"
+    },
+    "HMRP-8": {
+      "status": "collected",
+      "file": "HMRP_8_c1287d0027.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:38:07.022Z"
+    },
+    "HMRP-9": {
+      "status": "collected",
+      "file": "HMRP_9_dacaca5e73.json",
+      "matching_products": 1,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:38:19.323Z"
+    },
+    "HMRP-A": {
+      "status": "collected",
+      "file": "HMRP_A_be16ffad83.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:38:31.539Z"
+    },
+    "HMRP-B": {
+      "status": "collected",
+      "file": "HMRP_B_99e57b6bc6.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:38:43.488Z"
+    },
+    "HMRP-C": {
+      "status": "collected",
+      "file": "HMRP_C_641e352df8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:38:55.232Z"
+    },
+    "HMRP-D": {
+      "status": "collected",
+      "file": "HMRP_D_251bafe8ae.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:39:06.831Z"
+    },
+    "HMRP-E": {
+      "status": "collected",
+      "file": "HMRP_E_6bca0c595e.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:39:18.180Z"
+    },
+    "HMRP-F": {
+      "status": "collected",
+      "file": "HMRP_F_ea26dc48d8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:39:29.844Z"
+    },
+    "HMRP-G": {
+      "status": "collected",
+      "file": "HMRP_G_29471306e9.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:39:41.353Z"
+    },
+    "HMRP-H": {
+      "status": "collected",
+      "file": "HMRP_H_297b3587a1.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:39:53.928Z"
+    },
+    "HMRP-I": {
+      "status": "collected",
+      "file": "HMRP_I_92d49c4ec7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:40:05.218Z"
+    },
+    "HMRP-J": {
+      "status": "collected",
+      "file": "HMRP_J_c01892fbf9.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:40:17.091Z"
+    },
+    "HMRP-K": {
+      "status": "collected",
+      "file": "HMRP_K_625fae1a44.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:40:28.622Z"
+    },
+    "HMRP-L": {
+      "status": "collected",
+      "file": "HMRP_L_7a5c264eb6.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:40:40.583Z"
+    },
+    "HMRP-M": {
+      "status": "collected",
+      "file": "HMRP_M_610352a5ba.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:40:51.915Z"
+    },
+    "HMRP-N": {
+      "status": "collected",
+      "file": "HMRP_N_0e1fd12724.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:41:04.040Z"
+    },
+    "HMRP-O": {
+      "status": "collected",
+      "file": "HMRP_O_5b9990aa1b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:41:16.328Z"
+    },
+    "HMRP-P": {
+      "status": "collected",
+      "file": "HMRP_P_63d35f6c42.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:41:27.693Z"
+    },
+    "HMRP-Q": {
+      "status": "collected",
+      "file": "HMRP_Q_46aa550f7f.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:41:40.519Z"
+    },
+    "HMRP-R": {
+      "status": "collected",
+      "file": "HMRP_R_5e53022f44.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:41:52.842Z"
+    },
+    "HMRP-S": {
+      "status": "collected",
+      "file": "HMRP_S_a683e7d6b8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:42:05.076Z"
+    },
+    "HMRP-T": {
+      "status": "collected",
+      "file": "HMRP_T_baefffe808.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:42:16.530Z"
+    },
+    "HMRP-U": {
+      "status": "collected",
+      "file": "HMRP_U_1b95183c7c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:42:28.324Z"
+    },
+    "HMRP-V": {
+      "status": "collected",
+      "file": "HMRP_V_1584a50aea.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:42:39.550Z"
+    },
+    "HMRP-W": {
+      "status": "collected",
+      "file": "HMRP_W_71f0ee9423.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:42:52.592Z"
+    },
+    "HMRP-X": {
+      "status": "collected",
+      "file": "HMRP_X_115ac58006.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:43:03.745Z"
+    },
+    "HMRP-Y": {
+      "status": "collected",
+      "file": "HMRP_Y_00cccd2996.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:43:16.985Z"
+    },
+    "HMRP-Z": {
+      "status": "collected",
+      "file": "HMRP_Z_32aca1cc96.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:43:28.346Z"
+    },
+    "HMR-0": {
+      "status": "collected",
+      "file": "HMR_0_a31ba002f8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:43:42.609Z"
+    },
+    "HMR-1": {
+      "status": "collected",
+      "file": "HMR_1_9d1423bfd8.json",
+      "matching_products": 52,
+      "matching_leaflets": 9,
+      "retrieved_at": "2026-06-29T14:43:54.141Z"
+    },
+    "HMR-2": {
+      "status": "collected",
+      "file": "HMR_2_ea1a9374a3.json",
+      "matching_products": 2,
+      "matching_leaflets": 1,
+      "retrieved_at": "2026-06-29T14:44:07.845Z"
+    },
+    "HMR-3": {
+      "status": "collected",
+      "file": "HMR_3_572de347d1.json",
+      "matching_products": 3,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:44:19.457Z"
+    },
+    "HMR-4": {
+      "status": "collected",
+      "file": "HMR_4_6f674fc611.json",
+      "matching_products": 5,
+      "matching_leaflets": 2,
+      "retrieved_at": "2026-06-29T14:44:31.298Z"
+    },
+    "HMR-5": {
+      "status": "collected",
+      "file": "HMR_5_0ddd71aa06.json",
+      "matching_products": 3,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:44:42.964Z"
+    },
+    "HMR-6": {
+      "status": "collected",
+      "file": "HMR_6_ec91637707.json",
+      "matching_products": 5,
+      "matching_leaflets": 1,
+      "retrieved_at": "2026-06-29T14:44:55.222Z"
+    },
+    "HMR-7": {
+      "status": "collected",
+      "file": "HMR_7_0a10e6c84d.json",
+      "matching_products": 2,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:45:07.294Z"
+    },
+    "HMR-8": {
+      "status": "collected",
+      "file": "HMR_8_6862bb5b07.json",
+      "matching_products": 3,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:45:19.016Z"
+    },
+    "HMR-9": {
+      "status": "collected",
+      "file": "HMR_9_5ba04fb8e2.json",
+      "matching_products": 5,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:45:30.881Z"
+    },
+    "HMR-A": {
+      "status": "collected",
+      "file": "HMR_A_de8638c4f9.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:45:42.891Z"
+    },
+    "HMR-B": {
+      "status": "collected",
+      "file": "HMR_B_2de1ed09c6.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:45:55.280Z"
+    },
+    "HMR-C": {
+      "status": "collected",
+      "file": "HMR_C_1e64f609ff.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:46:06.521Z"
+    },
+    "HMR-D": {
+      "status": "collected",
+      "file": "HMR_D_6d04d1ba75.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:46:18.933Z"
+    },
+    "HMR-E": {
+      "status": "collected",
+      "file": "HMR_E_c040580565.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:46:30.519Z"
+    },
+    "HMR-F": {
+      "status": "collected",
+      "file": "HMR_F_19f32c57c6.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:46:42.032Z"
+    },
+    "HMR-G": {
+      "status": "collected",
+      "file": "HMR_G_ed2629cb1b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:46:55.477Z"
+    },
+    "HMR-H": {
+      "status": "collected",
+      "file": "HMR_H_453bc5bf36.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:47:06.778Z"
+    },
+    "HMR-I": {
+      "status": "collected",
+      "file": "HMR_I_428f0e716a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:47:18.732Z"
+    },
+    "HMR-J": {
+      "status": "collected",
+      "file": "HMR_J_2f74a91a86.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:47:31.125Z"
+    },
+    "HMR-K": {
+      "status": "collected",
+      "file": "HMR_K_eea45b961e.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:47:43.002Z"
+    },
+    "HMR-L": {
+      "status": "collected",
+      "file": "HMR_L_2710295a33.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:47:55.234Z"
+    },
+    "HMR-M": {
+      "status": "collected",
+      "file": "HMR_M_ba783b7d7f.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:48:07.758Z"
+    },
+    "HMR-N": {
+      "status": "collected",
+      "file": "HMR_N_de0118acfb.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:48:21.389Z"
+    },
+    "HMR-O": {
+      "status": "collected",
+      "file": "HMR_O_88c513409b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:48:34.718Z"
+    },
+    "HMR-P": {
+      "status": "collected",
+      "file": "HMR_P_3938393a6a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:48:48.742Z"
+    },
+    "HMR-Q": {
+      "status": "collected",
+      "file": "HMR_Q_09c62736d7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:49:04.251Z"
+    },
+    "HMR-R": {
+      "status": "collected",
+      "file": "HMR_R_6bb8275e73.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:49:17.371Z"
+    },
+    "HMR-S": {
+      "status": "collected",
+      "file": "HMR_S_df14e6c26e.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:49:31.295Z"
+    },
+    "HMR-T": {
+      "status": "collected",
+      "file": "HMR_T_240b8e954a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:49:43.571Z"
+    },
+    "HMR-U": {
+      "status": "collected",
+      "file": "HMR_U_f64837bf74.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:49:56.185Z"
+    },
+    "HMR-V": {
+      "status": "collected",
+      "file": "HMR_V_18e4f9a80c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:50:07.677Z"
+    },
+    "HMR-W": {
+      "status": "collected",
+      "file": "HMR_W_6e0dd1d847.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:50:19.049Z"
+    },
+    "HMR-X": {
+      "status": "collected",
+      "file": "HMR_X_dacb5cb969.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:50:31.626Z"
+    },
+    "HMR-Y": {
+      "status": "collected",
+      "file": "HMR_Y_b81cb7731b.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:50:43.402Z"
+    },
+    "HMR-Z": {
+      "status": "collected",
+      "file": "HMR_Z_2975a46aa0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T14:50:54.638Z"
+    },
+    "DRHR-0": {
+      "status": "collected",
+      "file": "DRHR_0_1449893d0d.json",
+      "matching_products": 1,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:04:25.226Z"
+    },
+    "DRHR-1": {
+      "status": "collected",
+      "file": "DRHR_1_214e727862.json",
+      "matching_products": 340,
+      "matching_leaflets": 29,
+      "retrieved_at": "2026-06-29T18:04:37.135Z"
+    },
+    "DRHR-2": {
+      "status": "collected",
+      "file": "DRHR_2_b576b8b433.json",
+      "matching_products": 411,
+      "matching_leaflets": 8,
+      "retrieved_at": "2026-06-29T18:04:48.374Z"
+    },
+    "DRHR-3": {
+      "status": "collected",
+      "file": "DRHR_3_0095d7ba8f.json",
+      "matching_products": 20,
+      "matching_leaflets": 2,
+      "retrieved_at": "2026-06-29T18:04:59.650Z"
+    },
+    "DRHR-4": {
+      "status": "collected",
+      "file": "DRHR_4_e0cc8f7302.json",
+      "matching_products": 10,
+      "matching_leaflets": 1,
+      "retrieved_at": "2026-06-29T18:17:14.678Z"
+    },
+    "DRHR-5": {
+      "status": "collected",
+      "file": "DRHR_5_d75066e426.json",
+      "matching_products": 10,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:17:28.854Z"
+    },
+    "DRHR-6": {
+      "status": "collected",
+      "file": "DRHR_6_7463356a0e.json",
+      "matching_products": 12,
+      "matching_leaflets": 2,
+      "retrieved_at": "2026-06-29T18:17:43.069Z"
+    },
+    "DRHR-7": {
+      "status": "collected",
+      "file": "DRHR_7_06f58e53df.json",
+      "matching_products": 12,
+      "matching_leaflets": 1,
+      "retrieved_at": "2026-06-29T18:17:56.368Z"
+    },
+    "DRHR-8": {
+      "status": "collected",
+      "file": "DRHR_8_612cfe9659.json",
+      "matching_products": 22,
+      "matching_leaflets": 1,
+      "retrieved_at": "2026-06-29T18:18:08.367Z"
+    },
+    "DRHR-9": {
+      "status": "collected",
+      "file": "DRHR_9_311784da0d.json",
+      "matching_products": 15,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:18:20.776Z"
+    },
+    "DRHR-A": {
+      "status": "collected",
+      "file": "DRHR_A_3f196a69ab.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:18:32.239Z"
+    },
+    "DRHR-B": {
+      "status": "collected",
+      "file": "DRHR_B_ca0c8d0da9.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:18:46.006Z"
+    },
+    "DRHR-C": {
+      "status": "collected",
+      "file": "DRHR_C_340b809507.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:18:57.542Z"
+    },
+    "DRHR-D": {
+      "status": "collected",
+      "file": "DRHR_D_3eb11238cc.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:19:09.066Z"
+    },
+    "DRHR-E": {
+      "status": "collected",
+      "file": "DRHR_E_266236c5e4.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:19:22.778Z"
+    },
+    "DRHR-F": {
+      "status": "collected",
+      "file": "DRHR_F_2e7571f5ec.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:19:36.524Z"
+    },
+    "DRHR-G": {
+      "status": "collected",
+      "file": "DRHR_G_c0d482baf9.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:19:50.275Z"
+    },
+    "DRHR-H": {
+      "status": "collected",
+      "file": "DRHR_H_07a5480988.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:20:02.253Z"
+    },
+    "DRHR-I": {
+      "status": "collected",
+      "file": "DRHR_I_adfbf7cf65.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:20:13.682Z"
+    },
+    "DRHR-J": {
+      "status": "collected",
+      "file": "DRHR_J_bba4955967.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:20:26.704Z"
+    },
+    "DRHR-K": {
+      "status": "collected",
+      "file": "DRHR_K_8be2df7d98.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:20:39.871Z"
+    },
+    "DRHR-L": {
+      "status": "collected",
+      "file": "DRHR_L_b497b8f5cb.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:20:53.868Z"
+    },
+    "DRHR-M": {
+      "status": "collected",
+      "file": "DRHR_M_fbbf3dd490.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:21:05.597Z"
+    },
+    "DRHR-N": {
+      "status": "collected",
+      "file": "DRHR_N_4a691b6b04.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:21:20.285Z"
+    },
+    "DRHR-O": {
+      "status": "collected",
+      "file": "DRHR_O_c7753154d0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:21:34.818Z"
+    },
+    "DRHR-P": {
+      "status": "collected",
+      "file": "DRHR_P_6bc5217b43.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:21:49.170Z"
+    },
+    "DRHR-Q": {
+      "status": "collected",
+      "file": "DRHR_Q_e90662207c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:22:01.664Z"
+    },
+    "DRHR-R": {
+      "status": "collected",
+      "file": "DRHR_R_f00d12af58.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:22:13.542Z"
+    },
+    "DRHR-S": {
+      "status": "collected",
+      "file": "DRHR_S_55207a5117.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:22:27.413Z"
+    },
+    "DRHR-T": {
+      "status": "collected",
+      "file": "DRHR_T_ca86f1c7e8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:22:41.684Z"
+    },
+    "DRHR-U": {
+      "status": "collected",
+      "file": "DRHR_U_e3e0b10758.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:22:56.447Z"
+    },
+    "DRHR-V": {
+      "status": "collected",
+      "file": "DRHR_V_265490ae81.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:23:08.774Z"
+    },
+    "DRHR-W": {
+      "status": "collected",
+      "file": "DRHR_W_c6ee550738.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:23:21.647Z"
+    },
+    "DRHR-X": {
+      "status": "collected",
+      "file": "DRHR_X_1e4f722bce.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:23:33.704Z"
+    },
+    "DRHR-Y": {
+      "status": "collected",
+      "file": "DRHR_Y_6f963ce0ec.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:23:47.069Z"
+    },
+    "DRHR-Z": {
+      "status": "collected",
+      "file": "DRHR_Z_9c1e05b4c0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:24:00.681Z"
+    },
+    "THPR-0": {
+      "status": "collected",
+      "file": "THPR_0_3ed6c27ecc.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:24:12.562Z"
+    },
+    "THPR-1": {
+      "status": "collected",
+      "file": "THPR_1_ee6be3891d.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:24:26.419Z"
+    },
+    "THPR-2": {
+      "status": "collected",
+      "file": "THPR_2_ea687630e7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:24:39.275Z"
+    },
+    "THPR-3": {
+      "status": "collected",
+      "file": "THPR_3_c3b973f20e.json",
+      "matching_products": 1,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:24:53.061Z"
+    },
+    "THPR-4": {
+      "status": "collected",
+      "file": "THPR_4_27951fad09.json",
+      "matching_products": 2,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:25:04.990Z"
+    },
+    "THPR-5": {
+      "status": "collected",
+      "file": "THPR_5_6f87056ef2.json",
+      "matching_products": 8,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:25:18.695Z"
+    },
+    "THPR-6": {
+      "status": "collected",
+      "file": "THPR_6_88e6dcf448.json",
+      "matching_products": 4,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:25:32.527Z"
+    },
+    "THPR-7": {
+      "status": "collected",
+      "file": "THPR_7_8d912fd388.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:25:45.318Z"
+    },
+    "THPR-8": {
+      "status": "collected",
+      "file": "THPR_8_9e8431e259.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:25:58.357Z"
+    },
+    "THPR-9": {
+      "status": "collected",
+      "file": "THPR_9_bcc8fdb3d0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:26:12.820Z"
+    },
+    "THPR-A": {
+      "status": "collected",
+      "file": "THPR_A_708280b1b3.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:26:26.675Z"
+    },
+    "THPR-B": {
+      "status": "collected",
+      "file": "THPR_B_bfa7797f04.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:26:41.058Z"
+    },
+    "THPR-C": {
+      "status": "collected",
+      "file": "THPR_C_c3cf6d5212.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:26:53.482Z"
+    },
+    "THPR-D": {
+      "status": "collected",
+      "file": "THPR_D_630cece9a7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:27:04.779Z"
+    },
+    "THPR-E": {
+      "status": "collected",
+      "file": "THPR_E_ed3f8692b0.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:27:20.072Z"
+    },
+    "THPR-F": {
+      "status": "collected",
+      "file": "THPR_F_5be7dfdb36.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:27:33.720Z"
+    },
+    "THPR-G": {
+      "status": "collected",
+      "file": "THPR_G_9001d18eb4.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:27:47.620Z"
+    },
+    "THPR-H": {
+      "status": "collected",
+      "file": "THPR_H_1cf86172fb.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:27:59.507Z"
+    },
+    "THPR-I": {
+      "status": "collected",
+      "file": "THPR_I_3a6c5680e9.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:28:11.279Z"
+    },
+    "THPR-J": {
+      "status": "collected",
+      "file": "THPR_J_95114c67f7.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:28:25.180Z"
+    },
+    "THPR-K": {
+      "status": "collected",
+      "file": "THPR_K_5449ec9957.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:28:38.763Z"
+    },
+    "THPR-L": {
+      "status": "collected",
+      "file": "THPR_L_360920a9a3.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:28:53.411Z"
+    },
+    "THPR-M": {
+      "status": "collected",
+      "file": "THPR_M_2a770d33d8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:29:06.513Z"
+    },
+    "THPR-N": {
+      "status": "collected",
+      "file": "THPR_N_739549564c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:29:19.707Z"
+    },
+    "THPR-O": {
+      "status": "collected",
+      "file": "THPR_O_ee830e5e7d.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:29:33.558Z"
+    },
+    "THPR-P": {
+      "status": "collected",
+      "file": "THPR_P_6087e93e0c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:29:46.557Z"
+    },
+    "THPR-Q": {
+      "status": "collected",
+      "file": "THPR_Q_3eac47043a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:30:00.277Z"
+    },
+    "THPR-R": {
+      "status": "collected",
+      "file": "THPR_R_463c775f70.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:30:14.208Z"
+    },
+    "THPR-S": {
+      "status": "collected",
+      "file": "THPR_S_cc348eb233.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:30:28.220Z"
+    },
+    "THPR-T": {
+      "status": "collected",
+      "file": "THPR_T_bd2d5e9009.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:30:42.317Z"
+    },
+    "THPR-U": {
+      "status": "collected",
+      "file": "THPR_U_5067cb03b8.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:30:54.633Z"
+    },
+    "THPR-V": {
+      "status": "collected",
+      "file": "THPR_V_77eb6d7c5c.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:31:07.756Z"
+    },
+    "THPR-W": {
+      "status": "collected",
+      "file": "THPR_W_f1ffb60993.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:31:22.958Z"
+    },
+    "THPR-X": {
+      "status": "collected",
+      "file": "THPR_X_cbb0c02e19.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:31:36.911Z"
+    },
+    "THPR-Y": {
+      "status": "collected",
+      "file": "THPR_Y_7dc46ebf7a.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:31:50.132Z"
+    },
+    "THPR-Z": {
+      "status": "collected",
+      "file": "THPR_Z_fdfd339b2f.json",
+      "matching_products": 0,
+      "matching_leaflets": 0,
+      "retrieved_at": "2026-06-29T18:32:02.730Z"
+    }
+  },
+  "failed_queries": {}
+}

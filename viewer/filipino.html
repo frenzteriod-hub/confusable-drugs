@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filipino-aware Matching · PH LASA</title><link rel="stylesheet" href="styles.css?v=20260630-2"></head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Philippine FDA data project</p><h1>Filipino-aware Matching</h1></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Pair review</a><a href="relationships.html">Medicine groups</a>
+      <a class="active" href="filipino.html">Filipino-aware</a><a href="documentation.html">How it works</a>
+    </nav>
+    <div class="status-pill"><span></span> Experimental</div>
+  </header>
+  <main>
+    <section class="notice"><strong>Experimental screening signal only.</strong>
+      This is not evidence that Filipinos will confuse two medicines, and it must never be used alone to label a pair as verified LASA.
+    </section>
+    <section class="page-intro"><p class="eyebrow">Plain-language explanation</p><h2>One combined Filipino-aware check</h2>
+      <p>It creates one comparison-only reading form using selected consonant and vowel substitutions, then measures similarity. It does not split people into Tagalog and Bisaya groups, and the published medicine names are never changed.</p>
+    </section>
+    <section class="explain-grid">
+      <article><span>1</span><h3>Normalize for comparison</h3><p>Capitalization, spaces and punctuation are simplified.</p></article>
+      <article><span>2</span><h3>Combine consonant readings</h3><p><code>ph/p</code>, <code>th/t</code>, <code>sh/s</code>, <code>f/p</code>, <code>v/b</code>, and <code>z/s</code>.</p></article>
+      <article><span>3</span><h3>Combine vowel readings</h3><p><code>e/i</code> and <code>o/u</code> are compared as possible reading substitutions for all Filipino-aware screening.</p></article>
+      <article><span>4</span><h3>Score, then review</h3><p>The combined Jaro–Winkler score is only one signal among several.</p></article>
+    </section>
+    <section class="workspace">
+      <div class="section-heading"><div><p class="eyebrow">Experimental results</p><h2>Pairs carrying this signal</h2></div></div>
+      <div class="filters one-filter"><label><span>Search either name</span><input id="filipino-search" type="search"></label></div>
+      <div class="result-meta"><p><strong id="filipino-count">0</strong> matching pairs</p><p id="filipino-page"></p></div>
+      <div class="table-wrap"><table><thead><tr><th>Name A</th><th>Name B</th><th>Standard spelling</th><th>Combined Filipino-aware</th><th>Difference</th><th>Review status</th></tr></thead><tbody id="filipino-results"></tbody></table></div>
+      <footer class="pagination"><button id="filipino-previous">← Previous</button><button id="filipino-next">Next →</button></footer>
+    </section>
+  </main>
+  <script src="filipino.js?v=20260630-2"></script>
+</body></html>

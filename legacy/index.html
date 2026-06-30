@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LASA Clinical Safety Portal - CDSS</title>
+    <meta name="description" content="A professional Clinical Decision Support System (CDSS) for Look-Alike Sound-Alike (LASA) drug safety checks.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- TOP HEADER NAVIGATION BAR -->
+    <header class="app-header">
+        <div class="header-logo">
+            <span class="header-logo-icon">🛡️</span>
+            <div class="header-logo-text">
+                <span class="header-title">LASA Clinical Safety Portal</span>
+                <span class="cdss-badge">CDSS v1.0</span>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <button id="nav-btn-auditor" class="nav-btn active" onclick="switchPage('auditor')">📝 Prescription Auditor</button>
+            <button id="nav-btn-directory" class="nav-btn" onclick="switchPage('directory')">📋 Drug Directory</button>
+            <button id="nav-btn-alerts" class="nav-btn" onclick="switchPage('alerts')">⚠️ LASA Alert Pairs</button>
+            <button id="nav-btn-settings" class="nav-btn" onclick="switchPage('settings')">⚙️ Algorithm Parameters</button>
+            <button id="nav-btn-filipino" class="nav-btn" onclick="switchPage('filipino')">🇵🇭 Filipino LASA</button>
+        </nav>
+    </header>
+
+    <!-- MAIN PAGE CONTAINER -->
+    <main class="page-container">
+
+        <!-- PAGE 1: PRESCRIPTION AUDITOR -->
+        <div id="page-auditor" class="page-view active">
+            <div class="centered-container">
+                <div class="clinical-card auditor-card">
+                    <div class="card-header">Clinical Prescription Audit Console</div>
+                    <div class="card-body">
+                        <textarea id="smart-input" placeholder="Type a drug name to search, or paste a prescription sentence (e.g. 'Take 1 tablet of metfornin daily')..."></textarea>
+                        
+                        <!-- ClinicalBERT Patient Diagnosis Context Selector -->
+                        <div class="patient-context-selector-box" style="margin-top: 12px; display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #f8fafc; border: 1px solid var(--border-light); border-radius: 6px;">
+                            <span style="font-size: 1.1rem; flex-shrink: 0;">🏥</span>
+                            <div style="flex-grow: 1; display: flex; align-items: center; gap: 8px;">
+                                <label for="patient-diagnosis-select" style="font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); white-space: nowrap; margin: 0;">Patient Diagnosis:</label>
+                                <select id="patient-diagnosis-select" style="padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.85rem; outline: none; background: white; font-family: var(--font-body); flex-grow: 1;">
+                                    <option value="none">No Context / Standard Check Only</option>
+                                    <option value="depression">Major Depressive Disorder (Psychiatry)</option>
+                                    <option value="arthritis">Rheumatoid Arthritis (Rheumatology/Pain Management)</option>
+                                    <option value="hypertension">Essential Hypertension (Cardiovascular)</option>
+                                    <option value="diabetes">Type 2 Diabetes Mellitus (Endocrine/Metabolic)</option>
+                                    <option value="infection">Bacterial Infection (Infectious Diseases)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="card-actions">
+                            <button class="btn btn-primary" onclick="triggerSmartCheck()">Audit Prescription</button>
+                            <button class="btn btn-secondary" onclick="clearSmartInput()">Clear Input</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="auditor-report-box" class="auditor-report-box">
+                    <div class="welcome-box glass-card">
+                        <h3>💡 Clinical Decision Guide</h3>
+                        <p class="welcome-text">Use this CDSS portal to verify prescription safety and identify orthographic look-alike sound-alike drug name confusions.</p>
+                        <div class="guide-steps">
+                            <div class="step-item">
+                                <span class="step-num">1</span>
+                                <div>
+                                    <strong>Verify Prescription</strong>
+                                    <p>Paste medical orders in the audit console above to identify typos and critical drug name overlaps.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">2</span>
+                                <div>
+                                    <strong>Explore Drug Profiles</strong>
+                                    <p>Browse the Drug Directory or look at the active LASA alert table to explore FDA reference safety reports.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: DRUG DIRECTORY -->
+        <div id="page-directory" class="page-view">
+            <div class="clinical-card page-card">
+                <div class="card-header-bar">
+                    <h3>📋 FDA Medication Directory</h3>
+                    <div class="search-bar-wrapper" style="gap: 12px; max-width: 750px;">
+                        <input type="text" id="directory-search-input" placeholder="Search by brand name, generic name, or class..." oninput="handleDirectorySearch(this.value)" style="flex: 2;">
+                        <select id="directory-category-select" onchange="handleDirectoryCategoryChange(this.value)" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.9rem; outline: none; background: white; font-family: var(--font-body); flex: 1;">
+                            <option value="">All Categories</option>
+                            <option value="Cardiovascular System">Cardiovascular System</option>
+                            <option value="Central Nervous System">Central Nervous System</option>
+                            <option value="Antimicrobials & Infectious Diseases">Antimicrobials & Infectious Diseases</option>
+                            <option value="Endocrine & Metabolic">Endocrine & Metabolic</option>
+                            <option value="Respiratory & Allergy">Respiratory & Allergy</option>
+                            <option value="Gastrointestinal System">Gastrointestinal System</option>
+                            <option value="Oncology & Immunology">Oncology & Immunology</option>
+                            <option value="Miscellaneous / Other">Miscellaneous / Other</option>
+                        </select>
+                        <span id="directory-count" class="list-count-badge">0 Drugs Loaded</span>
+                    </div>
+                </div>
+                <div id="directory-list-container" class="directory-list-grid">
+                    <!-- Filled dynamically by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 3: LASA ALERTS TABLE -->
+        <div id="page-alerts" class="page-view">
+            <div class="clinical-card page-card">
+                <div class="card-header-bar">
+                    <h3>⚠️ Targeted Confusable Drug Search</h3>
+                    <div class="search-bar-wrapper" style="gap: 12px; max-width: 800px;">
+                        <select id="alerts-mode-select" onchange="handleAlertsModeChange(this.value)" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.9rem; outline: none; background: white; font-family: var(--font-body); flex: 1;">
+                            <option value="generic">Generic-to-Generic LASA</option>
+                            <option value="brand">Brand-to-Brand LASA</option>
+                            <option value="cross">Generic-to-Brand LASA</option>
+                            <option value="all">All Name Types</option>
+                        </select>
+                        <input type="text" id="alerts-search-input" placeholder="Filter confusable pairs..." oninput="handleAlertsSearch(this.value)" style="flex: 2;">
+                        <span id="alerts-count" class="list-count-badge">Calculating...</span>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="lasa-table">
+                        <thead>
+                            <tr>
+                                <th>Drug A Name</th>
+                                <th>Drug B Name</th>
+                                <th>Jaro-Winkler Similarity</th>
+                                <th>Levenshtein Dist.</th>
+                                <th>Soundex Match</th>
+                                <th>Tall Man Lettering Alignment</th>
+                            </tr>
+                        </thead>
+                        <tbody id="alerts-tbody">
+                            <!-- Filled dynamically by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 4: ALGORITHM SETTINGS -->
+        <div id="page-settings" class="page-view">
+            <div class="clinical-card page-card settings-card">
+                <div class="card-header">Academic Similarity Configuration Dashboard</div>
+                <div class="card-body settings-grid">
+                    
+                    <div class="settings-control-section">
+                        <h3>Jaro-Winkler Similarity Metric Slider</h3>
+                        <p class="settings-desc">Adjust the similarity score threshold above which medication pairs are classified as potential Look-Alike Sound-Alike (LASA) risks.</p>
+                        
+                        <div class="slider-box">
+                            <label for="algo-threshold">Active Jaro-Winkler Threshold: <strong id="threshold-val">0.82</strong></label>
+                            <input type="range" id="algo-threshold" min="0.70" max="0.95" step="0.01" value="0.82" oninput="updateThreshold(this.value)">
+                            <div class="slider-labels">
+                                <span>0.70 (Very Loose)</span>
+                                <span>0.82 (Standard Clinical)</span>
+                                <span>0.95 (Extremely Strict)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-metrics-section">
+                        <h3>Assessment Methodologies</h3>
+                        
+                        <div class="academic-badge-row">
+                            <div class="academic-badge">
+                                <span class="badge-title font-mono">Jaro-Winkler Distance</span>
+                                <span class="badge-desc">Measures edit distances prioritizing characters near the start of the string (prefixes). Ideal for brand prefix matches. Configurable threshold (default: 0.82).</span>
+                            </div>
+                            <div class="academic-badge">
+                                <span class="badge-title font-mono">Levenshtein Edit Distance</span>
+                                <span class="badge-desc">Computes the exact number of insertions, deletions, or substitutions required to transform name A into name B.</span>
+                            </div>
+                            <div class="academic-badge">
+                                <span class="badge-title font-mono">Soundex Phonetics</span>
+                                <span class="badge-desc">Encodes strings into 4-character phonetic representations to capture words that sound similar (homophones).</span>
+                            </div>
+                            <div class="academic-badge">
+                                <span class="badge-title font-mono">Tall Man Lettering (TML)</span>
+                                <span class="badge-desc">Applies ISMP/FDA-standard visual differentiation by capitalizing unique syllables in confusable pairs (e.g., traMADol vs. traZODone). Uses an official lookup map with algorithmic fallback for unknown pairs via longest common prefix/suffix alignment.</span>
+                            </div>
+                            <div class="academic-badge">
+                                <span class="badge-title font-mono">Drug Name Normalization</span>
+                                <span class="badge-desc">Pre-processing pipeline that strips salt suffixes (hydrochloride, sulfate, sodium, etc.), removes special characters, and normalizes whitespace to isolate the active ingredient base name for accurate comparison.</span>
+                            </div>
+                            <div class="academic-badge">
+                                <span class="badge-title font-mono">ISMP Known LASA Overrides</span>
+                                <span class="badge-desc">Hardcoded set of 13 clinically verified high-risk confusable pairs from the ISMP (Institute for Safe Medication Practices) reference list. These pairs always trigger alerts regardless of algorithmic scores.</span>
+                            </div>
+                            <div class="academic-badge">
+                                <span class="badge-title font-mono">Multi-Signal Composite Detection</span>
+                                <span class="badge-desc">Combined scoring logic: flags a pair as LASA if Jaro-Winkler ≥ threshold, OR (Jaro-Winkler ≥ 0.75 AND Soundex ≥ 0.75), OR the pair exists in the ISMP clinical override list. Reduces false negatives by cross-validating orthographic and phonetic signals.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-metrics-section">
+                        <h3>🇵🇭 Filipino-Aware Methodologies</h3>
+                        
+                        <div class="academic-badge-row">
+                            <div class="academic-badge badge-filipino">
+                                <span class="badge-title font-mono">Filipino Grapheme-to-Phoneme (G2P)</span>
+                                <span class="badge-desc">Rule-based G2P engine modeling Filipino pronunciation patterns. Applies 8 ordered phonological rules: ph→p, th→t, sh→s, f→p, v→b, z→s, and vowel collapses e→i and o→u. Transforms English drug names into their Filipino-realized pronunciation.</span>
+                            </div>
+                            <div class="academic-badge badge-filipino">
+                                <span class="badge-title font-mono">Filipino Phonetic Encoder</span>
+                                <span class="badge-desc">Modified Soundex pipeline that first applies Filipino G2P transformation, then generates phonetic codes. Unlike standard Soundex (which preserves the first letter as-is), this captures how Filipino speakers actually pronounce the initial consonant — critical for detecting F/P and V/B merger confusions.</span>
+                            </div>
+                            <div class="academic-badge badge-filipino">
+                                <span class="badge-title font-mono">Filipino Multi-Signal Detection</span>
+                                <span class="badge-desc">Cross-validates Filipino G2P-transformed Jaro-Winkler scores against Filipino Phonetic similarity. Classifies pairs as: Filipino-Only (confusable only in Filipino, missed by English systems), Amplified (more confusable in Filipino than English), or Standard (equally confusable in both).</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 5: FILIPINO-AWARE LASA DETECTION -->
+        <div id="page-filipino" class="page-view">
+            <div class="clinical-card page-card">
+                <div class="card-header-bar">
+                    <h3>🇵🇭 Filipino-Aware Confusable Drug Analysis</h3>
+                    <div class="search-bar-wrapper" style="gap: 12px; max-width: 800px;">
+                        <select id="filipino-mode-select" onchange="handleFilipinoModeChange(this.value)" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.9rem; outline: none; background: white; font-family: var(--font-body); flex: 1;">
+                            <option value="generic">Generic-to-Generic</option>
+                            <option value="brand">Brand-to-Brand</option>
+                            <option value="cross">Generic-to-Brand</option>
+                            <option value="all">All Name Types</option>
+                        </select>
+                        <input type="text" id="filipino-search-input" placeholder="Search drug name..." oninput="handleFilipinoSearch(this.value)" style="flex: 2;">
+                        <span id="filipino-count" class="list-count-badge">Calculating...</span>
+                    </div>
+                </div>
+
+                <div class="filipino-info-callout">
+                    <span class="info-icon">💡</span>
+                    <div>
+                        <p><strong>Why this matters:</strong> Standard LASA systems rely on American English pronunciation. The Filipino Phonology model simulates how local healthcare workers realize drug names by incorporating consonant substitutions (<em>f→p</em>, <em>v→b</em>, <em>th→t</em>, <em>z→s</em>) and vowel collapses (<em>e→i</em>, <em>o→u</em>) into a unified phonetic engine.</p>
+                        <p style="margin-top: 6px;"><strong>🇵🇭 Filipino-Only</strong> = confusable only under Filipino pronunciation. <strong>⬆️ Amplified</strong> = confusable in both, but more similar in Filipino.</p>
+                    </div>
+                </div>
+
+                <div class="filipino-stats-bar">
+                    <div class="stat-card">
+                        <span class="stat-value" id="stat-total-pairs">—</span>
+                        <span class="stat-label">Total Filipino LASA Pairs</span>
+                    </div>
+                    <div class="stat-card stat-highlight">
+                        <span class="stat-value" id="stat-filipino-only">—</span>
+                        <span class="stat-label">🇵🇭 Filipino-Only Pairs</span>
+                    </div>
+                    <div class="stat-card stat-amplified-card">
+                        <span class="stat-value" id="stat-amplified">—</span>
+                        <span class="stat-label">⬆️ Amplified Risk Pairs</span>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="lasa-table">
+                        <thead>
+                            <tr>
+                                <th>Drug A (English)</th>
+                                <th>Filipino Phonemic A</th>
+                                <th>Drug B (English)</th>
+                                <th>Filipino Phonemic B</th>
+                                <th>Phonetic Sim (ALINE)</th>
+                                <th>Orthographic Sim (Visual)</th>
+                                <th>Blended Risk % (POCA)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="filipino-tbody">
+                            <!-- Filled dynamically by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- DRUG DETAIL MODAL DIALOG OVERLAY -->
+    <div id="drug-detail-modal" class="modal-overlay" onclick="closeDrugModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeDrugModal()">✕</button>
+            <div id="modal-body-content">
+                <!-- Filled dynamically by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hardcoded Drug Database (1,495 FDA medications) -->
+    <script src="drugs_db.js"></script>
+    <!-- Precomputed LASA Pair Metrics for Fast Static Hosting -->
+    <script src="lasa_pairs_cache.js"></script>
+    <!-- App Script -->
+    <script src="app.js"></script>
+</body>
+</html>

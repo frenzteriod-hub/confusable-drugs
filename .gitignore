@@ -1,7 +1,25 @@
 __pycache__/
 *.py[cod]
 .DS_Store
+node_modules/
+.venv/
 
 # Raw openFDA archives exceed GitHub's normal file size limit.
 drug-drugsfda-*.json
 data/drug-drugsfda-*.json
+
+# PH FDA collection checkpoints contain a local browser profile and many
+# reproducible per-query responses. The consolidated CSV/report files remain
+# visible to Git.
+data/ph_fda/state/chrome_profile/
+data/ph_fda/raw/queries/
+data/ph_fda/leaflet_extraction/pdf/
+data/ph_fda/leaflet_extraction/page_text/
+data/ph_fda/leaflet_extraction/state/
+data/ph_fda/**/*.tmp
+tmp/pdfs/
+
+# Large reproducible database/build outputs. Rebuild them with the scripts.
+data/canonical/ph_drugs.sqlite
+data/lasa/lasa_candidates.csv
+data/lasa/ph_lasa.sqlite

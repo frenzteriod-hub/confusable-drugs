@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How It Works · PH LASA</title><link rel="stylesheet" href="styles.css?v=20260630-2"></head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Philippine FDA data project</p><h1>How It Works</h1></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Pair review</a><a href="relationships.html">Medicine groups</a>
+      <a href="filipino.html">Filipino-aware</a><a class="active" href="documentation.html">How it works</a>
+    </nav>
+    <div class="status-pill"><span></span> Beginner guide</div>
+  </header>
+  <main class="docs-layout">
+    <aside class="docs-nav"><strong>On this page</strong><a href="#goal">Project goal</a><a href="#data">Data collected</a>
+      <a href="#pipeline">Step by step</a><a href="#algorithms">Algorithms</a><a href="#classifications">Classifications</a>
+      <a href="#limitations">Limitations</a></aside>
+    <article class="docs-content">
+      <section id="goal"><p class="eyebrow">Start here</p><h2>Project goal</h2>
+        <p>This project organizes Philippine FDA medicine records and proposes names that may look or sound alike. It helps a human reviewer find candidates faster. It does not diagnose, prescribe, or prove that a medication error will occur.</p></section>
+      <section id="data"><h2>What data we collect</h2>
+        <p>The product registry supplies registration number, published generic name, published brand name, strength, dosage form, classification, manufacturer, country, issuance date and expiry date. When an official leaflet is available, a separate process extracts sourced description and indication text with page references.</p>
+        <div class="callout"><strong>Important:</strong> 31,208 registration records do not mean 31,208 unique drugs. Strengths, forms, manufacturers, renewals and brands can create separate registrations.</div></section>
+      <section id="pipeline"><h2>Step-by-step workflow</h2><ol class="steps">
+        <li><strong>Preserve the source.</strong><span>Save each source separately and retain the registration number.</span></li>
+        <li><strong>Clean formatting.</strong><span>Standardize whitespace and capitalization without silently correcting published names.</span></li>
+        <li><strong>Create stable entities.</strong><span>Build generic-formulation and brand-name identifiers, linked back to registrations.</span></li>
+        <li><strong>Generate possible pairs.</strong><span>Use blocking keys so plausible names are compared without testing every possible combination.</span></li>
+        <li><strong>Calculate similarity signals.</strong><span>Measure spelling, edit distance, phonetic code and experimental Filipino-aware similarity.</span></li>
+        <li><strong>Separate obvious data cases.</strong><span>Place normalization duplicates and probable spelling/source variants in their own queues.</span></li>
+        <li><strong>Human review.</strong><span>Check ingredients, strengths, uses, registrations and external evidence before applying a final label.</span></li>
+      </ol></section>
+      <section id="algorithms"><h2>Algorithms used</h2><div class="definition-list">
+        <article><h3>Jaro–Winkler</h3><p>Scores spelling similarity from 0 to 1 and gives extra weight to a shared beginning.</p></article>
+        <article><h3>Levenshtein edit distance</h3><p>Counts how many character insertions, deletions or substitutions change one name into another.</p></article>
+        <article><h3>Soundex</h3><p>Creates a rough phonetic code. It is useful as a supporting signal, not proof of pronunciation.</p></article>
+        <article><h3>Filipino-aware experimental transform</h3><p>Creates one combined comparison form using selected consonant substitutions plus possible <code>e/i</code> and <code>o/u</code> reading confusion. It does not assign a language or ethnicity to a medicine pair.</p></article>
+        <article><h3>Blocking</h3><p>Groups names by prefixes, suffixes, length and phonetic keys before scoring. This makes a large dataset practical.</p></article>
+      </div></section>
+      <section id="classifications"><h2>Review classifications</h2><div class="definition-list">
+        <article><h3>Verified LASA pair</h3><p>Both medicines and a meaningful confusion risk have been confirmed by documented human review.</p></article>
+        <article><h3>Potential LASA pair</h3><p>Names are similar, but confusion evidence has not been established.</p></article>
+        <article><h3>Spelling variant or probable typo</h3><p>One published entry may be a misspelling or source-field problem requiring verification.</p></article>
+        <article><h3>Normalization duplicate</h3><p>The names become equal after harmless formatting differences are removed.</p></article>
+        <article><h3>False positive</h3><p>A human reviewer documented that the algorithmic match is unlikely to represent meaningful confusion.</p></article>
+      </div></section>
+      <section id="limitations"><h2>Limitations and safety rules</h2><ul>
+        <li>A high similarity score does not prove clinical confusion.</li><li>The PH FDA source can contain misspellings, reversed fields or missing leaflets.</li>
+        <li>OCR text can be wrong and must retain a review flag and page reference.</li><li>An LLM may help organize text but must not invent missing indications or descriptions.</li>
+        <li>Pairs are the review unit; groups only summarize multiple pair relationships.</li>
+      </ul></section>
+    </article>
+  </main>
+</body></html>
