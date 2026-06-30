@@ -16,7 +16,7 @@
     <aside class="docs-nav"><strong>On this page</strong><a href="#goal">Project goal</a><a href="#data">Data collected</a>
       <a href="#pipeline">Step by step</a><a href="#algorithms">Algorithms</a><a href="#weights">Experimental score</a>
       <a href="#pages">Why two pair pages?</a><a href="#classifications">Classifications</a><a href="#future">Future experiments</a>
-      <a href="#references">Technical references</a><a href="#limitations">Limitations</a></aside>
+      <a href="#limitations">Limitations</a></aside>
     <article class="docs-content">
       <section id="goal"><p class="eyebrow">Start here</p><h2>Project goal</h2>
         <p>This project organizes Philippine FDA medicine records and proposes names that may look or sound alike. It helps a human reviewer find candidates faster. It does not diagnose, prescribe, or prove that a medication error will occur.</p></section>
@@ -74,9 +74,6 @@
           <article><h3>Uncertainty calibration</h3><p>After validation data exists, convert raw ranking scores into interpretable confidence bands with documented error rates.</p></article>
           <article><h3>Dialect and speaker variation study</h3><p>Test whether controlled pronunciation paths represent real variation across Filipino speakers without assigning stereotypes to language groups.</p></article>
         </div>
-      </section>
-      <section id="references"><h2>Technical references and attribution</h2>
-        <p>This independent implementation was informed by public work on Filipino nativization and phonetic comparison, including <a href="https://github.com/Mango-Cats/PoC-PhOCA" target="_blank" rel="noreferrer">PoC-PhOCA</a> and <a href="https://github.com/Mango-Cats/tagabaybay" target="_blank" rel="noreferrer">TagaBaybay</a>. Their Apache-2.0 notices are respected. The experimental weights and dashboard pipeline here are separately implemented and make no superiority claim.</p>
       </section>
       <section id="limitations"><h2>Limitations and safety rules</h2><ul>
         <li>A high similarity score does not prove clinical confusion.</li><li>The PH FDA source can contain misspellings, reversed fields or missing leaflets.</li>
