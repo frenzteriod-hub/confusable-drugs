@@ -147,13 +147,13 @@ function renderCandidates(rows) {
       state.productsByName.get(row.bid) || [],
     );
     return `<tr>
-      <td class="name-cell"><button data-id="${escapeHTML(row.id)}">${escapeHTML(row.a)}</button><small>${escapeHTML(row.at)}</small></td>
-      <td class="name-cell"><button data-id="${escapeHTML(row.id)}">${escapeHTML(row.b)}</button><small>${escapeHTML(row.bt)}</small></td>
-      <td><span class="classification-label ${row.classification === "spelling_variant_or_probable_typo" ? "typo" : "potential"}">${escapeHTML(classificationLabel(row.classification))}</span></td>
-      <td><span class="relation-label ${escapeHTML(relationship.level)}">${escapeHTML(relationship.title)}</span></td>
-      <td><span class="badge ${escapeHTML(row.priority)}">${escapeHTML(row.priority)}</span></td>
-      <td class="metric"><strong>${formatScore(row.jw)}</strong><span>Jaro-Winkler</span></td>
-      <td class="reason-list">${row.reasons.map(reasonLabel).map(escapeHTML).join(" · ")}</td>
+      <td class="name-cell" data-label="Name A"><button data-id="${escapeHTML(row.id)}">${escapeHTML(row.a)}</button><small>${escapeHTML(row.at)}</small></td>
+      <td class="name-cell" data-label="Name B"><button data-id="${escapeHTML(row.id)}">${escapeHTML(row.b)}</button><small>${escapeHTML(row.bt)}</small></td>
+      <td data-label="Classification"><span class="classification-label ${row.classification === "spelling_variant_or_probable_typo" ? "typo" : "potential"}">${escapeHTML(classificationLabel(row.classification))}</span></td>
+      <td data-label="Product relation"><span class="relation-label ${escapeHTML(relationship.level)}">${escapeHTML(relationship.title)}</span></td>
+      <td data-label="Priority"><span class="badge ${escapeHTML(row.priority)}">${escapeHTML(row.priority)}</span></td>
+      <td class="metric" data-label="Spelling score"><strong>${formatScore(row.jw)}</strong><span>Jaro-Winkler</span></td>
+      <td class="reason-list" data-label="Signals">${row.reasons.map(reasonLabel).map(escapeHTML).join(" · ")}</td>
     </tr>`;
   }).join("");
 }
@@ -165,11 +165,11 @@ function renderVariants(rows) {
     <th style="width:10%">Classification</th>
   </tr>`;
   elements.results.innerHTML = rows.map(row => `<tr>
-    <td class="name-cell">${escapeHTML(row.a)}</td>
-    <td class="name-cell">${escapeHTML(row.b)}</td>
-    <td class="metric"><strong>${formatScore(row.jw)}</strong><span>Jaro-Winkler</span></td>
-    <td class="metric"><strong>${row.distance}</strong><span>characters</span></td>
-    <td><span class="classification-label typo">${escapeHTML(classificationLabel(row.classification))}</span></td>
+    <td class="name-cell" data-label="Published name A">${escapeHTML(row.a)}</td>
+    <td class="name-cell" data-label="Published name B">${escapeHTML(row.b)}</td>
+    <td class="metric" data-label="Similarity"><strong>${formatScore(row.jw)}</strong><span>Jaro-Winkler</span></td>
+    <td class="metric" data-label="Edits"><strong>${row.distance}</strong><span>characters</span></td>
+    <td data-label="Classification"><span class="classification-label typo">${escapeHTML(classificationLabel(row.classification))}</span></td>
   </tr>`).join("");
 }
 
@@ -180,11 +180,11 @@ function renderDuplicates(rows) {
     <th style="width:14%">Normalized key</th>
   </tr>`;
   elements.results.innerHTML = rows.map(row => `<tr>
-    <td class="name-cell">${escapeHTML(row.canonical)}</td>
-    <td class="name-cell">${escapeHTML(row.alias)}</td>
-    <td class="mode-label">${escapeHTML(row.type)}</td>
-    <td><span class="classification-label duplicate">${escapeHTML(classificationLabel(row.classification))}</span></td>
-    <td class="reason-list">${escapeHTML(row.key)}</td>
+    <td class="name-cell" data-label="Canonical display">${escapeHTML(row.canonical)}</td>
+    <td class="name-cell" data-label="Formatting alias">${escapeHTML(row.alias)}</td>
+    <td class="mode-label" data-label="Entity type">${escapeHTML(row.type)}</td>
+    <td data-label="Classification"><span class="classification-label duplicate">${escapeHTML(classificationLabel(row.classification))}</span></td>
+    <td class="reason-list" data-label="Normalized key">${escapeHTML(row.key)}</td>
   </tr>`).join("");
 }
 

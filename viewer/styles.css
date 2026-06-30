@@ -15,6 +15,7 @@
 }
 
 * { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
 body {
   margin: 0;
   background:
@@ -26,6 +27,7 @@ body {
 
 button, input, select { font: inherit; }
 button { cursor: pointer; }
+a, button, summary { -webkit-tap-highlight-color: transparent; }
 
 .topbar {
   min-height: 88px;
@@ -559,20 +561,159 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
   .classification-guide { grid-template-columns: repeat(2, 1fr); }
   .section-heading { align-items: stretch; flex-direction: column; }
   .filters { grid-template-columns: 1fr; }
-  table { min-width: 920px; }
   .product-comparison { grid-template-columns: 1fr; }
   .published-fields { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
-  .topbar { padding-inline: 16px; }
+  body { background: var(--wash); }
+  .topbar {
+    min-height: auto;
+    padding: 14px 14px 10px;
+    gap: 10px;
+    background: rgba(255, 255, 255, .96);
+  }
+  .brand-mark { width: 42px; height: 42px; border-radius: 12px; font-size: 16px; }
+  .topbar > div:nth-child(2) { min-width: 0; flex: 1; }
+  .topbar h1 { overflow: hidden; font-size: 20px; line-height: 1.05; text-overflow: ellipsis; white-space: nowrap; }
+  .topbar .eyebrow { font-size: 9px; }
   .status-pill { display: none; }
-  main { width: min(100% - 20px, 1480px); margin-top: 14px; }
+  .site-nav {
+    margin: 3px -2px 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px;
+    padding: 2px 2px 5px;
+  }
+  .site-nav a { min-height: 40px; padding: 11px 12px; display: grid; place-items: center; font-size: 11px; }
+  main { width: min(100% - 20px, 1480px); margin: 12px auto 36px; }
+  .notice { padding: 13px 14px; border-radius: 12px; font-size: 12px; line-height: 1.55; }
+  .notice strong { display: block; margin: 0 0 3px; }
+  .page-intro { margin: 20px 2px; }
+  .page-intro h2 { font-size: 25px; line-height: 1.1; }
+  .page-intro p:last-child { margin-top: 8px; font-size: 13px; line-height: 1.55; }
   .summary-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .classification-guide { grid-template-columns: 1fr; }
+  .classification-guide {
+    margin-inline: -10px;
+    padding: 0 10px 5px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .classification-guide::-webkit-scrollbar { display: none; }
+  .classification-guide article { min-width: 220px; scroll-snap-align: start; }
   .summary-grid article { padding: 13px; }
+  .summary-grid span { margin-bottom: 6px; font-size: 10px; }
   .summary-grid strong { font-size: 20px; }
-  .view-tabs { flex-direction: column; }
+  .summary-grid article:last-child { grid-column: 1 / -1; }
+  .workspace { border-radius: 16px; box-shadow: 0 10px 28px rgba(28, 53, 44, .07); }
+  .section-heading { padding: 18px 14px 14px; gap: 14px; }
+  .section-heading h2 { font-size: 24px; }
+  .view-tabs {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+  .view-tabs::-webkit-scrollbar { display: none; }
+  .tab { min-height: 40px; flex: 0 0 auto; padding-inline: 12px; font-size: 11px; }
+  .filters { padding: 14px; gap: 10px; }
+  input, select { height: 46px; font-size: 16px; }
+  .result-meta { padding: 11px 14px; }
+  .table-wrap { padding: 0 10px 10px; overflow: visible; background: var(--wash); }
+  table, thead, tbody, tr, td { display: block; width: 100%; }
+  table { min-width: 0; }
+  thead { display: none; }
+  tbody tr {
+    margin-top: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: white;
+    box-shadow: 0 3px 12px rgba(28, 53, 44, .04);
+  }
+  td {
+    min-height: 44px;
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: minmax(92px, 34%) 1fr;
+    gap: 12px;
+    align-items: start;
+    border-bottom: 1px solid #edf1ef;
+    overflow-wrap: anywhere;
+  }
+  td:last-child { border-bottom: 0; }
+  td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: .06em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+  .name-cell button { min-height: 32px; font-size: 14px; }
+  .reason-list { font-size: 11px; }
+  .pagination { padding: 14px; align-items: center; gap: 8px; }
+  .pagination button { min-width: 104px; min-height: 44px; }
   .detail-grid { grid-template-columns: 1fr; }
   .explain-grid, .definition-list { grid-template-columns: 1fr; }
-  .docs-content { padding: 20px; }
+  .explain-grid { gap: 8px; }
+  .explain-grid article { padding: 15px; border-radius: 13px; }
+  .docs-layout { gap: 12px; }
+  .docs-nav {
+    margin-inline: -10px;
+    padding: 8px 10px;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    border-inline: 0;
+    border-radius: 0;
+    scrollbar-width: none;
+  }
+  .docs-nav::-webkit-scrollbar { display: none; }
+  .docs-nav strong { display: none; }
+  .docs-nav a {
+    min-height: 38px;
+    margin: 0;
+    padding: 10px 12px;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: var(--green-soft);
+    font-weight: 750;
+  }
+  .docs-content { padding: 18px 16px; border-radius: 14px; box-shadow: none; }
+  .docs-content section + section { margin-top: 30px; padding-top: 26px; }
+  .docs-content p, .docs-content li { font-size: 13px; }
+  .steps li { padding-right: 0; }
+  .group-list { padding: 0 12px; }
+  .group-card summary { min-height: 62px; padding: 13px 2px; gap: 10px; }
+  .group-card summary span { min-width: 0; }
+  .group-card summary span strong { overflow-wrap: anywhere; }
+  .group-card summary > b { flex: 0 0 auto; }
+  .connection-list { padding: 0 0 12px 10px; }
+  .connection-list article { padding: 11px; display: block; }
+  .connection-list article > div:last-child { margin-top: 8px; display: flex; align-items: end; justify-content: space-between; gap: 10px; text-align: left; }
+  dialog {
+    width: 100%;
+    max-width: none;
+    max-height: 94dvh;
+    margin: auto 0 0;
+    padding: 22px 14px max(18px, env(safe-area-inset-bottom));
+    border-radius: 20px 20px 0 0;
+  }
+  dialog h2 { padding-right: 38px; font-size: 23px; overflow-wrap: anywhere; }
+  .close-button { width: 42px; height: 42px; top: 10px; right: 10px; }
+  .relationship-summary { padding: 12px; display: block; font-size: 12px; }
+  .relationship-summary strong, .relationship-summary span { display: block; }
+  .relationship-summary span { margin-top: 4px; }
+  .product-card-heading { display: block; }
+  .record-count { margin-top: 8px; display: inline-flex; }
+  .registration-title { display: block; }
+  .registration-list .presentation { margin-top: 4px; display: block; text-align: left; }
+  .fda-record-link { width: 100%; min-height: 44px; align-items: center; justify-content: center; text-align: center; }
+  .score-heading { margin-top: 18px; }
+  .detail-grid { margin-top: 16px; gap: 8px; }
+  .detail-grid article { padding: 12px; }
 }

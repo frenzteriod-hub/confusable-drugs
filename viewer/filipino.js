@@ -14,12 +14,12 @@ function render() {
   elements.page.textContent = `Page ${state.page} of ${pages}`;
   elements.previous.disabled = state.page === 1; elements.next.disabled = state.page === pages;
   elements.results.innerHTML = rows.map(row => `<tr>
-    <td><strong>${escapeHTML(row.a)}</strong><small class="block-label">${escapeHTML(row.at)}</small></td>
-    <td><strong>${escapeHTML(row.b)}</strong><small class="block-label">${escapeHTML(row.bt)}</small></td>
-    <td class="metric"><strong>${row.jw.toFixed(3)}</strong><span>Jaro–Winkler</span></td>
-    <td class="metric"><strong>${row.filipino.toFixed(3)}</strong><span>experimental</span></td>
-    <td class="metric"><strong>${(row.filipino - row.jw >= 0 ? "+" : "") + (row.filipino - row.jw).toFixed(3)}</strong><span>score change</span></td>
-    <td><span class="classification-label potential">Unverified candidate</span></td>
+    <td data-label="Name A"><strong>${escapeHTML(row.a)}</strong><small class="block-label">${escapeHTML(row.at)}</small></td>
+    <td data-label="Name B"><strong>${escapeHTML(row.b)}</strong><small class="block-label">${escapeHTML(row.bt)}</small></td>
+    <td class="metric" data-label="Standard spelling"><strong>${row.jw.toFixed(3)}</strong><span>Jaro–Winkler</span></td>
+    <td class="metric" data-label="Filipino-aware"><strong>${row.filipino.toFixed(3)}</strong><span>experimental</span></td>
+    <td class="metric" data-label="Difference"><strong>${(row.filipino - row.jw >= 0 ? "+" : "") + (row.filipino - row.jw).toFixed(3)}</strong><span>score change</span></td>
+    <td data-label="Review status"><span class="classification-label potential">Unverified candidate</span></td>
   </tr>`).join("");
 }
 function filter() {
