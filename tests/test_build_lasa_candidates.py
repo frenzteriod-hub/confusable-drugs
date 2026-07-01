@@ -13,6 +13,7 @@ from build_lasa_candidates import (  # noqa: E402
     jaro_winkler,
     levenshtein_distance,
     likely_same_combination_variant,
+    score_pair,
     soundex,
 )
 
@@ -32,6 +33,34 @@ class TestLASACandidates(unittest.TestCase):
         self.assertEqual(levenshtein_distance("tramadol", "trazodone"), 4)
         self.assertGreater(jaro_winkler("tramadol", "trazodone"), 0.75)
         self.assertEqual(soundex("tramadol"), "T653")
+
+    def test_candidate_exposes_experimental_pronunciation_components(self):
+        result = score_pair(
+            entry("B1", "brand", "Bayojesec", {"F1"}),
+            entry("B2", "brand", "Biogesic", {"F2"}),
+            standard_threshold=0.84,
+            filipino_threshold=0.86,
+        )
+        self.assertIsNotNone(result)
+        self.assertIn("pronunciation_lattice_similarity", result)
+        self.assertIn("experimental_ensemble_score", result)
+        self.assertTrue(result["pronunciation_path_a"])
+        self.assertTrue(result["pronunciation_path_b"])
+
+    def test_base_identical_numeric_variants_are_demoted(self):
+        result = score_pair(
+            entry("B1", "brand", "Gardasil", {"F1"}),
+            entry("B2", "brand", "Gardasil 9", {"F2"}),
+            standard_threshold=0.84,
+            filipino_threshold=0.86,
+        )
+        self.assertIsNotNone(result)
+        self.assertEqual(result["numeric_distinction_penalty"], 0.18)
+        self.assertEqual(result["algorithmic_priority"], "screen")
+        self.assertIn(
+            "numeric_strength_or_version_distinction",
+            result["candidate_reasons"],
+        )
 
     def test_known_orthographic_candidates_are_recalled(self):
         entries = [

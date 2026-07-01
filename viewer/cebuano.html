@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cebuano-aware Tools · PH LASA</title>
+  <link rel="stylesheet" href="styles.css?v=20260702-3">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Philippine FDA data project</p><h1>Cebuano-aware Tools</h1></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Pair review</a><a href="drugs.html">All products</a><a href="relationships.html">Medicine groups</a>
+      <a href="filipino.html">Filipino-aware</a><a class="active" href="cebuano.html">Cebuano tools</a>
+      <a href="documentation.html">How it works</a>
+    </nav>
+    <div class="status-pill"><span></span> Experimental</div>
+  </header>
+
+  <main>
+    <section class="notice" aria-label="Safety notice">
+      <strong>Rule-based research prototype—not a clinical warning system.</strong>
+      Scores rank name similarity only. They do not prove that two medicines are LASA or that a medication error will occur.
+    </section>
+
+    <section class="page-intro cebuano-intro">
+      <p class="eyebrow">Cebuano-aware · experimental</p>
+      <h2>Search how a medicine may be read—even when it is misread</h2>
+      <p>This tool compares the official spelling with internal rule-based reading paths and approximate letter or syllable alignment. It can tolerate selected Bisaya/Cebuano-influenced readings as well as some missing, added or transposed parts of an unfamiliar medicine name. The official drug name is never changed, and internal localized forms are hidden from the user.</p>
+      <div class="callout"><strong>Important limitation:</strong> The rules are pronunciation hypotheses informed by current project research. They have not been validated as a complete model of Cebuano speakers and should only generate candidates for human review.</div>
+      <div class="method-cta">
+        <div><strong>How are these scores calculated?</strong>
+          <span>See the matching algorithm, score formulas, pronunciation rules, evidence, sources and limitations.</span>
+        </div>
+        <a href="cebuano-docs.html">View methodology and sources →</a>
+      </div>
+    </section>
+
+    <section class="cebuano-mode-switch" role="tablist" aria-label="Cebuano-aware tools">
+      <button id="search-mode-button" class="active" type="button" role="tab" aria-selected="true" aria-controls="search-mode-panel">Find confusable drugs</button>
+      <button id="compare-mode-button" type="button" role="tab" aria-selected="false" aria-controls="compare-mode-panel">Compare two drugs</button>
+    </section>
+
+    <section id="search-mode-panel" class="workspace cebuano-tool" role="tabpanel" aria-labelledby="search-mode-button">
+      <div class="section-heading">
+        <div><p class="eyebrow">Mode 1</p><h2>Find potentially confusable drugs</h2>
+          <p class="section-note">Enter an official name or type it approximately as you read it. The system ranks possible registered-name interpretations first; you select the intended medicine before viewing its LASA screening candidates.</p>
+        </div>
+      </div>
+      <form id="candidate-search-form" class="cebuano-form">
+        <label><span>Medicine name or approximate reading</span>
+          <input id="candidate-query" type="search" placeholder="e.g. bayoplu, aybyupropin" autocomplete="off" required>
+        </label>
+        <button class="primary-action" type="submit" disabled>Rank possible names</button>
+      </form>
+      <div id="candidate-search-status" class="tool-status" aria-live="polite">Loading the medicine-name index…</div>
+      <div id="interpretation-results" class="interpretation-results" hidden>
+        <div class="result-heading"><div><p class="eyebrow">Input interpretation</p><h3>Possible registered names</h3></div>
+          <span id="interpretation-result-count"></span>
+        </div>
+        <ol id="interpretation-list" class="interpretation-list"></ol>
+        <p class="interpretation-note">These rankings are suggestions, not proof of the intended medicine. Confirm the official name, active ingredient, strength and dosage form before relying on a result.</p>
+      </div>
+      <div id="candidate-results" hidden>
+        <div class="result-heading"><div><p class="eyebrow">Ranked candidates</p><h3 id="candidate-results-title"></h3></div>
+          <span id="candidate-result-count"></span>
+        </div>
+        <div class="table-wrap">
+          <table class="cebuano-results-table">
+            <thead><tr><th>Potentially confusable name</th><th>Type</th><th>Looks alike</th><th>Sounds alike</th><th>Rank score</th><th>Priority</th></tr></thead>
+            <tbody id="candidate-results-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare-mode-panel" class="workspace cebuano-tool" role="tabpanel" aria-labelledby="compare-mode-button" hidden>
+      <div class="section-heading">
+        <div><p class="eyebrow">Mode 2</p><h2>Compare two drug names</h2>
+          <p class="section-note">Enter two registered brand or generic names. If an entry is approximate, the tool asks you to choose a registered name instead of selecting one silently.</p>
+        </div>
+      </div>
+      <form id="drug-compare-form" class="cebuano-form compare-form">
+        <label><span>First medicine</span><input id="first-drug" type="search" placeholder="e.g. Bioflu" autocomplete="off" required></label>
+        <label><span>Second medicine</span><input id="second-drug" type="search" placeholder="e.g. Neoflu" autocomplete="off" required></label>
+        <button class="primary-action" type="submit" disabled>Compare names</button>
+      </form>
+      <div id="compare-status" class="tool-status" aria-live="polite">Loading the medicine-name index…</div>
+      <div id="comparison-result" class="comparison-result" hidden></div>
+    </section>
+  </main>
+
+  <script type="module" src="cebuano.js?v=20260702-1"></script>
+</body>
+</html>

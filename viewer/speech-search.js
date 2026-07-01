@@ -29,7 +29,7 @@ if (SpeechRecognition) {
     const recognition = new SpeechRecognition();
     recognition.lang = "en-PH";
     recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
+    recognition.maxAlternatives = 5;
     let listening = false;
 
     const setListening = active => {
@@ -54,10 +54,17 @@ if (SpeechRecognition) {
     });
 
     recognition.addEventListener("result", event => {
-      const transcript = event.results[0][0].transcript.trim();
+      const alternatives = Array.from(event.results[0])
+        .map(result => result.transcript.trim()).filter(Boolean);
+      const transcript = alternatives[0] || "";
       input.value = transcript;
       input.dispatchEvent(new Event("input", { bubbles: true }));
-      status.textContent = transcript ? `Searching for “${transcript}”` : "No speech detected.";
+      input.dispatchEvent(new CustomEvent("voicealternatives", {
+        bubbles: true, detail: { alternatives: alternatives.slice(1) },
+      }));
+      status.textContent = transcript
+        ? `Searching for “${transcript}”${alternatives.length > 1 ? ` and ${alternatives.length - 1} speech alternative${alternatives.length === 2 ? "" : "s"}` : ""}.`
+        : "No speech detected.";
       input.focus();
     });
     recognition.addEventListener("error", event => {

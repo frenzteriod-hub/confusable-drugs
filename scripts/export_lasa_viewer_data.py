@@ -8,6 +8,8 @@ import json
 import re
 from pathlib import Path
 
+from filipino_phonetics import normalize_name, nativize, speech_simplify
+
 
 ROOT = Path(__file__).resolve().parent.parent
 LASA_DIR = ROOT / "data" / "lasa"
@@ -68,6 +70,17 @@ def compact_candidate(
         "distance": int(row["levenshtein_distance"]),
         "soundex": float(row["soundex_similarity"]),
         "filipino": float(row["filipino_jaro_winkler"]),
+        "lattice": float(row["pronunciation_lattice_similarity"]),
+        "phoneme": float(row["weighted_phoneme_similarity"]),
+        "syllable": float(row["syllable_similarity"]),
+        "stress": float(row["stress_similarity"]),
+        "bigram": float(row["orthographic_bigram_similarity"]),
+        "ensemble": float(row["experimental_ensemble_score"]),
+        "numberPenalty": float(row["numeric_distinction_penalty"]),
+        "pathA": row["pronunciation_path_a"],
+        "pathB": row["pronunciation_path_b"],
+        "pathLabelA": row["pronunciation_path_label_a"],
+        "pathLabelB": row["pronunciation_path_label_b"],
         "reasons": row["candidate_reasons"].split("|"),
         "classification": (
             "spelling_variant_or_probable_typo"
@@ -142,6 +155,90 @@ def write_json(path: Path, value: object) -> None:
     temporary.replace(path)
 
 
+def search_pronunciation_paths(value: str) -> list[str]:
+    paths = [
+        normalize_name(value),
+        nativize(value),
+        nativize(value, merge_vowels=True),
+        speech_simplify(value),
+    ]
+    for path in list(paths):
+        if path.startswith("i"):
+            paths.append(f"ay{path[1:]}")
+    return list(dict.fromkeys(path for path in paths if path))
+
+
+def compact_cebuano_tools(
+    products: list[dict[str, object]],
+    candidates: list[dict[str, object]],
+    generated_at: str,
+) -> dict[str, object]:
+    names_by_id: dict[str, tuple[str, str]] = {}
+    for product in products:
+        for identifier, name, name_type in (
+            (str(product["bi"]), str(product["b"]), "brand"),
+            (str(product["gi"]), str(product["g"]), "generic"),
+        ):
+            if identifier and name:
+                names_by_id.setdefault(identifier, (name, name_type))
+    for candidate in candidates:
+        names_by_id.setdefault(
+            str(candidate["aid"]), (str(candidate["a"]), str(candidate["at"]))
+        )
+        names_by_id.setdefault(
+            str(candidate["bid"]), (str(candidate["b"]), str(candidate["bt"]))
+        )
+
+    ordered_names = sorted(
+        names_by_id.items(),
+        key=lambda item: (item[1][0].casefold(), item[1][1], item[0]),
+    )
+    name_positions = {
+        identifier: index for index, (identifier, _) in enumerate(ordered_names)
+    }
+    names = [
+        [
+            identifier,
+            name,
+            name_type,
+            normalize_name(name),
+            search_pronunciation_paths(name),
+        ]
+        for identifier, (name, name_type) in ordered_names
+    ]
+    pairs = [
+        [
+            name_positions[str(candidate["aid"])],
+            name_positions[str(candidate["bid"])],
+            candidate["jw"],
+            candidate["lattice"],
+            candidate["edit"],
+            candidate["syllable"],
+            candidate["rank"],
+            candidate["priority"],
+        ]
+        for candidate in candidates
+        if str(candidate["aid"]) in name_positions
+        and str(candidate["bid"]) in name_positions
+    ]
+    return {
+        "generated_at": generated_at,
+        "name_columns": ["id", "name", "type", "normalized", "paths"],
+        "pair_columns": [
+            "name_a_index",
+            "name_b_index",
+            "looks_alike",
+            "sounds_alike",
+            "edit_similarity",
+            "syllable_similarity",
+            "rank_score",
+            "priority",
+        ],
+        "names": names,
+        "pairs": pairs,
+    }
+
+
 def main() -> int:
     report = json.loads((LASA_DIR / "lasa_report.json").read_text(encoding="utf-8"))
     product_rows = read_csv(CANONICAL_DIR / "products.csv")
@@ -182,6 +279,10 @@ def main() -> int:
         normalization_duplicates,
     )
     write_json(OUTPUT_DIR / "product_records.json", products)
+    write_json(
+        OUTPUT_DIR / "cebuano_tools.json",
+        compact_cebuano_tools(products, candidates, report["generated_at"]),
+    )
     print(json.dumps(summary, indent=2))
     return 0
 

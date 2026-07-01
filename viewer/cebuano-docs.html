@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cebuano-aware Methodology · PH LASA</title>
+  <link rel="stylesheet" href="styles.css?v=20260702-2">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Philippine FDA data project</p><h1>Cebuano-aware Methodology</h1></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Pair review</a><a href="drugs.html">All products</a><a href="relationships.html">Medicine groups</a>
+      <a href="filipino.html">Filipino-aware</a><a class="active" href="cebuano.html">Cebuano tools</a>
+      <a href="documentation.html">How it works</a>
+    </nav>
+    <div class="status-pill"><span></span> Experimental method</div>
+  </header>
+
+  <main class="docs-layout">
+    <aside class="docs-nav">
+      <strong>On this page</strong>
+      <a href="#scope">Scope</a><a href="#modes">Two tool modes</a><a href="#pipeline">Algorithm workflow</a>
+      <a href="#scores">Similarity scores</a><a href="#transformations">Transformation table</a>
+      <a href="#evidence">Evidence and assumptions</a><a href="#limitations">Limitations</a><a href="#sources">Sources</a>
+    </aside>
+
+    <article class="docs-content">
+      <section id="scope">
+        <p class="eyebrow">Cebuano-aware · rule-based · experimental</p>
+        <h2>Purpose and scope</h2>
+        <p>The Cebuano-aware tool helps a reviewer search unfamiliar medicine names using approximate written readings and compare drug-name similarity. It keeps every official PH FDA name unchanged. Localized forms exist only as internal comparison paths and are never presented as corrected drug names.</p>
+        <div class="callout"><strong>What the score means:</strong> It is a screening and ranking value from 0 to 1. It is not a probability, diagnostic result, clinical risk estimate or proof that two medicines are a verified LASA pair.</div>
+        <p><a class="method-link" href="cebuano.html">← Open the Cebuano-aware tools</a></p>
+      </section>
+
+      <section id="modes">
+        <h2>The two tool modes</h2>
+        <div class="definition-list">
+          <article><h3>1. Find confusable drugs</h3><p>The user may enter an official name or an approximate reading such as <code>amoksisilin</code>. The tool ranks up to five possible registered names and shows separate look-alike, sound-alike and overall scores. It does not silently select the first result. The user must choose the intended official name before its existing LASA candidates appear.</p></article>
+          <article><h3>2. Compare two drugs</h3><p>The user enters two official brand or generic names. If an entry is approximate, the tool offers ranked registered-name options and requires confirmation. It then displays spelling, localized sound, syllable and overall similarity signals.</p></article>
+        </div>
+      </section>
+
+      <section id="pipeline">
+        <h2>How the algorithm works</h2>
+        <ol class="steps">
+          <li><strong>Load registered names.</strong><span>Use brand and generic names collected from the Philippine FDA Verification Portal. The compact browser index currently contains the project’s registered-name entities and precomputed review pairs.</span></li>
+          <li><strong>Normalize formatting.</strong><span>Convert text to lowercase and remove spaces and punctuation for comparison. The displayed official name remains unchanged.</span></li>
+          <li><strong>Build controlled reading paths.</strong><span>Keep the normalized spelling, then generate nativized, vowel-merged, casual-reading and selected initial-letter paths using the table below.</span></li>
+          <li><strong>Retrieve a shortlist.</strong><span>Use overlapping three-character chunks (trigrams) to find a manageable set of possible registered names instead of comparing the query with the entire name collection.</span></li>
+          <li><strong>Calculate four signals.</strong><span>Compare ordinary spelling, the strongest pair of reading paths, edit similarity and heuristic syllable chunks.</span></li>
+          <li><strong>Rank—not identify.</strong><span>Show up to five possible registered names with their scores. The user chooses the intended official medicine; the program does not claim that rank 1 is correct.</span></li>
+          <li><strong>Show LASA candidates.</strong><span>After selection, retrieve the chosen name’s precomputed high- or medium-priority review candidates and display visual, sound and rank scores.</span></li>
+        </ol>
+      </section>
+
+      <section id="scores">
+        <h2>Similarity algorithms and scores</h2>
+        <div class="definition-list">
+          <article><h3>Looks alike</h3><p><strong>Jaro–Winkler similarity</strong> compares the normalized query with the published name. It rewards matching characters and a shared beginning while tolerating selected transpositions.</p></article>
+          <article><h3>Sounds alike</h3><p>Generate all controlled paths for the query and registered name, compare every path pair with Jaro–Winkler, and retain the strongest path-pair score. The selected internal paths are not shown to the user.</p></article>
+          <article><h3>Edit similarity</h3><p>Use normalized Levenshtein similarity on the strongest reading-path pair. This tolerates missing, inserted or substituted characters that can represent part of a misread syllable.</p></article>
+          <article><h3>Syllable similarity</h3><p>Split the selected paths heuristically around vowel nuclei, then align the resulting chunks. This is an engineering approximation, not a validated Cebuano syllabifier.</p></article>
+        </div>
+        <h3 class="docs-subheading">Input-interpretation formula</h3>
+        <div class="formula-card">
+          <code>overall = 0.30 × looks + 0.35 × sounds + 0.20 × edit + 0.15 × syllables</code>
+          <p>The weights are hand-set for this prototype. They were not learned from labeled Cebuano pronunciation data.</p>
+        </div>
+        <h3 class="docs-subheading">Confusable-candidate rank</h3>
+        <div class="formula-card">
+          <code>rank = max(spelling, edit, Filipino-transformed spelling, experimental ensemble)</code>
+          <p>The review queue keeps only algorithmic high- and medium-priority candidates and limits how many pairs each indexed name contributes. Its displayed sound score is the precomputed pronunciation-lattice score. None of these values is a clinical probability.</p>
+        </div>
+      </section>
+
+      <section id="transformations">
+        <h2>All Products search transformations</h2>
+        <p>The typed search keeps the published spelling and generates additional experimental reading paths for both the user's query and each registered brand or generic name. Rules are applied in sequence, so a final path may contain more than one change. Each example below highlights one transformation; later rules may change other letters in the final path.</p>
+        <div class="callout"><strong>Experimental search aid:</strong> These transformations make approximate names easier to find. They are not universal Cebuano pronunciation rules and have not yet been validated with a Cebuano medicine-pronunciation dataset.</div>
+        <div class="evidence-legend">
+          <span><b class="evidence-tag documented">Documented</b> Directly related to a pattern described by Wolff.</span>
+          <span><b class="evidence-tag motivated">Motivated</b> Suggested by the phoneme inventory, but the replacement itself is not established.</span>
+          <span><b class="evidence-tag heuristic">Heuristic</b> Engineering rule requiring speaker validation.</span>
+        </div>
+        <div class="table-wrap docs-table-wrap">
+          <table class="transformation-evidence-table">
+            <thead><tr><th>Original</th><th>Changed to</th><th>Example</th><th>Evidence status</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Original"><code>tion</code></td><td data-label="Changed to"><code>syon</code></td><td data-label="Example">medication → medikasyon</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> English-to-local spelling approximation</td></tr>
+              <tr><td data-label="Original"><code>sion</code></td><td data-label="Changed to"><code>syon</code></td><td data-label="Example">version → bersyon</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> English-to-local spelling approximation</td></tr>
+              <tr><td data-label="Original"><code>ture</code></td><td data-label="Changed to"><code>tyur</code></td><td data-label="Example">culture → kultyur</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> English-to-local spelling approximation</td></tr>
+              <tr><td data-label="Original"><code>ph</code></td><td data-label="Changed to"><code>p</code></td><td data-label="Example">pharma → parma</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> Grapheme simplification</td></tr>
+              <tr><td data-label="Original"><code>th</code></td><td data-label="Changed to"><code>t</code></td><td data-label="Example">thera → tera</td><td data-label="Evidence"><span class="evidence-tag motivated">Motivated</span> /t/ occurs in Wolff’s inventory; /θ/ does not</td></tr>
+              <tr><td data-label="Original"><code>sh</code></td><td data-label="Changed to"><code>s</code></td><td data-label="Example">sh → s</td><td data-label="Evidence"><span class="evidence-tag motivated">Motivated</span> /s/ occurs in the inventory; /ʃ/ does not</td></tr>
+              <tr><td data-label="Original"><code>ch</code></td><td data-label="Changed to"><code>ts</code></td><td data-label="Example">chemo → tsemo</td><td data-label="Evidence"><span class="evidence-tag documented">Documented link</span> Wolff transcribes Cebuano /c/ as <i>ts</i></td></tr>
+              <tr><td data-label="Original"><code>qu</code></td><td data-label="Changed to"><code>kw</code></td><td data-label="Example">quinine → kwinine</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> Orthographic simplification</td></tr>
+              <tr><td data-label="Original"><code>x</code></td><td data-label="Changed to"><code>ks</code></td><td data-label="Example">xyl → ksyl</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> Orthographic simplification</td></tr>
+              <tr><td data-label="Original"><code>f</code></td><td data-label="Changed to"><code>p</code></td><td data-label="Example">flu → plu</td><td data-label="Evidence"><span class="evidence-tag motivated">Motivated</span> /p/ occurs in Wolff’s inventory; /f/ does not</td></tr>
+              <tr><td data-label="Original"><code>v</code></td><td data-label="Changed to"><code>b</code></td><td data-label="Example">valsartan → balsartan</td><td data-label="Evidence"><span class="evidence-tag motivated">Motivated</span> /b/ occurs in the inventory; /v/ does not</td></tr>
+              <tr><td data-label="Original"><code>z</code></td><td data-label="Changed to"><code>s</code></td><td data-label="Example">zine → sine</td><td data-label="Evidence"><span class="evidence-tag heuristic">Weak heuristic</span> Wolff reports dialectal /z/; blanket replacement is not supported</td></tr>
+              <tr><td data-label="Original"><code>j</code></td><td data-label="Changed to"><code>dy</code></td><td data-label="Example">jesic → dyesic</td><td data-label="Evidence"><span class="evidence-tag documented">Documented</span> Initial and medial /j/ may be written <i>dy</i> or <i>diy</i></td></tr>
+              <tr><td data-label="Original"><code>ce</code></td><td data-label="Changed to"><code>se</code></td><td data-label="Example">ce → se</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> English soft-c spelling rule</td></tr>
+              <tr><td data-label="Original"><code>ci</code></td><td data-label="Changed to"><code>si</code></td><td data-label="Example">ci → si</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> English soft-c spelling rule</td></tr>
+              <tr><td data-label="Original"><code>cy</code></td><td data-label="Changed to"><code>sy</code></td><td data-label="Example">cy → sy</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> English soft-c spelling rule</td></tr>
+              <tr><td data-label="Original">remaining <code>c</code></td><td data-label="Changed to"><code>k</code></td><td data-label="Example">co → ko</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> English hard-c spelling rule</td></tr>
+              <tr><td data-label="Original">remaining <code>q</code></td><td data-label="Changed to"><code>k</code></td><td data-label="Example">qa → ka</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> Orthographic simplification</td></tr>
+              <tr><td data-label="Original"><code>ge</code></td><td data-label="Changed to"><code>dye</code></td><td data-label="Example">gesic → dyesic</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> English soft-g plus documented <i>j/dy</i> relation</td></tr>
+              <tr><td data-label="Original"><code>gi</code></td><td data-label="Changed to"><code>dyi</code></td><td data-label="Example">gi → dyi</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> English soft-g plus documented <i>j/dy</i> relation</td></tr>
+              <tr><td data-label="Original"><code>gy</code></td><td data-label="Changed to"><code>dyy</code></td><td data-label="Example">gy → dyy</td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> English soft-g plus documented <i>j/dy</i> relation</td></tr>
+              <tr><td data-label="Original"><code>e</code></td><td data-label="Changed to"><code>i</code></td><td data-label="Example">gesic → gisic</td><td data-label="Evidence"><span class="evidence-tag documented">Documented</span> Wolff treats written <i>e/i</i> as representations of /i/</td></tr>
+              <tr><td data-label="Original"><code>o</code></td><td data-label="Changed to"><code>u</code></td><td data-label="Example">bio → biu</td><td data-label="Evidence"><span class="evidence-tag documented">Documented</span> Wolff treats written <i>o/u</i> as representations of /u/</td></tr>
+              <tr><td data-label="Original">repeated vowels</td><td data-label="Changed to">one vowel</td><td data-label="Example"><code>floo</code> → <code>flo</code></td><td data-label="Evidence"><span class="evidence-tag documented">Partly documented</span> Vowel length may be doubled or left unwritten; drug-name use remains experimental</td></tr>
+              <tr><td data-label="Original"><code>h</code> before vowel</td><td data-label="Changed to">removed</td><td data-label="Example"><code>ha</code> → <code>a</code></td><td data-label="Evidence"><span class="evidence-tag heuristic">Heuristic</span> Casual-reading simplification</td></tr>
+              <tr><td data-label="Original"><code>y</code></td><td data-label="Changed to"><code>i</code></td><td data-label="Example"><code>biyo</code> → <code>biio</code></td><td data-label="Evidence"><span class="evidence-tag heuristic">Weak heuristic</span> Wolff documents more complex glide patterns, not a blanket replacement</td></tr>
+              <tr><td data-label="Original">initial <code>i</code></td><td data-label="Changed to"><code>ay</code></td><td data-label="Example">ibuprofen → aybuprofen</td><td data-label="Evidence"><span class="evidence-tag heuristic">Project hypothesis</span> Adviser-suggested reading path; not derived from Wolff</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="evidence">
+        <h2>Why these letters and pronunciations?</h2>
+        <div class="definition-list">
+          <article><h3>Direct Cebuano evidence</h3><p>Wolff’s phonology describes a three-vowel analysis using <i>i, a, u</i>, with inconsistent written <i>e/i</i> and <i>o/u</i>; it also describes <i>j/dy</i>, <i>c/ts</i>, vowel length and several glide patterns. Those observations motivate controlled alternative paths rather than replacing official spellings.</p></article>
+          <article><h3>Inventory-motivated paths</h3><p>The inventory contains sounds such as /p/, /b/, /t/ and /s/ but does not list several sounds common in English drug names. The prototype tests possible substitutions, but an absent inventory item does not prove that every Cebuano speaker substitutes it.</p></article>
+          <article><h3>Engineering heuristics</h3><p>Rules for English letter groups, soft <i>c/g</i>, silent or reduced <i>h</i>, and initial <i>i/ay</i> are search-tolerance hypotheses. They improve retrieval for selected examples but require speaker studies before being described as Cebuano pronunciation rules.</p></article>
+          <article><h3>Why keep multiple paths?</h3><p>Medicine names are unfamiliar technical forms and may be read through English, Filipino, Cebuano or spelling-based strategies. Retaining several controlled paths avoids declaring one localized form correct and lets the strongest plausible comparison contribute to ranking.</p></article>
+        </div>
+      </section>
+
+      <section id="limitations">
+        <h2>Limitations and required validation</h2>
+        <ul>
+          <li>The rule set does not represent every Cebuano dialect, speaker, age group or level of English exposure.</li>
+          <li>The Wolff dictionary was published in 1972 and is not a medicine-pronunciation dataset.</li>
+          <li>Several transformations are engineering heuristics, not linguistic findings.</li>
+          <li>Jaro–Winkler and Levenshtein measure string similarity; they do not model human medication errors.</li>
+          <li>The syllabifier and weights are hand-built and have not been calibrated against labeled Cebuano recordings.</li>
+          <li>High-scoring options may be false positives. Users must confirm the official name, ingredient, strength and dosage form.</li>
+          <li>“Verified LASA” and “False positive” labels require documented human and pharmacist review.</li>
+        </ul>
+      </section>
+
+      <section id="sources">
+        <h2>Sources and methodological references</h2>
+        <ol class="source-list">
+          <li><a href="https://www.gutenberg.org/files/40074/40074-h/40074-h.htm#s3" target="_blank" rel="noreferrer">John U. Wolff, <i>A Dictionary of Cebuano Visayan</i>, §3 Phonology and transcription</a> — phoneme inventory, vowel length, stress and dialect notes.</li>
+          <li><a href="https://www.gutenberg.org/files/40074/40074-h/40074-h.htm#s3.21" target="_blank" rel="noreferrer">Wolff, §3.21 Vowels</a> — <i>e/i</i>, <i>o/u</i> and vowel-length transcription.</li>
+          <li><a href="https://www.gutenberg.org/files/40074/40074-h/40074-h.htm#s3.23" target="_blank" rel="noreferrer">Wolff, §3.23 Consonant transcription</a> — <i>ng</i>, <i>c/ts</i>, <i>j/dy/diy</i> and <i>ty</i>.</li>
+          <li><a href="https://www.gutenberg.org/files/40074/40074-h/40074-h.htm#s3.24" target="_blank" rel="noreferrer">Wolff, §3.24 Glide sequences</a> — <i>iy/y</i>, <i>uw/w</i>, <i>ayi/ay</i> and <i>awu/aw</i> patterns.</li>
+          <li><a href="https://www.stat.cmu.edu/NCRN/PUBLIC/RLClassFiles/HW/Winkler1990.pdf" target="_blank" rel="noreferrer">William E. Winkler (1990), “String Comparator Metrics and Enhanced Decision Rules in the Fellegi–Sunter Model of Record Linkage”</a> — basis for the Jaro–Winkler string comparator.</li>
+          <li><a href="https://xlinux.nist.gov/dads/HTML/LevenshteinStringDistance.html" target="_blank" rel="noreferrer">NIST Dictionary of Algorithms and Data Structures: Levenshtein string distance</a> — reference for insertion, deletion and substitution distance.</li>
+          <li><a href="https://verification.fda.gov.ph/" target="_blank" rel="noreferrer">Philippine FDA Verification Portal</a> — source of published registration, generic and brand-name fields.</li>
+          <li><a href="https://www.who.int/westernpacific/publications/i/item/9789240058897" target="_blank" rel="noreferrer">World Health Organization (2023), <i>Medication safety for look-alike, sound-alike medicines</i></a> — safety context and the need for prospective LASA review.</li>
+        </ol>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

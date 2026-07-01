@@ -62,6 +62,9 @@ function reasonLabel(reason) {
     orthographic_phonetic_agreement: "spelling + phonetic",
     soundex_exact: "Soundex",
     filipino_phonology_experimental: "Filipino-aware",
+    pronunciation_lattice_experimental: "pronunciation lattice",
+    experimental_multifeature_ensemble: "multi-feature ensemble",
+    numeric_strength_or_version_distinction: "numeric distinction ↓",
   }[reason] || reason.replaceAll("_", " ");
 }
 
@@ -302,10 +305,22 @@ function showDetails(id) {
     ["Jaro-Winkler", formatScore(row.jw)],
     ["Edit similarity", `${formatScore(row.edit)} (${row.distance} edits)`],
     ["Soundex similarity", formatScore(row.soundex)],
-    ["Filipino-aware (experimental)", formatScore(row.filipino)],
+    ["Simple Filipino transform", formatScore(row.filipino)],
+    ["Pronunciation lattice (experimental)", formatScore(row.lattice)],
+    ["Weighted phoneme alignment", formatScore(row.phoneme)],
+    ["Syllable alignment", formatScore(row.syllable)],
+    ["Stress-position similarity", formatScore(row.stress)],
+    ["Orthographic bigrams", formatScore(row.bigram)],
+    ["Fixed-weight ensemble (experimental)", formatScore(row.ensemble)],
+    ["Numeric strength/version penalty", `−${formatScore(row.numberPenalty)}`],
+    [`Path A · ${row.pathLabelA}`, row.pathA],
+    [`Path B · ${row.pathLabelB}`, row.pathB],
     ["Review status", "Unverified—human review required"],
   ];
-  elements.detailContent.innerHTML = details.map(([label, value]) =>
+  elements.detailContent.innerHTML = `<article class="experimental-detail-note">
+    <span>Interpretation</span>
+    <strong>Experimental screening features only—these scores are not clinical evidence and have not been validated as accuracy measures.</strong>
+  </article>` + details.map(([label, value]) =>
     `<article><span>${escapeHTML(label)}</span><strong>${escapeHTML(value)}</strong></article>`
   ).join("");
   elements.dialog.showModal();

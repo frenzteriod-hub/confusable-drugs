@@ -1,5 +1,7 @@
 const PAGE_SIZE = 48;
-const state = { products: [], filtered: [], names: [], page: 1, suggestionTimer: null };
+const state = {
+  products: [], filtered: [], names: [], page: 1, suggestionTimer: null, voiceAlternatives: [],
+};
 const elements = {
   search: document.querySelector("#product-search"),
   sort: document.querySelector("#product-sort"),
@@ -25,15 +27,27 @@ const sortValue = (product, mode) => {
   return (selected || "\uffff").toLocaleLowerCase();
 };
 const normalizeSuggestion = value => String(value || "").toLocaleLowerCase().replace(/[^a-z0-9]+/g, "");
-const filipinoReading = value => {
+const nativizeReading = (value, mergeVowels = false) => {
   let transformed = normalizeSuggestion(value);
   for (const [source, target] of [
-    ["ph", "p"], ["th", "t"], ["sh", "s"], ["f", "p"], ["v", "b"],
-    ["z", "s"], ["g", "j"], ["y", "i"], ["e", "i"], ["o", "u"],
-    ["q", "k"], ["c", "k"],
+    ["tion", "syon"], ["sion", "syon"], ["ture", "tyur"], ["ph", "p"],
+    ["th", "t"], ["sh", "s"], ["ch", "ts"], ["qu", "kw"], ["x", "ks"],
+    ["f", "p"], ["v", "b"], ["z", "s"], ["j", "dy"],
   ]) transformed = transformed.replaceAll(source, target);
+  transformed = transformed.replaceAll("ce", "se").replaceAll("ci", "si").replaceAll("cy", "sy")
+    .replaceAll("c", "k").replaceAll("q", "k")
+    .replaceAll("ge", "dye").replaceAll("gi", "dyi").replaceAll("gy", "dyy");
+  if (mergeVowels) transformed = transformed.replaceAll("e", "i").replaceAll("o", "u");
   return transformed;
 };
+const speechReading = value => nativizeReading(value, true)
+  .replace(/([aeiou])\1+/g, "$1").replace(/h(?=[aeiou])/g, "").replaceAll("y", "i");
+const pronunciationPaths = value => [...new Set([
+  normalizeSuggestion(value),
+  nativizeReading(value),
+  nativizeReading(value, true),
+  speechReading(value),
+])].filter(Boolean);
 function jaroWinkler(first, second) {
   if (first === second) return 1;
   if (!first || !second) return 0;
@@ -58,32 +72,44 @@ function jaroWinkler(first, second) {
   while (prefix < Math.min(4, first.length, second.length) && first[prefix] === second[prefix]) prefix++;
   return jaro + prefix * 0.1 * (1 - jaro);
 }
-function bestSuggestion(query) {
+function rankedSuggestions(query) {
+  const queries = [query, ...state.voiceAlternatives].filter(Boolean);
+  const queryPaths = [...new Set(queries.flatMap(pronunciationPaths))];
   const standardQuery = normalizeSuggestion(query);
-  const readingQuery = filipinoReading(query);
-  if (standardQuery.length < 4) return null;
-  let best = null;
+  if (standardQuery.length < 4) return [];
+  const ranked = [];
   for (const name of state.names) {
     const lengthDifference = Math.abs(name.normalized.length - standardQuery.length);
-    if (lengthDifference > Math.max(4, Math.floor(standardQuery.length * 0.45))) continue;
-    if (name.reading[0] !== readingQuery[0]) continue;
+    if (lengthDifference > Math.max(7, Math.floor(standardQuery.length * 0.65))) continue;
     const standardScore = jaroWinkler(standardQuery, name.normalized);
-    const readingScore = jaroWinkler(readingQuery, name.reading);
-    const score = Math.max(standardScore, readingScore);
-    if (!best || score > best.score) best = { ...name, score };
+    let latticeScore = 0;
+    let selectedQueryPath = "";
+    let selectedNamePath = "";
+    for (const queryPath of queryPaths) {
+      for (const namePath of name.paths) {
+        const score = jaroWinkler(queryPath, namePath);
+        if (score > latticeScore) {
+          latticeScore = score; selectedQueryPath = queryPath; selectedNamePath = namePath;
+        }
+      }
+    }
+    const score = Math.max(standardScore, latticeScore);
+    if (score >= 0.72) ranked.push({
+      ...name, score, latticeScore, selectedQueryPath, selectedNamePath,
+    });
   }
-  return best && best.score >= 0.82 ? best : null;
+  return ranked.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name)).slice(0, 3);
 }
 function updateSuggestion(query) {
   clearTimeout(state.suggestionTimer);
   elements.suggestion.replaceChildren();
   if (!query || state.filtered.length) return;
   state.suggestionTimer = setTimeout(() => {
-    const suggestion = bestSuggestion(query);
-    if (!suggestion) return;
+    const suggestions = rankedSuggestions(query);
+    if (!suggestions.length) return;
     elements.suggestion.innerHTML = `<span>Did you mean</span>
-      <button type="button" data-suggestion="${escapeHTML(suggestion.name)}">${escapeHTML(suggestion.name)}</button>
-      <small>${escapeHTML(suggestion.type)} · sounds/spells similar</small>`;
+      ${suggestions.map(suggestion => `<button type="button" data-suggestion="${escapeHTML(suggestion.name)}">${escapeHTML(suggestion.name)}</button>`).join("")}
+      <small>registered names · pronunciation-lattice suggestions</small>`;
     const emptyState = elements.list.querySelector(".empty-state");
     if (emptyState) {
       emptyState.innerHTML = `<strong>No exact spelling match</strong>
@@ -146,7 +172,7 @@ fetch("data/product_records.json").then(response => response.json()).then(produc
     for (const [name, type] of [[product.b, "brand"], [product.g, "generic"]]) {
       const normalized = normalizeSuggestion(name);
       if (!normalized || uniqueNames.has(`${type}:${normalized}`)) continue;
-      uniqueNames.set(`${type}:${normalized}`, { name, type, normalized, reading: filipinoReading(name) });
+      uniqueNames.set(`${type}:${normalized}`, { name, type, normalized, paths: pronunciationPaths(name) });
     }
   }
   state.names = [...uniqueNames.values()];
@@ -156,6 +182,10 @@ fetch("data/product_records.json").then(response => response.json()).then(produc
 });
 
 elements.search.addEventListener("input", applyFilters);
+elements.search.addEventListener("voicealternatives", event => {
+  state.voiceAlternatives = event.detail?.alternatives || [];
+  updateSuggestion(elements.search.value.trim());
+});
 elements.sort.addEventListener("input", applyFilters);
 elements.suggestion.addEventListener("click", event => {
   const button = event.target.closest("button[data-suggestion]");

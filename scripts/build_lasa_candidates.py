@@ -13,12 +13,15 @@ import json
 import math
 import re
 import sqlite3
+import sys
 import time
 import unicodedata
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+
+from filipino_phonetics import pronunciation_features, speech_simplify
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -56,6 +59,14 @@ def normalize_name(value: str | None) -> str:
 
 def compact_name(value: str) -> str:
     return normalize_name(value).replace(" ", "")
+
+
+def numeric_tokens(value: str) -> tuple[str, ...]:
+    return tuple(re.findall(r"\d+(?:\.\d+)?", value))
+
+
+def name_without_numbers(value: str) -> str:
+    return re.sub(r"\d+(?:\.\d+)?", "", compact_name(value))
 
 
 def normalization_duplicate_key(value: str) -> str:
@@ -349,6 +360,47 @@ def score_pair(
         filipino_jw >= standard_jw + 0.02 or standard_jw >= 0.75
     ):
         reasons.append("filipino_phonology_experimental")
+
+    # The pronunciation lattice is intentionally more expensive than the
+    # first-pass spelling checks. A cheap speech-form gate keeps the full
+    # database rebuild practical while still allowing spoken-like spellings
+    # to enter even when the ordinary spelling score misses them.
+    speech_jw = jaro_winkler(
+        speech_simplify(first.display_name),
+        speech_simplify(second.display_name),
+    )
+    if not reasons and speech_jw < 0.76:
+        return None
+    advanced = pronunciation_features(first.display_name, second.display_name)
+    lattice_score = float(advanced["pronunciation_lattice_similarity"])
+    raw_ensemble_score = float(advanced["experimental_ensemble_score"])
+    first_numbers = numeric_tokens(first.display_name)
+    second_numbers = numeric_tokens(second.display_name)
+    first_base = name_without_numbers(first.display_name)
+    second_base = name_without_numbers(second.display_name)
+    base_similarity = (
+        jaro_winkler(first_base, second_base)
+        if first_base and second_base
+        else 0.0
+    )
+    number_penalty = 0.0
+    if (
+        first_numbers != second_numbers
+        and (first_numbers or second_numbers)
+        and base_similarity >= 0.94
+    ):
+        number_penalty = 0.18 if first_base == second_base else 0.10
+    ensemble_score = max(0.0, raw_ensemble_score - number_penalty)
+    advanced["experimental_ensemble_score"] = round(ensemble_score, 6)
+    advanced["numeric_distinction_penalty"] = round(number_penalty, 6)
+    if lattice_score >= 0.80 and (
+        lattice_score >= standard_jw + 0.03 or standard_jw >= 0.72
+    ):
+        reasons.append("pronunciation_lattice_experimental")
+    if ensemble_score >= 0.80 and standard_jw >= 0.70:
+        reasons.append("experimental_multifeature_ensemble")
+    if number_penalty:
+        reasons.append("numeric_strength_or_version_distinction")
     if not reasons:
         return None
 
@@ -359,9 +411,11 @@ def score_pair(
 
     if standard_jw >= 0.93 or (distance <= 2 and shorter >= 6):
         priority = "high"
-    elif standard_jw >= 0.86 or filipino_jw >= 0.90:
+    elif standard_jw >= 0.86 or filipino_jw >= 0.90 or ensemble_score >= 0.86:
         priority = "medium"
     else:
+        priority = "screen"
+    if number_penalty and base_similarity >= 0.98:
         priority = "screen"
 
     candidate_key = "|".join(sorted((first.name_id, second.name_id)))
@@ -400,6 +454,7 @@ def score_pair(
         "soundex_b": second_soundex,
         "soundex_similarity": round(soundex_score, 6),
         "filipino_jaro_winkler": round(filipino_jw, 6),
+        **advanced,
         "candidate_reasons": "|".join(sorted(set(reasons))),
         "algorithmic_priority": priority,
         "candidate_nature": candidate_nature,
@@ -477,6 +532,13 @@ def generate_candidates(
                     continue
                 seen_pairs.add(pair)
                 pair_count += 1
+                if pair_count % 250_000 == 0:
+                    print(
+                        f"Scored {pair_count:,} blocked pairs; "
+                        f"retained {len(candidates):,} candidates…",
+                        file=sys.stderr,
+                        flush=True,
+                    )
                 scored = score_pair(
                     entries[pair[0]],
                     entries[pair[1]],
@@ -516,6 +578,7 @@ def build_review_queue(
                 float(row["jaro_winkler"]),
                 float(row["edit_similarity"]),
                 float(row["filipino_jaro_winkler"]),
+                float(row.get("experimental_ensemble_score", 0)),
             ),
         )
     )
@@ -534,6 +597,7 @@ def build_review_queue(
                         float(row["jaro_winkler"]),
                         float(row["edit_similarity"]),
                         float(row["filipino_jaro_winkler"]),
+                        float(row.get("experimental_ensemble_score", 0)),
                     ),
                     6,
                 ),
@@ -585,6 +649,17 @@ def write_sqlite(
             soundex_b TEXT NOT NULL,
             soundex_similarity REAL NOT NULL,
             filipino_jaro_winkler REAL NOT NULL,
+            pronunciation_lattice_similarity REAL NOT NULL,
+            weighted_phoneme_similarity REAL NOT NULL,
+            syllable_similarity REAL NOT NULL,
+            stress_similarity REAL NOT NULL,
+            orthographic_bigram_similarity REAL NOT NULL,
+            experimental_ensemble_score REAL NOT NULL,
+            numeric_distinction_penalty REAL NOT NULL,
+            pronunciation_path_a TEXT NOT NULL,
+            pronunciation_path_b TEXT NOT NULL,
+            pronunciation_path_label_a TEXT NOT NULL,
+            pronunciation_path_label_b TEXT NOT NULL,
             candidate_reasons TEXT NOT NULL,
             algorithmic_priority TEXT NOT NULL,
             candidate_nature TEXT NOT NULL,
