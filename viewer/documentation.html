@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How It Works · PH LASA</title><link rel="stylesheet" href="styles.css?v=20260630-10"></head>
+  <title>How It Works · PH LASA</title><link rel="stylesheet" href="styles.css?v=20260701-1"></head>
 <body>
   <header class="topbar">
     <div class="brand-mark" aria-hidden="true">Rx</div>
@@ -14,7 +14,7 @@
   </header>
   <main class="docs-layout">
     <aside class="docs-nav"><strong>On this page</strong><a href="#goal">Project goal</a><a href="#data">Data collected</a>
-      <a href="#pipeline">Step by step</a><a href="#algorithms">Algorithms</a><a href="#weights">Experimental score</a>
+      <a href="#pipeline">Step by step</a><a href="#algorithms">Algorithms</a><a href="#search-rules">Search transformations</a><a href="#weights">Experimental score</a>
       <a href="#pages">Why two pair pages?</a><a href="#classifications">Classifications</a><a href="#future">Future experiments</a>
       <a href="#limitations">Limitations</a></aside>
     <article class="docs-content">
@@ -43,6 +43,41 @@
         <article><h3>Orthographic bigrams</h3><p>Measures overlap between two-character chunks. It preserves a spelling signal alongside the experimental speech features.</p></article>
         <article><h3>Blocking</h3><p>Groups names by prefixes, suffixes, length and phonetic keys before scoring. This makes a large dataset practical.</p></article>
       </div></section>
+      <section id="search-rules"><h2>All Products search transformations</h2>
+        <p>The typed search keeps the published spelling and generates additional experimental reading paths for both the user's query and each registered brand or generic name. The table below lists the transformations currently used. Rules are applied in sequence, so a final path may contain more than one change.</p>
+        <div class="callout"><strong>Experimental search aid:</strong> These transformations make approximate names easier to find. They are not universal Cebuano pronunciation rules and have not yet been validated with a Cebuano medicine-pronunciation dataset.</div>
+        <div class="table-wrap docs-table-wrap"><table class="transformation-table">
+          <thead><tr><th>Original</th><th>Changed to</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Original"><code>tion</code></td><td data-label="Changed to"><code>syon</code></td><td data-label="Example">medication → medikasyon</td></tr>
+            <tr><td data-label="Original"><code>sion</code></td><td data-label="Changed to"><code>syon</code></td><td data-label="Example">version → bersyon</td></tr>
+            <tr><td data-label="Original"><code>ture</code></td><td data-label="Changed to"><code>tyur</code></td><td data-label="Example">culture → kultyur</td></tr>
+            <tr><td data-label="Original"><code>ph</code></td><td data-label="Changed to"><code>p</code></td><td data-label="Example">pharma → parma</td></tr>
+            <tr><td data-label="Original"><code>th</code></td><td data-label="Changed to"><code>t</code></td><td data-label="Example">thera → tera</td></tr>
+            <tr><td data-label="Original"><code>sh</code></td><td data-label="Changed to"><code>s</code></td><td data-label="Example">sh → s</td></tr>
+            <tr><td data-label="Original"><code>ch</code></td><td data-label="Changed to"><code>ts</code></td><td data-label="Example">chemo → tsemo</td></tr>
+            <tr><td data-label="Original"><code>qu</code></td><td data-label="Changed to"><code>kw</code></td><td data-label="Example">quinine → kwinine</td></tr>
+            <tr><td data-label="Original"><code>x</code></td><td data-label="Changed to"><code>ks</code></td><td data-label="Example">xyl → ksyl</td></tr>
+            <tr><td data-label="Original"><code>f</code></td><td data-label="Changed to"><code>p</code></td><td data-label="Example">flu → plu</td></tr>
+            <tr><td data-label="Original"><code>v</code></td><td data-label="Changed to"><code>b</code></td><td data-label="Example">valsartan → balsartan</td></tr>
+            <tr><td data-label="Original"><code>z</code></td><td data-label="Changed to"><code>s</code></td><td data-label="Example">zine → sine</td></tr>
+            <tr><td data-label="Original"><code>j</code></td><td data-label="Changed to"><code>dy</code></td><td data-label="Example">jesic → dyesic</td></tr>
+            <tr><td data-label="Original"><code>ce</code></td><td data-label="Changed to"><code>se</code></td><td data-label="Example">ce → se</td></tr>
+            <tr><td data-label="Original"><code>ci</code></td><td data-label="Changed to"><code>si</code></td><td data-label="Example">ci → si</td></tr>
+            <tr><td data-label="Original"><code>cy</code></td><td data-label="Changed to"><code>sy</code></td><td data-label="Example">cy → sy</td></tr>
+            <tr><td data-label="Original">remaining <code>c</code></td><td data-label="Changed to"><code>k</code></td><td data-label="Example">co → ko</td></tr>
+            <tr><td data-label="Original">remaining <code>q</code></td><td data-label="Changed to"><code>k</code></td><td data-label="Example">qa → ka</td></tr>
+            <tr><td data-label="Original"><code>ge</code></td><td data-label="Changed to"><code>dye</code></td><td data-label="Example">gesic → dyesic</td></tr>
+            <tr><td data-label="Original"><code>gi</code></td><td data-label="Changed to"><code>dyi</code></td><td data-label="Example">gi → dyi</td></tr>
+            <tr><td data-label="Original"><code>gy</code></td><td data-label="Changed to"><code>dyy</code></td><td data-label="Example">gy → dyy</td></tr>
+            <tr><td data-label="Original"><code>e</code></td><td data-label="Changed to"><code>i</code></td><td data-label="Example">gesic → gisic</td></tr>
+            <tr><td data-label="Original"><code>o</code></td><td data-label="Changed to"><code>u</code></td><td data-label="Example">bio → biu</td></tr>
+            <tr><td data-label="Original">repeated vowels</td><td data-label="Changed to">one vowel</td><td data-label="Example"><code>floo</code> → <code>flo</code></td></tr>
+            <tr><td data-label="Original"><code>h</code> before vowel</td><td data-label="Changed to">removed</td><td data-label="Example"><code>ha</code> → <code>a</code></td></tr>
+            <tr><td data-label="Original"><code>y</code></td><td data-label="Changed to"><code>i</code></td><td data-label="Example"><code>biyo</code> → <code>biio</code></td></tr>
+          </tbody>
+        </table></div>
+      </section>
       <section id="weights"><h2>How the experimental score is combined</h2>
         <p>The dashboard exposes every component so a reviewer can see why a pair surfaced. The weights below are hand-set engineering choices for candidate ordering; they were not learned from labeled errors and must not be interpreted as accuracy or probability.</p>
         <div class="definition-list">
