@@ -14,6 +14,7 @@ from filipino_phonetics import normalize_name, nativize, speech_simplify
 ROOT = Path(__file__).resolve().parent.parent
 LASA_DIR = ROOT / "data" / "lasa"
 CANONICAL_DIR = ROOT / "data" / "canonical"
+LEAFLET_DIR = ROOT / "data" / "ph_fda" / "leaflet_extraction"
 OUTPUT_DIR = ROOT / "viewer" / "data"
 
 
@@ -97,7 +98,9 @@ def compact_candidate(
     }
 
 
-def compact_product(row: dict[str, str]) -> dict[str, object]:
+def compact_product(
+    row: dict[str, str], leaflet_counts: dict[str, int]
+) -> dict[str, object]:
     registration = row["registration_number"]
     return {
         "r": registration,
@@ -113,8 +116,45 @@ def compact_product(row: dict[str, str]) -> dict[str, object]:
         "o": row["country_of_origin_raw"],
         "i": row["issuance_date_raw"],
         "x": row["expiry_date_raw"],
+        "k": row["packaging_raw"],
+        "t": row["trader_raw"],
+        "m2": row["importer_raw"],
+        "d": row["distributor_raw"],
+        "a": row["application_type_raw"],
+        "l": leaflet_counts.get(registration, 0),
         "u": "https://verification.fda.gov.ph/",
     }
+
+
+def compact_leaflets(
+    rows: list[dict[str, str]],
+) -> dict[str, list[dict[str, object]]]:
+    by_registration: dict[str, list[dict[str, object]]] = {}
+    seen_hashes: dict[str, set[str]] = {}
+    for row in rows:
+        registration = row["registration_number"]
+        pdf_hash = row["pdf_sha256"]
+        if not registration or not pdf_hash:
+            continue
+        registration_hashes = seen_hashes.setdefault(registration, set())
+        if pdf_hash in registration_hashes:
+            continue
+        registration_hashes.add(pdf_hash)
+        by_registration.setdefault(registration, []).append(
+            {
+                "description": row["description_extracted"],
+                "indications": row["indications_extracted"],
+                "description_heading": row["description_heading"],
+                "indications_heading": row["indications_heading"],
+                "category": row["document_category"],
+                "version": row["document_version"],
+                "url": row["file_url"],
+                "method": row["extraction_method"],
+                "confidence": row["extraction_confidence"],
+                "review_status": row["review_status"],
+            }
+        )
+    return by_registration
 
 
 def compact_variant(row: dict[str, str]) -> dict[str, object]:
@@ -150,6 +190,18 @@ def write_json(path: Path, value: object) -> None:
     temporary = path.with_suffix(f"{path.suffix}.tmp")
     temporary.write_text(
         json.dumps(value, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    temporary.replace(path)
+
+
+def write_javascript_data(path: Path, variable: str, value: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(f"{path.suffix}.tmp")
+    temporary.write_text(
+        f"globalThis.{variable}="
+        + json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+        + ";\n",
         encoding="utf-8",
     )
     temporary.replace(path)
@@ -255,8 +307,10 @@ def main() -> int:
         compact_normalization_duplicate(row)
         for row in read_csv(LASA_DIR / "normalization_duplicates.csv")
     ]
+    leaflet_rows = read_csv(LEAFLET_DIR / "ph_fda_leaflet_sections.csv")
+    leaflets = compact_leaflets(leaflet_rows)
     products = [
-        compact_product(row)
+        compact_product(row, {registration: len(records) for registration, records in leaflets.items()})
         for row in product_rows
     ]
     summary = {
@@ -279,6 +333,17 @@ def main() -> int:
         normalization_duplicates,
     )
     write_json(OUTPUT_DIR / "product_records.json", products)
+    write_json(OUTPUT_DIR / "leaflet_records.json", leaflets)
+    write_javascript_data(
+        OUTPUT_DIR / "product_records.js",
+        "PRODUCT_RECORDS",
+        products,
+    )
+    write_javascript_data(
+        OUTPUT_DIR / "leaflet_records.js",
+        "LEAFLET_RECORDS",
+        leaflets,
+    )
     write_json(
         OUTPUT_DIR / "cebuano_tools.json",
         compact_cebuano_tools(products, candidates, report["generated_at"]),

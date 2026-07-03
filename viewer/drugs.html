@@ -26,6 +26,7 @@
       <p class="eyebrow">Product directory</p>
       <h2>Search all PH FDA product records</h2>
       <p>One medicine can have several registrations for different strengths, dosage forms, manufacturers, or brands. This page preserves each registration separately.</p>
+      <p class="section-note"><strong>Leaflet coverage:</strong> 5,002 of 31,208 registered products have a collected PH FDA-linked leaflet. Registry details remain available for products without one.</p>
     </section>
     <section class="workspace">
       <div class="filters product-filters">
@@ -41,6 +42,13 @@
             <option value="expiry">Expiry date text</option>
           </select>
         </label>
+        <label><span>Leaflet availability</span>
+          <select id="product-leaflet-filter">
+            <option value="all">All products</option>
+            <option value="with">With source leaflet</option>
+            <option value="without">Registry only</option>
+          </select>
+        </label>
       </div>
       <div class="result-meta">
         <p><strong id="product-count">0</strong> registered products</p>
@@ -53,7 +61,34 @@
       </footer>
     </section>
   </main>
-  <script src="drugs.js?v=20260701-1"></script>
+  <dialog id="product-dialog">
+    <form method="dialog"><button class="close-button" aria-label="Close">×</button></form>
+    <p class="eyebrow">Registered product details</p>
+    <h2 id="product-detail-title"></h2>
+    <p id="product-detail-subtitle" class="section-note"></p>
+    <div id="product-detail-content"></div>
+  </dialog>
+  <button id="chat-launcher" class="chat-launcher" type="button">
+    <span aria-hidden="true">Rx</span> Ask medicine guide
+  </button>
+  <dialog id="medicine-chat" class="medicine-chat-dialog">
+    <form method="dialog"><button class="close-button" aria-label="Close medicine guide">×</button></form>
+    <div class="chat-heading">
+      <p class="eyebrow">Source-grounded simulator</p>
+      <h2>Medicine guide</h2>
+      <p>Ask by brand, generic name, or registration number.</p>
+    </div>
+    <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
+    <form id="chat-form" class="chat-form">
+      <label for="chat-input">Ask about a medicine</label>
+      <div>
+        <input id="chat-input" autocomplete="off" placeholder="Example: What is Lecit-E 200?">
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="data/product_records.js"></script>
+  <script src="drugs.js?v=20260703-7"></script>
   <script src="speech-search.js?v=20260701-1"></script>
 </body>
 </html>

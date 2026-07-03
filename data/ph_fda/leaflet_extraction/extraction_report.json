@@ -1,0 +1,11 @@
+{
+  "source": "PH_FDA_VERIFICATION_PORTAL",
+  "generated_at": "2026-07-03T10:25:47.483596+00:00",
+  "input_leaflet_links": 6255,
+  "processed_documents": 6255,
+  "failed_documents": 0,
+  "ocr_documents": 1665,
+  "documents_with_description": 5192,
+  "documents_with_indications": 5069,
+  "documents_requiring_review": 6255
+}

@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import html
 import json
 import re
 import shutil
@@ -44,6 +45,9 @@ DESCRIPTION_STOPS = (
     "formulation",
     "composition",
     "qualitative and quantitative composition",
+    "what is in the medicine",
+    "what is this medicine used for",
+    "what is the medicine used for",
     "pharmacodynamics and pharmacokinetics",
     "pharmacological properties",
     "indications",
@@ -54,14 +58,20 @@ INDICATION_HEADINGS = (
     "therapeutic indications",
     "clinical indications",
     "uses",
+    "what is this medicine used for",
+    "what is the medicine used for",
+    "what is this medicine for",
 )
 INDICATION_STOPS = (
     "dosage and administration",
     "dose and method of administration",
     "posology and method of administration",
+    "how much and how often should you take this medicine",
+    "how should you take this medicine",
     "contraindications",
     "warnings and precautions",
     "special warnings and precautions for use",
+    "when should you not take this medicine",
 )
 
 
@@ -117,27 +127,63 @@ def download_pdf(
     destination.parent.mkdir(parents=True, exist_ok=True)
     url = google_drive_download_url(source_url)
     last_error: Exception | None = None
+
+    def fetch(download_url: str, temporary: Path, params: dict[str, str] | None = None) -> tuple[str, int]:
+        with session.get(
+            download_url,
+            params=params,
+            timeout=timeout,
+            stream=True,
+            allow_redirects=True,
+        ) as response:
+            response.raise_for_status()
+            size = 0
+            digest = hashlib.sha256()
+            with temporary.open("wb") as output:
+                for chunk in response.iter_content(chunk_size=1024 * 256):
+                    if not chunk:
+                        continue
+                    size += len(chunk)
+                    if size > max_bytes:
+                        raise ValueError(f"PDF exceeds {max_bytes} bytes")
+                    digest.update(chunk)
+                    output.write(chunk)
+        return digest.hexdigest(), size
+
     for attempt in range(retries + 1):
         temporary = destination.with_suffix(".pdf.tmp")
         try:
-            with session.get(url, timeout=timeout, stream=True, allow_redirects=True) as response:
-                response.raise_for_status()
-                size = 0
-                digest = hashlib.sha256()
-                with temporary.open("wb") as output:
-                    for chunk in response.iter_content(chunk_size=1024 * 256):
-                        if not chunk:
-                            continue
-                        size += len(chunk)
-                        if size > max_bytes:
-                            raise ValueError(f"PDF exceeds {max_bytes} bytes")
-                        digest.update(chunk)
-                        output.write(chunk)
+            digest, size = fetch(url, temporary)
             with temporary.open("rb") as downloaded:
                 if downloaded.read(5) != b"%PDF-":
-                    raise ValueError("Downloaded file is not a PDF")
+                    warning_page = temporary.read_text(encoding="utf-8", errors="ignore")
+                    form = re.search(
+                        r'<form[^>]+action="([^"]+)"[^>]*>(.*?)</form>',
+                        warning_page,
+                        flags=re.IGNORECASE | re.DOTALL,
+                    )
+                    if "Virus scan warning" not in warning_page or not form:
+                        raise ValueError("Downloaded file is not a PDF")
+                    confirmation_params = {
+                        html.unescape(name): html.unescape(value)
+                        for name, value in re.findall(
+                            r'<input[^>]+name="([^"]+)"[^>]+value="([^"]*)"',
+                            form.group(2),
+                            flags=re.IGNORECASE,
+                        )
+                    }
+                    if confirmation_params.get("confirm") != "t":
+                        raise ValueError("Google Drive confirmation page is missing a valid token")
+                    digest, size = fetch(
+                        html.unescape(form.group(1)),
+                        temporary,
+                        confirmation_params,
+                    )
+                    with temporary.open("rb") as confirmed_download:
+                        if confirmed_download.read(5) != b"%PDF-":
+                            raise ValueError("Confirmed Google Drive download is not a PDF")
             temporary.replace(destination)
-            return digest.hexdigest(), size
+            return digest, size
         except Exception as error:  # network and source-file failures are logged alike
             last_error = error
             temporary.unlink(missing_ok=True)
@@ -318,9 +364,22 @@ def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, object]]) 
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(f"{path.suffix}.tmp")
     with temporary.open("w", encoding="utf-8", newline="") as output:
-        writer = csv.DictWriter(output, fieldnames=fieldnames, extrasaction="ignore")
+        writer = csv.DictWriter(
+            output,
+            fieldnames=fieldnames,
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(
+            {
+                key: re.sub(r"[ \t]+$", "", value, flags=re.MULTILINE)
+                if isinstance(value, str)
+                else value
+                for key, value in row.items()
+            }
+            for row in rows
+        )
     temporary.replace(path)
 
 
@@ -347,6 +406,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--timeout-seconds", type=int, default=90)
     parser.add_argument("--max-pdf-mb", type=int, default=50)
     parser.add_argument("--ocr-dpi", type=int, default=300)
+    parser.add_argument(
+        "--reprocess-registration",
+        action="append",
+        default=[],
+        help="Re-extract matching registration number(s), even if already processed.",
+    )
     return parser.parse_args()
 
 
@@ -366,6 +431,20 @@ def main() -> int:
         else {"schema_version": 1, "created_at": utc_now(), "processed": {}, "failed": {}}
     )
     rows = read_leaflet_rows(args.input.resolve())
+    reprocess_registrations = {
+        normalize_space(value) for value in args.reprocess_registration if normalize_space(value)
+    }
+    if reprocess_registrations:
+        state["processed"] = {
+            key: value
+            for key, value in state["processed"].items()
+            if normalize_space(value.get("registration_number")) not in reprocess_registrations
+        }
+        state["failed"] = {
+            key: value
+            for key, value in state["failed"].items()
+            if normalize_space(value.get("registration_number")) not in reprocess_registrations
+        }
     session = requests.Session()
     session.headers["User-Agent"] = "ConfusableDrugsResearch/1.0 (PH FDA leaflet processing)"
 
@@ -376,6 +455,8 @@ def main() -> int:
                 break
             registration = normalize_space(row.get("registration_number"))
             file_url = normalize_space(row.get("file_url"))
+            if reprocess_registrations and registration not in reprocess_registrations:
+                continue
             document_key = hashlib.sha256(f"{registration}|{file_url}".encode()).hexdigest()
             if document_key in state["processed"]:
                 continue

@@ -427,7 +427,7 @@ main {
   font-size: 12px;
   line-height: 1.6;
 }
-.product-filters { grid-template-columns: minmax(260px, 2fr) minmax(190px, 1fr); }
+.product-filters { grid-template-columns: minmax(260px, 2fr) minmax(170px, 1fr) minmax(180px, 1fr); }
 .product-directory {
   padding: 0 22px 22px;
   display: grid;
@@ -455,7 +455,141 @@ main {
 .directory-card dl { margin: 0; padding: 13px 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 13px; border-block: 1px solid var(--line); }
 .directory-card dt { color: var(--muted); font-size: 9px; font-weight: 850; letter-spacing: .05em; text-transform: uppercase; }
 .directory-card dd { margin: 4px 0 0; font-size: 12px; font-weight: 700; line-height: 1.4; overflow-wrap: anywhere; }
-.directory-fda-link { margin: 12px 15px 15px; }
+.directory-actions { padding: 12px 15px 15px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.directory-fda-link { margin: 0; }
+.product-detail-button {
+  padding: 7px 10px;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  color: white;
+  background: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+}
+.product-detail-button:hover { filter: brightness(.92); }
+.chat-product-button {
+  padding: 7px 10px;
+  border: 1px solid #b9d7ca;
+  border-radius: 8px;
+  color: var(--green);
+  background: var(--green-soft);
+  font-size: 11px;
+  font-weight: 800;
+}
+.chat-launcher {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 20;
+  padding: 11px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  color: white;
+  background: var(--green);
+  box-shadow: 0 10px 30px rgba(15, 63, 47, .28);
+  font-weight: 850;
+}
+.chat-launcher span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--green);
+  background: white;
+  font: 700 13px Georgia, serif;
+}
+.medicine-chat-dialog { width: min(600px, calc(100% - 30px)); padding: 0; }
+.medicine-chat-dialog .close-button { z-index: 2; background: white; }
+.chat-heading { padding: 22px 60px 17px 22px; color: white; background: var(--green); }
+.chat-heading .eyebrow { color: #cce8dc; }
+.chat-heading h2 { margin: 3px 0 0; font-size: 28px; }
+.chat-heading > p:last-child { margin: 6px 0 0; color: #dceee7; font-size: 12px; }
+.chat-messages {
+  min-height: 340px;
+  max-height: min(560px, calc(100dvh - 260px));
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  overflow-y: auto;
+  background: #f4f8f6;
+}
+.chat-message {
+  max-width: 88%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px 14px 14px 4px;
+  background: white;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.chat-message.user {
+  margin-left: auto;
+  border-color: #acd2c2;
+  border-radius: 14px 14px 4px 14px;
+  background: var(--green-soft);
+}
+.chat-message p { margin: 0; }
+.chat-message p + p, .chat-message p + button, .chat-message div + button { margin-top: 9px; }
+.chat-indication { padding: 9px 10px; border-radius: 9px; background: var(--green-soft); }
+.chat-source-note { color: var(--muted); font-size: 11px; }
+.chat-choices { margin-top: 8px; display: grid; gap: 7px; }
+.chat-choice {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b9d7ca;
+  border-radius: 10px;
+  color: var(--ink);
+  background: white;
+  text-align: left;
+}
+.chat-choice strong, .chat-choice span, .chat-choice small { display: block; }
+.chat-choice span { margin-top: 3px; color: var(--muted); font-size: 11px; line-height: 1.35; }
+.chat-choice small { margin-top: 4px; color: var(--green); font-weight: 800; }
+.chat-inline-action {
+  padding: 7px 9px;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  color: var(--green);
+  background: white;
+  font-size: 11px;
+  font-weight: 800;
+}
+.chat-form { padding: 13px 16px 16px; border-top: 1px solid var(--line); background: white; }
+.chat-form label { display: block; margin-bottom: 6px; color: var(--muted); font-size: 10px; font-weight: 850; text-transform: uppercase; }
+.chat-form > div { display: flex; gap: 8px; }
+.chat-form input { flex: 1; min-width: 0; padding: 11px 12px; border: 1px solid var(--line); border-radius: 10px; }
+.chat-form button { padding: 10px 15px; border: 0; border-radius: 10px; color: white; background: var(--green); font-weight: 850; }
+.product-detail-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.product-detail-grid article { padding: 12px; border-radius: 11px; background: var(--wash); }
+.product-detail-grid span { display: block; color: var(--muted); font-size: 10px; font-weight: 800; text-transform: uppercase; }
+.product-detail-grid strong { display: block; margin-top: 5px; font-size: 13px; line-height: 1.4; overflow-wrap: anywhere; }
+.leaflet-heading { margin-top: 24px; }
+.leaflet-heading h3 { margin: 0; font: 600 20px Georgia, serif; }
+.leaflet-heading p { margin: 5px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.leaflet-list { margin-top: 12px; display: grid; gap: 12px; }
+.leaflet-card { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; }
+.leaflet-card-heading { padding: 13px 14px; display: flex; justify-content: space-between; gap: 12px; background: #fbfdfb; }
+.leaflet-card-heading h3 { margin: 4px 0 0; font: 600 18px Georgia, serif; }
+.leaflet-review-note { padding: 10px 14px; color: #69420c; background: var(--amber-soft); }
+.leaflet-review-note strong, .leaflet-review-note span { display: block; }
+.leaflet-review-note strong { font-size: 11px; text-transform: uppercase; }
+.leaflet-review-note span { margin-top: 3px; font-size: 11px; line-height: 1.4; }
+.leaflet-section { padding: 14px; border-top: 1px solid var(--line); }
+.leaflet-section h4 { margin: 0 0 7px; color: var(--green); font-size: 12px; text-transform: uppercase; }
+.leaflet-section p { margin: 0; white-space: pre-wrap; font-size: 13px; line-height: 1.6; }
+.leaflet-section.indication { background: var(--green-soft); }
+.leaflet-section.missing { color: var(--muted); background: var(--wash); }
+.leaflet-source-link { margin: 0 14px 14px; }
 
 .classification-guide {
   margin: 14px 0 20px;
@@ -1112,5 +1246,15 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
   .directory-card h3 { font-size: 19px; }
   .product-classification { max-width: none; margin-top: 7px; display: block; text-align: left; }
   .directory-card dl { padding: 12px 13px; grid-template-columns: 1fr; gap: 11px; }
-  .directory-fda-link { margin: 11px 13px 13px; width: calc(100% - 26px); }
+  .directory-actions { padding: 11px 13px 13px; display: grid; }
+  .directory-actions > * { width: 100%; min-height: 44px; align-items: center; justify-content: center; text-align: center; }
+  .chat-launcher { right: 12px; bottom: 12px; }
+  .medicine-chat-dialog { max-height: 96dvh; padding: 0; }
+  .chat-heading { padding: 18px 58px 14px 16px; }
+  .chat-messages { min-height: 300px; max-height: calc(96dvh - 205px); padding: 13px; }
+  .chat-message { max-width: 94%; }
+  .chat-form { padding: 11px 12px max(12px, env(safe-area-inset-bottom)); }
+  .product-detail-grid { grid-template-columns: 1fr; gap: 8px; }
+  .leaflet-card-heading { display: block; }
+  .leaflet-card-heading .record-count { margin-top: 7px; }
 }
