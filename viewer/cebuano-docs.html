@@ -38,7 +38,7 @@
       <section id="modes">
         <h2>The two tool modes</h2>
         <div class="definition-list">
-          <article><h3>1. Find confusable drugs</h3><p>The user may enter an official name or an approximate reading such as <code>amoksisilin</code>. The tool ranks up to five possible registered names and shows separate look-alike, sound-alike and overall scores. It does not silently select the first result. The user must choose the intended official name before its existing LASA candidates appear.</p></article>
+          <article><h3>1. Find confusable drugs</h3><p>The user may enter an official name or an approximate reading such as <code>amoksisilin</code>. The tool ranks up to 100 possible registered names and shows separate look-alike, sound-alike and overall scores. It does not silently select the first result. The user must choose the intended official name before its existing LASA candidates appear.</p></article>
           <article><h3>2. Compare two drugs</h3><p>The user enters two official brand or generic names. If an entry is approximate, the tool offers ranked registered-name options and requires confirmation. It then displays spelling, localized sound, syllable and overall similarity signals.</p></article>
         </div>
       </section>
@@ -50,8 +50,8 @@
           <li><strong>Normalize formatting.</strong><span>Convert text to lowercase and remove spaces and punctuation for comparison. The displayed official name remains unchanged.</span></li>
           <li><strong>Build controlled reading paths.</strong><span>Keep the normalized spelling, then generate nativized, vowel-merged, casual-reading and selected initial-letter paths using the table below.</span></li>
           <li><strong>Retrieve a shortlist.</strong><span>Use overlapping three-character chunks (trigrams) to find a manageable set of possible registered names instead of comparing the query with the entire name collection.</span></li>
-          <li><strong>Calculate four signals.</strong><span>Compare ordinary spelling, the strongest pair of reading paths, edit similarity and heuristic syllable chunks.</span></li>
-          <li><strong>Rank—not identify.</strong><span>Show up to five possible registered names with their scores. The user chooses the intended official medicine; the program does not claim that rank 1 is correct.</span></li>
+          <li><strong>Calculate the similarity signals.</strong><span>Compare ordinary spelling, the strongest pair of reading paths, edit similarity, heuristic syllable chunks, a Cebuano-grouped Editex phonetic distance and a head/tail feature.</span></li>
+          <li><strong>Rank—not identify.</strong><span>Show up to 100 possible registered names with their scores. The user chooses the intended official medicine; the program does not claim that rank 1 is correct.</span></li>
           <li><strong>Show LASA candidates.</strong><span>After selection, retrieve the chosen name’s precomputed high- or medium-priority review candidates and display visual, sound and rank scores.</span></li>
         </ol>
       </section>
@@ -63,11 +63,14 @@
           <article><h3>Sounds alike</h3><p>Generate all controlled paths for the query and registered name, compare every path pair with Jaro–Winkler, and retain the strongest path-pair score. The selected internal paths are not shown to the user.</p></article>
           <article><h3>Edit similarity</h3><p>Use normalized Levenshtein similarity on the strongest reading-path pair. This tolerates missing, inserted or substituted characters that can represent part of a misread syllable.</p></article>
           <article><h3>Syllable similarity</h3><p>Split the selected paths heuristically around vowel nuclei, then align the resulting chunks. This is an engineering approximation, not a validated Cebuano syllabifier.</p></article>
+          <article><h3>Phonetic (Cebuano Editex)</h3><p>A phonetic edit distance where substituting within a Cebuano-equivalent letter group (<code>e/i/y</code>, <code>o/u/w</code>, <code>b/v</code>, <code>p/f</code>, <code>c/k/q</code>, <code>s/z</code>, <code>m/n</code>) costs less than an unrelated substitution. Exposed as a sound-alike signal; not blended into the ranking by default.</p></article>
+          <article><h3>Head/tail (htco)</h3><p>Shared letters in the first two and last two positions, after the Japanese PMDA drug-name similarity index — confusion often concentrates at a name's start and end. Exposed as a supporting signal.</p></article>
         </div>
         <h3 class="docs-subheading">Input-interpretation formula</h3>
         <div class="formula-card">
           <code>overall = 0.30 × looks + 0.35 × sounds + 0.20 × edit + 0.15 × syllables</code>
           <p>The weights are hand-set for this prototype. They were not learned from labeled Cebuano pronunciation data.</p>
+          <p><strong>Experimental:</strong> an optional mode blends the Cebuano Editex phonetic distance into the sound term (reported as <code>overallExperimental</code>). It is off by default, so the <code>overall</code> above is unchanged; it is provided for A/B evaluation before any methodology change.</p>
         </div>
         <h3 class="docs-subheading">Confusable-candidate rank</h3>
         <div class="formula-card">

@@ -1,3 +1,9 @@
+// EXPERIMENTAL TOGGLE — when false (default), `overall` uses the thesis-reported
+// formula exactly, so existing results and rankings are unchanged. Flip to true to
+// rank by the phonetic-blended score (Cebuano Editex mixed into the sound term).
+// `overallExperimental` is always returned so both can be compared side by side.
+export const USE_EXPERIMENTAL_OVERALL = false;
+
 export function normalizeName(value) {
   return String(value || "").toLocaleLowerCase().replace(/[^a-z0-9]+/g, "");
 }
@@ -128,6 +134,60 @@ export function syllableSimilarity(first, second) {
   return Math.max(0, 1 - previous[right.length] / Math.max(left.length, right.length));
 }
 
+// Cebuano-grouped Editex: a phonetic edit distance where substituting within a
+// Cebuano-equivalent letter group (e/i/y, o/u/w, b/v, p/f, c/k/q, s/z, m/n) is
+// cheaper than an unrelated substitution. Better suited to sound-alike than the
+// spelling-oriented Jaro–Winkler because the cost reflects how the sound moves.
+const CEBUANO_GROUPS = [
+  "a", "eiy", "ouw", "bv", "pf", "ckq", "sz", "d", "t", "g", "j", "l", "r", "mn", "h",
+];
+const LETTER_GROUP = (() => {
+  const map = new Map();
+  CEBUANO_GROUPS.forEach((group, index) => {
+    for (const letter of group) map.set(letter, index);
+  });
+  return map;
+})();
+
+function editexCost(left, right) {
+  if (left === right) return 0;
+  const leftGroup = LETTER_GROUP.get(left);
+  const rightGroup = LETTER_GROUP.get(right);
+  return leftGroup !== undefined && leftGroup === rightGroup ? 1 : 2;
+}
+
+export function editexSimilarity(first, second) {
+  const left = normalizeName(first);
+  const right = normalizeName(second);
+  if (left === right) return left ? 1 : 0;
+  if (!left || !right) return 0;
+  let previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+  for (let leftIndex = 1; leftIndex <= left.length; leftIndex++) {
+    const current = [leftIndex];
+    for (let rightIndex = 1; rightIndex <= right.length; rightIndex++) {
+      current.push(Math.min(
+        previous[rightIndex] + 1,
+        current[rightIndex - 1] + 1,
+        previous[rightIndex - 1] + editexCost(left[leftIndex - 1], right[rightIndex - 1]),
+      ));
+    }
+    previous = current;
+  }
+  return Math.max(0, 1 - previous[right.length] / (2 * Math.max(left.length, right.length)));
+}
+
+// Head/tail (htco) feature, after Japan's PMDA drug-name similarity index:
+// confusion concentrates at the first two and last two letters of a name.
+export function headTailScore(first, second) {
+  const left = normalizeName(first);
+  const right = normalizeName(second);
+  if (left.length < 2 || right.length < 2) return left && left === right ? 1 : 0;
+  const head = (left[0] === right[0] ? 1 : 0) + (left[1] === right[1] ? 1 : 0);
+  const tail = (left[left.length - 1] === right[right.length - 1] ? 1 : 0)
+    + (left[left.length - 2] === right[right.length - 2] ? 1 : 0);
+  return (head + tail) / 4;
+}
+
 export function scoreNames(firstName, secondName, providedFirstPaths, providedSecondPaths) {
   const first = normalizeName(firstName);
   const second = normalizeName(secondName);
@@ -149,12 +209,23 @@ export function scoreNames(firstName, secondName, providedFirstPaths, providedSe
   }
   const edit = levenshteinSimilarity(selectedFirstPath, selectedSecondPath);
   const syllable = syllableSimilarity(selectedFirstPath, selectedSecondPath);
+  // Additional sound-alike signals, exposed for review and experimentation.
+  const phonetic = editexSimilarity(selectedFirstPath, selectedSecondPath);
+  const headTail = headTailScore(first, second);
+  // Thesis-reported formula (unchanged).
+  const overallBase = 0.30 * visual + 0.35 * sound + 0.20 * edit + 0.15 * syllable;
+  // Experimental: enrich the sound term with the Cebuano Editex distance (50/50).
+  const overallExperimental =
+    0.30 * visual + 0.35 * (0.5 * sound + 0.5 * phonetic) + 0.20 * edit + 0.15 * syllable;
   return {
     visual,
     sound,
     edit,
     syllable,
-    overall: 0.30 * visual + 0.35 * sound + 0.20 * edit + 0.15 * syllable,
+    phonetic,
+    headTail,
+    overall: USE_EXPERIMENTAL_OVERALL ? overallExperimental : overallBase,
+    overallExperimental,
   };
 }
 

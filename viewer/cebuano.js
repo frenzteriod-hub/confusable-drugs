@@ -130,7 +130,7 @@ function renderCandidateRows(targetIndex) {
       return { pair, name: state.names[otherIndex] };
     })
     .sort((first, second) => second.pair.overall - first.pair.overall)
-    .slice(0, 15);
+    .slice(0, 100);
 }
 
 function fallbackCandidateRows(targetIndex) {
@@ -154,7 +154,7 @@ function fallbackCandidateRows(targetIndex) {
     })
     .filter(result => result.pair.overall >= 0.68)
     .sort((first, second) => second.pair.overall - first.pair.overall)
-    .slice(0, 15);
+    .slice(0, 100);
 }
 
 function showCandidateResults(targetIndex) {
@@ -187,7 +187,7 @@ function searchCandidates(event) {
   elements.interpretationResults.hidden = true;
   elements.results.hidden = true;
   const query = elements.query.value.trim();
-  const matches = resolveNames(query, 5);
+  const matches = resolveNames(query, 100);
   if (!matches.length) {
     elements.searchStatus.innerHTML = `<strong>No likely registered names found.</strong> Try another spelling or a longer part of the medicine name.`;
     return;
@@ -260,6 +260,7 @@ function compareDrugs(event) {
     <div class="comparison-metrics">
       ${comparisonMetric("Looks alike", scores.visual, "spelling similarity")}
       ${comparisonMetric("Sounds alike", scores.sound, "localized reading similarity")}
+      ${comparisonMetric("Phonetic (Cebuano Editex)", live.phonetic, "group-aware sound distance")}
       ${comparisonMetric("Syllable similarity", scores.syllable, "approximate spoken chunks")}
       ${comparisonMetric("Overall rank", scores.overall, "screening score, not probability")}
     </div>
