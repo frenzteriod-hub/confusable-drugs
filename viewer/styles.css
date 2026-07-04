@@ -1258,3 +1258,11 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
   .leaflet-card-heading { display: block; }
   .leaflet-card-heading .record-count { margin-top: 7px; }
 }
+
+/* Sortable candidate columns (Cebuano tools) */
+.cebuano-results-table th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+.cebuano-results-table th.sortable:hover { text-decoration: underline; }
+.cebuano-results-table th.sortable.active::after { content: " \25BE"; opacity: .8; }
+
+/* Reading-basis note (Cebuano compare view) */
+.match-basis-note { font-size: 0.85rem; opacity: 0.75; margin: 0.4rem 0 0; }

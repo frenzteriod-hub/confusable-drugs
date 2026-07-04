@@ -30,6 +30,7 @@ const elements = {
   resultsTitle: document.querySelector("#candidate-results-title"),
   resultCount: document.querySelector("#candidate-result-count"),
   resultsBody: document.querySelector("#candidate-results-body"),
+  resultsHead: document.querySelector(".cebuano-results-table thead"),
   compareForm: document.querySelector("#drug-compare-form"),
   firstDrug: document.querySelector("#first-drug"),
   secondDrug: document.querySelector("#second-drug"),
@@ -148,6 +149,7 @@ function fallbackCandidateRows(targetIndex) {
           edit: scores.edit,
           syllable: scores.syllable,
           overall: scores.overall,
+          matchBasis: scores.matchBasis,
           priority: scores.overall >= 0.85 ? "high" : "medium",
         },
       };
@@ -157,25 +159,37 @@ function fallbackCandidateRows(targetIndex) {
     .slice(0, 100);
 }
 
+// Current candidate list + active sort column (visual = looks, sound = sounds,
+// overall = rank). Clicking a column header re-sorts without recomputing scores.
+let candidateSort = { rows: [], key: "overall" };
+
+function renderCandidateBody() {
+  if (!candidateSort.rows.length) {
+    elements.resultsBody.innerHTML = `<tr><td colspan="6" data-label="Result">No candidate passed the experimental display threshold.</td></tr>`;
+    return;
+  }
+  const rows = [...candidateSort.rows].sort((first, second) =>
+    second.pair[candidateSort.key] - first.pair[candidateSort.key]);
+  elements.resultsBody.innerHTML = rows.map(({ pair, name }) => `<tr>
+    <td class="name-cell" data-label="Potentially confusable name"><strong>${escapeHTML(name.name)}</strong></td>
+    <td data-label="Type"><span class="mode-label">${escapeHTML(name.type)}</span></td>
+    <td class="metric" data-label="Looks alike"><strong>${scoreText(pair.visual)}</strong><span>spelling</span></td>
+    <td class="metric" data-label="Sounds alike"><strong>${scoreText(pair.sound)}</strong><span>${pair.matchBasis === "localized-reading" ? "via reading" : pair.matchBasis === "spelling" ? "via spelling" : "rule-based"}</span></td>
+    <td class="metric" data-label="Rank score"><strong>${scoreText(pair.overall)}</strong><span>not probability</span></td>
+    <td data-label="Priority"><span class="badge ${escapeHTML(pair.priority)}">${escapeHTML(pair.priority)}</span></td>
+  </tr>`).join("");
+}
+
 function showCandidateResults(targetIndex) {
   const target = state.names[targetIndex];
   let rows = renderCandidateRows(target.index);
   const usedPrecomputedQueue = rows.length > 0;
   if (!rows.length) rows = fallbackCandidateRows(target.index);
+  candidateSort.rows = rows;
   elements.searchStatus.innerHTML = `You selected <strong>${escapeHTML(target.name)}</strong> (${escapeHTML(target.type)}). The list below ranks potentially confusable names; it does not confirm a LASA relationship.`;
   elements.resultsTitle.textContent = `Names similar to ${target.name}`;
   elements.resultCount.textContent = `${rows.length} candidate${rows.length === 1 ? "" : "s"}`;
-  elements.resultsBody.innerHTML = rows.map(({ pair, name }) => `<tr>
-    <td class="name-cell" data-label="Potentially confusable name"><strong>${escapeHTML(name.name)}</strong></td>
-    <td data-label="Type"><span class="mode-label">${escapeHTML(name.type)}</span></td>
-    <td class="metric" data-label="Looks alike"><strong>${scoreText(pair.visual)}</strong><span>spelling</span></td>
-    <td class="metric" data-label="Sounds alike"><strong>${scoreText(pair.sound)}</strong><span>rule-based</span></td>
-    <td class="metric" data-label="Rank score"><strong>${scoreText(pair.overall)}</strong><span>not probability</span></td>
-    <td data-label="Priority"><span class="badge ${escapeHTML(pair.priority)}">${escapeHTML(pair.priority)}</span></td>
-  </tr>`).join("");
-  if (!rows.length) {
-    elements.resultsBody.innerHTML = `<tr><td colspan="6" data-label="Result">No candidate passed the experimental display threshold.</td></tr>`;
-  }
+  renderCandidateBody();
   elements.resultCount.title = usedPrecomputedQueue
     ? "Candidates from the precomputed LASA review queue"
     : "Candidates calculated on demand";
@@ -264,6 +278,7 @@ function compareDrugs(event) {
       ${comparisonMetric("Syllable similarity", scores.syllable, "approximate spoken chunks")}
       ${comparisonMetric("Overall rank", scores.overall, "screening score, not probability")}
     </div>
+    <p class="match-basis-note">Sound match found via <strong>${live.matchBasis === "spelling" ? "the published spelling" : "a localized reading"}</strong>${live.matchBasis === "spelling" ? "" : ` (reading confidence ${scoreText(live.readingConfidence)})`}.</p>
     <p class="comparison-note">${stored
       ? "This pair is present in the precomputed LASA review queue."
       : "This pair is not in the precomputed review queue; the score was calculated on demand using the lightweight rule-based matcher."
@@ -308,6 +323,14 @@ async function loadData() {
 
 elements.modeButtons.forEach(button => button.addEventListener("click", () => switchMode(button)));
 elements.searchForm.addEventListener("submit", searchCandidates);
+elements.resultsHead?.addEventListener("click", event => {
+  const header = event.target.closest("th[data-sort]");
+  if (!header) return;
+  candidateSort.key = header.dataset.sort;
+  elements.resultsHead.querySelectorAll("th[data-sort]").forEach(th =>
+    th.classList.toggle("active", th === header));
+  renderCandidateBody();
+});
 elements.interpretationList.addEventListener("click", event => {
   const button = event.target.closest("button[data-name-index]");
   if (!button) return;

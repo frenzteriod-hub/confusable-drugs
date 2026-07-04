@@ -4,6 +4,12 @@
 // `overallExperimental` is always returned so both can be compared side by side.
 export const USE_EXPERIMENTAL_OVERALL = false;
 
+// Confidence attached to a match that relies on a derived (re-read / misread) path,
+// versus a match on the published spelling (1.0). Exposed as `readingConfidence` — a
+// SEPARATE signal, deliberately NOT folded into the sound score, so a genuine homophone
+// that happens to be spelled differently (Bayoflu / Bioflu) still scores 100% sound-alike.
+export const DERIVED_PATH_WEIGHT = 0.9;
+
 export function normalizeName(value) {
   return String(value || "").toLocaleLowerCase().replace(/[^a-z0-9]+/g, "");
 }
@@ -33,7 +39,14 @@ export function pronunciationPaths(value) {
     .replaceAll("y", "i");
   const paths = [original, nativized, merged, casual];
   for (const path of [...paths]) {
+    // Word-initial i is read as the English letter name /ai/ ("Ibuprofen" -> "aybuprofen").
     if (path.startsWith("i")) paths.push(`ay${path.slice(1)}`);
+    // i before another vowel acts as a glide: "bio" -> "bayo" (English-ish) or "biyo"
+    // (Bisaya glide). Generate both so the lattice can match either reading.
+    if (/i[aeou]/.test(path)) {
+      paths.push(path.replace(/i(?=[aeou])/g, "ay"));
+      paths.push(path.replace(/i(?=[aeou])/g, "iy"));
+    }
   }
   return [...new Set(paths)].filter(Boolean);
 }
@@ -194,6 +207,9 @@ export function scoreNames(firstName, secondName, providedFirstPaths, providedSe
   const firstPaths = providedFirstPaths || pronunciationPaths(firstName);
   const secondPaths = providedSecondPaths || pronunciationPaths(secondName);
   const visual = jaroWinkler(first, second);
+  // sound = true phonetic similarity: the best match across all plausible readings.
+  // Genuine homophones spelled differently (Bayoflu / Bioflu) correctly reach 1.0 —
+  // important for a safety tool, where under-scoring a real homophone hides real risk.
   let sound = 0;
   let selectedFirstPath = first;
   let selectedSecondPath = second;
@@ -207,6 +223,12 @@ export function scoreNames(firstName, secondName, providedFirstPaths, providedSe
       }
     }
   }
+  // Separate reading-basis signal: did the best match use the published spelling, or
+  // only a re-read path? Kept OUT of `sound` so real homophones still score 100%, and
+  // surfaced so a reviewer can see (and filter) matches that depend on a localized reading.
+  const matchedOnSpelling = selectedFirstPath === first && selectedSecondPath === second;
+  const matchBasis = matchedOnSpelling ? "spelling" : "localized-reading";
+  const readingConfidence = matchedOnSpelling ? 1 : DERIVED_PATH_WEIGHT;
   const edit = levenshteinSimilarity(selectedFirstPath, selectedSecondPath);
   const syllable = syllableSimilarity(selectedFirstPath, selectedSecondPath);
   // Additional sound-alike signals, exposed for review and experimentation.
@@ -224,6 +246,8 @@ export function scoreNames(firstName, secondName, providedFirstPaths, providedSe
     syllable,
     phonetic,
     headTail,
+    matchBasis,
+    readingConfidence,
     overall: USE_EXPERIMENTAL_OVERALL ? overallExperimental : overallBase,
     overallExperimental,
   };
