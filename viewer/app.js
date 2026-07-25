@@ -29,7 +29,11 @@ const elements = {
 };
 
 const formatNumber = number => new Intl.NumberFormat("en-PH").format(number);
-const formatScore = number => Number(number).toFixed(3);
+const formatScore = number => (
+  number === null || number === undefined || Number.isNaN(Number(number))
+    ? "—"
+    : Number(number).toFixed(3)
+);
 const escapeHTML = value => String(value)
   .replaceAll("&", "&amp;")
   .replaceAll("<", "&lt;")
@@ -61,11 +65,76 @@ function reasonLabel(reason) {
     edit_similarity: "edit distance",
     orthographic_phonetic_agreement: "spelling + phonetic",
     soundex_exact: "Soundex",
-    filipino_phonology_experimental: "Filipino-aware",
-    pronunciation_lattice_experimental: "pronunciation lattice",
+    filipino_phonology_experimental: "legacy Philippine spelling baseline",
+    pronunciation_lattice_experimental: "legacy pronunciation lattice",
+    pronunciation_lattice_weighted: "weighted pronunciation lattice",
     experimental_multifeature_ensemble: "multi-feature ensemble",
     numeric_strength_or_version_distinction: "numeric distinction ↓",
   }[reason] || reason.replaceAll("_", " ");
+}
+
+function pronunciationProfileStatus(row) {
+  return row.pronunciationProfileStatus || "not_exported";
+}
+
+function pronunciationProfileStatusText(row) {
+  return {
+    profiled: "Profiled in the batch pronunciation lattice; the selected paths and provenance are shown below.",
+    not_profiled_complex_name: "Intentional unprofiled boundary: this complex name exceeded the bounded pronunciation-profile shape, so no selected batch paths exist. It remains spelling-screened only.",
+    not_profiled_no_supported_paths: "No supported batch pronunciation path was produced. This is a data-review boundary, not a browser-pronunciation result.",
+    not_scored_first_pass: "Pronunciation lattice was deliberately deferred during first-pass spelling screening; no selected path was exported for this row.",
+    not_exported: "Pronunciation-profile status was not included in this data export.",
+  }[pronunciationProfileStatus(row)]
+    || `Batch pronunciation status: ${pronunciationProfileStatus(row)}.`;
+}
+
+function selectedPathData(row, side) {
+  return {
+    path: row[`path${side}`] || "",
+    label: row[`pathLabel${side}`] || "",
+    route: row[`pathRoute${side}`] || "",
+    evidence: row[`pathEvidence${side}`] || "",
+    source: row[`pathSource${side}`] || "",
+    cost: row[`pathCost${side}`],
+    coverage: row[`pathCoverage${side}`],
+    ruleIds: row[`pathRuleIds${side}`],
+    ipa: row[`pathIpa${side}`] || "",
+  };
+}
+
+function selectedPathRules(value) {
+  if (Array.isArray(value)) return value.filter(Boolean);
+  return String(value || "").split("|").map(value => value.trim()).filter(Boolean);
+}
+
+function selectedPathText(row, side) {
+  const path = selectedPathData(row, side);
+  if (path.path) return path.path;
+  return {
+    not_profiled_complex_name: "No selected path — intentionally not batch-profiled for this complex name.",
+    not_profiled_no_supported_paths: "No selected path — the batch engine produced no supported path.",
+    not_scored_first_pass: "No selected path — pronunciation scoring was deferred in the first pass.",
+  }[pronunciationProfileStatus(row)] || "No selected path was exported.";
+}
+
+function selectedPathProvenance(row, side) {
+  const path = selectedPathData(row, side);
+  if (!path.path) return selectedPathText(row, side);
+  const rules = selectedPathRules(path.ruleIds);
+  return [
+    path.route,
+    path.evidence,
+    path.source ? `source: ${path.source}` : "source: not exported",
+    path.cost === null || path.cost === undefined ? "" : `cost ${formatScore(path.cost)}`,
+    path.coverage === null || path.coverage === undefined ? "" : `coverage ${formatScore(path.coverage)}`,
+    rules.length ? `rules: ${rules.join(", ")}` : "rules: none recorded",
+  ].filter(Boolean).join(" · ");
+}
+
+function selectedPathIpa(row, side) {
+  const path = selectedPathData(row, side);
+  if (path.ipa) return path.ipa;
+  return path.path ? "IPA not exported." : selectedPathText(row, side);
 }
 
 function indexProducts(products) {
@@ -297,6 +366,8 @@ function showDetails(id) {
   elements.relationshipSummary.innerHTML = `<strong>${escapeHTML(relationship.title)}</strong><span>${escapeHTML(relationship.message)}</span>`;
   elements.productComparison.innerHTML =
     productCard(row.a, row.at, productsA) + productCard(row.b, row.bt, productsB);
+  const pathA = selectedPathData(row, "A");
+  const pathB = selectedPathData(row, "B");
   const details = [
     ["Review classification", classificationLabel(row.classification)],
     ["Classification basis", row.classificationBasis],
@@ -305,21 +376,30 @@ function showDetails(id) {
     ["Jaro-Winkler", formatScore(row.jw)],
     ["Edit similarity", `${formatScore(row.edit)} (${row.distance} edits)`],
     ["Soundex similarity", formatScore(row.soundex)],
-    ["Simple Filipino transform", formatScore(row.filipino)],
-    ["Pronunciation lattice (experimental)", formatScore(row.lattice)],
+    [
+      "Legacy Filipino/Philippine spelling baseline",
+      formatScore(row.legacyFilipino ?? row.filipino),
+    ],
+    ["Pronunciation lattice (cost-weighted)", formatScore(row.lattice)],
+    ["Raw best path similarity", formatScore(row.rawLattice)],
     ["Weighted phoneme alignment", formatScore(row.phoneme)],
     ["Syllable alignment", formatScore(row.syllable)],
     ["Stress-position similarity", formatScore(row.stress)],
     ["Orthographic bigrams", formatScore(row.bigram)],
     ["Fixed-weight ensemble (experimental)", formatScore(row.ensemble)],
     ["Numeric strength/version penalty", `−${formatScore(row.numberPenalty)}`],
-    [`Path A · ${row.pathLabelA}`, row.pathA],
-    [`Path B · ${row.pathLabelB}`, row.pathB],
+    ["Pronunciation-profile status", pronunciationProfileStatusText(row)],
+    [`Path A · ${pathA.label || "no selected path"}`, selectedPathText(row, "A")],
+    ["Path A provenance", selectedPathProvenance(row, "A")],
+    ["Path A IPA", selectedPathIpa(row, "A")],
+    [`Path B · ${pathB.label || "no selected path"}`, selectedPathText(row, "B")],
+    ["Path B provenance", selectedPathProvenance(row, "B")],
+    ["Path B IPA", selectedPathIpa(row, "B")],
     ["Review status", "Unverified—human review required"],
   ];
   elements.detailContent.innerHTML = `<article class="experimental-detail-note">
     <span>Interpretation</span>
-    <strong>Experimental screening features only—these scores are not clinical evidence and have not been validated as accuracy measures.</strong>
+    <strong>Experimental screening features only. ${escapeHTML(pronunciationProfileStatusText(row))} The pronunciation score is cost-weighted, and the raw best path is shown separately so speculative routes are visible. These scores are not clinical evidence.</strong>
   </article>` + details.map(([label, value]) =>
     `<article><span>${escapeHTML(label)}</span><strong>${escapeHTML(value)}</strong></article>`
   ).join("");

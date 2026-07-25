@@ -1,30 +1,50 @@
 {
-  "generated_at": "2026-06-30T19:38:55.525587+00:00",
+  "generated_at": "2026-07-12T12:36:19.072865+00:00",
   "name_count": 25252,
   "source_name_count": 25692,
   "generic_name_count": 3440,
   "brand_name_count": 21812,
-  "algorithmic_candidate_count": 326127,
-  "ranked_review_queue_count": 21340,
-  "probable_source_spelling_variant_count": 662,
+  "algorithmic_candidate_count": 335389,
+  "ranked_review_queue_count": 21727,
+  "review_queue_pronunciation_enriched_count": 21727,
+  "phonetic_promotion_selected_count": 2484,
+  "phonetic_promotion_accepted_count": 242,
+  "phonetic_promotion_eligible_count": 3287,
+  "probable_source_spelling_variant_count": 663,
   "normalization_duplicate_count": 440,
   "candidates_by_mode": {
-    "brand_brand": 284023,
-    "generic_brand": 18951,
-    "generic_generic": 23153
+    "brand_brand": 293398,
+    "generic_brand": 19377,
+    "generic_generic": 22614
   },
   "candidates_by_priority": {
-    "high": 18625,
-    "medium": 57501,
-    "screen": 250001
+    "high": 18907,
+    "medium": 58038,
+    "screen": 258444
   },
-  "blocking_keys": 26617,
-  "unique_pairs_scored": 3154454,
-  "large_blocks_skipped": 0,
+  "blocking_keys": 29514,
+  "unique_pairs_scored": 7070668,
+  "large_blocks_skipped": 19,
   "standard_threshold": 0.84,
+  "legacy_filipino_threshold": 0.86,
   "filipino_threshold": 0.86,
+  "pronunciation_model": {
+    "model_id": "cebuano-pronunciation-lattice-v4",
+    "config_sha256": "f121a5acd39e78682561f314f042655ece3bb2b11dab658bb12ba03e13e1a08a",
+    "provider_status": {
+      "cmudict": "available",
+      "espeak_ng": "available",
+      "epitran": "available",
+      "epitran_eng": "unavailable: lex_lookup not on PATH",
+      "epitran_ceb": "available"
+    },
+    "notes": "CMUdict supplies exact known-word routes. eSpeak NG supplies contextual dictionary/rule G2P for OOV names. Epitran Cebuano remains a separate direct-reading recovery path; English Epitran is used only when Flite lex_lookup is available, and stress is unknown for Epitran paths."
+  },
   "maximum_block_size": 500,
   "review_pairs_per_name": 3,
-  "elapsed_seconds": 1782.804,
+  "phonetic_promotion_pairs_per_name": 2,
+  "maximum_phonetic_promotions": 5000,
+  "pronunciation_scoring_strategy": "first-pass IPA lattice for phonetic-only recall; full IPA evidence attached to selected review rows; exact coarse-IPA screen rows are retained only when their full weighted lattice score promotes them",
+  "elapsed_seconds": 293.499,
   "clinical_status": "potential_lasa_candidates_only; verified_lasa_and_false_positive_require_human_review"
 }

@@ -1,7 +1,12 @@
+import {
+  pronunciationPathsWithG2P,
+  pronunciationPathText,
+} from "./cebuano-core.js?v=20260713-g2p-5";
+
 const PAGE_SIZE = 48;
 const state = {
   products: [], filtered: [], names: [], page: 1, suggestionTimer: null, voiceAlternatives: [],
-  leaflets: null, leafletPromise: null, chatProductRegistration: "",
+  leaflets: null, leafletPromise: null, chatProductRegistration: "", authoritativeNamePaths: new Map(),
 };
 const elements = {
   search: document.querySelector("#product-search"),
@@ -49,27 +54,16 @@ const sortValue = (product, mode) => {
   return (selected || "\uffff").toLocaleLowerCase();
 };
 const normalizeSuggestion = value => String(value || "").toLocaleLowerCase().replace(/[^a-z0-9]+/g, "");
-const nativizeReading = (value, mergeVowels = false) => {
-  let transformed = normalizeSuggestion(value);
-  for (const [source, target] of [
-    ["tion", "syon"], ["sion", "syon"], ["ture", "tyur"], ["ph", "p"],
-    ["th", "t"], ["sh", "s"], ["ch", "ts"], ["qu", "kw"], ["x", "ks"],
-    ["f", "p"], ["v", "b"], ["z", "s"], ["j", "dy"],
-  ]) transformed = transformed.replaceAll(source, target);
-  transformed = transformed.replaceAll("ce", "se").replaceAll("ci", "si").replaceAll("cy", "sy")
-    .replaceAll("c", "k").replaceAll("q", "k")
-    .replaceAll("ge", "dye").replaceAll("gi", "dyi").replaceAll("gy", "dyy");
-  if (mergeVowels) transformed = transformed.replaceAll("e", "i").replaceAll("o", "u");
-  return transformed;
+const namePathKey = (type, normalized) => `${type}:${normalized}`;
+const registeredNamePaths = (name, type) => {
+  const normalized = normalizeSuggestion(name);
+  const batchProfile = state.authoritativeNamePaths.get(namePathKey(type, normalized));
+  // An empty exported path list paired with an explicit profile status is an
+  // intentional batch boundary (for example, a long ingredient string), not
+  // permission to quietly replace it with a browser pronunciation heuristic.
+  if (batchProfile) return batchProfile.paths;
+  return normalized ? [normalized] : [];
 };
-const speechReading = value => nativizeReading(value, true)
-  .replace(/([aeiou])\1+/g, "$1").replace(/h(?=[aeiou])/g, "").replaceAll("y", "i");
-const pronunciationPaths = value => [...new Set([
-  normalizeSuggestion(value),
-  nativizeReading(value),
-  nativizeReading(value, true),
-  speechReading(value),
-])].filter(Boolean);
 function jaroWinkler(first, second) {
   if (first === second) return 1;
   if (!first || !second) return 0;
@@ -94,9 +88,10 @@ function jaroWinkler(first, second) {
   while (prefix < Math.min(4, first.length, second.length) && first[prefix] === second[prefix]) prefix++;
   return jaro + prefix * 0.1 * (1 - jaro);
 }
-function rankedSuggestions(query) {
+async function rankedSuggestions(query) {
   const queries = [query, ...state.voiceAlternatives].filter(Boolean);
-  const queryPaths = [...new Set(queries.flatMap(pronunciationPaths))];
+  const generated = await Promise.all(queries.map(pronunciationPathsWithG2P));
+  const queryPaths = [...new Set(generated.flat().map(pronunciationPathText).filter(Boolean))];
   const standardQuery = normalizeSuggestion(query);
   if (standardQuery.length < 4) return [];
   const ranked = [];
@@ -126,12 +121,12 @@ function updateSuggestion(query) {
   clearTimeout(state.suggestionTimer);
   elements.suggestion.replaceChildren();
   if (!query || state.filtered.length) return;
-  state.suggestionTimer = setTimeout(() => {
-    const suggestions = rankedSuggestions(query);
+  state.suggestionTimer = setTimeout(async () => {
+    const suggestions = await rankedSuggestions(query);
     if (!suggestions.length) return;
     elements.suggestion.innerHTML = `<span>Did you mean</span>
       ${suggestions.map(suggestion => `<button type="button" data-suggestion="${escapeHTML(suggestion.name)}">${escapeHTML(suggestion.name)}</button>`).join("")}
-      <small>registered names · pronunciation-lattice suggestions</small>`;
+      <small>registered names · batch-profile suggestions when available</small>`;
     const emptyState = elements.list.querySelector(".empty-state");
     if (emptyState) {
       emptyState.innerHTML = `<strong>No exact spelling match</strong>
@@ -237,7 +232,7 @@ function productsForChatName(name) {
     || first.r.localeCompare(second.r));
 }
 
-function resolveChatNames(query) {
+async function resolveChatNames(query) {
   const normalized = normalizeSuggestion(query);
   if (!normalized) return [];
   const exact = state.names.filter(name => name.normalized === normalized);
@@ -300,7 +295,7 @@ async function explainChatProduct(product) {
   }
 }
 
-function respondToChat(value) {
+async function respondToChat(value) {
   const query = cleanChatQuery(value);
   const refersToCurrent = /^(?:this|it|this one)$/i.test(query);
   if (refersToCurrent && state.chatProductRegistration) {
@@ -324,7 +319,7 @@ function respondToChat(value) {
     explainChatProduct(exactRegistration);
     return;
   }
-  const names = resolveChatNames(query);
+  const names = await resolveChatNames(query);
   if (!names.length) {
     appendChatMessage("assistant", `<p>I couldn’t find a close registered name for “${escapeHTML(query)}.” Try a shorter brand or generic name, or enter the registration number.</p>`);
     return;
@@ -373,22 +368,57 @@ function loadLeaflets() {
   return state.leafletPromise;
 }
 
+function rebuildNameIndex() {
+  const uniqueNames = new Map();
+  for (const product of state.products) {
+    for (const [name, type] of [[product.b, "brand"], [product.g, "generic"]]) {
+      const normalized = normalizeSuggestion(name);
+      if (!normalized || uniqueNames.has(namePathKey(type, normalized))) continue;
+      uniqueNames.set(namePathKey(type, normalized), {
+        name,
+        type,
+        normalized,
+        paths: registeredNamePaths(name, type),
+      });
+    }
+  }
+  state.names = [...uniqueNames.values()];
+}
+
 function initializeProducts(products) {
   state.products = products.map(product => ({
     ...product,
     _search: [product.r, product.b, product.g, product.s, product.f, product.c, product.m]
       .filter(Boolean).join(" ").toLocaleLowerCase(),
   }));
-  const uniqueNames = new Map();
-  for (const product of products) {
-    for (const [name, type] of [[product.b, "brand"], [product.g, "generic"]]) {
-      const normalized = normalizeSuggestion(name);
-      if (!normalized || uniqueNames.has(`${type}:${normalized}`)) continue;
-      uniqueNames.set(`${type}:${normalized}`, { name, type, normalized, paths: pronunciationPaths(name) });
-    }
-  }
-  state.names = [...uniqueNames.values()];
+  rebuildNameIndex();
   applyFilters();
+}
+
+function loadBatchNamePaths() {
+  return fetch("data/cebuano_name_paths.json")
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then(data => {
+      for (const [type, normalized, paths, profileStatus] of data.names || []) {
+        if (!type || !normalized || !Array.isArray(paths)) continue;
+        state.authoritativeNamePaths.set(namePathKey(type, normalized), {
+          paths,
+          profileStatus: profileStatus || (paths.length ? "profiled" : ""),
+        });
+      }
+      if (state.products.length) {
+        rebuildNameIndex();
+        updateSuggestion(elements.search.value.trim());
+      }
+    })
+    .catch(() => {
+      // The product directory remains usable offline or before a viewer-data
+      // export; in that case registered names keep spelling paths while free
+      // text still uses the contextual browser G2P query route.
+    });
 }
 
 function showProductLoadError(error) {
@@ -403,6 +433,7 @@ if (globalThis.PRODUCT_RECORDS) {
     return response.json();
   }).then(initializeProducts).catch(showProductLoadError);
 }
+void loadBatchNamePaths();
 
 function leafletPanel(leaflet, index, total) {
   const title = total > 1 ? `Leaflet ${index + 1} of ${total}` : "Medicine leaflet";
@@ -525,7 +556,7 @@ elements.chatForm.addEventListener("submit", event => {
   if (!value) return;
   appendChatMessage("user", `<p>${escapeHTML(value)}</p>`);
   elements.chatInput.value = "";
-  respondToChat(value);
+  void respondToChat(value);
 });
 elements.chatMessages.addEventListener("click", event => {
   const nameChoice = event.target.closest("[data-chat-name][data-chat-name-type]");

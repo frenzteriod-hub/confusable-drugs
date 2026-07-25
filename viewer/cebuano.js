@@ -1,9 +1,12 @@
 import {
+  browserPronunciationProfile,
+  decodedPathDetailEntries,
   normalizeName,
-  pronunciationPaths,
+  pronunciationPathsWithG2P,
   scoreNames,
+  syllabify,
   trigrams,
-} from "./cebuano-core.js";
+} from "./cebuano-core.js?v=20260713-g2p-5";
 
 const state = {
   names: [],
@@ -12,6 +15,9 @@ const state = {
   gramIndex: new Map(),
   pairIndex: new Map(),
   adjacency: new Map(),
+  pronunciationModel: null,
+  pathDetailsById: new Map(),
+  pathDetailsPromise: null,
   loaded: false,
 };
 
@@ -37,6 +43,16 @@ const elements = {
   compareButton: document.querySelector("#drug-compare-form button"),
   compareStatus: document.querySelector("#compare-status"),
   comparisonResult: document.querySelector("#comparison-result"),
+  pronunciationPanel: document.querySelector("#pronunciation-mode-panel"),
+  pronunciationForm: document.querySelector("#pronunciation-search-form"),
+  pronunciationQuery: document.querySelector("#pronunciation-query"),
+  pronunciationButton: document.querySelector("#pronunciation-search-form button"),
+  pronunciationStatus: document.querySelector("#pronunciation-status"),
+  pronunciationWorkbench: document.querySelector("#pronunciation-workbench"),
+  pronunciationResults: document.querySelector("#pronunciation-results"),
+  pronunciationCount: document.querySelector("#pronunciation-result-count"),
+  pronunciationList: document.querySelector("#pronunciation-list"),
+  pronunciationDetail: document.querySelector("#pronunciation-detail"),
 };
 
 const escapeHTML = value => String(value || "")
@@ -45,11 +61,42 @@ const escapeHTML = value => String(value || "")
 const scoreText = value => Number(value).toFixed(3);
 const pairKey = (first, second) => first < second ? `${first}:${second}` : `${second}:${first}`;
 
+function profileStatusLabel(status) {
+  return {
+    profiled: "Batch profile available",
+    not_profiled_complex_name: "Not batch-profiled",
+    not_profiled_no_supported_paths: "No batch paths",
+  }[status] || "Batch status unavailable";
+}
+
+function profileStatusNote(status) {
+  return {
+    not_profiled_complex_name: "The batch engine intentionally does not create pronunciation paths for this complex name. It exceeds the bounded name shape used to avoid cross-ingredient readings and path explosion; spelling-based screening still applies.",
+    not_profiled_no_supported_paths: "The name was within the batch-profile bounds, but the batch engine produced no supported pronunciation path. This is a data-review case, not an invitation to substitute a browser reading.",
+  }[status] || "The exported batch-profile status is not available for this name.";
+}
+
+function isIntentionalNoProfile(status) {
+  return status === "not_profiled_complex_name"
+    || status === "not_profiled_no_supported_paths";
+}
+
 function scoreBand(score) {
   if (score >= 0.90) return ["Very high name similarity", "high"];
   if (score >= 0.80) return ["High name similarity", "high"];
   if (score >= 0.70) return ["Moderate name similarity", "medium"];
   return ["Lower name similarity", "low"];
+}
+
+function syllableText(path) {
+  return String(path || "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map(word => {
+      const parts = syllabify(word);
+      return parts.length ? parts.join("-") : word;
+    })
+    .join(" ");
 }
 
 function buildIndexes() {
@@ -94,10 +141,10 @@ function shortlist(query, queryPaths) {
   return [...new Set([...exact, ...indexes])];
 }
 
-function resolveNames(query, limit = 3) {
+async function resolveNames(query, limit = 3) {
   const normalized = normalizeName(query);
   if (normalized.length < 3) return [];
-  const queryPaths = pronunciationPaths(query);
+  const queryPaths = await pronunciationPathsWithG2P(query);
   const seen = new Set();
   return shortlist(query, queryPaths)
     .map(index => {
@@ -196,12 +243,13 @@ function showCandidateResults(targetIndex) {
   elements.results.hidden = false;
 }
 
-function searchCandidates(event) {
+async function searchCandidates(event) {
   event.preventDefault();
   elements.interpretationResults.hidden = true;
   elements.results.hidden = true;
   const query = elements.query.value.trim();
-  const matches = resolveNames(query, 100);
+  elements.searchStatus.textContent = "Analyzing the query with contextual English G2P…";
+  const matches = await resolveNames(query, 100);
   if (!matches.length) {
     elements.searchStatus.innerHTML = `<strong>No likely registered names found.</strong> Try another spelling or a longer part of the medicine name.`;
     return;
@@ -225,13 +273,16 @@ function comparisonMetric(label, score, note) {
   return `<article><span>${escapeHTML(label)}</span><strong>${scoreText(score)}</strong><small>${escapeHTML(note)}</small></article>`;
 }
 
-function compareDrugs(event) {
+async function compareDrugs(event) {
   event.preventDefault();
   elements.comparisonResult.hidden = true;
   const firstValue = elements.firstDrug.value.trim();
   const secondValue = elements.secondDrug.value.trim();
-  const firstMatches = resolveNames(firstValue, 5);
-  const secondMatches = resolveNames(secondValue, 5);
+  elements.compareStatus.textContent = "Analyzing both names with contextual English G2P…";
+  const [firstMatches, secondMatches] = await Promise.all([
+    resolveNames(firstValue, 5),
+    resolveNames(secondValue, 5),
+  ]);
   if (!firstMatches.length || !secondMatches.length) {
     elements.compareStatus.innerHTML = `<strong>One or both entries have no likely registered-name options.</strong> Try a longer or more exact medicine name.`;
     return;
@@ -281,20 +332,216 @@ function compareDrugs(event) {
     <p class="match-basis-note">Sound match found via <strong>${live.matchBasis === "spelling" ? "the published spelling" : "a localized reading"}</strong>${live.matchBasis === "spelling" ? "" : ` (reading confidence ${scoreText(live.readingConfidence)})`}.</p>
     <p class="comparison-note">${stored
       ? "This pair is present in the precomputed LASA review queue."
-      : "This pair is not in the precomputed review queue; the score was calculated on demand using the lightweight rule-based matcher."
+      : "This pair is not in the precomputed review queue; the score was calculated on demand using contextual browser G2P and exported name paths."
     } Similarity alone does not establish a LASA classification.</p>`;
   elements.comparisonResult.hidden = false;
 }
 
+async function searchPronunciations(event) {
+  event.preventDefault();
+  elements.pronunciationWorkbench.hidden = true;
+  elements.pronunciationDetail.hidden = true;
+  const query = elements.pronunciationQuery.value.trim();
+  elements.pronunciationStatus.textContent = "Analyzing the query with contextual English G2P…";
+  const matches = await resolveNames(query, 60);
+  if (!matches.length) {
+    elements.pronunciationStatus.innerHTML = `<strong>No likely registered names found.</strong> Try a longer name, a brand name, or a generic name from the dataset.`;
+    return;
+  }
+  elements.pronunciationStatus.innerHTML = `<strong>“${escapeHTML(query)}” matched ${matches.length} registered-name option${matches.length === 1 ? "" : "s"}.</strong> Click one name to inspect its precomputed batch pronunciation paths and provenance.`;
+  elements.pronunciationCount.textContent = `${matches.length} option${matches.length === 1 ? "" : "s"}`;
+  elements.pronunciationList.innerHTML = matches.map((match, index) => {
+    const possiblePathCount = (match.name.pathDetails || match.name.paths || []).length;
+    const profileStatus = match.name.profileStatus || (possiblePathCount ? "profiled" : "");
+    const pathCountLabel = isIntentionalNoProfile(profileStatus)
+      ? profileStatusLabel(profileStatus)
+      : "Possible paths";
+    return `<li>
+    <span class="interpretation-rank">${index + 1}</span>
+    <div><strong>${escapeHTML(match.name.name)}</strong><small>${escapeHTML(match.name.type)}</small></div>
+    <div class="interpretation-signals">
+      <span><strong>${scoreText(match.scores.visual)}</strong><small>Looks alike</small></span>
+      <span><strong>${scoreText(match.scores.sound)}</strong><small>Sounds alike</small></span>
+      <span><strong>${isIntentionalNoProfile(profileStatus) ? "—" : possiblePathCount}</strong><small>${escapeHTML(pathCountLabel)}</small></span>
+    </div>
+    <button type="button" data-pronunciation-index="${match.index}" aria-pressed="false">Show readings</button>
+  </li>`;
+  }).join("");
+  elements.pronunciationWorkbench.hidden = false;
+}
+
+function routeLabel(route) {
+  return {
+    curated: "Curated pronunciation override",
+    english_cmudict: "CMUdict English pronunciation",
+    english_espeak_ng: "eSpeak NG contextual English pronunciation",
+    english_epitran: "Epitran English pronunciation",
+    english_heuristic: "English spelling fallback",
+    cebuano_epitran_direct: "Epitran Cebuano direct-reading hypothesis",
+    cebuano_epitran_nativized: "Epitran Cebuano nativized direct-reading hypothesis",
+    cebuano_phone_adaptation: "Cebuano-aware phone adaptation",
+    cebuano_grapheme_adaptation: "Letter-aligned Cebuano-aware adaptation",
+    cebuano_direct_spelling: "Cebuano-compatible direct-spelling recovery path",
+    cebuano_legacy_rule: "Legacy spelling-rule baseline",
+    cebuano_spelling_repair: "Cebuano spelling-repair hypothesis",
+    numeric: "Published numeric token",
+  }[route] || route || "Generated path";
+}
+
+async function viewerFallbackPathDetails(name) {
+  return (await browserPronunciationProfile(name.name)).paths;
+}
+
+function pathCostText(path) {
+  if (path.cost === null || path.cost === undefined) return "not available";
+  return Number(path.cost).toFixed(2);
+}
+
+async function loadPathDetails() {
+  if (state.pathDetailsById.size) return state.pathDetailsById;
+  if (!state.pathDetailsPromise) {
+    state.pathDetailsPromise = fetch("data/cebuano_path_details.json")
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then(data => {
+        for (const [id, details] of decodedPathDetailEntries(data)) {
+          state.pathDetailsById.set(id, details);
+        }
+        return state.pathDetailsById;
+      })
+      .catch(error => {
+        state.pathDetailsPromise = null;
+        throw error;
+      });
+  }
+  return state.pathDetailsPromise;
+}
+
+function detailRecord(value) {
+  if (Array.isArray(value)) {
+    return {
+      profile_status: value.length ? "profiled" : "",
+      paths: value,
+      total_path_count: value.length,
+      truncated: false,
+    };
+  }
+  return value && Array.isArray(value.paths) ? value : null;
+}
+
+async function showPronunciationDetail(nameIndex) {
+  const name = state.names[nameIndex];
+  if (!name) return;
+  let profile = detailRecord(name.pathDetails);
+  let detailError = "";
+  let detailMissing = false;
+  const listedProfileStatus = profile?.profile_status || name.profileStatus || "";
+  // The compact catalog payload already records an intentional no-profile
+  // boundary, so avoid downloading the large detail file just to rediscover
+  // it.  A missing detail file is treated separately below.
+  if (!profile && !isIntentionalNoProfile(listedProfileStatus)) {
+    elements.pronunciationStatus.textContent = "Loading batch pronunciation details…";
+    try {
+      const pathDetails = await loadPathDetails();
+      if (pathDetails.has(name.id)) {
+        profile = detailRecord(pathDetails.get(name.id));
+      } else {
+        detailMissing = true;
+      }
+    } catch (error) {
+      detailError = error.message;
+    }
+  }
+  const profileStatus = profile?.profile_status
+    || name.profileStatus
+    || (profile?.paths?.length ? "profiled" : "");
+  const intentionallyUnprofiled = isIntentionalNoProfile(profileStatus);
+  let paths = profile?.paths?.length ? profile.paths : [];
+  if (!paths.length && !intentionallyUnprofiled) {
+    paths = await viewerFallbackPathDetails(name);
+  }
+  const usingBatchProfile = Boolean(profile?.paths?.length);
+  const displayedPathCount = intentionallyUnprofiled
+    ? "Not profiled"
+    : profile?.total_path_count || paths.length;
+  elements.pronunciationList.querySelectorAll("button[data-pronunciation-index]").forEach(button => {
+    const selected = Number(button.dataset.pronunciationIndex) === nameIndex;
+    button.classList.toggle("selected", selected);
+    button.setAttribute("aria-pressed", String(selected));
+    button.textContent = selected ? "Showing" : "Show readings";
+  });
+  elements.pronunciationDetail.innerHTML = `
+    <div class="pronunciation-detail-heading">
+      <div>
+        <p class="eyebrow">${usingBatchProfile
+          ? "Batch pronunciation profile"
+          : intentionallyUnprofiled
+            ? "Batch pronunciation status"
+            : "Batch profile unavailable · contextual browser G2P"}</p>
+        <h3>${escapeHTML(name.name)}</h3>
+        <p>${escapeHTML(name.type)} · normalized as <code>${escapeHTML(name.normalized)}</code></p>
+      </div>
+      <span>${escapeHTML(displayedPathCount)}${intentionallyUnprofiled ? "" : ` possible path${displayedPathCount === 1 ? "" : "s"}`}</span>
+    </div>
+    ${intentionallyUnprofiled ? `<div class="profile-status-card">
+      <strong>${escapeHTML(profileStatusLabel(profileStatus))}</strong>
+      <p>${escapeHTML(profileStatusNote(profileStatus))}</p>
+      <small>No browser preview is shown here because it would not be equivalent to an exported batch profile.</small>
+    </div>` : `<div class="path-grid">
+      ${paths.map((path, index) => {
+        const displayPath = path.display || "(no display form)";
+        const syllables = Array.isArray(path.syllables) && path.syllables.length
+          ? path.syllables.join("-")
+          : path.syllables || syllableText(displayPath);
+        const rules = Array.isArray(path.rules) && path.rules.length
+          ? path.rules.join(", ")
+          : "none recorded";
+        return `<article class="path-card">
+          <span>Path ${index + 1}</span>
+          <strong>${escapeHTML(displayPath)}</strong>
+          <small>IPA: ${escapeHTML(Array.isArray(path.ipa) ? path.ipa.join(" ") : path.ipa || "not available")}</small>
+          <small>Syllable chunks: ${escapeHTML(syllables)}</small>
+          <p>${escapeHTML(path.source || "No source detail was exported.")}</p>
+          <div class="path-tags">
+            <b>${escapeHTML(routeLabel(path.route))}</b>
+            <b>${escapeHTML(path.evidence || "evidence not recorded")}</b>
+            <b>cost ${escapeHTML(pathCostText(path))}</b>
+            ${path.coverage === null || path.coverage === undefined ? "" : `<b>coverage ${escapeHTML(Number(path.coverage).toFixed(2))}</b>`}
+            <b>rules: ${escapeHTML(rules)}</b>
+          </div>
+        </article>`;
+      }).join("")}
+    </div>`}
+    ${profile?.truncated ? `<p class="interpretation-note">The viewer shows the first ${paths.length} route-diverse paths from a ${profile.total_path_count}-path batch profile.</p>` : ""}
+    <p class="interpretation-note">${usingBatchProfile
+      ? "These are batch-generated candidate paths, not official pronunciations. Their route, evidence level, and cost are shown so speculative paths cannot be mistaken for a dictionary or speaker-validated result."
+      : intentionallyUnprofiled
+        ? "This is an explicit batch-engine boundary, not a missing file or a pronunciation finding."
+        : `Batch path details were unavailable${detailMissing ? " for this catalog name" : ""}${detailError ? ` (${escapeHTML(detailError)})` : ""}; the displayed readings are contextual browser-generated hypotheses only.`
+    } A human reviewer still checks the exact brand, generic, strength, and form.</p>`;
+  elements.pronunciationDetail.hidden = false;
+  elements.pronunciationStatus.textContent = usingBatchProfile
+    ? "Batch pronunciation details loaded."
+    : intentionallyUnprofiled
+      ? profileStatusLabel(profileStatus)
+      : "Batch details unavailable; contextual browser G2P shown.";
+  if (window.matchMedia("(max-width: 850px)").matches) {
+    elements.pronunciationDetail.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 function switchMode(button) {
-  const searchMode = button.id === "search-mode-button";
+  const activePanelId = button.getAttribute("aria-controls");
   elements.modeButtons.forEach(item => {
     const active = item === button;
     item.classList.toggle("active", active);
     item.setAttribute("aria-selected", String(active));
   });
-  elements.searchPanel.hidden = !searchMode;
-  elements.comparePanel.hidden = searchMode;
+  [elements.searchPanel, elements.comparePanel, elements.pronunciationPanel].forEach(panel => {
+    panel.hidden = panel.id !== activePanelId;
+  });
 }
 
 async function loadData() {
@@ -302,22 +549,52 @@ async function loadData() {
     const response = await fetch("data/cebuano_tools.json");
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
-    state.names = data.names.map(([id, name, type, normalized, paths], index) => ({
-      id, name, type, normalized, paths, index,
-    }));
-    state.pairs = data.pairs.map(([a, b, visual, sound, edit, syllable, overall, priority]) => ({
-      a, b, visual, sound, edit, syllable, overall, priority,
-    }));
+    state.pronunciationModel = data.pronunciation_model || null;
+    const nameColumns = data.name_columns || [];
+    const nameColumn = column => nameColumns.indexOf(column);
+    const profileStatusColumn = nameColumn("profile_status");
+    const pathDetailsColumn = nameColumn("path_details");
+    state.names = data.names.map(([id, name, type, normalized, paths, ...extra], index) => {
+      const record = [id, name, type, normalized, paths, ...extra];
+      const profileStatus = profileStatusColumn >= 0
+        ? record[profileStatusColumn]
+        : paths?.length ? "profiled" : "";
+      return {
+        id,
+        name,
+        type,
+        normalized,
+        paths: Array.isArray(paths) ? paths : [],
+        profileStatus,
+        pathDetails: pathDetailsColumn >= 0 ? record[pathDetailsColumn] || null : null,
+        index,
+      };
+    });
+    state.pairs = data.pairs.map(pair => {
+      const [a, b, visual, sound] = pair;
+      const modern = pair.length >= 9;
+      const [rawSound, edit, syllable, overall, priority] = modern
+        ? pair.slice(4, 9)
+        : [sound, ...pair.slice(4, 8)];
+      return { a, b, visual, sound, rawSound, edit, syllable, overall, priority };
+    });
     buildIndexes();
     state.loaded = true;
     elements.searchButton.disabled = false;
     elements.compareButton.disabled = false;
+    elements.pronunciationButton.disabled = false;
     elements.searchStatus.textContent = `${state.names.length.toLocaleString("en-PH")} registered names ready.`;
     elements.compareStatus.textContent = "Enter two medicine names to compare.";
+    const englishG2P = state.pronunciationModel?.provider_status?.espeak_ng;
+    const providerNote = englishG2P === "available"
+      ? " eSpeak NG contextual G2P was available for unknown names in this batch."
+      : " eSpeak NG was unavailable for this batch; affected profiles retain explicit fallback provenance.";
+    elements.pronunciationStatus.textContent = `Enter one medicine name to inspect its batch reading paths.${providerNote}`;
   } catch (error) {
     const message = `The Cebuano-aware data could not load: ${error.message}`;
     elements.searchStatus.textContent = message;
     elements.compareStatus.textContent = message;
+    elements.pronunciationStatus.textContent = message;
   }
 }
 
@@ -343,6 +620,12 @@ elements.interpretationList.addEventListener("click", event => {
   showCandidateResults(Number(button.dataset.nameIndex));
 });
 elements.compareForm.addEventListener("submit", compareDrugs);
+elements.pronunciationForm.addEventListener("submit", searchPronunciations);
+elements.pronunciationList.addEventListener("click", event => {
+  const button = event.target.closest("button[data-pronunciation-index]");
+  if (!button) return;
+  void showPronunciationDetail(Number(button.dataset.pronunciationIndex));
+});
 elements.compareStatus.addEventListener("click", event => {
   const button = event.target.closest("button[data-compare-target][data-name-index]");
   if (!button) return;

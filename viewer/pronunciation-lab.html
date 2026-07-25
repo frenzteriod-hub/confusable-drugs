@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pronunciation Lab · PH LASA</title>
+  <link rel="stylesheet" href="styles.css?v=20260712-g2p-2">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Philippine FDA data project</p><h1>Pronunciation Lab</h1></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Pair review</a><a href="cebuano-pairs.html">Cebuano pairs</a><a href="drugs.html">All products</a>
+      <a href="relationships.html">Medicine groups</a><a href="cebuano.html">Cebuano tools</a><a class="active" href="pronunciation-lab.html">Pronunciation lab</a><a href="documentation.html">How it works</a>
+    </nav>
+    <div class="status-pill"><span></span> Validation aid</div>
+  </header>
+
+  <main>
+    <section class="notice" aria-label="Safety notice">
+      <strong>Generated validation aid—not an official pronunciation source.</strong>
+      English G2P and Cebuano-aware paths are hypotheses for review by Cebuano speakers, pharmacists, or thesis validators.
+    </section>
+
+    <section class="page-intro cebuano-intro">
+      <p class="eyebrow">Made-up or proposed medicine names</p>
+      <h2>Generate contextual English and Cebuano/Bisaya reading paths</h2>
+      <p>Use this page for invented drug names, proposed brand names, or validation examples that are not in the PH FDA dataset. A bundled eSpeak NG engine handles English surrounding-letter rules and exceptions; local adaptations remain separately labeled.</p>
+    </section>
+
+    <section class="workspace cebuano-tool">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Free-form name</p>
+          <h2>Possible pronunciation paths</h2>
+          <p class="section-note">The English source path comes from contextual grapheme-to-phoneme analysis, not a five-vowel replacement table. For <code>binary</code>, English remains <code>bayneri</code>; aligning written <code>ar</code> to <code>/ɚ/</code> licenses the separate local hypothesis <code>baynari</code>, while direct <code>binari</code> remains another route. This runs only for the entered name.</p>
+        </div>
+      </div>
+      <form id="lab-form" class="cebuano-form lab-form">
+        <label><span>Drug name</span>
+          <input id="lab-name" type="search" placeholder="e.g. Biozalin, Zyprofen, Angioflo Plus" autocomplete="off" required>
+        </label>
+        <button class="primary-action" type="submit">Generate paths</button>
+      </form>
+      <div class="lab-examples" aria-label="Example names">
+        <button type="button" data-example="binary">binary</button>
+        <button type="button" data-example="basket">basket</button>
+        <button type="button" data-example="ball">ball</button>
+        <button type="button" data-example="late">late</button>
+        <button type="button" data-example="note">note</button>
+        <button type="button" data-example="head">head</button>
+        <button type="button" data-example="idea">idea</button>
+        <button type="button" data-example="could">could</button>
+        <button type="button" data-example="cloud">cloud</button>
+        <button type="button" data-example="Cefuroxime">Cefuroxime</button>
+        <button type="button" data-example="Biozalin">Biozalin</button>
+      </div>
+      <div id="lab-status" class="tool-status" aria-live="polite">Enter any proposed or made-up name.</div>
+      <div id="lab-detail" class="pronunciation-detail lab-detail" hidden></div>
+    </section>
+  </main>
+
+  <script type="module" src="pronunciation-lab.js?v=20260713-g2p-5"></script>
+</body>
+</html>

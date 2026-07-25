@@ -8,7 +8,12 @@ import json
 import re
 from pathlib import Path
 
-from filipino_phonetics import normalize_name, nativize, speech_simplify
+from filipino_phonetics import (
+    normalize_name,
+    pronunciation_input_is_bounded,
+    pronunciation_model_metadata,
+    pronunciation_profile,
+)
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -16,6 +21,7 @@ LASA_DIR = ROOT / "data" / "lasa"
 CANONICAL_DIR = ROOT / "data" / "canonical"
 LEAFLET_DIR = ROOT / "data" / "ph_fda" / "leaflet_extraction"
 OUTPUT_DIR = ROOT / "viewer" / "data"
+VIEWER_PATH_DETAIL_LIMIT = 8
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -50,6 +56,29 @@ def source_anomaly_name_ids(products: list[dict[str, str]]) -> set[str]:
     return anomalies
 
 
+def number_or_none(value: str | None) -> float | None:
+    """Read optional CSV metrics without inventing a value for unknown stress."""
+    if value is None or not str(value).strip():
+        return None
+    return float(value)
+
+
+def display_path_label(value: str) -> str:
+    """Keep legacy labels accurate when exporting an older candidate file."""
+    return value.replace("Filipino", "Legacy Filipino/Philippine")
+
+
+def rule_ids(value: str | None) -> list[str]:
+    """Keep selected rule IDs as structured JSON after their CSV round trip."""
+    if not value:
+        return []
+    return list(
+        dict.fromkeys(
+            item.strip() for item in str(value).split("|") if item.strip()
+        )
+    )
+
+
 def compact_candidate(
     row: dict[str, str], anomaly_name_ids: set[str]
 ) -> dict[str, object]:
@@ -70,18 +99,55 @@ def compact_candidate(
         "edit": float(row["edit_similarity"]),
         "distance": int(row["levenshtein_distance"]),
         "soundex": float(row["soundex_similarity"]),
-        "filipino": float(row["filipino_jaro_winkler"]),
-        "lattice": float(row["pronunciation_lattice_similarity"]),
+        "legacyFilipino": float(
+            row.get("legacy_filipino_jaro_winkler")
+            or row["filipino_jaro_winkler"]
+        ),
+        # ``lattice`` remains the screen's display key, but now contains the
+        # cost-weighted score.  The raw best-path value is retained for audit.
+        "lattice": float(
+            row.get("weighted_lattice_similarity")
+            or row["pronunciation_lattice_similarity"]
+        ),
+        "rawLattice": float(
+            row.get("raw_pronunciation_lattice_similarity")
+            or row["pronunciation_lattice_similarity"]
+        ),
         "phoneme": float(row["weighted_phoneme_similarity"]),
         "syllable": float(row["syllable_similarity"]),
-        "stress": float(row["stress_similarity"]),
+        "stress": number_or_none(row.get("stress_similarity")),
         "bigram": float(row["orthographic_bigram_similarity"]),
         "ensemble": float(row["experimental_ensemble_score"]),
         "numberPenalty": float(row["numeric_distinction_penalty"]),
+        # A review-queue row must say whether its selected paths came from a
+        # completed lattice comparison.  Blank paths alone are ambiguous:
+        # they can mean an intentional complex-name boundary, a deferred
+        # first-pass score, or a stale export.
+        "pronunciationProfileStatus": (
+            row.get("pronunciation_profile_status") or "not_exported"
+        ),
         "pathA": row["pronunciation_path_a"],
         "pathB": row["pronunciation_path_b"],
-        "pathLabelA": row["pronunciation_path_label_a"],
-        "pathLabelB": row["pronunciation_path_label_b"],
+        "pathLabelA": display_path_label(row["pronunciation_path_label_a"]),
+        "pathLabelB": display_path_label(row["pronunciation_path_label_b"]),
+        "pathRouteA": row.get("pronunciation_path_route_a", ""),
+        "pathRouteB": row.get("pronunciation_path_route_b", ""),
+        "pathEvidenceA": row.get("pronunciation_path_evidence_a", ""),
+        "pathEvidenceB": row.get("pronunciation_path_evidence_b", ""),
+        "pathSourceA": row.get("pronunciation_path_source_a", ""),
+        "pathSourceB": row.get("pronunciation_path_source_b", ""),
+        "pathCostA": number_or_none(row.get("pronunciation_path_cost_a")),
+        "pathCostB": number_or_none(row.get("pronunciation_path_cost_b")),
+        "pathCoverageA": number_or_none(
+            row.get("pronunciation_path_coverage_a")
+        ),
+        "pathCoverageB": number_or_none(
+            row.get("pronunciation_path_coverage_b")
+        ),
+        "pathRuleIdsA": rule_ids(row.get("pronunciation_path_rule_ids_a")),
+        "pathRuleIdsB": rule_ids(row.get("pronunciation_path_rule_ids_b")),
+        "pathIpaA": row.get("pronunciation_path_ipa_a", ""),
+        "pathIpaB": row.get("pronunciation_path_ipa_b", ""),
         "reasons": row["candidate_reasons"].split("|"),
         "classification": (
             "spelling_variant_or_probable_typo"
@@ -207,24 +273,62 @@ def write_javascript_data(path: Path, variable: str, value: object) -> None:
     temporary.replace(path)
 
 
-def search_pronunciation_paths(value: str) -> list[str]:
-    paths = [
-        normalize_name(value),
-        nativize(value),
-        nativize(value, merge_vowels=True),
-        speech_simplify(value),
+def compact_pronunciation_paths(
+    value: str,
+) -> tuple[list[str], dict[str, object]]:
+    """Serialize the batch engine's actual paths for catalog names.
+
+    The viewer may still make lightweight paths for free text, but it must not
+    re-label those browser heuristics as the authoritative batch pronunciation
+    analysis for a registered catalog name.
+    """
+    all_paths = pronunciation_profile(value).paths
+    # Long multi-ingredient strings are intentionally left out of the
+    # pronunciation lattice.  Export that decision so the viewer never turns
+    # a deliberate batch boundary into an indistinguishable browser fallback.
+    if all_paths:
+        profile_status = "profiled"
+    elif not pronunciation_input_is_bounded(value):
+        profile_status = "not_profiled_complex_name"
+    else:
+        profile_status = "not_profiled_no_supported_paths"
+    visible_paths = all_paths[:VIEWER_PATH_DETAIL_LIMIT]
+    details = [
+        {
+            "display": path.spelling,
+            "ipa": list(path.phonemes),
+            "syllables": list(path.syllables),
+            "stress": path.stress_index,
+            "label": path.label,
+            "route": path.route,
+            "evidence": path.evidence,
+            "source": path.source,
+            "cost": path.cost,
+            "confidence": path.confidence,
+            "coverage": path.coverage,
+            "rules": list(path.rule_ids),
+            "availability": path.availability,
+            "error": path.error,
+        }
+        for path in visible_paths
     ]
-    for path in list(paths):
-        if path.startswith("i"):
-            paths.append(f"ay{path[1:]}")
-    return list(dict.fromkeys(path for path in paths if path))
+    return (
+        list(dict.fromkeys(path["display"] for path in details if path["display"])),
+        {
+            "profile_status": profile_status,
+            "paths": details,
+            "total_path_count": len(all_paths),
+            "truncated": len(all_paths) > len(visible_paths),
+        },
+    )
 
 
 def compact_cebuano_tools(
     products: list[dict[str, object]],
     candidates: list[dict[str, object]],
     generated_at: str,
-) -> dict[str, object]:
+    pronunciation_model: dict[str, object],
+) -> tuple[dict[str, object], dict[str, object]]:
     names_by_id: dict[str, tuple[str, str]] = {}
     for product in products:
         for identifier, name, name_type in (
@@ -248,22 +352,69 @@ def compact_cebuano_tools(
     name_positions = {
         identifier: index for index, (identifier, _) in enumerate(ordered_names)
     }
-    names = [
-        [
+    names = []
+    path_details = []
+    dictionary_values: dict[str, list[str]] = {
+        "labels": [],
+        "routes": [],
+        "evidence": [],
+        "sources": [],
+        "rules": [],
+        "availability": [],
+    }
+    dictionary_positions: dict[str, dict[str, int]] = {
+        key: {} for key in dictionary_values
+    }
+
+    def dictionary_ref(dictionary: str, value: str) -> int:
+        positions = dictionary_positions[dictionary]
+        if value not in positions:
+            positions[value] = len(dictionary_values[dictionary])
+            dictionary_values[dictionary].append(value)
+        return positions[value]
+
+    def encode_path(path: dict[str, object]) -> list[object]:
+        return [
+            path["display"],
+            " ".join(str(item) for item in path["ipa"]),
+            "-".join(str(item) for item in path["syllables"]),
+            path["stress"],
+            dictionary_ref("labels", str(path["label"])),
+            dictionary_ref("routes", str(path["route"])),
+            dictionary_ref("evidence", str(path["evidence"])),
+            dictionary_ref("sources", str(path["source"])),
+            path["cost"],
+            path["confidence"],
+            path["coverage"],
+            [dictionary_ref("rules", str(rule)) for rule in path["rules"]],
+            dictionary_ref("availability", str(path["availability"])),
+            path["error"],
+        ]
+
+    for identifier, (name, name_type) in ordered_names:
+        paths, details = compact_pronunciation_paths(name)
+        names.append([
             identifier,
             name,
             name_type,
             normalize_name(name),
-            search_pronunciation_paths(name),
-        ]
-        for identifier, (name, name_type) in ordered_names
-    ]
+            paths,
+            details["profile_status"],
+        ])
+        path_details.append([
+            identifier,
+            details["profile_status"],
+            details["total_path_count"],
+            details["truncated"],
+            [encode_path(path) for path in details["paths"]],
+        ])
     pairs = [
         [
             name_positions[str(candidate["aid"])],
             name_positions[str(candidate["bid"])],
             candidate["jw"],
             candidate["lattice"],
+            candidate["rawLattice"],
             candidate["edit"],
             candidate["syllable"],
             candidate["rank"],
@@ -273,14 +424,23 @@ def compact_cebuano_tools(
         if str(candidate["aid"]) in name_positions
         and str(candidate["bid"]) in name_positions
     ]
-    return {
+    tools = {
         "generated_at": generated_at,
-        "name_columns": ["id", "name", "type", "normalized", "paths"],
+        "pronunciation_model": pronunciation_model,
+        "name_columns": [
+            "id",
+            "name",
+            "type",
+            "normalized",
+            "paths",
+            "profile_status",
+        ],
         "pair_columns": [
             "name_a_index",
             "name_b_index",
             "looks_alike",
-            "sounds_alike",
+            "weighted_sounds_alike",
+            "raw_best_sounds_alike",
             "edit_similarity",
             "syllable_similarity",
             "rank_score",
@@ -289,6 +449,38 @@ def compact_cebuano_tools(
         "names": names,
         "pairs": pairs,
     }
+    details = {
+        "generated_at": generated_at,
+        "pronunciation_model": pronunciation_model,
+        "path_detail_limit": VIEWER_PATH_DETAIL_LIMIT,
+        "format": "dictionary_columnar_v1",
+        "name_columns": [
+            "id",
+            "profile_status",
+            "total_path_count",
+            "truncated",
+            "paths",
+        ],
+        "path_columns": [
+            "display",
+            "ipa",
+            "syllables",
+            "stress",
+            "label_ref",
+            "route_ref",
+            "evidence_ref",
+            "source_ref",
+            "cost",
+            "confidence",
+            "coverage",
+            "rule_refs",
+            "availability_ref",
+            "error",
+        ],
+        "dictionaries": dictionary_values,
+        "names": path_details,
+    }
+    return tools, details
 
 
 def main() -> int:
@@ -324,6 +516,9 @@ def main() -> int:
         "normalization_duplicates": len(normalization_duplicates),
         "product_records": len(products),
         "clinical_status": report["clinical_status"],
+        "pronunciation_model": report.get(
+            "pronunciation_model", pronunciation_model_metadata()
+        ),
     }
     write_json(OUTPUT_DIR / "summary.json", summary)
     write_json(OUTPUT_DIR / "review_queue.json", candidates)
@@ -344,9 +539,26 @@ def main() -> int:
         "LEAFLET_RECORDS",
         leaflets,
     )
+    cebuano_tools, cebuano_path_details = compact_cebuano_tools(
+        products,
+        candidates,
+        report["generated_at"],
+        summary["pronunciation_model"],
+    )
+    write_json(OUTPUT_DIR / "cebuano_tools.json", cebuano_tools)
+    write_json(OUTPUT_DIR / "cebuano_path_details.json", cebuano_path_details)
     write_json(
-        OUTPUT_DIR / "cebuano_tools.json",
-        compact_cebuano_tools(products, candidates, report["generated_at"]),
+        OUTPUT_DIR / "cebuano_name_paths.json",
+        {
+            "generated_at": report["generated_at"],
+            "pronunciation_model": summary["pronunciation_model"],
+            "name_columns": ["type", "normalized", "paths", "profile_status"],
+            "names": [
+                [name_type, normalized, paths, profile_status]
+                for _, _, name_type, normalized, paths, profile_status
+                in cebuano_tools["names"]
+            ],
+        },
     )
     print(json.dumps(summary, indent=2))
     return 0

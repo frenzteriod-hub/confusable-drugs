@@ -5,10 +5,14 @@
   "scripts": {
     "scrape:ph-fda": "node scripts/ph_fda_scraper.mjs",
     "test:ph-fda": "node --test tests/ph_fda_scraper.test.mjs",
+    "test:ui": "node --test tests/*.test.mjs",
+    "test": ".venv/bin/python -m unittest discover -s tests -p 'test_*.py' && node --test tests/*.test.mjs",
+    "viewer:vendor": "node scripts/vendor_browser_dependencies.mjs",
     "viewer:data": ".venv/bin/python scripts/export_lasa_viewer_data.py",
     "viewer": "python3 -m http.server 8088 --directory viewer"
   },
   "dependencies": {
+    "phonemizer": "1.2.1",
     "playwright": "^1.55.0"
   }
 }

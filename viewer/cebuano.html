@@ -4,15 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cebuano-aware Tools · PH LASA</title>
-  <link rel="stylesheet" href="styles.css?v=20260702-3">
+  <link rel="stylesheet" href="styles.css?v=20260712-g2p-2">
 </head>
 <body>
   <header class="topbar">
     <div class="brand-mark" aria-hidden="true">Rx</div>
     <div><p class="eyebrow">Philippine FDA data project</p><h1>Cebuano-aware Tools</h1></div>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Pair review</a><a href="drugs.html">All products</a><a href="relationships.html">Medicine groups</a>
-      <a href="filipino.html">Filipino-aware</a><a class="active" href="cebuano.html">Cebuano tools</a>
+      <a href="index.html">Pair review</a><a href="cebuano-pairs.html">Cebuano pairs</a><a href="drugs.html">All products</a><a href="relationships.html">Medicine groups</a>
+      <a class="active" href="cebuano.html">Cebuano tools</a>
+      <a href="pronunciation-lab.html">Pronunciation lab</a>
       <a href="documentation.html">How it works</a>
     </nav>
     <div class="status-pill"><span></span> Experimental</div>
@@ -20,14 +21,14 @@
 
   <main>
     <section class="notice" aria-label="Safety notice">
-      <strong>Rule-based research prototype—not a clinical warning system.</strong>
+      <strong>Experimental review aid—not a clinical warning system.</strong>
       Scores rank name similarity only. They do not prove that two medicines are LASA or that a medication error will occur.
     </section>
 
     <section class="page-intro cebuano-intro">
       <p class="eyebrow">Cebuano-aware · experimental</p>
       <h2>Search how a medicine may be read—even when it is misread</h2>
-      <p>This tool compares the official spelling with internal rule-based reading paths and approximate letter or syllable alignment. It can tolerate selected Bisaya/Cebuano-influenced readings as well as some missing, added or transposed parts of an unfamiliar medicine name. The official drug name is never changed, and internal localized forms are hidden from the user.</p>
+      <p>This tool compares official spelling with exported batch pronunciation paths for registered names. Each shown path carries a route, evidence level, source, IPA, coverage, and cost. Free text uses bundled contextual English G2P plus separately costed Cebuano-aware hypotheses; it can suggest a registered name but does not replace the batch result.</p>
       <div class="callout"><strong>Important limitation:</strong> The rules are pronunciation hypotheses informed by current project research. They have not been validated as a complete model of Cebuano speakers and should only generate candidates for human review.</div>
       <div class="method-cta">
         <div><strong>How are these scores calculated?</strong>
@@ -40,6 +41,7 @@
     <section class="cebuano-mode-switch" role="tablist" aria-label="Cebuano-aware tools">
       <button id="search-mode-button" class="active" type="button" role="tab" aria-selected="true" aria-controls="search-mode-panel">Find confusable drugs</button>
       <button id="compare-mode-button" type="button" role="tab" aria-selected="false" aria-controls="compare-mode-panel">Compare two drugs</button>
+      <button id="pronunciation-mode-button" type="button" role="tab" aria-selected="false" aria-controls="pronunciation-mode-panel">Explore pronunciations</button>
     </section>
 
     <section id="search-mode-panel" class="workspace cebuano-tool" role="tabpanel" aria-labelledby="search-mode-button">
@@ -89,8 +91,32 @@
       <div id="compare-status" class="tool-status" aria-live="polite">Loading the medicine-name index…</div>
       <div id="comparison-result" class="comparison-result" hidden></div>
     </section>
+
+    <section id="pronunciation-mode-panel" class="workspace cebuano-tool" role="tabpanel" aria-labelledby="pronunciation-mode-button" hidden>
+      <div class="section-heading">
+        <div><p class="eyebrow">Mode 3</p><h2>Search one drug and inspect its reading paths</h2>
+          <p class="section-note">Type a brand or generic name, choose the registered medicine, then view its exported batch pronunciation paths and provenance. These are candidate readings, not official pronunciations.</p>
+        </div>
+      </div>
+      <form id="pronunciation-search-form" class="cebuano-form">
+        <label><span>Medicine name</span>
+          <input id="pronunciation-query" type="search" placeholder="e.g. ibuprofen, bioflu, sport" autocomplete="off" required>
+        </label>
+        <button class="primary-action" type="submit" disabled>Find pronunciations</button>
+      </form>
+      <div id="pronunciation-status" class="tool-status" aria-live="polite">Loading the medicine-name index…</div>
+      <div id="pronunciation-workbench" class="pronunciation-workbench" hidden>
+        <div id="pronunciation-results" class="interpretation-results">
+          <div class="result-heading"><div><p class="eyebrow">Registered-name choices</p><h3>Click a drug to show its possible readings</h3></div>
+            <span id="pronunciation-result-count"></span>
+          </div>
+          <ol id="pronunciation-list" class="interpretation-list pronunciation-list"></ol>
+        </div>
+        <div id="pronunciation-detail" class="pronunciation-detail" hidden></div>
+      </div>
+    </section>
   </main>
 
-  <script type="module" src="cebuano.js?v=20260702-1"></script>
+  <script type="module" src="cebuano.js?v=20260713-g2p-5"></script>
 </body>
 </html>

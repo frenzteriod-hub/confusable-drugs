@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cebuano Confusable Pairs · PH LASA</title>
+  <link rel="stylesheet" href="styles.css?v=20260711-epitran-1">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Philippine FDA data project</p><h1>Cebuano Confusable Pairs</h1></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Pair review</a><a class="active" href="cebuano-pairs.html">Cebuano pairs</a><a href="drugs.html">All products</a>
+      <a href="relationships.html">Medicine groups</a><a href="cebuano.html">Cebuano tools</a><a href="pronunciation-lab.html">Pronunciation lab</a><a href="documentation.html">How it works</a>
+    </nav>
+    <div class="status-pill"><span></span> Cebuano screened</div>
+  </header>
+
+  <main>
+    <section class="notice" aria-label="Safety notice">
+      <strong>Cebuano-aware candidate list—not a clinical warning system.</strong>
+      This page shows pairs where a weighted pronunciation route or the legacy Philippine spelling baseline contributed to the match. Human review is still required.
+    </section>
+
+    <section class="page-intro cebuano-intro">
+      <p class="eyebrow">Sound-alike focus</p>
+      <h2>Confusable name pairs filtered for Cebuano-aware signals</h2>
+      <p>The main review queue mixes spelling, Soundex, edit distance, and cost-weighted pronunciation signals. This page narrows the view to pairs touched by a documented pronunciation route, the retained legacy baseline, or the experimental multi-feature score.</p>
+      <div class="method-cta">
+        <div><strong>Need to inspect one medicine first?</strong>
+          <span>Use the pronunciation explorer to inspect exported batch paths, IPA, route, evidence, and cost for a registered medicine.</span>
+        </div>
+        <a href="cebuano.html">Open pronunciation explorer →</a>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Cebuano-only pair review</p>
+          <h2>Confusable name pairs</h2>
+          <p class="section-note">Rows are ranked candidates. A high score means the names deserve review; it does not prove an actual medication error risk.</p>
+        </div>
+      </div>
+
+      <div class="filters cebuano-pair-filters">
+        <label class="search-field"><span>Search either name</span>
+          <input id="cebuano-pair-search" type="search" placeholder="e.g. ibuprofen, bioflu, amlotin">
+        </label>
+        <label><span>Cebuano signal</span>
+          <select id="cebuano-signal-filter">
+            <option value="">All pronunciation signals</option>
+            <option value="transform">Legacy spelling baseline</option>
+            <option value="lattice">Weighted pronunciation lattice</option>
+            <option value="ensemble">Multi-feature ensemble</option>
+          </select>
+        </label>
+        <label><span>Priority</span>
+          <select id="cebuano-priority-filter">
+            <option value="">All priorities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="result-meta">
+        <p><strong id="cebuano-pair-count">0</strong> Cebuano-screened pairs</p>
+        <p id="cebuano-pair-page">Loading…</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="cebuano-pair-table">
+          <thead>
+            <tr>
+              <th>Name A</th><th>Name B</th><th>Best reading paths</th>
+              <th>Looks</th><th>Sounds</th><th>Ensemble</th><th>Signals</th>
+            </tr>
+          </thead>
+          <tbody id="cebuano-pair-results"></tbody>
+        </table>
+        <div id="cebuano-pair-empty" class="empty-state" hidden>
+          <strong>No Cebuano-screened pair matched</strong>
+          <span>Try removing a filter or searching a shorter name.</span>
+        </div>
+      </div>
+
+      <footer class="pagination">
+        <button id="cebuano-pair-previous" type="button">← Previous</button>
+        <button id="cebuano-pair-next" type="button">Next →</button>
+      </footer>
+    </section>
+  </main>
+
+  <dialog id="cebuano-pair-dialog">
+    <form method="dialog"><button class="close-button" aria-label="Close">×</button></form>
+    <p class="eyebrow">Cebuano-screened pair details</p>
+    <h2 id="cebuano-pair-title"></h2>
+    <div id="cebuano-pair-summary" class="relationship-summary"></div>
+    <h3 class="score-heading">Similarity signals</h3>
+    <div id="cebuano-pair-detail" class="detail-grid"></div>
+  </dialog>
+
+  <script src="cebuano-pairs.js?v=20260711-epitran-1"></script>
+</body>
+</html>

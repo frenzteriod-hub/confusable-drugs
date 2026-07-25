@@ -1,21 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How It Works · PH LASA</title><link rel="stylesheet" href="styles.css?v=20260702-1"></head>
+  <title>How It Works · PH LASA</title><link rel="stylesheet" href="styles.css?v=20260712-g2p-2"></head>
 <body>
   <header class="topbar">
     <div class="brand-mark" aria-hidden="true">Rx</div>
     <div><p class="eyebrow">Philippine FDA data project</p><h1>How It Works</h1></div>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Pair review</a><a href="drugs.html">All products</a><a href="relationships.html">Medicine groups</a>
-      <a href="filipino.html">Filipino-aware</a><a href="cebuano.html">Cebuano tools</a><a class="active" href="documentation.html">How it works</a>
+      <a href="index.html">Pair review</a><a href="cebuano-pairs.html">Cebuano pairs</a><a href="drugs.html">All products</a><a href="relationships.html">Medicine groups</a>
+      <a href="cebuano.html">Cebuano tools</a><a href="pronunciation-lab.html">Pronunciation lab</a><a class="active" href="documentation.html">How it works</a>
     </nav>
     <div class="status-pill"><span></span> Beginner guide</div>
   </header>
   <main class="docs-layout">
     <aside class="docs-nav"><strong>On this page</strong><a href="#goal">Project goal</a><a href="#data">Data collected</a>
       <a href="#pipeline">Step by step</a><a href="#algorithms">Algorithms</a><a href="#search-rules">Search transformations</a><a href="#weights">Experimental score</a>
-      <a href="#pages">Why two pair pages?</a><a href="#classifications">Classifications</a><a href="#future">Future experiments</a>
+      <a href="#pages">Pair pages</a><a href="#classifications">Classifications</a><a href="#future">Future experiments</a>
       <a href="#limitations">Limitations</a></aside>
     <article class="docs-content">
       <section id="goal"><p class="eyebrow">Start here</p><h2>Project goal</h2>
@@ -30,8 +30,8 @@
         <li><strong>Clean formatting.</strong><span>Standardize whitespace and capitalization without silently correcting published names.</span></li>
         <li><strong>Create stable entities.</strong><span>Build generic-formulation and brand-name identifiers, linked back to registrations.</span></li>
         <li><strong>Generate possible pairs.</strong><span>Use blocking keys so plausible names are compared without testing every possible combination.</span></li>
-        <li><strong>Build possible pronunciation paths.</strong><span>Keep the published spelling and create controlled Filipino-nativized, vowel-merged, casual-speech and stress variants.</span></li>
-        <li><strong>Calculate similarity signals.</strong><span>Measure spelling, edit distance, phonetic code, syllables, weighted phonemes, stress and letter bigrams.</span></li>
+        <li><strong>Build documented pronunciation paths.</strong><span>Keep English dictionary/G2P, Cebuano direct-reading, and bounded adaptation routes separate; record each path’s IPA, source, evidence, coverage, and cost.</span></li>
+        <li><strong>Calculate similarity signals.</strong><span>Measure spelling, IPA phonemes, IPA-syllable chunks, optional known stress, letter bigrams, and a cost-adjusted pronunciation lattice score.</span></li>
         <li><strong>Separate obvious data cases.</strong><span>Place normalization duplicates and probable spelling/source variants in their own queues.</span></li>
         <li><strong>Human review.</strong><span>Check ingredients, strengths, uses, registrations and external evidence before applying a final label.</span></li>
       </ol></section>
@@ -41,61 +41,44 @@
         <article><h3>Soundex</h3><p>Creates a rough phonetic code. It is useful as a supporting signal, not proof of pronunciation.</p></article>
         <article><h3>Cebuano Editex</h3><p>A phonetic edit distance where substituting within a Cebuano-equivalent letter group (<code>e/i/y</code>, <code>o/u/w</code>, <code>b/v</code>, <code>p/f</code>, <code>c/k/q</code>, <code>s/z</code>, <code>m/n</code>) costs less than an unrelated substitution. Better suited to sound-alike than spelling-oriented measures. Exposed as a signal; not yet blended into the ranking score.</p></article>
         <article><h3>Head/tail (htco)</h3><p>Shared letters in the first two and last two positions, after the Japanese PMDA drug-name similarity index — confusion often concentrates at a name's beginning and ending. Exposed as a supporting signal.</p></article>
-        <article><h3>Pronunciation lattice</h3><p>Creates several controlled reading paths instead of declaring one pronunciation correct. Paths include the published spelling, Filipino nativization, possible <code>e/i</code> and <code>o/u</code> variation, casual-speech simplification and an alternative stress position.</p></article>
-        <article><h3>Heuristic syllabification</h3><p>Splits a comparison form around vowel nuclei, then aligns syllables. This helps inspect chunks of a spoken name rather than comparing letters alone.</p></article>
-        <article><h3>Weighted phoneme alignment</h3><p>Converts each path to a simple phoneme sequence. Controlled pairs such as <code>f/p</code>, <code>v/b</code>, <code>z/s</code>, <code>e/i</code> and <code>o/u</code> receive smaller substitution penalties than unrelated sounds.</p></article>
+        <article><h3>Pronunciation lattice</h3><p>Keeps several costed routes instead of declaring one local pronunciation correct: curated IPA, exact CMUdict entries, eSpeak NG contextual G2P for unknown names, optional English Epitran/Flite, coverage-checked Cebuano Epitran direct reading, and bounded adaptations. <code>ceb-Latn</code> is a spelling-reading hypothesis, not an accent model.</p></article>
+        <article><h3>IPA-syllable alignment</h3><p>Groups IPA segments around vowel nuclei and aligns spoken-like chunks. Stress is used only when a selected source provides it; Epitran stress is unknown rather than guessed.</p></article>
+        <article><h3>Weighted phoneme alignment</h3><p>Compares IPA segments. Controlled pairs such as <code>f/p</code>, <code>v/b</code>, <code>z/s</code>, <code>e/i</code> and <code>o/u</code> receive smaller substitution penalties than unrelated sounds.</p></article>
         <article><h3>Orthographic bigrams</h3><p>Measures overlap between two-character chunks. It preserves a spelling signal alongside the experimental speech features.</p></article>
-        <article><h3>Blocking</h3><p>Groups names by prefixes, suffixes, length and phonetic keys before scoring. This makes a large dataset practical.</p></article>
+        <article><h3>Blocking</h3><p>Groups names by spelling plus coarse IPA-derived prefixes, suffixes, and length buckets before scoring. This lets a phonetically similar but differently spelled pair reach full comparison.</p></article>
       </div></section>
-      <section id="search-rules"><h2>All Products search transformations</h2>
-        <p>The typed search keeps the published spelling and generates additional experimental reading paths for both the user's query and each registered brand or generic name. The table below lists the transformations currently used. Rules are applied in sequence, so a final path may contain more than one change.</p>
-        <div class="callout"><strong>Experimental search aid:</strong> These transformations make approximate names easier to find. They are not universal Cebuano pronunciation rules and have not yet been validated with a Cebuano medicine-pronunciation dataset.</div>
+      <section id="search-rules"><h2>Contextual browser pronunciation</h2>
+        <p>English has more spoken vowels than five vowel letters, and a spelling can change with nearby letters, syllable structure, morphology, or a lexical exception. The browser therefore uses bundled eSpeak NG grapheme-to-phoneme rules instead of trying to maintain one regular expression for every English vowel pattern.</p>
+        <div class="callout"><strong>What “rule-based” means here:</strong> eSpeak NG combines an exception dictionary with ordered rules that inspect preceding and following context. Unknown drug-like names fall through to those general rules. This is broader than a fixed word lookup, but a coined brand still needs speaker or manufacturer validation.</div>
         <div class="table-wrap docs-table-wrap"><table class="transformation-table">
-          <thead><tr><th>Original</th><th>Changed to</th><th>Example</th></tr></thead>
+          <thead><tr><th>Route</th><th>What it represents</th><th><code>binary</code> example</th></tr></thead>
           <tbody>
-            <tr><td data-label="Original"><code>tion</code></td><td data-label="Changed to"><code>syon</code></td><td data-label="Example">medication → medikasyon</td></tr>
-            <tr><td data-label="Original"><code>sion</code></td><td data-label="Changed to"><code>syon</code></td><td data-label="Example">version → bersyon</td></tr>
-            <tr><td data-label="Original"><code>ture</code></td><td data-label="Changed to"><code>tyur</code></td><td data-label="Example">culture → kultyur</td></tr>
-            <tr><td data-label="Original"><code>ph</code></td><td data-label="Changed to"><code>p</code></td><td data-label="Example">pharma → parma</td></tr>
-            <tr><td data-label="Original"><code>th</code></td><td data-label="Changed to"><code>t</code></td><td data-label="Example">thera → tera</td></tr>
-            <tr><td data-label="Original"><code>sh</code></td><td data-label="Changed to"><code>s</code></td><td data-label="Example">sh → s</td></tr>
-            <tr><td data-label="Original"><code>ch</code></td><td data-label="Changed to"><code>ts</code></td><td data-label="Example">chemo → tsemo</td></tr>
-            <tr><td data-label="Original"><code>qu</code></td><td data-label="Changed to"><code>kw</code></td><td data-label="Example">quinine → kwinine</td></tr>
-            <tr><td data-label="Original"><code>x</code></td><td data-label="Changed to"><code>ks</code></td><td data-label="Example">xyl → ksyl</td></tr>
-            <tr><td data-label="Original"><code>f</code></td><td data-label="Changed to"><code>p</code></td><td data-label="Example">flu → plu</td></tr>
-            <tr><td data-label="Original"><code>v</code></td><td data-label="Changed to"><code>b</code></td><td data-label="Example">valsartan → balsartan</td></tr>
-            <tr><td data-label="Original"><code>z</code></td><td data-label="Changed to"><code>s</code></td><td data-label="Example">zine → sine</td></tr>
-            <tr><td data-label="Original"><code>j</code></td><td data-label="Changed to"><code>dy</code></td><td data-label="Example">jesic → dyesic</td></tr>
-            <tr><td data-label="Original"><code>ce</code></td><td data-label="Changed to"><code>se</code></td><td data-label="Example">ce → se</td></tr>
-            <tr><td data-label="Original"><code>ci</code></td><td data-label="Changed to"><code>si</code></td><td data-label="Example">ci → si</td></tr>
-            <tr><td data-label="Original"><code>cy</code></td><td data-label="Changed to"><code>sy</code></td><td data-label="Example">cy → sy</td></tr>
-            <tr><td data-label="Original">remaining <code>c</code></td><td data-label="Changed to"><code>k</code></td><td data-label="Example">co → ko</td></tr>
-            <tr><td data-label="Original">remaining <code>q</code></td><td data-label="Changed to"><code>k</code></td><td data-label="Example">qa → ka</td></tr>
-            <tr><td data-label="Original"><code>ge</code></td><td data-label="Changed to"><code>dye</code></td><td data-label="Example">gesic → dyesic</td></tr>
-            <tr><td data-label="Original"><code>gi</code></td><td data-label="Changed to"><code>dyi</code></td><td data-label="Example">gi → dyi</td></tr>
-            <tr><td data-label="Original"><code>gy</code></td><td data-label="Changed to"><code>dyy</code></td><td data-label="Example">gy → dyy</td></tr>
-            <tr><td data-label="Original"><code>e</code></td><td data-label="Changed to"><code>i</code></td><td data-label="Example">gesic → gisic</td></tr>
-            <tr><td data-label="Original"><code>o</code></td><td data-label="Changed to"><code>u</code></td><td data-label="Example">bio → biu</td></tr>
-            <tr><td data-label="Original">repeated vowels</td><td data-label="Changed to">one vowel</td><td data-label="Example"><code>floo</code> → <code>flo</code></td></tr>
-            <tr><td data-label="Original"><code>h</code> before vowel</td><td data-label="Changed to">removed</td><td data-label="Example"><code>ha</code> → <code>a</code></td></tr>
-            <tr><td data-label="Original"><code>y</code></td><td data-label="Changed to"><code>i</code></td><td data-label="Example"><code>biyo</code> → <code>biio</code></td></tr>
+            <tr><td data-label="Route">English source G2P</td><td data-label="Meaning">Contextual English IPA from CMUdict in the batch or eSpeak NG for an unknown/browser token.</td><td data-label="Example"><code>/b aɪ n ɚ i/</code> → <code>bayneri</code></td></tr>
+            <tr><td data-label="Route">Deterministic letter-aligned reading</td><td data-label="Meaning">For this entered name only, written vowel anchors are paired monotonically with English vowel nuclei. The alignment can skip silent written vowels and recognize vowel-like <code>y</code>. One local reading is emitted even when it confirms the English display; a rare incomplete alignment preserves unmatched source phones and is marked partial. It never branches into every combination.</td><td data-label="Example"><code>i | ar | y ↔ /aɪ | ɚ | i/</code>; aligned <code>ar</code> gives <code>baynari</code></td></tr>
+            <tr><td data-label="Route">Direct-spelling recovery</td><td data-label="Meaning">A reader follows Cebuano-compatible letter values rather than the English source path.</td><td data-label="Example">word-final <code>y → i</code> gives <code>binari</code></td></tr>
           </tbody>
         </table></div>
+        <p>For <code>binary</code>, the browser keeps three routes separate: English source <code>bayneri</code>, the aligned written-<code>a</code> hypothesis <code>baynari</code>, and direct reading <code>binari</code>. The aligned route can fire only after associating <code>/ɚ/</code> with written <code>ar</code>; it cannot change a rhotic written with <code>er</code>, <code>ir</code>, <code>or</code>, or <code>ur</code>. It applies one rule to the entered name and does not regenerate the medicine database.</p>
+        <p>The aligned route also remains visible when no vowel needs changing. Examples include <code>ball → bol</code>, <code>late → leyt</code>, <code>head → hed</code>, and <code>cloud → klawd</code>. Contextual repairs include <code>basket → basket</code>, <code>note → not</code>, <code>topic → topik</code>, <code>model → model</code>, <code>umbrella → ambrela</code>, <code>uranus → yoreynos</code>, and <code>idea → aydiya</code>. Regression cases such as <code>omeprazole</code>, <code>azithromycin</code>, <code>furosemide</code>, and <code>aspirin</code> verify that internal silent vowels or vowel-like <code>y</code> no longer make the local route disappear.</p>
+        <p>The old browser-only word table and normal-path blanket <code>e→i</code>/<code>o→u</code> rewrites were removed. Free-text search, the Pronunciation Lab, product suggestions, and chat name resolution now call the same browser G2P module. Registered-name paths and saved pair scores still come from the richer Python batch lattice and remain authoritative.</p>
       </section>
-      <section id="weights"><h2>How the experimental score is combined</h2>
+      <section id="weights"><h2>How the batch score is combined</h2>
         <p>The dashboard exposes every component so a reviewer can see why a pair surfaced. The weights below are hand-set engineering choices for candidate ordering; they were not learned from labeled errors and must not be interpreted as accuracy or probability.</p>
         <div class="definition-list">
-          <article><h3>Pronunciation-path score</h3><p><strong>58%</strong> weighted phonemes + <strong>32%</strong> syllable alignment + <strong>10%</strong> stress position.</p></article>
-          <article><h3>Multi-feature ensemble</h3><p><strong>42%</strong> path score + <strong>23%</strong> phonemes + <strong>15%</strong> syllables + <strong>12%</strong> bigrams + <strong>8%</strong> stress.</p></article>
+          <article><h3>Raw pronunciation-path score</h3><p>When stress is unknown: <strong>67%</strong> weighted IPA phonemes + <strong>33%</strong> IPA-syllable alignment. When both paths have known stress: <strong>60%</strong> phonemes + <strong>30%</strong> syllables + <strong>10%</strong> stress.</p></article>
+          <article><h3>Cost-adjusted lattice score</h3><p>The selected score is the best raw path-pair value after subtracting a fixed penalty for both path costs. The raw maximum remains visible for audit, but it does not outrank a more credible route just because two speculative paths match.</p></article>
+          <article><h3>Multi-feature ensemble</h3><p><strong>52%</strong> cost-adjusted lattice + <strong>23%</strong> phonemes + <strong>17%</strong> syllables + <strong>8%</strong> spelling bigrams. It is a fixed experimental ranking feature, not a probability.</p></article>
           <article><h3>Numeric distinction penalty</h3><p>When the letter-name base is almost identical but strength or version numbers differ, the final ensemble loses <strong>0.10</strong>; it loses <strong>0.18</strong> when the letter base is exactly equal. Near-identical numeric variants stay in the full screening data but are moved out of the main high/medium review queue.</p></article>
-          <article><h3>Cebuano tools: added signals</h3><p>The Cebuano-aware tools additionally compute a Cebuano-grouped <strong>Editex</strong> phonetic distance and a <strong>head/tail (htco)</strong> feature. These are exposed for review; an optional experimental mode blends Editex into the sound term (<code>overallExperimental</code>) without changing the default ranking. See the Cebuano methodology page for details.</p></article>
+          <article><h3>Browser preview signals</h3><p>The Cebuano tools may show browser-only Editex and head/tail suggestions for free text. They are not the authoritative batch result for a registered medicine name.</p></article>
         </div>
-        <div class="callout"><strong>Why it is called experimental:</strong> no Filipino medicine-name confusion gold set has been used to estimate sensitivity, specificity, precision or recall. The interface therefore says “candidate,” never “verified,” based on this score.</div>
+        <div class="callout"><strong>Why it is called experimental:</strong> no Cebuano medicine-name confusion gold set has been used to estimate sensitivity, specificity, precision or recall. The interface therefore says “candidate,” never “verified,” based on this score.</div>
       </section>
-      <section id="pages"><h2>Why are there two pair pages?</h2>
+      <section id="pages"><h2>How the pair pages fit together</h2>
         <div class="definition-list">
-          <article><h3>Pair Review</h3><p>The complete high/medium human-review queue. Each pair can be retained through spelling, general phonetic, or experimental Filipino-aware evidence. Filipino-aware features already contribute to ranking here.</p></article>
-          <article><h3>Filipino-aware</h3><p>A focused explanation view containing only Pair Review candidates where at least one Filipino-aware signal contributed. It uses the same records and pair IDs; it is not a separate dataset or competing algorithm.</p></article>
+          <article><h3>Pair Review</h3><p>The complete high/medium human-review queue. Each pair can be retained through spelling, general phonetic, or experimental Cebuano-aware evidence.</p></article>
+          <article><h3>Cebuano pairs</h3><p>A filtered pair-review page showing candidates where Cebuano-aware transform, pronunciation lattice, or multi-feature pronunciation signals contributed to the match.</p></article>
+          <article><h3>Cebuano tools</h3><p>A focused workspace for approximate reading search, two-name comparison, and one-drug pronunciation-path exploration. It uses the same official medicine names, but exposes the Cebuano-aware reading-path signals more directly.</p></article>
+          <article><h3>Pronunciation lab</h3><p>A free-form tool for made-up or proposed names. Its bundled eSpeak NG engine generates contextual English IPA, then shows local phone adaptations and direct-spelling recovery as separate, costed hypotheses. It does not claim CMUdict evidence or a verified local pronunciation.</p></article>
         </div>
       </section>
       <section id="classifications"><h2>Review classifications</h2><div class="definition-list">
@@ -107,18 +90,18 @@
       </div></section>
       <section id="future"><h2>Future experiments—not implemented or validated yet</h2>
         <div class="definition-list">
-          <article><h3>Filipino medicine-pronunciation lexicon</h3><p>Collect consented, speaker-provided pronunciations of medicine names instead of relying only on hand-written reading rules.</p></article>
+          <article><h3>Cebuano medicine-pronunciation lexicon</h3><p>Collect consented, speaker-provided pronunciations of medicine names instead of relying only on hand-written reading rules.</p></article>
           <article><h3>Learned ranking weights</h3><p>Replace hand-set weights only after pharmacists create a sufficiently large, consistently labeled review set.</p></article>
           <article><h3>Speech-alternative evaluation</h3><p>Measure whether multiple microphone transcripts improve retrieval without creating too many unrelated suggestions.</p></article>
           <article><h3>Ingredient and product guardrails</h3><p>Use ingredient, strength, route and dosage form to explain product relationships and down-rank obvious same-product/version cases—not to declare LASA automatically.</p></article>
           <article><h3>Uncertainty calibration</h3><p>After validation data exists, convert raw ranking scores into interpretable confidence bands with documented error rates.</p></article>
-          <article><h3>Dialect and speaker variation study</h3><p>Test whether controlled pronunciation paths represent real variation across Filipino speakers without assigning stereotypes to language groups.</p></article>
+          <article><h3>Dialect and speaker variation study</h3><p>Test whether controlled pronunciation paths represent real variation across Cebuano speakers without assigning stereotypes to language groups.</p></article>
         </div>
       </section>
       <section id="limitations"><h2>Limitations and safety rules</h2><ul>
         <li>A high similarity score does not prove clinical confusion.</li><li>The PH FDA source can contain misspellings, reversed fields or missing leaflets.</li>
         <li>OCR text can be wrong and must retain a review flag and page reference.</li><li>An LLM may help organize text but must not invent missing indications or descriptions.</li>
-        <li>Pronunciation paths are hypotheses, not claims about how every Filipino speaker talks.</li><li>The fixed weights are not trained, calibrated or clinically validated.</li>
+        <li>Pronunciation paths are hypotheses, not claims about how every Cebuano speaker talks.</li><li>The fixed weights are not trained, calibrated or clinically validated.</li>
         <li>Pairs are the review unit; groups only summarize multiple pair relationships.</li>
       </ul></section>
     </article>
