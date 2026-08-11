@@ -1,0 +1,25 @@
+/node_modules/
+/data/
+/reports/
+/static_analysis_semgrep_*/
+/supabase/
+/tests/
+
+# Research-only browser files. They contain algorithm rankings or are not used
+# by the blinded validation portal generated in dist/.
+viewer/data/candidate_details/
+viewer/data/candidate_index.json
+viewer/data/cebuano_queue.json
+viewer/data/cebuano_tools.json
+viewer/data/expert_queue.json
+viewer/data/name_products/
+viewer/data/normalization_duplicates.json
+viewer/data/relationship_queue.json
+viewer/data/source_variants.json
+viewer/vendor/
+
+*.csv
+*.docx
+*.pdf
+*.ppt
+*.pptx

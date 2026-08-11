@@ -3,9 +3,21 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:validation": "node scripts/build_validation_site.mjs",
     "scrape:ph-fda": "node scripts/ph_fda_scraper.mjs",
     "test:ph-fda": "node --test tests/ph_fda_scraper.test.mjs",
-    "viewer:data": ".venv/bin/python scripts/export_lasa_viewer_data.py",
+    "candidates": "python3 scripts/build_lasa_candidates.py",
+    "expert:queue": "python3 scripts/rebuild_expert_queue.py",
+    "audit:data": "python3 scripts/audit_drug_names.py",
+    "audit:scores": "python3 scripts/audit_recalculated_scores.py",
+    "audit:validation": "PYTHONPATH=scripts python3 scripts/audit_validation_readiness.py",
+    "scores:dry-run": "python3 scripts/dry_run_recalculate_scores.py",
+    "scores:backfill-history": "PYTHONPATH=scripts python3 scripts/backfill_historical_review_scores.py",
+    "viewer:data": "python3 scripts/export_lasa_viewer_data.py",
+    "reviewer:data": "python3 scripts/export_supabase_review_data.py",
+    "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "test:js": "node --test tests/*.test.mjs",
+    "test": "npm run test:python && npm run test:js",
     "viewer": "python3 -m http.server 8088 --directory viewer"
   },
   "dependencies": {

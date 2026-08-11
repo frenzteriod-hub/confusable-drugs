@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review Cebuano pairs · PH LASA</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="theme-boot.js?v=20260811-1"></script>
+  <link rel="stylesheet" href="styles.css?v=20260811-1">
+</head>
+<body class="auth-pending">
+  <header class="topbar account-topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Blind expert review</p><h1>Cebuano pair review</h1></div>
+    <nav class="site-nav" aria-label="Reviewer navigation"><a href="reviewer-dashboard.html">Dashboard</a><a class="active" href="review.html">Review pairs</a><a href="review.html?status=completed">History</a><button id="review-settings-button" class="nav-settings-button" type="button">Settings</button></nav>
+    <div class="account-menu"><div><strong data-user-name>Reviewer</strong><span>Reviewer</span></div><button type="button" data-sign-out>Sign out</button></div>
+  </header>
+  <main>
+    <section class="notice blind-notice" data-test-account-notice hidden>
+      <strong>Testing account.</strong> Labels saved here are for portal checks and are excluded from expert-validation statistics.
+    </section>
+    <section class="notice blind-notice"><strong>Blind review is active.</strong>No similarity score, rank, threshold, or algorithm recommendation is shown on this page.</section>
+    <section class="page-intro review-intro">
+      <p class="eyebrow">Independent adjudication</p>
+      <h2>Could these two be mixed up in practice?</h2>
+      <p class="review-lede">One decision per pair — written, spoken, or both. If you are unsure, choose <strong>Needs discussion</strong> rather than guessing.</p>
+      <details class="review-guidance">
+        <summary>What counts as confusable</summary>
+        <div>
+          <p><strong>Look-alike</strong> — the two registered spellings could be misread on a label, prescription, or shelf. Judge the names exactly as they are written here.</p>
+          <p><strong>Sound-alike</strong> — the two could be misheard when spoken, either in standard English or in a plausible Cebuano reading.</p>
+          <p>Either one is enough to choose <strong>LASA</strong>. You do not need to say which.</p>
+        </div>
+      </details>
+    </section>
+    <section class="workspace review-workspace">
+      <div class="filters review-filters">
+        <label class="search-field"><span>Search either medicine</span><input id="review-search" type="search" placeholder="Search medicine names…"></label>
+        <label><span>Review status</span><select id="review-status"><option value="pending">Pending</option><option value="completed">Completed</option><option value="all">All pairs</option></select></label>
+        <label><span>Comparison</span><select id="review-mode"><option value="">All types</option><option value="generic_generic">Generic ↔ Generic</option><option value="brand_brand">Brand ↔ Brand</option><option value="generic_brand">Generic ↔ Brand</option></select></label>
+      </div>
+      <div class="result-meta"><p><strong id="review-count">0</strong> matching pairs</p><p id="review-page">Page 1</p></div>
+      <div id="review-list" class="review-list"><p class="loading-message">Loading score-free review queue…</p></div>
+      <footer class="pagination"><button id="review-previous" type="button">← Previous</button><button id="review-next" type="button">Next →</button></footer>
+    </section>
+  </main>
+  <dialog id="review-settings-dialog" class="review-settings-dialog" aria-labelledby="review-settings-title">
+    <form method="dialog"><button class="close-button" type="submit" aria-label="Close review settings">×</button></form>
+    <p class="eyebrow">Reviewer preferences</p>
+    <h2 id="review-settings-title">Review settings</h2>
+    <p class="dialog-subtitle">Saved for this reviewer in this browser. You can change these at any time.</p>
+    <div class="review-setting-list">
+      <label class="review-setting-row"><span><strong>Auto-save labels and notes</strong><small>Selecting a label saves it automatically. Notes save after you pause typing; the manual save button remains available.</small></span><input id="setting-autosave" type="checkbox" role="switch"></label>
+      <label class="review-setting-row"><span><strong>One pair at a time</strong><small>Show one pair with Previous pair and Next pair controls so you do not need to scroll through a long page.</small></span><input id="setting-focus-mode" type="checkbox" role="switch"></label>
+    </div>
+    <p id="review-settings-status" class="settings-save-status" role="status"></p>
+  </dialog>
+  <dialog id="unsaved-review-dialog" class="review-settings-dialog unsaved-review-dialog" aria-labelledby="unsaved-review-title">
+    <p class="eyebrow">Unsaved decision</p>
+    <h2 id="unsaved-review-title">You have not saved this pair</h2>
+    <p class="dialog-subtitle" id="unsaved-review-detail">Your choice on this pair has not been saved yet. Leaving now would discard it.</p>
+    <div class="unsaved-review-actions">
+      <button id="unsaved-save" class="primary-action" type="button">Save and continue</button>
+      <button id="unsaved-discard" type="button">Discard and continue</button>
+      <button id="unsaved-cancel" type="button">Stay on this pair</button>
+    </div>
+  </dialog>
+  <dialog id="medicine-evidence-dialog" class="medicine-evidence-dialog" aria-labelledby="medicine-evidence-title">
+    <form method="dialog"><button class="close-button" type="submit" aria-label="Close medicine details">×</button></form>
+    <p class="eyebrow">Reviewer reference</p>
+    <h2 id="medicine-evidence-title">Medicine details</h2>
+    <p id="medicine-evidence-subtitle" class="dialog-subtitle"></p>
+    <div class="blind-evidence-note"><strong>Blind review remains active.</strong><span>Local registry and leaflet evidence appears inside this site. Use a live FDA link only to double-check something doubtful; no similarity score, rank, threshold, or recommendation is included.</span></div>
+    <p id="medicine-evidence-status" class="evidence-status" role="status"></p>
+    <div id="medicine-evidence-content"></div>
+  </dialog>
+  <script type="module" src="review.js?v=20260811-1"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reviewer dashboard · PH LASA</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="theme-boot.js?v=20260811-1"></script>
+  <link rel="stylesheet" href="styles.css?v=20260811-1">
+</head>
+<body class="auth-pending">
+  <header class="topbar account-topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Expert review portal</p><h1>Reviewer dashboard</h1></div>
+    <nav class="site-nav" aria-label="Reviewer navigation">
+      <a class="active" href="reviewer-dashboard.html">Dashboard</a>
+      <a href="review.html">Review pairs</a>
+    </nav>
+    <div class="account-menu"><div><strong data-user-name>Reviewer</strong><span>Reviewer</span></div><button type="button" data-sign-out>Sign out</button></div>
+  </header>
+  <main>
+    <section class="notice blind-notice" data-test-account-notice hidden>
+      <strong>Testing account.</strong> This activity is excluded from expert-validation progress, agreement, and timing summaries.
+    </section>
+    <section class="welcome-row">
+      <div><p class="eyebrow">Your progress</p><h2>Maayong adlaw, <span data-user-name>Reviewer</span>.</h2><p>Your independent reviews help evaluate which medicine names may be confused when pronounced in Cebuano.</p></div>
+      <a class="primary-link" href="review.html">Continue reviewing →</a>
+    </section>
+    <section class="summary-grid reviewer-summary" aria-label="Review progress summary">
+      <article><span>Completed today</span><strong id="today-count">—</strong><small>labels</small></article>
+      <article class="streak-stat current"><span>Current streak</span><strong><i aria-hidden="true">🔥</i><b id="streak-count">—</b></strong><small>consecutive active days</small></article>
+      <article class="streak-stat longest"><span>Longest streak</span><strong><i aria-hidden="true">★</i><b id="longest-streak-count">—</b></strong><small>personal best</small></article>
+      <article><span>Reviewed in active queue</span><strong id="reviewed-count">—</strong><small id="reviewed-percent">of the queue</small></article>
+      <article><span>Still pending</span><strong id="pending-count">—</strong><small>pairs</small></article>
+    </section>
+    <section class="dashboard-grid">
+      <article class="activity-card">
+        <div class="card-heading"><div><p class="eyebrow">Daily activity</p><h2>Your 12-month review activity</h2></div><span id="activity-total">— labels in 12 months</span></div>
+        <div class="activity-scroll"><div id="activity-months" class="activity-months" aria-hidden="true"></div><div id="activity-grid" class="activity-grid" aria-label="Daily review activity"></div></div>
+        <div class="activity-legend"><span>Less</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>More</span></div>
+        <div class="activity-insights" aria-label="Review timing summary">
+          <span><strong id="average-review-time">—</strong><small>average decision time</small></span>
+          <span><strong id="timed-review-count">—</strong><small>timed labels</small></span>
+          <span><strong id="excluded-review-count">—</strong><small>excluded sessions ≥ 1 hour</small></span>
+        </div>
+      </article>
+      <article class="recent-card">
+        <div class="card-heading"><div><p class="eyebrow">Review history</p><h2>Recently labeled</h2></div><a href="review.html?status=completed">View all</a></div>
+        <div id="recent-reviews" class="recent-list"><p class="loading-message">Loading your reviews…</p></div>
+      </article>
+    </section>
+  </main>
+  <div id="activity-tooltip" class="activity-tooltip" role="tooltip" hidden></div>
+  <script type="module" src="reviewer-dashboard.js?v=20260811-1"></script>
+</body>
+</html>

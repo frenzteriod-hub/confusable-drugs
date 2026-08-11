@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reviewer audit · PH LASA</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="theme-boot.js?v=20260811-1"></script>
+  <link rel="stylesheet" href="styles.css?v=20260811-1">
+</head>
+<body class="auth-pending">
+  <header class="topbar account-topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Study administration</p><h1>Reviewer audit</h1></div>
+    <nav class="site-nav" aria-label="Admin navigation"><a href="admin-dashboard.html">All reviewers</a><a href="index.html">Scoring workspace</a></nav>
+    <div class="account-menu"><div><strong data-user-name>Administrator</strong><span>Admin</span></div><button type="button" data-sign-out>Sign out</button></div>
+  </header>
+  <main>
+    <section class="welcome-row reviewer-audit-welcome">
+      <div><p class="eyebrow">Expert reviewer detail</p><h2 id="reviewer-name">Loading reviewer…</h2><p>Review progress, timing, decisions, written rationale, and admin-only algorithm context.</p></div>
+      <a class="secondary-link" href="admin-dashboard.html">← Back to all reviewers</a>
+    </section>
+
+    <section class="notice blind-notice reviewer-audit-notice" aria-label="Blinding reminder">
+      <strong>Blind review remains preserved.</strong> The algorithm scores below are visible only to administrators and were not shown to the reviewer when the decision was made. Human labels are expert judgments, not automatic clinical confirmation.
+    </section>
+
+    <section class="summary-grid reviewer-audit-summary" aria-label="Reviewer summary">
+      <article><span>Reviewed in active queue</span><strong id="audit-reviewed">—</strong><small id="audit-progress">of the queue</small></article>
+      <article class="streak-stat current"><span>Current streak</span><strong><i aria-hidden="true">🔥</i><b id="audit-current-streak">—</b></strong><small>consecutive active days</small></article>
+      <article class="streak-stat longest"><span>Longest streak</span><strong><i aria-hidden="true">★</i><b id="audit-longest-streak">—</b></strong><small>personal best</small></article>
+      <article><span>Average decision time</span><strong id="audit-average-time">—</strong><small id="audit-timing-count">eligible timed labels</small></article>
+      <article><span>Still pending</span><strong id="audit-pending">—</strong><small>active pairs</small></article>
+    </section>
+
+    <section class="dashboard-grid reviewer-audit-overview">
+      <article class="activity-card">
+        <div class="card-heading"><div><p class="eyebrow">Daily activity</p><h2>12-month labeling activity</h2></div><span id="audit-activity-total">— labels</span></div>
+        <div class="activity-scroll"><div id="audit-activity-months" class="activity-months" aria-hidden="true"></div><div id="audit-activity-grid" class="activity-grid" aria-label="Reviewer daily activity"></div></div>
+        <div class="activity-legend"><span>Less</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>More</span></div>
+      </article>
+      <article class="activity-card">
+        <div class="card-heading"><div><p class="eyebrow">Human decisions</p><h2>Reviewer label distribution</h2></div></div>
+        <div id="audit-label-distribution" class="distribution-list"></div>
+      </article>
+    </section>
+
+    <section class="workspace reviewer-history-card" aria-labelledby="reviewer-history-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Decision audit trail</p><h2 id="reviewer-history-title">Review history and rationale</h2><p class="section-note">This audit trail keeps both current-queue reviews and historical reviews from earlier queues. Each entry clearly identifies which it is and shows the reviewer's saved response beside admin-only scores.</p></div>
+        <span id="audit-history-count" class="interim-badge">— reviews</span>
+      </div>
+      <div class="reviewer-history-filters">
+        <label><span>Search medicine pair</span><input id="audit-history-search" type="search" placeholder="Search either medicine"></label>
+        <label><span>Reviewer label</span><select id="audit-history-label"><option value="">All labels</option><option value="potential_lasa">LASA</option><option value="false_positive">Not LASA</option><option value="needs_discussion">Needs discussion</option></select></label>
+      </div>
+      <div id="audit-history-list" class="reviewer-history-list"><p class="loading-message">Loading reviewer decisions…</p></div>
+      <div class="pagination reviewer-history-pagination"><button id="audit-history-previous" type="button">← Previous</button><span id="audit-history-page">Page 1</span><button id="audit-history-next" type="button">Next →</button></div>
+    </section>
+  </main>
+  <div id="audit-activity-tooltip" class="activity-tooltip" role="tooltip" hidden></div>
+  <script type="module" src="admin-reviewer.js?v=20260811-1"></script>
+</body>
+</html>

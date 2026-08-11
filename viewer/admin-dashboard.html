@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin dashboard · PH LASA</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="theme-boot.js?v=20260811-1"></script>
+  <link rel="stylesheet" href="styles.css?v=20260811-1">
+</head>
+<body class="auth-pending">
+  <header class="topbar account-topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Study administration</p><h1>Review progress</h1></div>
+    <nav class="site-nav" aria-label="Admin navigation"><a class="active" href="admin-dashboard.html">Dashboard</a><a href="index.html">Scoring workspace</a></nav>
+    <div class="account-menu"><div><strong data-user-name>Administrator</strong><span>Admin</span></div><button type="button" data-sign-out>Sign out</button></div>
+  </header>
+  <main>
+    <section class="welcome-row admin-welcome">
+      <div><p class="eyebrow">Region VII expert review</p><h2>Reviewer progress at a glance</h2><p>This dashboard tracks only the active expert queue stored in Supabase, not the larger internal algorithmic shortlist.</p></div>
+      <a class="secondary-link" href="index.html">Open scores and ranking →</a>
+    </section>
+    <section id="queue-sync-notice" class="notice" aria-label="Queue synchronization status" hidden></section>
+    <section class="summary-grid admin-summary" aria-label="Aggregate review summary">
+      <article><span>Active expert pairs</span><strong id="admin-pairs">—</strong><small id="admin-pair-source">live Supabase workload</small></article>
+      <article><span>Active reviewers</span><strong id="admin-reviewers">—</strong><small>accounts</small></article>
+      <article><span>Completed labels</span><strong id="admin-completed">—</strong><small id="admin-target">across all reviewers</small></article>
+      <article><span>Overall progress</span><strong id="admin-progress">—</strong><small>of expected labels</small></article>
+      <article><span>Fully reviewed pairs</span><strong id="admin-overlap">—</strong><small>all 3 reviewers</small></article>
+    </section>
+    <section class="workspace interim-review-card" aria-labelledby="interim-review-title">
+      <div class="section-heading"><div><p class="eyebrow">Preliminary monitoring</p><h2 id="interim-review-title">Interim review snapshot</h2><p class="section-note">This updates as autosaved or manually saved labels arrive. It supports early monitoring only and is not the study’s final conclusion.</p></div><span id="interim-coverage-badge" class="interim-badge">— coverage</span></div>
+      <div class="interim-stat-grid">
+        <article><span>Unanimous completed pairs</span><strong id="interim-unanimous">—</strong><small id="interim-unanimous-rate">of fully reviewed pairs</small></article>
+        <article><span>Majority LASA</span><strong id="interim-potential">—</strong><small id="interim-potential-rate">of fully reviewed pairs</small></article>
+        <article><span>Majority Not LASA</span><strong id="interim-false-positive">—</strong><small id="interim-false-positive-rate">of fully reviewed pairs</small></article>
+        <article><span>No majority / discussion</span><strong id="interim-unresolved">—</strong><small id="interim-unresolved-rate">of fully reviewed pairs</small></article>
+      </div>
+      <div class="interim-conclusion"><strong>Current interpretation</strong><p id="interim-conclusion-text">Waiting for saved expert reviews…</p></div>
+    </section>
+    <section class="workspace admin-progress-card">
+      <div class="section-heading"><div><p class="eyebrow">Individual progress</p><h2>Reviewer completion</h2><p class="section-note">Today uses Philippine time. A pair is complete for a reviewer after their first saved label.</p></div></div>
+      <div class="table-wrap"><table class="progress-table"><thead><tr><th>Reviewer</th><th>Progress</th><th>Completed</th><th>Today</th><th>Streaks</th><th>Avg. decision time</th><th>Last activity</th></tr></thead><tbody id="reviewer-progress"><tr><td colspan="7">Loading progress…</td></tr></tbody></table></div>
+    </section>
+    <section class="dashboard-grid admin-lower-grid">
+      <article class="activity-card"><div class="card-heading"><div><p class="eyebrow">Aggregate status</p><h2>Label distribution</h2></div></div><div id="label-distribution" class="distribution-list"></div></article>
+      <article class="activity-card"><div class="card-heading"><div><p class="eyebrow">Data separation</p><h2>Reviewer blinding</h2></div></div><ul class="protection-list"><li>Reviewer pages query only the score-free review table.</li><li>Score records have an admin-only database policy.</li><li>Each reviewer can read and change only their own labels.</li><li>The browser uses the public anon key—never the service-role key.</li></ul></article>
+    </section>
+  </main>
+  <script type="module" src="admin-dashboard.js?v=20260811-1"></script>
+</body>
+</html>

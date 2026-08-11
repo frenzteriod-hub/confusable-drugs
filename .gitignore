@@ -3,6 +3,10 @@ __pycache__/
 .DS_Store
 node_modules/
 .venv/
+.vercel/
+dist/
+tmp/
+static_analysis_semgrep_*/
 
 # Raw openFDA archives exceed GitHub's normal file size limit.
 drug-drugsfda-*.json

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · PH LASA Review</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="theme-boot.js?v=20260811-1"></script>
+  <link rel="stylesheet" href="styles.css?v=20260811-1">
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-intro">
+      <div class="brand-mark" aria-hidden="true">Rx</div>
+      <p class="eyebrow">Philippine FDA data project</p>
+      <h1>Cebuano LASA<br>review workspace</h1>
+      <p>Secure, independent labeling for the Region VII expert review. Reviewers see medicine names only—never algorithm scores or rank.</p>
+      <div class="privacy-note"><span aria-hidden="true">✓</span><div><strong>Blind expert review</strong><small>Your labels are saved privately and can be revisited at any time.</small></div></div>
+    </section>
+    <section class="login-card">
+      <div class="login-theme-controls" data-theme-controls aria-label="Appearance"></div>
+      <p class="eyebrow">Authorized reviewers</p>
+      <h2>Welcome back</h2>
+      <p class="login-help">Use the email and password provided by the study administrator.</p>
+      <div id="configuration-warning" class="configuration-warning" hidden>
+        <strong>One-time setup needed</strong>
+        <span>Add the Supabase project URL and anon key to <code>supabase-config.js</code>. The service-role key must never go there.</span>
+      </div>
+      <form id="login-form" class="login-form">
+        <label><span>Email address</span><input id="email" type="email" autocomplete="username" required placeholder="reviewer1@example.com"></label>
+        <label><span>Password</span><input id="password" type="password" autocomplete="current-password" required minlength="6" placeholder="Enter your password"></label>
+        <p id="login-error" class="form-error" role="alert" hidden></p>
+        <button class="primary-action login-submit" type="submit">Sign in to review</button>
+      </form>
+      <p class="account-note">Accounts are created by the administrator. Public sign-up is intentionally disabled.</p>
+    </section>
+  </main>
+  <script type="module" src="login.js?v=20260811-1"></script>
+</body>
+</html>
