@@ -6,15 +6,17 @@
   <title>Reviewer dashboard · PH LASA</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <script src="theme-boot.js?v=20260811-1"></script>
-  <link rel="stylesheet" href="styles.css?v=20260812-2">
+  <link rel="stylesheet" href="styles.css?v=20260812-4">
 </head>
 <body class="auth-pending">
   <header class="topbar account-topbar">
     <div class="brand-mark" aria-hidden="true">Rx</div>
-    <div><p class="eyebrow">Expert review portal</p><h1>Reviewer dashboard</h1></div>
+    <div><p class="eyebrow">Blind expert review</p><h1>Cebuano pair review</h1></div>
     <nav class="site-nav" aria-label="Reviewer navigation">
       <a class="active" href="reviewer-dashboard.html">Dashboard</a>
       <a href="review.html">Review pairs</a>
+      <a href="review.html?status=completed">History</a>
+      <button id="review-settings-button" class="nav-settings-button" type="button">Settings</button>
     </nav>
     <div class="account-menu"><div><strong data-user-name>Reviewer</strong><span>Reviewer</span></div><button id="account-settings-button" type="button">Profile</button><button type="button" data-sign-out>Sign out</button></div>
   </header>
@@ -51,6 +53,17 @@
     </section>
   </main>
   <div id="activity-tooltip" class="activity-tooltip" role="tooltip" hidden></div>
+  <dialog id="review-settings-dialog" class="review-settings-dialog" aria-labelledby="review-settings-title">
+    <form method="dialog"><button class="close-button" type="submit" aria-label="Close review settings">×</button></form>
+    <p class="eyebrow">Reviewer preferences</p>
+    <h2 id="review-settings-title">Review settings</h2>
+    <p class="dialog-subtitle">Saved for this reviewer in this browser. These preferences also apply on the Review pairs and History pages.</p>
+    <div class="review-setting-list">
+      <label class="review-setting-row"><span><strong>Auto-save labels and notes</strong><small>Selecting a label saves it automatically. Notes save after you pause typing; the manual save button remains available.</small></span><input id="setting-autosave" type="checkbox" role="switch"></label>
+      <label class="review-setting-row"><span><strong>One pair at a time</strong><small>Show one pair with Previous pair and Next pair controls so you do not need to scroll through a long page.</small></span><input id="setting-focus-mode" type="checkbox" role="switch"></label>
+    </div>
+    <p id="review-settings-status" class="settings-save-status" role="status"></p>
+  </dialog>
   <dialog id="account-settings-dialog" class="review-settings-dialog account-settings-dialog" aria-labelledby="account-settings-title">
     <form method="dialog"><button class="close-button" type="submit" aria-label="Close account settings">×</button></form>
     <p class="eyebrow">Reviewer account</p>
@@ -87,6 +100,6 @@
       </form>
     </section>
   </dialog>
-  <script type="module" src="reviewer-dashboard.js?v=20260812-3"></script>
+  <script type="module" src="reviewer-dashboard.js?v=20260812-4"></script>
 </body>
 </html>

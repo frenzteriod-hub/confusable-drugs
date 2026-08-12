@@ -66,6 +66,9 @@ const timingObserver = "IntersectionObserver" in window ? new IntersectionObserv
 
 const initialStatus = new URLSearchParams(location.search).get("status");
 if (["pending", "completed", "all"].includes(initialStatus)) elements.status.value = initialStatus;
+const historyView = initialStatus === "completed";
+document.querySelector("[data-review-nav]")?.classList.toggle("active", !historyView);
+document.querySelector("[data-history-nav]")?.classList.toggle("active", historyView);
 
 function resetPosition() {
   state.listPage = 1;
@@ -530,4 +533,7 @@ elements.list.addEventListener("click", event => {
 });
 
 applySettingsUI();
+if (new URLSearchParams(location.search).get("settings") === "open" && !elements.settingsDialog.open) {
+  elements.settingsDialog.showModal();
+}
 loadQueue();

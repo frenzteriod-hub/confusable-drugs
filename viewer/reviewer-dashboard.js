@@ -4,11 +4,13 @@ import { activityCalendar, activityLevel, buildDailyCounts, buildDailyReviewActi
 import { formatReviewDuration, includedReviewSeconds, summarizeReviewDurations } from "./modules/review-timing.js?v=20260809-1";
 import { installThemeToggle } from "./modules/theme.js?v=20260811-1";
 import { installAccountSettings } from "./modules/account-settings.js?v=20260812-3";
+import { loadReviewSettings, saveReviewSettings } from "./modules/reviewer-settings.js?v=20260809-1";
 installThemeToggle();
 
 const account = await requireAccount(["reviewer"]);
 installSignOut();
 installAccountSettings({ account, supabase });
+installReviewSettings();
 
 const [{ count: pairCount, error: pairError }, { count: activeReviewedCount, error: activeReviewError }, reviewResult] = await Promise.all([
   supabase.from("review_pairs").select("id", { count: "exact", head: true }).eq("is_active", true),
@@ -46,6 +48,37 @@ document.querySelector("#activity-grid").innerHTML = activity.days.map(day => {
 }).join("");
 
 installActivityTooltip();
+
+function installReviewSettings() {
+  const button = document.querySelector("#review-settings-button");
+  const dialog = document.querySelector("#review-settings-dialog");
+  const autosave = document.querySelector("#setting-autosave");
+  const focusMode = document.querySelector("#setting-focus-mode");
+  const status = document.querySelector("#review-settings-status");
+  let settings = loadReviewSettings(account.user.id);
+
+  const paint = () => {
+    autosave.checked = settings.autosave;
+    focusMode.checked = settings.focusMode;
+    button.classList.toggle("enabled", settings.autosave || settings.focusMode);
+    button.textContent = settings.autosave || settings.focusMode ? "Settings · On" : "Settings";
+  };
+  const persist = () => {
+    settings = { autosave: autosave.checked, focusMode: focusMode.checked };
+    const saved = saveReviewSettings(account.user.id, settings);
+    status.textContent = saved ? "Settings saved for this browser." : "Settings are active, but this browser blocked persistent storage.";
+    paint();
+  };
+
+  button.addEventListener("click", () => {
+    paint();
+    status.textContent = "Changes apply immediately.";
+    if (!dialog.open) dialog.showModal();
+  });
+  autosave.addEventListener("change", persist);
+  focusMode.addEventListener("change", persist);
+  paint();
+}
 
 const recent = document.querySelector("#recent-reviews");
 recent.innerHTML = reviews.filter(review => review.review_pairs).slice(0, 6).map(review => `<article>
