@@ -26,6 +26,7 @@ const publicFiles = [
 ];
 
 const publicModules = [
+  "account-settings.js",
   "admin-score-presentation.js",
   "interim-review.js",
   "medicine-evidence.js",

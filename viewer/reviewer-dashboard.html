@@ -6,7 +6,7 @@
   <title>Reviewer dashboard · PH LASA</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <script src="theme-boot.js?v=20260811-1"></script>
-  <link rel="stylesheet" href="styles.css?v=20260811-1">
+  <link rel="stylesheet" href="styles.css?v=20260812-2">
 </head>
 <body class="auth-pending">
   <header class="topbar account-topbar">
@@ -16,7 +16,7 @@
       <a class="active" href="reviewer-dashboard.html">Dashboard</a>
       <a href="review.html">Review pairs</a>
     </nav>
-    <div class="account-menu"><div><strong data-user-name>Reviewer</strong><span>Reviewer</span></div><button type="button" data-sign-out>Sign out</button></div>
+    <div class="account-menu"><div><strong data-user-name>Reviewer</strong><span>Reviewer</span></div><button id="account-settings-button" type="button">Profile</button><button type="button" data-sign-out>Sign out</button></div>
   </header>
   <main>
     <section class="notice blind-notice" data-test-account-notice hidden>
@@ -51,6 +51,42 @@
     </section>
   </main>
   <div id="activity-tooltip" class="activity-tooltip" role="tooltip" hidden></div>
-  <script type="module" src="reviewer-dashboard.js?v=20260811-1"></script>
+  <dialog id="account-settings-dialog" class="review-settings-dialog account-settings-dialog" aria-labelledby="account-settings-title">
+    <form method="dialog"><button class="close-button" type="submit" aria-label="Close account settings">×</button></form>
+    <p class="eyebrow">Reviewer account</p>
+    <h2 id="account-settings-title">Account settings</h2>
+    <p class="dialog-subtitle">Update the name shown in the portal, verified sign-in email, or private password.</p>
+    <section class="account-settings-section" aria-labelledby="profile-name-title">
+      <h3 id="profile-name-title">Displayed name</h3>
+      <form id="display-name-form" class="account-settings-form">
+        <label><span>Professional display name</span><input id="account-display-name" name="display_name" type="text" maxlength="100" autocomplete="name" required></label>
+        <button class="primary-action" type="submit">Save display name</button>
+        <p id="display-name-status" class="settings-save-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section class="account-settings-section" aria-labelledby="email-change-title">
+      <h3 id="email-change-title">Change sign-in email</h3>
+      <form id="email-change-form" class="account-settings-form">
+        <p class="account-field-note">Current email: <strong id="account-current-email"></strong></p>
+        <label><span>New email address</span><input id="account-new-email" name="new_email" type="email" maxlength="254" autocomplete="email" required></label>
+        <p class="account-field-note">Use an inbox you can open. Supabase may ask you to confirm the current and new inboxes. Keep using the current email until confirmation is complete.</p>
+        <button class="primary-action" type="submit">Change email</button>
+        <p id="email-change-status" class="settings-save-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section class="account-settings-section" aria-labelledby="password-change-title">
+      <h3 id="password-change-title">Change password</h3>
+      <form id="password-change-form" class="account-settings-form">
+        <div class="account-password-grid">
+          <label><span>New password</span><input id="account-new-password" name="new_password" type="password" minlength="8" autocomplete="new-password" required></label>
+          <label><span>Confirm new password</span><input id="account-confirm-password" name="confirm_password" type="password" minlength="8" autocomplete="new-password" required></label>
+        </div>
+        <p class="account-field-note">Use at least 8 characters. Your password is sent directly to the secure authentication service and is never displayed in the portal.</p>
+        <button class="primary-action" type="submit">Change password</button>
+        <p id="password-change-status" class="settings-save-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </dialog>
+  <script type="module" src="reviewer-dashboard.js?v=20260812-2"></script>
 </body>
 </html>

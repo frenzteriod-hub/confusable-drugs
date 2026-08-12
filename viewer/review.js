@@ -5,6 +5,7 @@ import { loadReviewSettings, saveReviewSettings } from "./modules/reviewer-setti
 import { createReviewTimingTracker, formatReviewDuration, includedReviewSeconds } from "./modules/review-timing.js?v=20260809-1";
 import { decisionPayload, savedDecision } from "./modules/review-decision.js?v=20260809-2";
 import { installThemeToggle } from "./modules/theme.js?v=20260811-1";
+import { installAccountSettings } from "./modules/account-settings.js?v=20260812-2";
 installThemeToggle();
 
 const PAGE_SIZE = 12;
@@ -28,6 +29,7 @@ const state = {
   sessionReviewed: 0,
 };
 installSignOut();
+installAccountSettings({ account, supabase });
 
 const elements = {
   search: document.querySelector("#review-search"),

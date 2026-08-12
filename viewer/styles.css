@@ -47,6 +47,12 @@
   --panel-veil: rgba(255, 255, 255, .52);
   --edge: #b9d7ca;
   --body-glow: #dff0e8;
+  --activity-0: #e4ebe7;
+  --activity-0-border: #87988f;
+  --activity-1: #c9e6d8;
+  --activity-2: #81c7a8;
+  --activity-3: #3a9a72;
+  --activity-4: #176b50;
 }
 
 /* Dark theme. Set by modules/theme.js on <html data-theme>, applied from an
@@ -79,6 +85,12 @@
   --panel-translucent: rgba(11, 12, 15, .78);
   --panel-veil: rgba(255, 255, 255, .035);
   --body-glow: transparent;  /* no coloured wash behind the page */
+  --activity-0: #30353e;
+  --activity-0-border: #626d7d;
+  --activity-1: #24483b;
+  --activity-2: #2f7458;
+  --activity-3: #39a477;
+  --activity-4: #3ddc97;
 }
 
 * { box-sizing: border-box; }
@@ -1218,22 +1230,23 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
   min-width: 0;
   min-height: 0;
   padding: 0;
-  border: 0;
+  border: 1px solid var(--activity-0-border);
   border-radius: var(--r-xs);
-  background: var(--paper);
+  background: var(--activity-0);
 }
 .activity-grid .activity-day { cursor: pointer; }
-.activity-grid .activity-day:hover { box-shadow: 0 0 0 2px rgba(22, 115, 82, .3); transform: scale(1.12); }
+.activity-grid .activity-day:hover { box-shadow: 0 0 0 2px color-mix(in srgb, var(--green) 45%, transparent); transform: scale(1.18); }
 .activity-legend i {
   width: 12px;
   height: 12px;
+  border: 1px solid var(--activity-0-border);
   border-radius: var(--r-xs);
-  background: var(--paper);
+  background: var(--activity-0);
 }
-[data-level="1"] { background: var(--panel) !important; }
-[data-level="2"] { background: #81c7a8 !important; }
-[data-level="3"] { background: #3a9a72 !important; }
-[data-level="4"] { background: var(--green) !important; }
+.activity-grid [data-level="1"], .activity-legend [data-level="1"] { border-color: var(--activity-1); background: var(--activity-1); }
+.activity-grid [data-level="2"], .activity-legend [data-level="2"] { border-color: var(--activity-2); background: var(--activity-2); }
+.activity-grid [data-level="3"], .activity-legend [data-level="3"] { border-color: var(--activity-3); background: var(--activity-3); }
+.activity-grid [data-level="4"], .activity-legend [data-level="4"] { border-color: var(--activity-4); background: var(--activity-4); }
 .activity-legend { padding: 8px 22px 12px; display: flex; align-items: center; justify-content: flex-end; gap: 5px; color: var(--muted); font-size: var(--t-xs); }
 .activity-insights {
   padding: 13px 22px 18px;
@@ -1416,6 +1429,19 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
 .review-setting-row input:checked::before { transform: translateX(20px); }
 .review-setting-row input:focus-visible { outline: 3px solid rgba(23, 107, 80, .18); outline-offset: 2px; }
 .settings-save-status { min-height: 18px; margin: 13px 2px 0; color: var(--green); font-size: var(--t-xs); font-weight: 750; }
+.settings-save-status[data-kind="error"] { color: var(--red); }
+.settings-save-status[data-kind="pending"] { color: var(--muted); }
+.account-settings-dialog { width: min(720px, calc(100% - 30px)); }
+.account-settings-section { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.account-settings-section h3 { margin: 0 0 12px; font: 600 20px Georgia, serif; }
+.account-settings-form { display: grid; gap: 12px; }
+.account-settings-form label > span { display: block; margin-bottom: 6px; color: var(--muted); font-size: var(--t-xs); font-weight: 850; letter-spacing: .05em; text-transform: uppercase; }
+.account-settings-form input { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--r-sm); color: var(--ink); background: var(--panel); font: inherit; }
+.account-settings-form input:focus { outline: 3px solid rgba(23, 107, 80, .14); border-color: var(--green); }
+.account-settings-form .primary-action { width: max-content; min-height: 42px; }
+.account-password-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.account-field-note { margin: -2px 0 0; color: var(--muted); font-size: var(--t-xs); line-height: 1.5; overflow-wrap: anywhere; }
+.account-field-note strong { color: var(--ink); }
 .review-pair-card {
   margin: 16px 0;
   padding: 18px;
@@ -1894,6 +1920,7 @@ dialog::backdrop { background: rgba(15, 31, 25, .45); backdrop-filter: blur(3px)
   .focus-review-workspace .pagination button { min-width: 0; flex: 1; }
   .review-settings-dialog { width: calc(100% - 16px); padding: 20px 14px; border-radius: var(--r-lg); }
   .review-settings-dialog h2 { font-size: var(--t-xl); }
+  .account-password-grid { grid-template-columns: 1fr; }
   .review-setting-row { align-items: flex-start; gap: 12px; }
   .review-setting-row input { height: 26px; }
   .review-pair-card { padding: 14px; border-radius: var(--r-md); }
