@@ -1,4 +1,4 @@
-import { escapeHTML, installSignOut, requireAccount } from "./auth.js?v=20260809-1";
+import { escapeHTML, installSignOut, requireAccount } from "./auth.js?v=20260812-3";
 import { supabase } from "./supabase-client.js?v=20260809-1";
 import {
   activityCalendar,
@@ -20,6 +20,7 @@ import {
   scoreRecordStatus,
 } from "./modules/admin-score-presentation.js?v=20260809-1";
 import { installThemeToggle } from "./modules/theme.js?v=20260811-1";
+import { reviewerLabelDistribution, reviewerLabelText } from "./modules/review-decision.js?v=20260812-3";
 installThemeToggle();
 
 const PAGE_SIZE = 20;
@@ -83,16 +84,8 @@ function renderActivity(rows) {
 }
 
 function renderLabelDistribution(rows) {
-  const labels = [
-    [row => row.look_alike === true && row.sound_alike === true, "Both look- and sound-alike"],
-    [row => row.look_alike === true && row.sound_alike === false, "Look-alike only"],
-    [row => row.look_alike === false && row.sound_alike === true, "Sound-alike only"],
-    [row => row.look_alike === false && row.sound_alike === false, "Neither channel"],
-    [row => row.label === "needs_discussion", "Needs discussion"],
-    [row => row.look_alike == null && row.sound_alike == null && row.label !== "needs_discussion", "Old single-label response"],
-  ];
-  document.querySelector("#audit-label-distribution").innerHTML = labels.map(([matches, title]) => {
-    const count = rows.filter(matches).length;
+  const labels = reviewerLabelDistribution(rows);
+  document.querySelector("#audit-label-distribution").innerHTML = labels.map(({ count, title }) => {
     const percent = rows.length ? Math.round(count / rows.length * 100) : 0;
     return `<div><span><strong>${title}</strong><small>${count.toLocaleString("en-PH")} decisions</small></span><div class="distribution-track"><i style="width:${percent}%"></i></div><b>${percent}%</b></div>`;
   }).join("");
@@ -277,11 +270,7 @@ function formatSignedScore(value) {
   return Number.isFinite(score) ? `${score >= 0 ? "+" : ""}${score.toFixed(3)}` : "—";
 }
 
-function channelLabelText(review) { return labelText(review.label); }
-
-function labelText(label) {
-  return { potential_lasa: "LASA", false_positive: "Not LASA", needs_discussion: "Needs discussion" }[label] || label;
-}
+function channelLabelText(review) { return reviewerLabelText(review.label); }
 
 function modeText(mode) {
   return { generic_generic: "Generic ↔ Generic", brand_brand: "Brand ↔ Brand", generic_brand: "Generic ↔ Brand" }[mode] || mode;

@@ -1,4 +1,4 @@
-import { escapeHTML, installSignOut, requireAccount } from "./auth.js?v=20260809-2";
+import { escapeHTML, installSignOut, requireAccount } from "./auth.js?v=20260812-3";
 import { supabase } from "./supabase-client.js?v=20260809-1";
 import { buildInterimReviewStats } from "./modules/interim-review.js?v=20260809-1";
 import { buildDailyCounts, calculateLongestStreak, calculateStreak, dayKey } from "./modules/review-stats.js?v=20260809-2";

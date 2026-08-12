@@ -1,11 +1,11 @@
-import { escapeHTML, installSignOut, requireAccount } from "./auth.js?v=20260809-2";
+import { escapeHTML, installSignOut, requireAccount } from "./auth.js?v=20260812-3";
 import { supabase } from "./supabase-client.js?v=20260809-1";
 import { showMedicineComparison, showMedicineEvidence } from "./modules/medicine-evidence.js?v=20260811-1";
 import { loadReviewSettings, saveReviewSettings } from "./modules/reviewer-settings.js?v=20260809-1";
 import { createReviewTimingTracker, formatReviewDuration, includedReviewSeconds } from "./modules/review-timing.js?v=20260809-1";
-import { decisionPayload, savedDecision } from "./modules/review-decision.js?v=20260809-2";
+import { decisionPayload, savedDecision } from "./modules/review-decision.js?v=20260812-3";
 import { installThemeToggle } from "./modules/theme.js?v=20260811-1";
-import { installAccountSettings } from "./modules/account-settings.js?v=20260812-2";
+import { installAccountSettings } from "./modules/account-settings.js?v=20260812-3";
 installThemeToggle();
 
 const PAGE_SIZE = 12;
@@ -320,7 +320,7 @@ async function saveReview(card, { automatic = false } = {}) {
   const status = card.querySelector(".save-status");
   const button = card.querySelector(".save-review");
   if (!values) {
-    status.textContent = "Choose LASA, Not LASA, or Needs discussion. For LASA, also choose why.";
+    status.textContent = "Choose LASA, Not LASA, or Needs discussion.";
     status.classList.add("error");
     return;
   }

@@ -1,4 +1,4 @@
-import { destinationForRole, getCurrentAccount } from "./auth.js?v=20260809-1";
+import { destinationForRole, getCurrentAccount } from "./auth.js?v=20260812-3";
 import { isSupabaseConfigured, supabase } from "./supabase-client.js?v=20260809-1";
 import { installThemeToggle } from "./modules/theme.js?v=20260811-1";
 installThemeToggle();
@@ -21,12 +21,13 @@ form.addEventListener("submit", async event => {
   errorMessage.hidden = true;
   submit.disabled = true;
   submit.textContent = "Signing in…";
-  const email = document.querySelector("#email").value.trim();
+  const login = document.querySelector("#login-name").value.trim().toLowerCase();
+  const email = login.includes("@") ? login : `${login}@cebuano-lasa.local`;
   const password = document.querySelector("#password").value;
   const { error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) {
     errorMessage.textContent = error.message === "Invalid login credentials"
-      ? "The email or password is incorrect. Please try again."
+      ? "The username or password is incorrect. Please try again."
       : error.message;
     errorMessage.hidden = false;
     submit.disabled = false;

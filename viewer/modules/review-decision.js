@@ -22,3 +22,18 @@ export function decisionPayload(decision) {
   if (decision !== "lasa") return null;
   return { label: "potential_lasa", lookAlike: null, soundAlike: null };
 }
+
+export function reviewerLabelText(label) {
+  return { potential_lasa: "LASA", false_positive: "Not LASA", needs_discussion: "Needs discussion" }[label] || label;
+}
+
+export function reviewerLabelDistribution(rows) {
+  return [
+    { label: "potential_lasa", title: "LASA" },
+    { label: "false_positive", title: "Not LASA" },
+    { label: "needs_discussion", title: "Needs discussion" },
+  ].map(item => ({
+    ...item,
+    count: rows.filter(row => row.label === item.label).length,
+  }));
+}

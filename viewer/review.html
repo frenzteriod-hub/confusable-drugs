@@ -59,7 +59,7 @@
     <form method="dialog"><button class="close-button" type="submit" aria-label="Close account settings">×</button></form>
     <p class="eyebrow">Reviewer account</p>
     <h2 id="account-settings-title">Account settings</h2>
-    <p class="dialog-subtitle">Update the name shown in the portal, verified sign-in email, or private password.</p>
+    <p class="dialog-subtitle">Update the name shown in the portal, your login username, or your private password.</p>
     <section class="account-settings-section" aria-labelledby="profile-name-title">
       <h3 id="profile-name-title">Displayed name</h3>
       <form id="display-name-form" class="account-settings-form">
@@ -68,14 +68,14 @@
         <p id="display-name-status" class="settings-save-status" role="status" aria-live="polite"></p>
       </form>
     </section>
-    <section class="account-settings-section" aria-labelledby="email-change-title">
-      <h3 id="email-change-title">Change sign-in email</h3>
-      <form id="email-change-form" class="account-settings-form">
-        <p class="account-field-note">Current email: <strong id="account-current-email"></strong></p>
-        <label><span>New email address</span><input id="account-new-email" name="new_email" type="email" maxlength="254" autocomplete="email" required></label>
-        <p class="account-field-note">Use an inbox you can open. Supabase may ask you to confirm the current and new inboxes. Keep using the current email until confirmation is complete.</p>
-        <button class="primary-action" type="submit">Change email</button>
-        <p id="email-change-status" class="settings-save-status" role="status" aria-live="polite"></p>
+    <section class="account-settings-section" aria-labelledby="username-change-title">
+      <h3 id="username-change-title">Change login username</h3>
+      <form id="username-change-form" class="account-settings-form">
+        <p class="account-field-note">Current username: <strong id="account-current-username"></strong></p>
+        <label><span>New username</span><input id="account-new-username" name="new_username" type="text" minlength="3" maxlength="40" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
+        <p class="account-field-note">This is a login name, not an inbox. Changing it does not send an email, OTP, or confirmation link.</p>
+        <button class="primary-action" type="submit">Change username</button>
+        <p id="username-change-status" class="settings-save-status" role="status" aria-live="polite"></p>
       </form>
     </section>
     <section class="account-settings-section" aria-labelledby="password-change-title">
@@ -110,6 +110,6 @@
     <p id="medicine-evidence-status" class="evidence-status" role="status"></p>
     <div id="medicine-evidence-content"></div>
   </dialog>
-  <script type="module" src="review.js?v=20260812-2"></script>
+  <script type="module" src="review.js?v=20260812-3"></script>
 </body>
 </html>

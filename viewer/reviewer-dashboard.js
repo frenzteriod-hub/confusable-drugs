@@ -1,9 +1,9 @@
-import { escapeHTML, installSignOut, requireAccount } from "./auth.js?v=20260809-2";
+import { escapeHTML, installSignOut, requireAccount } from "./auth.js?v=20260812-3";
 import { supabase } from "./supabase-client.js?v=20260809-1";
 import { activityCalendar, activityLevel, buildDailyCounts, buildDailyReviewActivity, calculateLongestStreak, calculateStreak, dayKey } from "./modules/review-stats.js?v=20260809-2";
 import { formatReviewDuration, includedReviewSeconds, summarizeReviewDurations } from "./modules/review-timing.js?v=20260809-1";
 import { installThemeToggle } from "./modules/theme.js?v=20260811-1";
-import { installAccountSettings } from "./modules/account-settings.js?v=20260812-2";
+import { installAccountSettings } from "./modules/account-settings.js?v=20260812-3";
 installThemeToggle();
 
 const account = await requireAccount(["reviewer"]);

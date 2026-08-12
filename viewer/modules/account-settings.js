@@ -11,15 +11,17 @@ export function displayNameError(value) {
   return "";
 }
 
-export function normalizeEmail(value) {
+export function normalizeUsername(value) {
   return String(value ?? "").trim().toLowerCase();
 }
 
-export function emailChangeError(value, currentEmail = "") {
-  const email = normalizeEmail(value);
-  if (!email) return "Enter the new email address.";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return "Enter a valid email address.";
-  if (email === normalizeEmail(currentEmail)) return "Enter a different email address.";
+export function usernameChangeError(value, currentUsername = "") {
+  const username = normalizeUsername(value);
+  if (!username) return "Enter the username you want to use.";
+  if (!/^[a-z0-9][a-z0-9._-]{2,39}$/.test(username)) {
+    return "Use 3–40 letters, numbers, dots, underscores, or hyphens, starting with a letter or number.";
+  }
+  if (username === normalizeUsername(currentUsername)) return "Enter a different username.";
   return "";
 }
 
@@ -46,24 +48,24 @@ export function installAccountSettings({ account, supabase }) {
   const nameForm = document.querySelector("#display-name-form");
   const nameInput = document.querySelector("#account-display-name");
   const nameStatus = document.querySelector("#display-name-status");
-  const emailForm = document.querySelector("#email-change-form");
-  const currentEmail = document.querySelector("#account-current-email");
-  const newEmail = document.querySelector("#account-new-email");
-  const emailStatus = document.querySelector("#email-change-status");
+  const usernameForm = document.querySelector("#username-change-form");
+  const currentUsername = document.querySelector("#account-current-username");
+  const newUsername = document.querySelector("#account-new-username");
+  const usernameStatus = document.querySelector("#username-change-status");
   const passwordForm = document.querySelector("#password-change-form");
   const password = document.querySelector("#account-new-password");
   const confirmation = document.querySelector("#account-confirm-password");
   const passwordStatus = document.querySelector("#password-change-status");
 
-  if (!button || !dialog || !nameForm || !emailForm || !passwordForm) return;
+  if (!button || !dialog || !nameForm || !usernameForm || !passwordForm) return;
 
   nameInput.value = account.profile.display_name;
-  currentEmail.textContent = account.user.email || "Unavailable";
+  currentUsername.textContent = account.profile.username || "Unavailable";
 
   button.addEventListener("click", () => {
     nameInput.value = account.profile.display_name;
     setStatus(nameStatus, "", "success");
-    setStatus(emailStatus, "", "success");
+    setStatus(usernameStatus, "", "success");
     setStatus(passwordStatus, "", "success");
     if (!dialog.open) dialog.showModal();
   });
@@ -101,34 +103,34 @@ export function installAccountSettings({ account, supabase }) {
     setStatus(nameStatus, "Display name saved.");
   });
 
-  emailForm.addEventListener("submit", async event => {
+  usernameForm.addEventListener("submit", async event => {
     event.preventDefault();
-    const email = normalizeEmail(newEmail.value);
-    const validationError = emailChangeError(email, account.user.email);
+    const username = normalizeUsername(newUsername.value);
+    const validationError = usernameChangeError(username, account.profile.username);
     if (validationError) {
-      setStatus(emailStatus, validationError, "error");
-      newEmail.focus();
+      setStatus(usernameStatus, validationError, "error");
+      newUsername.focus();
       return;
     }
 
-    setBusy(emailForm, true);
-    setStatus(emailStatus, "Requesting email change…", "pending");
-    const { data, error } = await supabase.auth.updateUser({ email });
-    setBusy(emailForm, false);
+    setBusy(usernameForm, true);
+    setStatus(usernameStatus, "Changing username…", "pending");
+    const { data, error } = await supabase.rpc("change_own_username", { requested_username: username });
+    setBusy(usernameForm, false);
 
     if (error) {
-      setStatus(emailStatus, `Could not request the email change. ${error.message}`, "error");
+      const message = /already in use|duplicate key/i.test(error.message)
+        ? "That username is already in use. Choose another one."
+        : error.message;
+      setStatus(usernameStatus, `Could not change the username. ${message}`, "error");
       return;
     }
 
-    newEmail.value = "";
-    if (normalizeEmail(data.user?.email) === email) {
-      account.user.email = data.user.email;
-      currentEmail.textContent = data.user.email;
-      setStatus(emailStatus, "Sign-in email changed successfully.");
-    } else {
-      setStatus(emailStatus, "Confirmation sent. Follow the instructions from Supabase before using the new email to sign in.");
-    }
+    account.profile.username = normalizeUsername(data || username);
+    currentUsername.textContent = account.profile.username;
+    newUsername.value = "";
+    await supabase.auth.refreshSession();
+    setStatus(usernameStatus, `Username changed to ${account.profile.username}. No email or OTP confirmation is needed.`);
   });
 
   passwordForm.addEventListener("submit", async event => {

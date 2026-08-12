@@ -12,7 +12,7 @@ export async function getCurrentAccount() {
 
   const { data: profile, error: profileError } = await supabase
     .from("profiles")
-    .select("id, display_name, role, is_test_account")
+    .select("id, display_name, username, role, is_test_account")
     .eq("id", session.user.id)
     .single();
   if (profileError) throw profileError;
