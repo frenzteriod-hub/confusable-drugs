@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive preview · Cebuano LASA Review</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="theme-boot.js?v=20260811-1"></script>
+  <link rel="stylesheet" href="styles.css?v=20260813-4">
+</head>
+<body class="demo-page">
+  <header class="topbar demo-topbar">
+    <a class="demo-brand" href="demo.html" aria-label="Cebuano LASA review interactive preview"><span class="brand-mark" aria-hidden="true">Rx</span><span><small>Public interactive preview</small><strong>Cebuano LASA review</strong></span></a>
+    <div class="demo-header-actions"><div data-theme-controls aria-label="Appearance"></div><a class="secondary-link" href="login.html">Authorized sign in</a></div>
+  </header>
+
+  <main class="demo-main">
+    <section class="demo-hero demo-role-hero">
+      <div>
+        <p class="eyebrow">Explore the research workspace</p>
+        <h1>See what medicine-pair validation feels like</h1>
+        <p>Choose a perspective and explore a safe simulation of the Cebuano-context LASA study. The computer creates a candidate queue; licensed experts independently determine whether the names may be confused.</p>
+        <div class="demo-role-picker" role="group" aria-label="Choose a demo perspective">
+          <button class="demo-role-button is-selected" type="button" data-demo-role="reviewer"><span aria-hidden="true">✓</span><strong>Reviewer view</strong><small>Judge one candidate pair at a time</small></button>
+          <button class="demo-role-button" type="button" data-demo-role="admin"><span aria-hidden="true">◎</span><strong>Administrator view</strong><small>Monitor the validation workload</small></button>
+        </div>
+      </div>
+      <aside class="demo-safety-card">
+        <p class="eyebrow">Safe simulation</p>
+        <strong>120 fictional candidate pairs</strong>
+        <ul><li>No real validation pair is included.</li><li>No score, rank, formula, weight, or algorithm recommendation is exposed.</li><li>Nothing is sent to the database or counted in the study.</li></ul>
+      </aside>
+    </section>
+
+    <section class="demo-simulation" aria-labelledby="simulation-title">
+      <div class="demo-simulation-heading">
+        <div><p class="eyebrow">Interactive workspace</p><h2 id="simulation-title">Reviewer perspective</h2><p id="simulation-description">Practice the same score-blind decision flow used by an expert reviewer.</p></div>
+        <span class="demo-research-badge">Fictional data · session only</span>
+      </div>
+
+      <div id="demo-reviewer-view" class="demo-role-view">
+        <div class="demo-mini-header"><div><span class="brand-mark" aria-hidden="true">Rx</span><div><small>Blind expert review</small><strong>Candidate-pair workspace</strong></div></div><nav aria-label="Reviewer preview navigation"><button class="is-active" type="button">Review pairs</button><button id="demo-history-button" type="button">History <span id="demo-history-count">0</span></button></nav></div>
+        <div class="demo-preview-notice"><strong>Score-blind preview.</strong> You see names and simulated product evidence only—never algorithm values or rankings.</div>
+        <div class="demo-review-layout">
+          <article class="demo-review-card">
+            <div class="demo-pair-meta"><span id="demo-pair-number">Pair 1 of 120</span><span id="demo-pair-type">Brand ↔ Brand</span></div>
+            <div class="demo-pair-names"><div><small>Medicine A</small><strong id="demo-name-a">Simu-Alvena A</strong></div><span aria-hidden="true">↔</span><div><small>Medicine B</small><strong id="demo-name-b">Simu-Alvina A</strong></div></div>
+            <button id="demo-evidence-button" class="demo-evidence-button" type="button">View simulated product evidence</button>
+            <fieldset class="demo-decision-options">
+              <legend>Your practice decision</legend>
+              <label><input type="radio" name="demo-label" value="lasa"><span><strong>LASA</strong><small>The pair may be confused.</small></span></label>
+              <label><input type="radio" name="demo-label" value="not_lasa"><span><strong>Not LASA</strong><small>The names are sufficiently distinct.</small></span></label>
+              <label><input type="radio" name="demo-label" value="discussion"><span><strong>Needs discussion</strong><small>More evidence or expert discussion is needed.</small></span></label>
+            </fieldset>
+            <label class="demo-comment"><span>Optional comment</span><textarea id="demo-comment" rows="3" placeholder="Record the reason for your practice decision"></textarea></label>
+            <div class="demo-save-row"><label class="demo-autosave"><input id="demo-autosave" type="checkbox" checked><span>Autosave in this preview</span></label><span id="demo-save-status" role="status" aria-live="polite">Choose a label to continue</span></div>
+            <div class="demo-pair-navigation"><button id="demo-previous-pair" type="button">← Previous</button><button id="demo-save-button" type="button">Save practice decision</button><button id="demo-next-pair" class="primary-action" type="button">Next pair →</button></div>
+          </article>
+
+          <aside class="demo-review-sidebar">
+            <p class="eyebrow">Practice progress</p>
+            <div class="demo-progress-ring" id="demo-progress-ring"><strong id="demo-reviewed-count">0</strong><span>of 120 reviewed</span></div>
+            <dl><div><dt>LASA</dt><dd id="demo-lasa-count">0</dd></div><div><dt>Not LASA</dt><dd id="demo-not-lasa-count">0</dd></div><div><dt>Needs discussion</dt><dd id="demo-discussion-count">0</dd></div></dl>
+            <div id="demo-history-panel" class="demo-history-panel"><strong>Recent practice decisions</strong><p id="demo-empty-history">No decisions yet.</p><ol id="demo-history-list"></ol></div>
+          </aside>
+        </div>
+      </div>
+
+      <div id="demo-admin-view" class="demo-role-view" hidden>
+        <div class="demo-mini-header"><div><span class="brand-mark" aria-hidden="true">Rx</span><div><small>Administrator preview</small><strong>Validation monitoring</strong></div></div><nav aria-label="Administrator preview navigation"><button class="is-active" type="button">Dashboard</button><button id="demo-candidates-button" type="button">Candidate pairs</button></nav></div>
+        <div class="demo-preview-notice"><strong>Public-safe administrator preview.</strong> The real secured administrator account has additional research tools; this simulation intentionally omits all scoring and ranking information.</div>
+        <div class="demo-admin-stats">
+          <article><span>Simulated candidate pairs</span><strong>120</strong><small>fictional preview queue</small></article>
+          <article><span>Demo reviewers</span><strong>3</strong><small>independent perspectives</small></article>
+          <article><span>Expected decisions</span><strong>360</strong><small>120 × 3 reviewers</small></article>
+          <article><span>Completed decisions</span><strong id="demo-admin-completed">249</strong><small id="demo-admin-coverage">69% of expected</small></article>
+        </div>
+        <div class="demo-admin-grid">
+          <section class="demo-admin-panel"><p class="eyebrow">Individual progress</p><h3>Reviewer completion</h3><div id="demo-reviewer-progress"></div></section>
+          <section class="demo-admin-panel"><p class="eyebrow">Human decisions</p><h3>Label distribution</h3><div id="demo-label-distribution"></div><p class="demo-panel-note">These are simulated human labels—not algorithm classifications.</p></section>
+        </div>
+        <section id="demo-candidate-table-panel" class="demo-admin-panel demo-candidate-panel">
+          <div class="demo-table-heading"><div><p class="eyebrow">Shared workload</p><h3>Fictional candidate pairs</h3></div><label><span>Search demo candidates</span><input id="demo-candidate-search" type="search" placeholder="Search either fictional name"></label></div>
+          <div class="demo-table-wrap"><table><thead><tr><th>Candidate pair</th><th>Type</th><th>Reviews received</th><th>Current agreement</th><th></th></tr></thead><tbody id="demo-candidate-rows"></tbody></table></div>
+          <div class="demo-table-pagination"><span id="demo-table-summary">Showing 1–8 of 120</span><div><button id="demo-table-previous" type="button">← Previous</button><button id="demo-table-next" type="button">Next →</button></div></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="demo-explainer" aria-labelledby="demo-about-title">
+      <p class="eyebrow">What the complete study does</p><h2 id="demo-about-title">From FDA-derived names to expert reference labels</h2>
+      <div class="demo-principle-grid"><article><span class="demo-channel-tag">1</span><strong>Generate candidates</strong><p>The research pipeline retrieves potentially confusable registered names while keeping written and spoken evidence separate.</p></article><article><span class="demo-channel-tag">2</span><strong>Review independently</strong><p>All three experts receive the same score-free sample and choose LASA, Not LASA, or Needs discussion.</p></article><article><span class="demo-channel-tag">3</span><strong>Evaluate afterward</strong><p>Only after independent review are expert labels compared with the hidden algorithm ranking for research evaluation.</p></article></div>
+      <div class="notice blind-notice"><strong>Candidate does not mean confirmed LASA.</strong> A pair remains a screening candidate until documented expert adjudication supplies the reference label.</div>
+    </section>
+
+    <section class="demo-limitations" aria-labelledby="demo-boundary-title"><div><p class="eyebrow">Public-demo boundary</p><h2 id="demo-boundary-title">What is deliberately not included</h2></div><ul><li>Real expert-validation candidates, progress, comments, and identities.</li><li>Algorithm scores, formulas, weights, ranks, thresholds, strata, and recommendations.</li><li>The complete Philippine FDA-derived product directory; the reviewer preview shows only fictional evidence for the current pair.</li><li>Database writes, authentication, exports, and administrator-only research records.</li></ul><div class="demo-hero-actions"><a class="primary-link" href="#simulation-title">Return to the interactive preview</a><a class="secondary-link" href="login.html">Authorized sign in</a></div></section>
+  </main>
+
+  <dialog id="demo-evidence-dialog" class="demo-evidence-dialog">
+    <form method="dialog"><button class="demo-dialog-close" aria-label="Close simulated product evidence">×</button></form>
+    <p class="eyebrow">Simulated product evidence</p><h2 id="demo-evidence-title">Compare both fictional medicines</h2><p>This preview imitates the in-site evidence panel. Every record below is fictional and exists only in this browser session.</p>
+    <div id="demo-evidence-records" class="demo-evidence-records"></div>
+    <div class="demo-evidence-disclaimer"><strong>Demo records only.</strong> Authorized reviewers use locally collected FDA-derived records and may optionally open the live FDA portal when verification remains uncertain.</div>
+  </dialog>
+
+  <script type="module" src="demo.js?v=20260813-3"></script>
+</body>
+</html>

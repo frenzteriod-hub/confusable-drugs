@@ -12,6 +12,8 @@ const publicFiles = [
   "theme-boot.js",
   "login.html",
   "login.js",
+  "demo.html",
+  "demo.js",
   "auth.js",
   "supabase-client.js",
   "supabase-config.js",
