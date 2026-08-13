@@ -834,6 +834,19 @@ input:focus, select:focus {
   background: var(--green-soft);
   font-size: var(--t-sm);
 }
+.reviewer-search-suggestion { flex-wrap: wrap; }
+.reviewer-search-suggestion button {
+  padding: 5px 9px;
+  border: 1px solid var(--edge);
+  border-radius: var(--r-pill);
+  color: var(--green);
+  background: var(--paper);
+  font-size: var(--t-xs);
+  font-weight: 800;
+}
+.reviewer-search-suggestion button:hover,
+.reviewer-search-suggestion button:focus-visible { border-color: var(--green); outline: none; }
+.reviewer-search-suggestion small { width: 100%; }
 .search-suggestion button {
   padding: 2px 4px;
   border: 0;

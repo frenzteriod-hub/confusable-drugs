@@ -10,8 +10,10 @@
 viewer/data/candidate_details/
 viewer/data/candidate_index.json
 viewer/data/cebuano_queue.json
-viewer/data/cebuano_tools.json
-viewer/data/expert_queue.json
+# The build step regenerates the score-free reviewer search index from these;
+# they remain absent from the published dist/ output.
+!viewer/data/cebuano_tools.json
+!viewer/data/expert_queue.json
 viewer/data/name_products/
 viewer/data/normalization_duplicates.json
 viewer/data/relationship_queue.json

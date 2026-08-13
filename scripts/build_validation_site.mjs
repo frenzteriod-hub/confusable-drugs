@@ -36,8 +36,10 @@ const publicModules = [
   "review-timing.js",
   "reviewer-settings.js",
   "similarity.js",
+  "speech-search.js",
   "theme.js",
   "validation-accounts.js",
+  "reviewer-search.js",
 ];
 
 const evidenceDirectories = ["leaflet_records", "product_details"];
@@ -80,6 +82,7 @@ await mkdir(output, { recursive: true });
 for (const file of publicFiles) await copy(file);
 for (const moduleName of publicModules) await copy(`modules/${moduleName}`);
 await copy("data/product_directory.json");
+await copy("data/reviewer_search_names.json");
 for (const directory of evidenceDirectories) await copy(`data/${directory}`);
 
 const summary = JSON.parse(await readFile(path.join(source, "data/summary.json"), "utf8"));
@@ -109,6 +112,15 @@ for (const relative of forbiddenPublicAssets) {
   } catch (error) {
     if (error.code !== "ENOENT") throw error;
   }
+}
+
+const reviewerSearch = JSON.parse(await readFile(path.join(output, "data/reviewer_search_names.json"), "utf8"));
+if (!Array.isArray(reviewerSearch.names) || reviewerSearch.names.some(row => row.length !== 3)) {
+  throw new Error("Reviewer search index must contain only name, normalized spelling, and pronunciation paths.");
+}
+const forbiddenSearchKeys = /score|rank|threshold|priority|similarity/i;
+if (Object.keys(reviewerSearch).some(key => forbiddenSearchKeys.test(key))) {
+  throw new Error("Reviewer search index exposes algorithm scores or ranks.");
 }
 
 const bytes = await directorySize(output);

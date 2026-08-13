@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:validation": "node scripts/build_validation_site.mjs",
+    "build:review-search": "python3 scripts/build_reviewer_search_index.py",
+    "build:validation": "npm run build:review-search && node scripts/build_validation_site.mjs",
     "scrape:ph-fda": "node scripts/ph_fda_scraper.mjs",
     "test:ph-fda": "node --test tests/ph_fda_scraper.test.mjs",
     "candidates": "python3 scripts/build_lasa_candidates.py",

@@ -6,6 +6,10 @@ import { createReviewTimingTracker, formatReviewDuration, includedReviewSeconds 
 import { decisionPayload, savedDecision } from "./modules/review-decision.js?v=20260812-3";
 import { installThemeToggle } from "./modules/theme.js?v=20260811-1";
 import { installAccountSettings } from "./modules/account-settings.js?v=20260812-3";
+import {
+  automaticReviewerSearchMatch, createReviewerSearchIndex, rankReviewerMedicineNames,
+} from "./modules/reviewer-search.js?v=20260813-1";
+import { installSpeechSearch } from "./modules/speech-search.js?v=20260813-1";
 installThemeToggle();
 
 const PAGE_SIZE = 12;
@@ -20,6 +24,9 @@ const state = {
   loadId: 0,
   pendingSavedPairId: null,
   saveTimers: new Map(),
+  voiceAlternatives: [],
+  searchIndex: null,
+  searchIndexPromise: null,
   timing: createReviewTimingTracker(),
   // One-pair mode support. `history` lets "Previous pair" step back to a pair
   // that has just left the pending set, and `sessionReviewed` gives the
@@ -33,6 +40,7 @@ installAccountSettings({ account, supabase });
 
 const elements = {
   search: document.querySelector("#review-search"),
+  searchSuggestions: document.querySelector("#review-search-suggestions"),
   status: document.querySelector("#review-status"),
   mode: document.querySelector("#review-mode"),
   count: document.querySelector("#review-count"),
@@ -53,6 +61,70 @@ const elements = {
   unsavedDiscard: document.querySelector("#unsaved-discard"),
   unsavedCancel: document.querySelector("#unsaved-cancel"),
 };
+
+const [speechControl] = installSpeechSearch({ inputs: [elements.search] });
+
+async function reviewerSearchIndex() {
+  if (state.searchIndex) return state.searchIndex;
+  if (!state.searchIndexPromise) {
+    state.searchIndexPromise = fetch("data/reviewer_search_names.json", { cache: "no-store" })
+      .then(response => {
+        if (!response.ok) throw new Error(`Medicine search index could not load (${response.status})`);
+        return response.json();
+      })
+      .then(payload => {
+        state.searchIndex = createReviewerSearchIndex(payload.names || []);
+        return state.searchIndex;
+      })
+      .catch(error => {
+        state.searchIndexPromise = null;
+        throw error;
+      });
+  }
+  return state.searchIndexPromise;
+}
+
+function renderSearchSuggestions(matches, heardText) {
+  elements.searchSuggestions.replaceChildren();
+  if (!matches.length) return;
+  const label = document.createElement("span");
+  label.textContent = heardText ? `Heard “${heardText}”. Did you mean` : "Did you mean";
+  elements.searchSuggestions.appendChild(label);
+  matches.forEach(match => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.searchName = match.name;
+    button.textContent = match.name;
+    elements.searchSuggestions.appendChild(button);
+  });
+  const note = document.createElement("small");
+  note.textContent = "registered names · spelling and plausible English/Cebuano readings";
+  elements.searchSuggestions.appendChild(note);
+}
+
+async function resolveSpokenSearch() {
+  const transcripts = [elements.search.value, ...state.voiceAlternatives].filter(Boolean);
+  if (!transcripts.length) return;
+  if (speechControl) speechControl.status.textContent = "Matching speech to score-free registered names…";
+  try {
+    const matches = rankReviewerMedicineNames(await reviewerSearchIndex(), transcripts, 4);
+    const automaticMatch = automaticReviewerSearchMatch(transcripts, matches);
+    renderSearchSuggestions(matches, transcripts[0]);
+    if (automaticMatch) {
+      elements.search.value = automaticMatch.name;
+      state.voiceAlternatives = [];
+      if (speechControl) speechControl.status.textContent = `Matched to registered name “${automaticMatch.name}”.`;
+      resetPosition();
+      await loadQueue();
+    } else if (speechControl) {
+      speechControl.status.textContent = matches.length
+        ? "Several registered names are possible. Choose the intended name below."
+        : "No confident registered-name match. Try again or type part of the spelling.";
+    }
+  } catch {
+    if (speechControl) speechControl.status.textContent = "Pronunciation matching could not load. Typed search still works.";
+  }
+}
 
 const timingObserver = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -214,6 +286,9 @@ async function loadQueue({ scrollToList = false } = {}) {
     return;
   }
   state.count = count || 0;
+  if (search && state.count === 0 && state.searchIndex) {
+    renderSearchSuggestions(rankReviewerMedicineNames(state.searchIndex, [elements.search.value], 4));
+  }
   if (state.count && start >= state.count) {
     if (state.settings.focusMode) state.focusIndex = state.count - 1;
     else state.listPage = Math.max(1, Math.ceil(state.count / PAGE_SIZE));
@@ -456,9 +531,37 @@ function persistSettings() {
 }
 
 let searchTimer;
+elements.search.addEventListener("voicealternatives", event => {
+  state.voiceAlternatives = event.detail?.alternatives || [];
+  clearTimeout(searchTimer);
+  resolveSpokenSearch();
+});
 elements.search.addEventListener("input", () => {
   clearTimeout(searchTimer);
-  searchTimer = setTimeout(() => guardNavigation(() => { resetPosition(); loadQueue(); }, { checkUndecided: false }), 250);
+  if (!elements.search.value.trim()) {
+    state.voiceAlternatives = [];
+    elements.searchSuggestions.replaceChildren();
+  }
+  searchTimer = setTimeout(() => guardNavigation(async () => {
+    resetPosition();
+    await loadQueue();
+    const query = elements.search.value.trim();
+    if (!query || state.count > 0) return;
+    try {
+      renderSearchSuggestions(rankReviewerMedicineNames(await reviewerSearchIndex(), [query], 4));
+    } catch {
+      // The normal surface-spelling search already ran; suggestions are optional.
+    }
+  }, { checkUndecided: false }), 250);
+});
+elements.searchSuggestions.addEventListener("click", event => {
+  const button = event.target.closest("[data-search-name]");
+  if (!button) return;
+  elements.search.value = button.dataset.searchName;
+  state.voiceAlternatives = [];
+  elements.searchSuggestions.replaceChildren();
+  if (speechControl) speechControl.status.textContent = `Searching for registered name “${button.dataset.searchName}”.`;
+  guardNavigation(() => { resetPosition(); loadQueue(); }, { checkUndecided: false });
 });
 [elements.status, elements.mode].forEach(element => element.addEventListener("change", () => guardNavigation(() => { resetPosition(); loadQueue(); }, { checkUndecided: false })));
 elements.previous.addEventListener("click", () => guardNavigation(() => {
