@@ -23,6 +23,8 @@ const publicFiles = [
   "review.js",
   "admin-dashboard.html",
   "admin-dashboard.js",
+  "demo-reviewer-history.html",
+  "demo-reviewer-history.js",
   "admin-reviewer.html",
   "admin-reviewer.js",
 ];
@@ -30,6 +32,7 @@ const publicFiles = [
 const publicModules = [
   "account-settings.js",
   "admin-score-presentation.js",
+  "demo-admin-data.js",
   "interim-review.js",
   "medicine-evidence.js",
   "name-normalization.js",
@@ -55,8 +58,8 @@ async function copy(relativeSource, relativeDestination = relativeSource) {
 async function sanitizeAdminPage(name) {
   const target = path.join(output, name);
   const html = (await readFile(target, "utf8"))
-    .replace(/<a href="index\.html">Scoring workspace<\/a>/g, "")
-    .replace(/\s*<a class="secondary-link" href="index\.html">Open scores and ranking →<\/a>/g, "");
+    .replace(/\s*<a\b[^>]*href="index\.html"[^>]*>Scoring workspace<\/a>/g, "")
+    .replace(/\s*<a\b[^>]*href="index\.html"[^>]*>Open scores and ranking →<\/a>/g, "");
   await writeFile(target, html);
 }
 

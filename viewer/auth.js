@@ -1,7 +1,7 @@
 import { configurationMessage, isSupabaseConfigured, supabase } from "./supabase-client.js?v=20260809-1";
 
 export function destinationForRole(role) {
-  return role === "admin" ? "admin-dashboard.html" : "reviewer-dashboard.html";
+  return role === "admin" || role === "demo_admin" ? "admin-dashboard.html" : "reviewer-dashboard.html";
 }
 
 export async function getCurrentAccount() {
@@ -42,7 +42,9 @@ export async function requireAccount(allowedRoles = ["admin", "reviewer"]) {
     element.textContent = account.profile.display_name;
   });
   document.querySelectorAll("[data-user-role]").forEach(element => {
-    element.textContent = account.profile.is_test_account ? "Testing account" : account.profile.role;
+    element.textContent = account.profile.role === "demo_admin"
+      ? "Demonstration account"
+      : account.profile.is_test_account ? "Testing account" : account.profile.role;
   });
   document.querySelectorAll("[data-test-account-notice]").forEach(element => {
     element.hidden = !account.profile.is_test_account;

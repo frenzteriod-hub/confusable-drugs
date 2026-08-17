@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reviewer profile · PH LASA</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="theme-boot.js?v=20260811-1"></script>
+  <link rel="stylesheet" href="styles.css?v=20260817-1">
+</head>
+<body class="auth-pending demo-admin-account">
+  <header class="topbar account-topbar">
+    <div class="brand-mark" aria-hidden="true">Rx</div>
+    <div><p class="eyebrow">Study administration</p><h1>Reviewer profile</h1></div>
+    <nav class="site-nav" aria-label="Admin navigation"><a href="admin-dashboard.html">Dashboard</a></nav>
+    <div class="account-menu"><div><strong data-user-name>Administrator</strong><span data-user-role>Admin</span></div><button type="button" data-sign-out>Sign out</button></div>
+  </header>
+  <main>
+    <section class="welcome-row reviewer-audit-welcome">
+      <div><p class="eyebrow">Reviewer detail</p><h2 id="reviewer-name">Loading reviewer…</h2><p>Progress, label distribution, decision timing, and complete review history.</p></div>
+      <a class="secondary-link" href="admin-dashboard.html">← Back to all reviewers</a>
+    </section>
+
+    <section class="summary-grid reviewer-audit-summary" aria-label="Reviewer summary">
+      <article><span>Reviewed</span><strong id="audit-reviewed">—</strong><small id="audit-progress">of the queue</small></article>
+      <article class="streak-stat current"><span>Current streak</span><strong><i aria-hidden="true">🔥</i><b id="audit-current-streak">—</b></strong><small>consecutive active days</small></article>
+      <article class="streak-stat longest"><span>Longest streak</span><strong><i aria-hidden="true">★</i><b id="audit-longest-streak">—</b></strong><small>personal best</small></article>
+      <article><span>Average decision time</span><strong id="audit-average-time">—</strong><small>per saved label</small></article>
+      <article><span>Still pending</span><strong id="audit-pending">—</strong><small>pairs</small></article>
+    </section>
+
+    <section class="dashboard-grid admin-lower-grid">
+      <article class="activity-card"><div class="card-heading"><div><p class="eyebrow">Human decisions</p><h2>Label distribution</h2></div></div><div id="audit-label-distribution" class="distribution-list"></div></article>
+      <article class="activity-card"><div class="card-heading"><div><p class="eyebrow">Activity period</p><h2>Review timeline</h2></div></div><div id="audit-daily-activity" class="distribution-list"></div></article>
+    </section>
+
+    <section class="workspace reviewer-history-card" aria-labelledby="reviewer-history-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Decision audit trail</p><h2 id="reviewer-history-title">Complete label history</h2><p class="section-note">Search or filter the reviewer’s saved decisions. Use Previous and Next to browse every page.</p></div>
+        <span id="audit-history-count" class="interim-badge">— reviews</span>
+      </div>
+      <div class="reviewer-history-filters">
+        <label><span>Search medicine pair</span><input id="audit-history-search" type="search" placeholder="Search either medicine"></label>
+        <label><span>Reviewer label</span><select id="audit-history-label"><option value="">All labels</option><option value="potential_lasa">LASA</option><option value="false_positive">Not LASA</option><option value="needs_discussion">Needs discussion</option></select></label>
+      </div>
+      <div class="table-wrap"><table class="progress-table demo-profile-history-table"><thead><tr><th>Medicine pair</th><th>Label</th><th>Decision time</th><th>Saved</th></tr></thead><tbody id="audit-history-body"></tbody></table></div>
+      <div class="pagination reviewer-history-pagination"><button id="audit-history-previous" type="button">← Previous</button><span id="audit-history-page">Page 1</span><button id="audit-history-next" type="button">Next →</button></div>
+    </section>
+  </main>
+  <script type="module" src="demo-reviewer-history.js?v=20260817-1"></script>
+</body>
+</html>

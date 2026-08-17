@@ -6,19 +6,19 @@
   <title>Admin dashboard · PH LASA</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <script src="theme-boot.js?v=20260811-1"></script>
-  <link rel="stylesheet" href="styles.css?v=20260811-1">
+  <link rel="stylesheet" href="styles.css?v=20260817-1">
 </head>
 <body class="auth-pending">
   <header class="topbar account-topbar">
     <div class="brand-mark" aria-hidden="true">Rx</div>
     <div><p class="eyebrow">Study administration</p><h1>Review progress</h1></div>
-    <nav class="site-nav" aria-label="Admin navigation"><a class="active" href="admin-dashboard.html">Dashboard</a><a href="index.html">Scoring workspace</a></nav>
-    <div class="account-menu"><div><strong data-user-name>Administrator</strong><span>Admin</span></div><button type="button" data-sign-out>Sign out</button></div>
+    <nav class="site-nav" aria-label="Admin navigation"><a class="active" href="admin-dashboard.html">Dashboard</a><a href="index.html" data-real-admin-only>Scoring workspace</a></nav>
+    <div class="account-menu"><div><strong data-user-name>Administrator</strong><span data-user-role>Admin</span></div><button type="button" data-sign-out>Sign out</button></div>
   </header>
   <main>
     <section class="welcome-row admin-welcome">
       <div><p class="eyebrow">Region VII expert review</p><h2>Reviewer progress at a glance</h2><p>This dashboard tracks only the active expert queue stored in Supabase, not the larger internal algorithmic shortlist.</p></div>
-      <a class="secondary-link" href="index.html">Open scores and ranking →</a>
+      <a class="secondary-link" href="index.html" data-real-admin-only>Open scores and ranking →</a>
     </section>
     <section id="queue-sync-notice" class="notice" aria-label="Queue synchronization status" hidden></section>
     <section class="summary-grid admin-summary" aria-label="Aggregate review summary">
@@ -42,11 +42,15 @@
       <div class="section-heading"><div><p class="eyebrow">Individual progress</p><h2>Reviewer completion</h2><p class="section-note">Today uses Philippine time. A pair is complete for a reviewer after their first saved label.</p></div></div>
       <div class="table-wrap"><table class="progress-table"><thead><tr><th>Reviewer</th><th>Progress</th><th>Completed</th><th>Today</th><th>Streaks</th><th>Avg. decision time</th><th>Last activity</th></tr></thead><tbody id="reviewer-progress"><tr><td colspan="7">Loading progress…</td></tr></tbody></table></div>
     </section>
+    <section id="demo-label-history" class="workspace admin-progress-card" hidden>
+      <div class="section-heading"><div><p class="eyebrow">Review activity</p><h2>Recent labels</h2><p class="section-note">Open a reviewer profile above to browse that reviewer’s complete label history.</p></div></div>
+      <div class="table-wrap"><table class="progress-table demo-label-history-table"><thead><tr><th>Reviewer</th><th>Medicine pair</th><th>Label</th><th>Decision time</th><th>Saved</th></tr></thead><tbody id="demo-label-history-body"></tbody></table></div>
+    </section>
     <section class="dashboard-grid admin-lower-grid">
       <article class="activity-card"><div class="card-heading"><div><p class="eyebrow">Aggregate status</p><h2>Label distribution</h2></div></div><div id="label-distribution" class="distribution-list"></div></article>
       <article class="activity-card"><div class="card-heading"><div><p class="eyebrow">Data separation</p><h2>Reviewer blinding</h2></div></div><ul class="protection-list"><li>Reviewer pages query only the score-free review table.</li><li>Score records have an admin-only database policy.</li><li>Each reviewer can read and change only their own labels.</li><li>The browser uses the public anon key—never the service-role key.</li></ul></article>
     </section>
   </main>
-  <script type="module" src="admin-dashboard.js?v=20260812-3"></script>
+  <script type="module" src="admin-dashboard.js?v=20260817-3"></script>
 </body>
 </html>
