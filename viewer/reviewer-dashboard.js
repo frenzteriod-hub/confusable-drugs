@@ -5,6 +5,7 @@ import { formatReviewDuration, includedReviewSeconds, summarizeReviewDurations }
 import { installThemeToggle } from "./modules/theme.js?v=20260811-1";
 import { installAccountSettings } from "./modules/account-settings.js?v=20260812-3";
 import { loadReviewSettings, saveReviewSettings } from "./modules/reviewer-settings.js?v=20260809-1";
+import { collectSupabasePages } from "./modules/supabase-pagination.js?v=20260820-1";
 installThemeToggle();
 
 const account = await requireAccount(["reviewer"]);
@@ -95,11 +96,18 @@ function channelLabelText(review) {
 }
 
 async function loadReviews() {
-  const base = "pair_id, label, look_alike, sound_alike, reviewed_at, updated_at, review_started_at, review_duration_seconds, review_pairs(name_a, name_b)";
-  let result = await supabase.from("reviews").select(base).eq("reviewer_id", account.user.id).order("reviewed_at", { ascending: false });
+  const load = columns => collectSupabasePages((from, to) => supabase
+    .from("reviews")
+    .select(columns)
+    .eq("reviewer_id", account.user.id)
+    .order("id", { ascending: false })
+    .range(from, to));
+  const base = "id, pair_id, label, look_alike, sound_alike, reviewed_at, updated_at, review_started_at, review_duration_seconds, review_pairs(name_a, name_b)";
+  let result = await load(base);
   if (result.error && /review_started_at|review_duration_seconds|schema cache|column/i.test(result.error.message || "")) {
-    result = await supabase.from("reviews").select("pair_id, label, reviewed_at, updated_at, review_pairs(name_a, name_b)").eq("reviewer_id", account.user.id).order("reviewed_at", { ascending: false });
+    result = await load("id, pair_id, label, reviewed_at, updated_at, review_pairs(name_a, name_b)");
   }
+  if (result.data) result.data.sort((left, right) => new Date(right.reviewed_at) - new Date(left.reviewed_at) || Number(right.id) - Number(left.id));
   return result;
 }
 

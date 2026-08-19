@@ -5,6 +5,7 @@ import { buildDailyCounts, calculateLongestStreak, calculateStreak, dayKey } fro
 import { formatReviewDuration, summarizeReviewDurations } from "./modules/review-timing.js?v=20260809-1";
 import { validationReviews } from "./modules/validation-accounts.js?v=20260809-1";
 import { DEMO_ADMIN_SNAPSHOT, demoActivitySummary, demoRecentReviews, demoSnapshotTotals, loadDemoPairRows } from "./modules/demo-admin-data.js?v=20260817-4";
+import { collectSupabasePages } from "./modules/supabase-pagination.js?v=20260820-1";
 import { installThemeToggle } from "./modules/theme.js?v=20260811-1";
 installThemeToggle();
 
@@ -59,6 +60,7 @@ document.querySelector("#admin-overlap").textContent = fullyReviewed.toLocaleStr
 
 const { coveragePercent } = interim;
 const interimRate = count => fullyReviewed ? Math.round(count / fullyReviewed * 100) : 0;
+const fullyReviewedPhrase = fullyReviewed === 1 ? "1 pair has" : `${fullyReviewed.toLocaleString("en-PH")} pairs have`;
 document.querySelector("#interim-coverage-badge").textContent = `${coveragePercent}% label coverage`;
 document.querySelector("#interim-unanimous").textContent = unanimousPairs.toLocaleString("en-PH");
 document.querySelector("#interim-unanimous-rate").textContent = `${interimRate(unanimousPairs)}% of fully reviewed pairs`;
@@ -69,7 +71,7 @@ document.querySelector("#interim-false-positive-rate").textContent = `${interimR
 document.querySelector("#interim-unresolved").textContent = unresolvedMajority.toLocaleString("en-PH");
 document.querySelector("#interim-unresolved-rate").textContent = `${interimRate(unresolvedMajority)}% of fully reviewed pairs`;
 document.querySelector("#interim-conclusion-text").textContent = fullyReviewed
-  ? `${reviews.length.toLocaleString("en-PH")} of ${expected.toLocaleString("en-PH")} expected reviews are saved (${coveragePercent}%). ${fullyReviewed.toLocaleString("en-PH")} pairs have been reviewed by every expert. Of those, ${interimRate(potentialMajority)}% currently have a majority LASA judgment and ${interimRate(falsePositiveMajority)}% have a majority Not LASA judgment. These are preliminary expert judgments, not the study's final conclusion.`
+  ? `${reviews.length.toLocaleString("en-PH")} of ${expected.toLocaleString("en-PH")} expected reviews are saved (${coveragePercent}%). ${fullyReviewedPhrase} been reviewed by every expert. Of those, ${interimRate(potentialMajority)}% currently have a majority LASA judgment and ${interimRate(falsePositiveMajority)}% have a majority Not LASA judgment. These are preliminary expert judgments, not the study's final conclusion.`
   : `${reviews.length.toLocaleString("en-PH")} of ${expected.toLocaleString("en-PH")} expected reviews are saved (${coveragePercent}%), but no pair has yet been reviewed by every expert.`;
 
 document.querySelector("#reviewer-progress").innerHTML = reviewers.map(reviewer => {
@@ -181,9 +183,16 @@ async function renderDemoDashboard() {
 }
 
 async function loadReviews() {
-  let result = await supabase.from("reviews").select("pair_id, reviewer_id, label, look_alike, sound_alike, reviewed_at, review_duration_seconds, review_pairs!inner(is_active)").eq("review_pairs.is_active", true).order("reviewed_at", { ascending: false });
+  const load = columns => collectSupabasePages((from, to) => supabase
+    .from("reviews")
+    .select(columns)
+    .eq("review_pairs.is_active", true)
+    .order("id", { ascending: false })
+    .range(from, to));
+  let result = await load("id, pair_id, reviewer_id, label, look_alike, sound_alike, reviewed_at, review_duration_seconds, review_pairs!inner(is_active)");
   if (result.error && /review_duration_seconds|schema cache|column/i.test(result.error.message || "")) {
-    result = await supabase.from("reviews").select("pair_id, reviewer_id, label, reviewed_at, review_pairs!inner(is_active)").eq("review_pairs.is_active", true).order("reviewed_at", { ascending: false });
+    result = await load("id, pair_id, reviewer_id, label, reviewed_at, review_pairs!inner(is_active)");
   }
+  if (result.data) result.data.sort((left, right) => new Date(right.reviewed_at) - new Date(left.reviewed_at) || Number(right.id) - Number(left.id));
   return result;
 }

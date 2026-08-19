@@ -42,6 +42,7 @@ const publicModules = [
   "reviewer-settings.js",
   "similarity.js",
   "speech-search.js",
+  "supabase-pagination.js",
   "theme.js",
   "validation-accounts.js",
   "reviewer-search.js",
