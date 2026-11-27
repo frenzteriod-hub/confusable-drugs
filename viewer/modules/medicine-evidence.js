@@ -1,12 +1,11 @@
+import { indexDirectory, normalizeProductName as normalizeName, productBucket } from "./product-lookup.js";
 const DIRECTORY_URL = "data/product_directory.json";
 const FDA_VERIFICATION_URL = "https://verification.fda.gov.ph/";
 const INITIAL_PRODUCT_LIMIT = 12;
 const COMPARISON_PRODUCT_LIMIT = 4;
-const SEARCH_FEEDBACK_MS = 280;
 
 const state = {
-  directoryPromise: null,
-  indexes: null,
+  directories: new Map(),
   matches: [],
   visibleCount: INITIAL_PRODUCT_LIMIT,
   comparison: null,
@@ -32,11 +31,6 @@ const escapeHTML = value => String(value ?? "")
   .replaceAll("'", "&#039;");
 
 const display = (value, fallback = "Not published") => String(value || "").trim() || fallback;
-const normalizeName = value => String(value || "").toLocaleLowerCase("en")
-  .normalize("NFKD")
-  .replace(/[\u0300-\u036f]/g, "")
-  .replace(/[^a-z0-9]+/g, "");
-
 async function fetchJSON(url) {
   // Let the browser revalidate large registry files instead of downloading the
   // same evidence bundle again on every modal open or page refresh.
@@ -52,27 +46,26 @@ function addToIndex(index, value, product) {
   index.get(key).push(product);
 }
 
-async function loadDirectory() {
-  if (!state.directoryPromise) {
-    state.directoryPromise = fetchJSON(DIRECTORY_URL).then(products => {
+async function matchProducts(name, type) {
+  const key = normalizeName(name);
+  if (!key) return [];
+  const url = indexDirectory ? `${indexDirectory}/${productBucket(key)}.json` : DIRECTORY_URL;
+  if (!state.directories.has(url)) {
+    state.directories.set(url, fetchJSON(url).then(products => {
       const indexes = { brand: new Map(), generic: new Map() };
       for (const product of products) {
         addToIndex(indexes.brand, product.b, product);
         addToIndex(indexes.generic, product.g, product);
       }
-      state.indexes = indexes;
-      return products;
+      return indexes;
     }).catch(error => {
-      state.directoryPromise = null;
+      state.directories.delete(url);
       throw error;
-    });
+    }));
   }
-  return state.directoryPromise;
-}
-
-function matchProducts(name, type) {
-  const index = type === "brand" ? state.indexes.brand : state.indexes.generic;
-  return [...(index.get(normalizeName(name)) || [])].sort((first, second) =>
+  const indexes = await state.directories.get(url);
+  const index = type === "brand" ? indexes.brand : indexes.generic;
+  return [...(index.get(key) || [])].sort((first, second) =>
     Number(second.l || 0) - Number(first.l || 0)
     || String(first.r || "").localeCompare(String(second.r || "")));
 }
@@ -215,7 +208,6 @@ function comparisonLoading(first, second) {
   </div>`;
 }
 
-const wait = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
 
 function cprDetailItem(label, value) {
   return `<div><strong>${escapeHTML(label)}:</strong><span>${escapeHTML(display(value, "—"))}</span></div>`;
@@ -382,9 +374,9 @@ export async function showMedicineEvidence(name, type) {
   elements.content.innerHTML = '<p class="loading-message">Loading the local PH FDA product directory…</p>';
   if (!elements.dialog.open) elements.dialog.showModal();
   try {
-    await loadDirectory();
+    const matches = await matchProducts(name, type);
     if (requestId !== state.requestId) return;
-    state.matches = matchProducts(name, type);
+    state.matches = matches;
     state.productByRegistration = new Map(state.matches.map(product => [product.r, product]));
     state.visibleCount = INITIAL_PRODUCT_LIMIT;
     if (state.matches.length) renderMatches();
@@ -393,6 +385,7 @@ export async function showMedicineEvidence(name, type) {
       elements.content.innerHTML = noMatchContent(name);
     }
   } catch (error) {
+    if (requestId !== state.requestId) return;
     elements.status.textContent = "Medicine evidence could not load.";
     elements.content.innerHTML = `<div class="empty-panel"><strong>Product directory could not load</strong><span>${escapeHTML(error.message)}</span></div>`;
   }
@@ -408,11 +401,11 @@ export async function showMedicineComparison(first, second) {
   elements.content.innerHTML = comparisonLoading(first, second);
   if (!elements.dialog.open) elements.dialog.showModal();
   try {
-    await Promise.all([loadDirectory(), wait(SEARCH_FEEDBACK_MS)]);
+    const [firstMatches, secondMatches] = await Promise.all([matchProducts(first.name, first.type), matchProducts(second.name, second.type)]);
     if (requestId !== state.requestId) return;
     state.comparison = {
-      first: { ...first, matches: matchProducts(first.name, first.type), visibleCount: COMPARISON_PRODUCT_LIMIT },
-      second: { ...second, matches: matchProducts(second.name, second.type), visibleCount: COMPARISON_PRODUCT_LIMIT },
+      first: { ...first, matches: firstMatches, visibleCount: COMPARISON_PRODUCT_LIMIT },
+      second: { ...second, matches: secondMatches, visibleCount: COMPARISON_PRODUCT_LIMIT },
     };
     const products = [...state.comparison.first.matches, ...state.comparison.second.matches];
     state.productByRegistration = new Map(products.map(product => [product.r, product]));

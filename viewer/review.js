@@ -21,6 +21,7 @@ const state = {
   focusIndex: 0,
   count: 0,
   rows: [],
+  focusWindow: null,
   loadId: 0,
   pendingSavedPairId: null,
   saveTimers: new Map(),
@@ -67,7 +68,7 @@ const [speechControl] = installSpeechSearch({ inputs: [elements.search] });
 async function reviewerSearchIndex() {
   if (state.searchIndex) return state.searchIndex;
   if (!state.searchIndexPromise) {
-    state.searchIndexPromise = fetch("data/reviewer_search_names.json", { cache: "no-store" })
+    state.searchIndexPromise = fetch("data/reviewer_search_names.json")
       .then(response => {
         if (!response.ok) throw new Error(`Medicine search index could not load (${response.status})`);
         return response.json();
@@ -143,6 +144,7 @@ document.querySelector("[data-review-nav]")?.classList.toggle("active", !history
 document.querySelector("[data-history-nav]")?.classList.toggle("active", historyView);
 
 function resetPosition() {
+  state.focusWindow = null;
   state.listPage = 1;
   state.focusIndex = 0;
   state.pendingSavedPairId = null;
@@ -189,8 +191,25 @@ function undecidedCard() {
 
 // Runs `proceed()` unless the pair is unsaved or undecided, in which case the
 // reviewer resolves it first.
-function guardNavigation(proceed, { checkUndecided = true } = {}) {
-  const dirty = state.settings.autosave ? null : dirtyCard();
+let navigating = false;
+async function guardNavigation(proceed, { checkUndecided = true } = {}) {
+  if (navigating) return;
+  if (state.settings.autosave) {
+    navigating = true;
+    try {
+      for (const card of elements.list.querySelectorAll(".review-pair-card")) {
+        if (!cardIsDirty(card) || !reviewValues(card)) continue;
+        const pairId = Number(card.dataset.pairId);
+        clearTimeout(state.saveTimers.get(pairId));
+        state.saveTimers.delete(pairId);
+        await saveReview(card);
+        if (cardIsDirty(card)) return;
+      }
+    } finally {
+      navigating = false;
+    }
+  }
+  const dirty = dirtyCard();
   // Changing a filter is deliberate navigation, not skipping a pair, so the
   // undecided check applies only to Previous/Next.
   const undecided = checkUndecided ? undecidedCard() : null;
@@ -248,16 +267,34 @@ elements.unsavedDialog.addEventListener("cancel", event => { event.preventDefaul
 
 // Closing the tab or following a link is the same hazard.
 window.addEventListener("beforeunload", event => {
-  if (state.settings.autosave || !dirtyCard()) return;
+  if (!dirtyCard()) return;
   event.preventDefault();
   event.returnValue = "";
 });
 
+function displayQueue(rows, scrollToList) {
+  state.rows = rows;
+  render();
+  if (scrollToList) requestAnimationFrame(() => elements.list.scrollIntoView({ behavior: "smooth", block: "start" }));
+}
+
+document.addEventListener("visibilitychange", () => { state.focusWindow = null; });
+
 async function loadQueue({ scrollToList = false } = {}) {
   const loadId = ++state.loadId;
-  elements.list.innerHTML = '<p class="loading-message">Loading score-free review queue…</p>';
   let query = supabase.from("reviewer_queue").select("*", { count: "exact" }).order("review_order");
   const search = elements.search.value.trim().toLocaleLowerCase().replaceAll("%", "\\%").replaceAll("_", "\\_");
+  const key = JSON.stringify([search, elements.mode.value, elements.status.value]);
+  const start = currentStart();
+  const buffer = state.focusWindow;
+  if (state.settings.focusMode && state.pinnedPairId === null && buffer?.key === key && Date.now() < buffer.expires) {
+    const cached = buffer.rows[start - buffer.start];
+    if (cached) {
+      displayQueue([cached], scrollToList);
+      return;
+    }
+  }
+  elements.list.innerHTML = '<p class="loading-message">Loading score-free review queue…</p>';
   if (search) query = query.ilike("search_text", `%${search}%`);
   if (elements.mode.value) query = query.eq("comparison_type", elements.mode.value);
   if (elements.status.value === "pending") query = query.is("review_id", null);
@@ -266,7 +303,7 @@ async function loadQueue({ scrollToList = false } = {}) {
   // current filter (a pair just labeled drops out of the Pending set). Pin it
   // by id and bypass the status filter so it can still be corrected.
   if (state.pinnedPairId !== null) {
-    let pinned = supabase.from("reviewer_queue").select("*", { count: "exact" }).eq("pair_id", state.pinnedPairId);
+    const pinned = supabase.from("reviewer_queue").select("*").eq("pair_id", state.pinnedPairId);
     const pinnedResult = await pinned;
     if (loadId !== state.loadId) return;
     if (!pinnedResult.error && pinnedResult.data?.length) {
@@ -277,8 +314,7 @@ async function loadQueue({ scrollToList = false } = {}) {
     }
     state.pinnedPairId = null; // fall through to the normal offset query
   }
-  const start = currentStart();
-  const end = state.settings.focusMode ? start : start + PAGE_SIZE - 1;
+  const end = start + PAGE_SIZE - 1;
   const { data, count, error } = await query.range(start, end);
   if (loadId !== state.loadId) return;
   if (error) {
@@ -295,9 +331,9 @@ async function loadQueue({ scrollToList = false } = {}) {
     await loadQueue({ scrollToList });
     return;
   }
-  state.rows = data || [];
-  render();
-  if (scrollToList) requestAnimationFrame(() => elements.list.scrollIntoView({ behavior: "smooth", block: "start" }));
+  const rows = data || [];
+  state.focusWindow = state.settings.focusMode ? { key, start, rows, expires: Date.now() + 30000 } : null;
+  displayQueue(state.settings.focusMode ? rows.slice(0, 1) : rows, scrollToList);
 }
 
 function render() {
@@ -393,17 +429,24 @@ function scheduleAutosave(card, delay = 250) {
   }, delay));
 }
 
-async function saveReview(card, { automatic = false } = {}) {
+const savingCards = new WeakMap();
+function saveReview(card, options = {}) {
+  if (savingCards.has(card)) {
+    if (options.automatic) scheduleAutosave(card, 350);
+    return savingCards.get(card);
+  }
+  const pending = writeReview(card, options).finally(() => savingCards.delete(card));
+  savingCards.set(card, pending);
+  return pending;
+}
+
+async function writeReview(card, { automatic = false } = {}) {
   const values = reviewValues(card);
   const status = card.querySelector(".save-status");
   const button = card.querySelector(".save-review");
   if (!values) {
     status.textContent = "Choose LASA, Not LASA, or Needs discussion.";
     status.classList.add("error");
-    return;
-  }
-  if (button.dataset.saving === "true") {
-    if (automatic) scheduleAutosave(card, 350);
     return;
   }
   button.dataset.saving = "true";
@@ -466,7 +509,20 @@ async function saveReview(card, { automatic = false } = {}) {
     notes: payload.notes,
   });
   if (elements.status.value === "pending") state.pendingSavedPairId = payload.pair_id;
-  if (firstReview) state.sessionReviewed += 1;
+  if (firstReview) {
+    state.sessionReviewed += 1;
+    if (state.focusWindow && elements.status.value === "pending") {
+      const index = state.focusWindow.rows.findIndex(item => item.pair_id === pairId);
+      if (index >= 0) {
+        state.focusWindow.rows.splice(index, 1);
+        state.count = Math.max(0, state.count - 1);
+      } else {
+        state.focusWindow = null;
+      }
+    } else {
+      state.focusWindow = null;
+    }
+  }
   const savedRow = state.rows.find(item => item.pair_id === pairId);
   if (savedRow) {
     // Keep the in-memory row in step with what was just written, so the

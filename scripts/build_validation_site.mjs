@@ -1,5 +1,7 @@
 import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { createHash } from "node:crypto";
+import { normalizeProductName, productBucket } from "../viewer/modules/product-lookup.js";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -31,6 +33,8 @@ const publicFiles = [
 
 const publicModules = [
   "account-settings.js",
+  "dashboard-data.js",
+  "product-lookup.js",
   "admin-score-presentation.js",
   "demo-admin-data.js",
   "interim-review.js",
@@ -64,15 +68,6 @@ async function sanitizeAdminPage(name) {
   await writeFile(target, html);
 }
 
-async function restrictLoginDestination() {
-  const target = path.join(output, "login.js");
-  const sourceCode = await readFile(target, "utf8");
-  const original = 'const safeNext = requested && /^[a-z0-9-]+\\.html$/i.test(requested) ? requested : "";';
-  const replacement = 'const safeNext = requested === "admin-dashboard.html" ? requested : "";';
-  if (!sourceCode.includes(original)) throw new Error("login.js safe-next guard changed; update the validation build explicitly.");
-  await writeFile(target, sourceCode.replace(original, replacement));
-}
-
 async function directorySize(directory) {
   let total = 0;
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -88,6 +83,21 @@ await mkdir(output, { recursive: true });
 for (const file of publicFiles) await copy(file);
 for (const moduleName of publicModules) await copy(`modules/${moduleName}`);
 await copy("data/product_directory.json");
+const directory = await readFile(path.join(source, "data/product_directory.json"), "utf8");
+const version = createHash("sha256").update(directory).digest("hex").slice(0, 16);
+const indexDirectory = `data/registry-v1/${version}`;
+await mkdir(path.join(output, indexDirectory), { recursive: true });
+const buckets = Array.from({ length: 128 }, () => []);
+for (const product of JSON.parse(directory)) {
+  const bucketsForProduct = new Set([product.b, product.g].map(normalizeProductName).filter(Boolean).map(productBucket));
+  for (const bucket of bucketsForProduct) buckets[parseInt(bucket, 16)].push(product);
+}
+await Promise.all(buckets.map((products, i) => writeFile(
+  path.join(output, indexDirectory, `${i.toString(16)}.json`), JSON.stringify(products)
+)));
+const lookupPath = path.join(output, "modules/product-lookup.js");
+await writeFile(lookupPath, (await readFile(lookupPath, "utf8"))
+  .replace("export const indexDirectory = null;", `export const indexDirectory = ${JSON.stringify(indexDirectory)};`));
 await copy("data/reviewer_search_names.json");
 for (const directory of evidenceDirectories) await copy(`data/${directory}`);
 
@@ -101,7 +111,6 @@ await writeFile(path.join(output, "data/summary.json"), `${JSON.stringify({
 
 await sanitizeAdminPage("admin-dashboard.html");
 await sanitizeAdminPage("admin-reviewer.html");
-await restrictLoginDestination();
 
 const forbiddenPublicAssets = [
   "data/candidate_index.json",

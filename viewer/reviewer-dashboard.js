@@ -1,11 +1,11 @@
-import { escapeHTML, installSignOut, requireAccount } from "./auth.js?v=20260812-3";
+import { loadOwnActivity } from "./modules/dashboard-data.js";
+import { escapeHTML, installSignOut, requireAccount, showBlockingError } from "./auth.js?v=20260812-3";
 import { supabase } from "./supabase-client.js?v=20260809-1";
-import { activityCalendar, activityLevel, buildDailyCounts, buildDailyReviewActivity, calculateLongestStreak, calculateStreak, dayKey } from "./modules/review-stats.js?v=20260809-2";
-import { formatReviewDuration, includedReviewSeconds, summarizeReviewDurations } from "./modules/review-timing.js?v=20260809-1";
+import { activityCalendar, activityLevel, calculateLongestStreak, calculateStreak, dayKey } from "./modules/review-stats.js?v=20260809-2";
+import { formatReviewDuration, includedReviewSeconds } from "./modules/review-timing.js?v=20260809-1";
 import { installThemeToggle } from "./modules/theme.js?v=20260811-1";
 import { installAccountSettings } from "./modules/account-settings.js?v=20260812-3";
 import { loadReviewSettings, saveReviewSettings } from "./modules/reviewer-settings.js?v=20260809-1";
-import { collectSupabasePages } from "./modules/supabase-pagination.js?v=20260820-1";
 installThemeToggle();
 
 const account = await requireAccount(["reviewer"]);
@@ -13,18 +13,21 @@ installSignOut();
 installAccountSettings({ account, supabase });
 installReviewSettings();
 
-const [{ count: pairCount, error: pairError }, { count: activeReviewedCount, error: activeReviewError }, reviewResult] = await Promise.all([
-  supabase.from("review_pairs").select("id", { count: "exact", head: true }).eq("is_active", true),
-  supabase.from("reviewer_queue").select("pair_id", { count: "exact", head: true }).not("review_id", "is", null),
-  loadReviews(),
+const [activityResult, recentResult] = await Promise.all([
+  loadOwnActivity(supabase, account.user.id).then(data => ({ data }), error => ({ error })),
+  supabase.from("reviews")
+    .select("id, label, reviewed_at, updated_at, review_duration_seconds, review_pairs!inner(name_a, name_b)")
+    .eq("reviewer_id", account.user.id)
+    .order("reviewed_at", { ascending: false }).order("id", { ascending: false }).limit(6),
 ]);
-const { data: reviews, error: reviewError } = reviewResult;
-
-if (pairError || activeReviewError || reviewError) throw pairError || activeReviewError || reviewError;
-
-const counts = buildDailyCounts(reviews);
+if (activityResult.error || recentResult.error) {
+  showBlockingError((activityResult.error || recentResult.error).message);
+  throw activityResult.error || recentResult.error;
+}
+const { pairCount, completed: total, days: dailyActivity, ...timingSummary } = activityResult.data;
+const reviews = recentResult.data;
+const counts = Object.fromEntries(Object.entries(dailyActivity).map(([day, stats]) => [day, stats.count]));
 const today = counts[dayKey(new Date())] || 0;
-const total = activeReviewedCount || 0;
 const pending = Math.max(0, pairCount - total);
 document.querySelector("#today-count").textContent = today.toLocaleString("en-PH");
 document.querySelector("#streak-count").textContent = calculateStreak(counts).toLocaleString("en-PH");
@@ -34,8 +37,6 @@ document.querySelector("#reviewed-percent").textContent = pairCount ? `${Math.ro
 document.querySelector("#pending-count").textContent = pending.toLocaleString("en-PH");
 
 const activity = activityCalendar(counts);
-const dailyActivity = buildDailyReviewActivity(reviews, undefined, includedReviewSeconds);
-const timingSummary = summarizeReviewDurations(reviews);
 document.querySelector("#activity-total").textContent = `${activity.days.reduce((sum, day) => sum + (day.count || 0), 0).toLocaleString("en-PH")} labels in 12 months`;
 document.querySelector("#average-review-time").textContent = timingSummary.averageSeconds === null ? "Not available" : formatReviewDuration(timingSummary.averageSeconds);
 document.querySelector("#timed-review-count").textContent = timingSummary.timedCount.toLocaleString("en-PH");
@@ -93,22 +94,6 @@ function labelText(label) {
 
 function channelLabelText(review) {
   return labelText(review.label);
-}
-
-async function loadReviews() {
-  const load = columns => collectSupabasePages((from, to) => supabase
-    .from("reviews")
-    .select(columns)
-    .eq("reviewer_id", account.user.id)
-    .order("id", { ascending: false })
-    .range(from, to));
-  const base = "id, pair_id, label, look_alike, sound_alike, reviewed_at, updated_at, review_started_at, review_duration_seconds, review_pairs(name_a, name_b)";
-  let result = await load(base);
-  if (result.error && /review_started_at|review_duration_seconds|schema cache|column/i.test(result.error.message || "")) {
-    result = await load("id, pair_id, label, reviewed_at, updated_at, review_pairs(name_a, name_b)");
-  }
-  if (result.data) result.data.sort((left, right) => new Date(right.reviewed_at) - new Date(left.reviewed_at) || Number(right.id) - Number(left.id));
-  return result;
 }
 
 function reviewTimestamp(review) {
