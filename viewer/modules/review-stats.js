@@ -1,13 +1,13 @@
 export const MANILA_TIME_ZONE = "Asia/Manila";
 
+const dayFormatters = new Map();
+
 export function dayKey(value, timeZone = MANILA_TIME_ZONE) {
   const date = value instanceof Date ? value : new Date(value);
-  const parts = new Intl.DateTimeFormat("en-US", {
-    timeZone,
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).formatToParts(date);
+  if (!dayFormatters.has(timeZone)) {
+    dayFormatters.set(timeZone, new Intl.DateTimeFormat("en-US", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }));
+  }
+  const parts = dayFormatters.get(timeZone).formatToParts(date);
   const get = type => parts.find(part => part.type === type)?.value;
   return `${get("year")}-${get("month")}-${get("day")}`;
 }

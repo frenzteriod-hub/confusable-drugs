@@ -58,7 +58,17 @@ export function installSignOut() {
   document.querySelectorAll("[data-sign-out]").forEach(button => {
     button.addEventListener("click", async () => {
       button.disabled = true;
-      await supabase.auth.signOut();
+      const { error } = await supabase.auth.signOut({ scope: "local" });
+      if (error) {
+        button.disabled = false;
+        window.alert(`Sign-out failed: ${error.message}`);
+        return;
+      }
+      try {
+        for (const key of Object.keys(sessionStorage)) {
+          if (key.startsWith("review-summary-v1:")) sessionStorage.removeItem(key);
+        }
+      } catch { /* Session storage can be disabled. */ }
       location.replace("login.html");
     });
   });
@@ -71,8 +81,10 @@ export function showBlockingError(message) {
     <p class="eyebrow">Setup needed</p>
     <h1>Review workspace unavailable</h1>
     <p>${escapeHTML(message)}</p>
-    <a class="primary-link" href="login.html">Return to sign in</a>
+    <button type="button" class="primary-link" data-retry>Retry connection</button>
+    <a href="login.html">Return to sign in</a>
   </main>`;
+  document.querySelector("[data-retry]").addEventListener("click", () => location.reload());
 }
 
 export function escapeHTML(value) {
